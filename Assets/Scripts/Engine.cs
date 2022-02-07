@@ -3,50 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum EngineState
-{
-    OK,
-    OverHeat,
-    BatteryEmpty,
-    Failure,
-}
 
 public class Engine : MonoBehaviour
 {
-    public EngineState engineState;
 
-    // Start is called before the first frame update
+    //Create dictionary for possible engine problems
+    public Dictionary<CrisisSubType, bool> engineProblemStates = new Dictionary<CrisisSubType, bool>()
+        {
+            { CrisisSubType.Overheat, false },
+            { CrisisSubType.BatteryEmpty, false },
+            { CrisisSubType.Failure, false },
+        };
+
+
     void Start()
     {
-        LevelManager.instance.onEngineStateChanged += ChangeEngineState;
+        //subscribe to EventManager's static action and use it to execute setEngineState function
+        EventManager.onCrisisStart += setEngineProblem;
+
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+
+    private void setEngineProblem(CrisisType crisis, CrisisSubType newEngineproblem)
     {
-        
+        if (crisis == CrisisType.Engine)
+        {
+            if (engineProblemStates.ContainsKey(newEngineproblem))
+            {
+                engineProblemStates[newEngineproblem] = true;
+            }
+        }
+
+        CheckEngineProblems();
     }
 
-
-    private void ChangeEngineState(EngineState newState)
+    public void CheckEngineProblems()
     {
-        engineState = newState;
+        foreach (KeyValuePair<CrisisSubType, bool> pair in engineProblemStates)
+        {
+            if (LevelManager.instance.currentPiece != null)
+            {
+                LevelManager.instance.currentPiece.CheckProgress(CrisisType.Engine, pair.Key, pair.Value);
 
-        if (engineState == EngineState.OK)
-        {
-            gameObject.GetComponent<Renderer>().material.color = Color.green;
-        }
-        else if (engineState == EngineState.OverHeat)
-        {
-            gameObject.GetComponent<Renderer>().material.color = Color.red;
-        }
-        else if (engineState == EngineState.BatteryEmpty)
-        {
-            gameObject.GetComponent<Renderer>().material.color = Color.blue;
+                //Debug.Log("Engine problem: " + pair.Key + " status: " + pair.Value);
+            }
         }
 
-        LevelManager.instance.currentPiece.GetComponent<Crisis>().engineCrisis = newState;
-        LevelManager.instance.currentPiece.GetComponent<EventManager>().CheckProgress();
     }
+
+
 }
 

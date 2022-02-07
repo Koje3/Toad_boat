@@ -3,77 +3,112 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+
 public enum CrisisType
 {
-    none,
+    None,
     Engine,
+    Radar,
     Rudder,
+    Hull,
 }
+
+public enum CrisisSubType
+{
+    None,
+    Overheat,
+    Broken,
+    BatteryEmpty,
+    Failure,
+    Explosion,
+}
+
 
 public class EventManager : MonoBehaviour
 {
+    public static event Action<CrisisType, CrisisSubType> onCrisisStart;
 
-    public float tick;
-
-    [Space (2)]
-
-    public float startPuzzleTick;
-    public float checkPuzzleCompletionTick;
+    public Dictionary<CrisisType, CrisisSubType> crisesDictionary;
+ 
 
     [SerializeField]
-    public Crisis[] crisis;
+    public List<Crises> Crises;
+
 
     void Start()
     {
-        tick = 0f;
+        foreach (Crises item in Crises)
+        {
+            item.SetVarsiablesFalse();
+            Debug.Log("Set false ");
+
+
+        }
     }
 
     private void Update()
     {
-        Debug.Log(tick);
 
-        StartPuzzle();
     }
 
-    private void StartPuzzle()
+    //LevelManager updates current Tick every frame
+    public void Tick(float tick)
     {
-        if (tick > startPuzzleTick && tick != 0)
+        
+        foreach (Crises item in Crises)
         {
-            foreach (Crisis item in crisis)
-            {
-                if (item.crisisType == CrisisType.Engine)
-                {
-                    LevelManager.instance.StartCrisis(item.engineCrisis, item.crisisType);
-
-                }
-
-            }
+            item.Tick(tick);
         }
+       
     }
 
-    public void CheckProgress()
-    {
-        foreach (Crisis item in crisis)
-        {
-            if (item.engineCrisis == EngineState.OK)
-            {
 
-            }
+
+    public void CheckProgress(CrisisType type, CrisisSubType subType, bool isSolved)
+    {
+        Debug.Log("Check progress");
+
+        if (crisesDictionary.Count > 0)
+        {
             
+            if (crisesDictionary.ContainsKey(type) && crisesDictionary.ContainsValue(subType) && isSolved)
+            {
+                crisesDictionary.Remove(type, out subType);
+            }
+            else
+            {
+                Debug.Log(type + " " + subType +" is not solved");
+            }
 
+            Debug.Log("There are " + crisesDictionary.Count + " crises to be solved");
+        }
+
+    }
+
+
+
+    //Shout crisis to start!
+
+    public void StartCrisis(CrisisType crisisType, CrisisSubType crisisSubType)
+    {
+        onCrisisStart(crisisType, crisisSubType);
+
+        foreach (Crises item in Crises)
+        {
+            crisesDictionary.Add(item.crisisType, item.crisisSubType);
         }
     }
+
+
 
 }
 
+
+/*
+
 [Serializable]
-public class Crisis
+public class EngineCrisis
 {
-    [Header("Select Crisis")]
-    public CrisisType crisisType;
-
-    [Space(2)]
-
     [Header("Select Engine State")]
     public EngineState engineCrisis;
 
@@ -81,5 +116,87 @@ public class Crisis
 
     [Header("Does ship's speed stop?")]
     public bool shipSpeedStop;
+
+    [Space(2)]
+
+    public bool isCrisisStarted;
+
+    public float startPuzzleTick;
+    public float failPuzzleTick;
+    public void Tick(float tick)
+    {
+        if (!isCrisisStarted)
+        {
+            if (tick > startPuzzleTick)
+            {
+                LevelManager.instance.currentPiece.changeEngineCrisisState(engineCrisis);
+                isCrisisStarted = true;
+            }
+        }
+        else
+        {
+            if (failPuzzleTick > 0 && tick > failPuzzleTick)
+            {
+                // enginecrises is failing
+            }
+        }
+
+    }
+
+}
+*/
+
+[Serializable]
+public class Crises
+{
+    [Header("Select crisis MAIN type")]
+    public CrisisType crisisType;
+
+    [Header("Select crisis SUB type")]
+    public CrisisSubType crisisSubType;
+
+    [Space(2)]
+
+    public bool stopShipSpeed;
+    public bool isCrisisStarted;
+    [Range(0f, 1f)]
+    public float startPuzzleTick;
+    [Range(0f, 1f)]
+    public float failPuzzleTick;
+
+    public bool isCrisisFixed;
+    public bool isCrisisFailed;
+
+    public void SetVarsiablesFalse()
+    {
+        isCrisisFixed = false;
+        isCrisisFailed = false;
+        isCrisisStarted = false;
+    }
+
+    public void Tick(float tick)
+    {
+        if (!isCrisisStarted)
+        {
+            if (tick > startPuzzleTick)
+            {
+                Debug.Log("Puzzle started");
+                isCrisisStarted = true;
+                isCrisisFixed = false;
+                LevelManager.instance.currentPiece.StartCrisis(crisisType, crisisSubType);
+
+            }
+        }
+        else
+        {
+            if (failPuzzleTick > 0 && tick > failPuzzleTick && !isCrisisFailed)
+            {
+                isCrisisFailed = true;
+                Debug.Log("Puzzle FAILED");
+                
+            }
+        }
+
+    }
 }
 

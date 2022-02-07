@@ -7,8 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
 
-    public event Action<CrisisType> onCrisisStart;
-    public event Action<EngineState> onEngineStateChanged;
+   // public event Action<CrisisType, CrisisSubType> onCrisisStart;
 
     public GameObject[] level1;
     private int levelNumber;
@@ -22,7 +21,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private float speedDelta;
 
     [SerializeField] private int currentPieceNumber;
-    [SerializeField] public GameObject currentPiece;
+    [SerializeField] public EventManager currentPiece;
     [SerializeField] private float currentPieceLenght;
     [SerializeField] private float currentPieceTravelled;
     [SerializeField] private float levelTravelled;
@@ -47,7 +46,12 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
         ScrollEnvironment();
+        CalculateCurrentPieceMovement();
         GetCurrentPieceInfo();
+
+        if (currentPiece != null)
+            currentPiece.Tick(currentPieceDistance);
+
     }
 
     void MakeLevel(int levelNumber)
@@ -78,57 +82,55 @@ public class LevelManager : MonoBehaviour
 
     public void GetCurrentPieceInfo()
     {
-        if (currentPieceNumber < level1.Length)
+        if (levelCleared == false)
         {
-            currentPiece = level1[currentPieceNumber];
-            currentPieceLenght = currentPiece.transform.localScale.z;
-            currentPieceTravelled += speedDelta;
+            if (currentPiece == null)
+            {
+                currentPiece = level1[currentPieceNumber].GetComponent<EventManager>();
+                if (currentPiece == null)
+                {
+                    Debug.Log("Couldn't get event manager (currentPieceNumber: " + currentPieceNumber + ")");
+                }
+                currentPieceLenght = currentPiece.transform.localScale.z;
+            }
 
-            currentPieceDistance = Mathf.Round(currentPieceTravelled / currentPieceLenght * 100f) * 0.01f;
-
-            if (currentPieceTravelled > currentPieceLenght)
+            else if (currentPieceTravelled > currentPieceLenght)
             {
                 currentPieceNumber += 1;
                 currentPieceTravelled = 0;
+                currentPieceDistance = 0;
+
+                if (currentPieceNumber < level1.Length)
+                {
+                    // New piece!
+                    currentPiece = level1[currentPieceNumber].GetComponent<EventManager>();
+                    currentPieceLenght = currentPiece.transform.localScale.z;
+                }
+                else
+                {
+                    // Level Cleared!
+                    currentPiece = null;
+                    levelCleared = true;
+                }
             }
-            
         }
-        else if (currentPieceNumber >= level1.Length)
-        {
-            currentPiece = null;
-            levelCleared = true;
-        }
-
-        if (currentPiece != null)
-        {
-            Debug.Log("piece found");
-
-            if (currentPiece.GetComponent<EventManager>() != null)
-            {
-                Debug.Log("eventmanager found");
-
-                EventManager currentEventManager = currentPiece.GetComponent<EventManager>();
-
-                Debug.Log(currentEventManager);
-
-                currentPiece.GetComponent<EventManager>().tick = currentPieceDistance;
-            }
-
-        }
+                
 
     }
 
-    public void StartCrisis(EngineState engineState, CrisisType crisisType)
+    public void CalculateCurrentPieceMovement()
     {
-        onCrisisStart(crisisType);
-        onEngineStateChanged(engineState);
+        currentPieceTravelled += speedDelta;
+
+        currentPieceDistance = currentPieceTravelled / currentPieceLenght;
+
     }
 
+    /*
+    public void StartCrisis(CrisisType crisisType, CrisisSubType crisisSubType)
+    {
+        onCrisisStart(crisisType, crisisSubType);
+    }
+    */
 }
 
-public class CrisisManager
-{
-
-
-    
-}
