@@ -12,6 +12,7 @@ public class ShipManager : MonoBehaviour
  
     }
 
+    /*
     private void OnTriggerEnter(Collider other)
     {
         GameObject triggerObject = other.gameObject;
@@ -27,4 +28,5 @@ public class ShipManager : MonoBehaviour
         }
 
     }
+    */
 }

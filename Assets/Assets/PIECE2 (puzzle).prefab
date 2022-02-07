@@ -1751,6 +1751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7855430943342648067}
   - component: {fileID: 533085642690712845}
+  - component: {fileID: 3600842013850001717}
   m_Layer: 0
   m_Name: PIECE2 (puzzle)
   m_TagString: Untagged
@@ -1787,6 +1788,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0.5}
+--- !u!114 &3600842013850001717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7855430943342648064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7071dbdf4e4b00458f0a7c3fc0961cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tick: 0
+  startPuzzleTick: 0.1
+  checkPuzzleCompletionTick: 0
+  crisis:
+  - crisisType: 2
+    shipSpeedStop: 0
 --- !u!1 &7855430944471029905
 GameObject:
   m_ObjectHideFlags: 0
