@@ -7,7 +7,8 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
 
-    public event Action<CrisisTypes> onCrisisStart;
+    public event Action<CrisisType> onCrisisStart;
+    public event Action<EngineState> onEngineStateChanged;
 
     public GameObject[] level1;
     private int levelNumber;
@@ -117,9 +118,17 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    public void StartCrisis(CrisisTypes crisisType)
+    public void StartCrisis(EngineState engineState, CrisisType crisisType)
     {
         onCrisisStart(crisisType);
+        onEngineStateChanged(engineState);
     }
 
+}
+
+public class CrisisManager
+{
+
+
+    
 }
