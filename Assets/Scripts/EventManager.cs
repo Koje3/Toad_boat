@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 
-public enum CrisisType
+public enum PuzzleComponent
 {
     None,
     Engine,
@@ -26,18 +26,18 @@ public enum CrisisSubType
 
 public class EventManager : MonoBehaviour
 {
-    public static event Action<CrisisType, CrisisSubType> onCrisisStart;
+    public static event Action<PuzzleComponent, CrisisSubType, bool> onCrisisStateChange;
 
-    public Dictionary<CrisisType, CrisisSubType> crisesDictionary;
+    public Dictionary<PuzzleComponent, CrisisSubType> crisesDictionary = new Dictionary<PuzzleComponent, CrisisSubType>();
  
 
     [SerializeField]
-    public List<Crises> Crises;
+    public List<Crises> crises;
 
 
     void Start()
     {
-        foreach (Crises item in Crises)
+        foreach (Crises item in crises)
         {
             item.SetVarsiablesFalse();
             Debug.Log("Set false ");
@@ -55,7 +55,7 @@ public class EventManager : MonoBehaviour
     public void Tick(float tick)
     {
         
-        foreach (Crises item in Crises)
+        foreach (Crises item in crises)
         {
             item.Tick(tick);
         }
@@ -64,39 +64,84 @@ public class EventManager : MonoBehaviour
 
 
 
-    public void CheckProgress(CrisisType type, CrisisSubType subType, bool isSolved)
+    public void CheckProgress(PuzzleComponent type, CrisisSubType subType, bool isSolved)
     {
         Debug.Log("Check progress");
 
         if (crisesDictionary.Count > 0)
         {
             
-            if (crisesDictionary.ContainsKey(type) && crisesDictionary.ContainsValue(subType) && isSolved)
+            if (crisesDictionary.ContainsKey(type) && crisesDictionary.ContainsValue(subType))
             {
+                if (!isSolved)
                 crisesDictionary.Remove(type, out subType);
             }
             else
             {
-                Debug.Log(type + " " + subType +" is not solved");
+                Debug.Log(type + " " + subType +" is not in the dictionary");
             }
 
-            Debug.Log("There are " + crisesDictionary.Count + " crises to be solved");
+           
         }
 
+        Debug.Log("There are " + crisesDictionary.Count + " crises to be solved");
+
+        foreach (var item in crisesDictionary)
+        {
+            Debug.Log(item);
+        }
+        
     }
 
 
 
     //Shout crisis to start!
 
-    public void StartCrisis(CrisisType crisisType, CrisisSubType crisisSubType)
+    public void SetCrisisState(PuzzleComponent newShipComponent, CrisisSubType newCrisisSubType, bool isCrisisFixed)
     {
-        onCrisisStart(crisisType, crisisSubType);
 
-        foreach (Crises item in Crises)
+        onCrisisStateChange(newShipComponent, newCrisisSubType, isCrisisFixed);
+
+
+        foreach (Crises item in crises)
         {
-            crisesDictionary.Add(item.crisisType, item.crisisSubType);
+            if (item.shipComponent == newShipComponent && item.crisisSubType == newCrisisSubType)
+            {
+                item.isCrisisFixed = isCrisisFixed;
+            }
         }
+    }
+
+    public bool GetCrisisState(PuzzleComponent newShipComponent, CrisisSubType newCrisisSubType)
+    {
+
+        foreach (Crises item in crises)
+        {
+            if (item.shipComponent == newShipComponent && item.crisisSubType == newCrisisSubType)
+            {
+                return item.isCrisisFixed;
+            }
+        }
+
+        Debug.LogError("Tried to find crisis that doesn't exit" + newShipComponent + " " + newCrisisSubType);
+        return false;
+    }
+
+    public bool IsShipComponentFixed(PuzzleComponent checkCrisisType)
+    {
+
+        foreach (Crises item in crises)
+        {
+            if (item.shipComponent == checkCrisisType)
+            {
+                if (item.isCrisisFixed == false)
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 
 
@@ -150,7 +195,7 @@ public class EngineCrisis
 public class Crises
 {
     [Header("Select crisis MAIN type")]
-    public CrisisType crisisType;
+    public PuzzleComponent shipComponent;
 
     [Header("Select crisis SUB type")]
     public CrisisSubType crisisSubType;
@@ -182,8 +227,8 @@ public class Crises
             {
                 Debug.Log("Puzzle started");
                 isCrisisStarted = true;
-                isCrisisFixed = false;
-                LevelManager.instance.currentPiece.StartCrisis(crisisType, crisisSubType);
+                
+                LevelManager.instance.currentPiece.SetCrisisState(shipComponent, crisisSubType, false);
 
             }
         }

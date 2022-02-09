@@ -59,15 +59,15 @@ public class LevelManager : MonoBehaviour
         levelObjectParent = Instantiate(emptyObject, new Vector3(0, 0, 0), Quaternion.identity);
         pieceLenghtSum = 0;
 
-        foreach (GameObject piece in level1)
+        for (int i = 0; i < level1.Length; i++)
         {
-            float pieceLenght = piece.transform.localScale.z;
+            float pieceLenght = level1[i].transform.localScale.z;
 
-            GameObject levelPiece = Instantiate(piece, new Vector3(0, 0, pieceLenghtSum), Quaternion.identity);
+            GameObject levelPiece = Instantiate(level1[i], new Vector3(0, 0, pieceLenghtSum), Quaternion.identity);
             levelPiece.transform.parent = levelObjectParent.transform;
-
+            level1[i] = levelPiece;
             pieceLenghtSum += pieceLenght;
-        }           
+        }
     }
 
     void ScrollEnvironment()

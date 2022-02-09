@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 
-public class Engine : MonoBehaviour
+public class ShipComponent : MonoBehaviour
 {
 
     //Create dictionary for possible engine problems
@@ -15,28 +15,36 @@ public class Engine : MonoBehaviour
             { CrisisSubType.Failure, false },
         };
 
+    public PuzzleComponent puzzleComponent;
 
     void Start()
     {
         //subscribe to EventManager's static action and use it to execute setEngineState function
-        EventManager.onCrisisStart += setEngineProblem;
+        EventManager.onCrisisStateChange += GetCrisisStateChange;
 
     }
 
 
 
 
-    private void setEngineProblem(CrisisType crisis, CrisisSubType newEngineproblem)
+    public void GetCrisisStateChange(PuzzleComponent crisis, CrisisSubType newEngineproblem, bool isCrisisFixed)
     {
-        if (crisis == CrisisType.Engine)
+        if (crisis == puzzleComponent)
         {
-            if (engineProblemStates.ContainsKey(newEngineproblem))
-            {
-                engineProblemStates[newEngineproblem] = true;
-            }
+            // Change vfxState
         }
 
-        CheckEngineProblems();
+    }
+
+    public void FixPuzzleComponent(CrisisSubType crisisSubType)
+    {
+        LevelManager.instance.currentPiece.SetCrisisState(puzzleComponent, crisisSubType, true);
+        
+    }
+
+    public void GetCrisisStates()
+    {
+
     }
 
     public void CheckEngineProblems()
@@ -45,7 +53,7 @@ public class Engine : MonoBehaviour
         {
             if (LevelManager.instance.currentPiece != null)
             {
-                LevelManager.instance.currentPiece.CheckProgress(CrisisType.Engine, pair.Key, pair.Value);
+                LevelManager.instance.currentPiece.CheckProgress(PuzzleComponent.Engine, pair.Key, pair.Value);
 
                 //Debug.Log("Engine problem: " + pair.Key + " status: " + pair.Value);
             }
