@@ -136,8 +136,9 @@ GameObject:
   - component: {fileID: 1493662}
   - component: {fileID: 1493661}
   - component: {fileID: 1493660}
+  - component: {fileID: 1493665}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: ButtonCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -258,13 +259,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1493665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c797aaba013dbbd4dbc85eb3bf6baeca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 424532213}
+        m_TargetAssemblyTypeName: ShipComponent, Assembly-CSharp
+        m_MethodName: FixCrisis
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  crisisSubType: 1
+  key: 0
 --- !u!43 &179458988
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29820
+  m_Name: pb_Mesh959994
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -435,8 +465,9 @@ GameObject:
   - component: {fileID: 242031029}
   - component: {fileID: 242031028}
   - component: {fileID: 242031027}
+  - component: {fileID: 242031032}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: ButtonCube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,6 +568,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &242031032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242031026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c797aaba013dbbd4dbc85eb3bf6baeca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 424532213}
+        m_TargetAssemblyTypeName: ShipComponent, Assembly-CSharp
+        m_MethodName: FixCrisis
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  crisisSubType: 3
+  key: 1
 --- !u!1 &424532212
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,6 +629,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e36caa70245614babbc991963086ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleComponent: 1
+  crisisSubTypes: 010000000200000003000000
 --- !u!65 &424532214
 BoxCollider:
   m_ObjectHideFlags: 0

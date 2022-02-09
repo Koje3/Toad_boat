@@ -1801,22 +1801,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crises:
-  - PuzzleComponent: 1
+  - puzzleComponent: 1
     crisisSubType: 1
     stopShipSpeed: 0
     isCrisisStarted: 0
     startPuzzleTick: 0.045
     failPuzzleTick: 0.927
     isCrisisFixed: 0
-    isCrisisFailed: 0
-  - PuzzleComponent: 1
-    crisisSubType: 2
+    isCrisisEnded: 0
+  - puzzleComponent: 1
+    crisisSubType: 3
     stopShipSpeed: 0
     isCrisisStarted: 0
-    startPuzzleTick: 0.058
-    failPuzzleTick: 0.918
+    startPuzzleTick: 0.105
+    failPuzzleTick: 0.951
     isCrisisFixed: 0
-    isCrisisFailed: 0
+    isCrisisEnded: 0
 --- !u!1 &7855430944471029905
 GameObject:
   m_ObjectHideFlags: 0

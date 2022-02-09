@@ -61,78 +61,52 @@ public class EventManager : MonoBehaviour
     }
 
 
-    /*
-    public void CheckProgress(PuzzleComponent type, CrisisSubType subType, bool isSolved)
-    {
-        Debug.Log("Check progress");
-
-        if (crisesDictionary.Count > 0)
-        {
-            
-            if (crisesDictionary.ContainsKey(type) && crisesDictionary.ContainsValue(subType))
-            {
-                if (!isSolved)
-                crisesDictionary.Remove(type, out subType);
-            }
-            else
-            {
-                Debug.Log(type + " " + subType +" is not in the dictionary");
-            }
-
-           
-        }
-
-        Debug.Log("There are " + crisesDictionary.Count + " crises to be solved");
-
-        foreach (var item in crisesDictionary)
-        {
-            Debug.Log(item);
-        }
-        
-    }
-    */
-
 
     //Shout crisis to start!
 
-    public void SetCrisisState(PuzzleComponent newShipComponent, CrisisSubType newCrisisSubType, bool isCrisisFixed)
+    public void SetCrisisState(PuzzleComponent newPuzzleComponent, CrisisSubType newCrisisSubType, bool isCrisisFixed)
     {
-        onCrisisStateChange(newShipComponent, newCrisisSubType, isCrisisFixed);
+        onCrisisStateChange(newPuzzleComponent, newCrisisSubType, isCrisisFixed);
 
         foreach (Crises item in crises)
         {
-            if (item.PuzzleComponent == newShipComponent && item.crisisSubType == newCrisisSubType)
+            if (item.puzzleComponent == newPuzzleComponent && item.crisisSubType == newCrisisSubType)
             {
                 item.isCrisisFixed = isCrisisFixed;
             }
         }
+
+        if (IsPuzzleComponentFixed(newPuzzleComponent))
+        {
+            Debug.Log(newPuzzleComponent + " is fixed!");
+        }
     }
 
 
 
-    public bool GetCrisisState(PuzzleComponent newShipComponent, CrisisSubType newCrisisSubType)
+    public bool GetCrisisState(PuzzleComponent newPuzzleComponent, CrisisSubType newCrisisSubType)
     {
 
         foreach (Crises item in crises)
         {
-            if (item.PuzzleComponent == newShipComponent && item.crisisSubType == newCrisisSubType)
+            if (item.puzzleComponent == newPuzzleComponent && item.crisisSubType == newCrisisSubType)
             {
                 return item.isCrisisFixed;
             }
         }
 
-        Debug.LogError("Tried to find crisis that doesn't exit" + newShipComponent + " " + newCrisisSubType);
+        Debug.LogError("Tried to find crisis that doesn't exit" + newPuzzleComponent + " " + newCrisisSubType);
         return false;
     }
 
 
 
-    public bool IsShipComponentFixed(PuzzleComponent checkCrisisType)
+    public bool IsPuzzleComponentFixed(PuzzleComponent checkPuzzleComponent)
     {
 
         foreach (Crises item in crises)
         {
-            if (item.PuzzleComponent == checkCrisisType)
+            if (item.puzzleComponent == checkPuzzleComponent)
             {
                 if (item.isCrisisFixed == false)
                 {
@@ -195,7 +169,7 @@ public class EngineCrisis
 public class Crises
 {
     [Header("Select Puzzle Component")]
-    public PuzzleComponent PuzzleComponent;
+    public PuzzleComponent puzzleComponent;
 
     [Header("Select crisis type")]
     public CrisisSubType crisisSubType;
@@ -210,12 +184,12 @@ public class Crises
     public float failPuzzleTick;
 
     public bool isCrisisFixed;
-    public bool isCrisisFailed;
+    public bool isCrisisEnded;
 
     public void SetVarsiablesFalse()
     {
         isCrisisFixed = false;
-        isCrisisFailed = false;
+        isCrisisEnded = false;
         isCrisisStarted = false;
     }
 
@@ -225,20 +199,27 @@ public class Crises
         {
             if (tick > startPuzzleTick)
             {
-                Debug.Log("Puzzle started");
-                isCrisisStarted = true;
-                
-                LevelManager.instance.currentPiece.SetCrisisState(PuzzleComponent, crisisSubType, false);
+                Debug.Log(puzzleComponent + " " + crisisSubType + "Crisis started");
+
+                isCrisisStarted = true;               
+                LevelManager.instance.currentPiece.SetCrisisState(puzzleComponent, crisisSubType, false);
 
             }
         }
         else
         {
-            if (failPuzzleTick > 0 && tick > failPuzzleTick && !isCrisisFailed)
+            if (failPuzzleTick > 0 && tick > failPuzzleTick && !isCrisisEnded)
             {
-                isCrisisFailed = true;
-                Debug.Log("Puzzle FAILED");
-                
+                isCrisisEnded = true;
+
+                if (isCrisisFixed)
+                {
+                    Debug.Log(puzzleComponent + " " + crisisSubType + " crisis PASSED");
+                }
+                else 
+                {                    
+                    Debug.Log(puzzleComponent + " " + crisisSubType + " crisis FAILED");
+                }               
             }
         }
 
