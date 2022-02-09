@@ -105,7 +105,7 @@ public class EventManager : MonoBehaviour
 
         foreach (Crises item in crises)
         {
-            if (item.shipComponent == newShipComponent && item.crisisSubType == newCrisisSubType)
+            if (item.PuzzleComponent == newShipComponent && item.crisisSubType == newCrisisSubType)
             {
                 item.isCrisisFixed = isCrisisFixed;
             }
@@ -117,7 +117,7 @@ public class EventManager : MonoBehaviour
 
         foreach (Crises item in crises)
         {
-            if (item.shipComponent == newShipComponent && item.crisisSubType == newCrisisSubType)
+            if (item.PuzzleComponent == newShipComponent && item.crisisSubType == newCrisisSubType)
             {
                 return item.isCrisisFixed;
             }
@@ -132,7 +132,7 @@ public class EventManager : MonoBehaviour
 
         foreach (Crises item in crises)
         {
-            if (item.shipComponent == checkCrisisType)
+            if (item.PuzzleComponent == checkCrisisType)
             {
                 if (item.isCrisisFixed == false)
                 {
@@ -194,10 +194,10 @@ public class EngineCrisis
 [Serializable]
 public class Crises
 {
-    [Header("Select crisis MAIN type")]
-    public PuzzleComponent shipComponent;
+    [Header("Select Puzzle Component")]
+    public PuzzleComponent PuzzleComponent;
 
-    [Header("Select crisis SUB type")]
+    [Header("Select crisis type")]
     public CrisisSubType crisisSubType;
 
     [Space(2)]
@@ -228,7 +228,7 @@ public class Crises
                 Debug.Log("Puzzle started");
                 isCrisisStarted = true;
                 
-                LevelManager.instance.currentPiece.SetCrisisState(shipComponent, crisisSubType, false);
+                LevelManager.instance.currentPiece.SetCrisisState(PuzzleComponent, crisisSubType, false);
 
             }
         }
