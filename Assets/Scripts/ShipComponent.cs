@@ -7,7 +7,8 @@ using UnityEngine;
 public class ShipComponent : MonoBehaviour
 {
 
-    //Create dictionary for possible engine problems
+    /*
+    /Create dictionary for possible engine problems
     public Dictionary<CrisisSubType, bool> engineProblemStates = new Dictionary<CrisisSubType, bool>()
         {
             { CrisisSubType.Overheat, false },
@@ -15,11 +16,14 @@ public class ShipComponent : MonoBehaviour
             { CrisisSubType.Failure, false },
         };
 
+    */
+
     public PuzzleComponent puzzleComponent;
+
 
     void Start()
     {
-        //subscribe to EventManager's static action and use it to execute setEngineState function
+        //subscribe to EventManager's static action and use it to execute GetCrisisStateChange function
         EventManager.onCrisisStateChange += GetCrisisStateChange;
 
     }
@@ -27,26 +31,38 @@ public class ShipComponent : MonoBehaviour
 
 
 
-    public void GetCrisisStateChange(PuzzleComponent crisis, CrisisSubType newEngineproblem, bool isCrisisFixed)
+    public void GetCrisisStateChange(PuzzleComponent crisis, CrisisSubType newCrisisType, bool isCrisisFixed)
     {
         if (crisis == puzzleComponent)
         {
-            // Change vfxState
+
+            // Change vfxState = CrisisSubType
         }
 
     }
 
-    public void FixPuzzleComponent(CrisisSubType crisisSubType)
+    public void FixCrisis(CrisisSubType crisisSubType)
     {
+
         LevelManager.instance.currentPiece.SetCrisisState(puzzleComponent, crisisSubType, true);
         
     }
 
-    public void GetCrisisStates()
+    public void GetCrisisStates(CrisisSubType crisisSubType)
     {
+        if (LevelManager.instance.currentPiece.GetCrisisState(puzzleComponent, crisisSubType))
+        {
 
+            Debug.Log(crisisSubType + " is fixed");
+        }
+        else
+        {
+
+            Debug.Log(crisisSubType + " is not fixed");
+        }
     }
 
+    /*
     public void CheckEngineProblems()
     {
         foreach (KeyValuePair<CrisisSubType, bool> pair in engineProblemStates)
@@ -61,6 +77,6 @@ public class ShipComponent : MonoBehaviour
 
     }
 
-
+    */
 }
 

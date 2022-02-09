@@ -27,8 +27,6 @@ public enum CrisisSubType
 public class EventManager : MonoBehaviour
 {
     public static event Action<PuzzleComponent, CrisisSubType, bool> onCrisisStateChange;
-
-    public Dictionary<PuzzleComponent, CrisisSubType> crisesDictionary = new Dictionary<PuzzleComponent, CrisisSubType>();
  
 
     [SerializeField]
@@ -63,7 +61,7 @@ public class EventManager : MonoBehaviour
     }
 
 
-
+    /*
     public void CheckProgress(PuzzleComponent type, CrisisSubType subType, bool isSolved)
     {
         Debug.Log("Check progress");
@@ -92,16 +90,14 @@ public class EventManager : MonoBehaviour
         }
         
     }
-
+    */
 
 
     //Shout crisis to start!
 
     public void SetCrisisState(PuzzleComponent newShipComponent, CrisisSubType newCrisisSubType, bool isCrisisFixed)
     {
-
         onCrisisStateChange(newShipComponent, newCrisisSubType, isCrisisFixed);
-
 
         foreach (Crises item in crises)
         {
@@ -111,6 +107,8 @@ public class EventManager : MonoBehaviour
             }
         }
     }
+
+
 
     public bool GetCrisisState(PuzzleComponent newShipComponent, CrisisSubType newCrisisSubType)
     {
@@ -126,6 +124,8 @@ public class EventManager : MonoBehaviour
         Debug.LogError("Tried to find crisis that doesn't exit" + newShipComponent + " " + newCrisisSubType);
         return false;
     }
+
+
 
     public bool IsShipComponentFixed(PuzzleComponent checkCrisisType)
     {
