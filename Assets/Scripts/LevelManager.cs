@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
    // public event Action<CrisisType, CrisisSubType> onCrisisStart;
 
     public GameObject[] level1;
+    public GameObject stream1;
     private int levelNumber;
 
 
@@ -68,6 +69,10 @@ public class LevelManager : MonoBehaviour
             level1[i] = levelPiece;
             pieceLenghtSum += pieceLenght;
         }
+
+        GameObject stream = Instantiate(stream1, new Vector3(0, 0, -5), Quaternion.identity);
+        stream.transform.parent = levelObjectParent.transform;
+
     }
 
     void ScrollEnvironment()

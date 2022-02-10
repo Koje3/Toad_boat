@@ -26,7 +26,10 @@ public class ShipComponent : MonoBehaviour
     {
         if (crisis == puzzleComponent)
         {
+            if (crisisSubTypes.Contains(newCrisisType))
+            {
 
+            }
             // Change vfxState = CrisisSubType
             // vfxstateChange activates objects, particle effects, buttons, levers etc...
 
