@@ -38,7 +38,7 @@ public class BoxButtonTest : MonoBehaviour
 
 public enum KeyboardKey
 {
-    w,
-    e,
-    r,
+    t,
+    y,
+    u,
 }

@@ -6,6 +6,14 @@ namespace BNG {
     /// <summary>
     /// Physical button helper with 
     /// </summary>
+    /// 
+
+    //Added custom unityevent class
+    [System.Serializable]
+    public class MyCrisisTypeEvent : UnityEvent<CrisisSubType>
+    {
+    }
+
     public class Button : MonoBehaviour {
 
         [Tooltip("The Local Y position of the button when it is pushed all the way down. Local Y position will never be less than this.")]
@@ -28,11 +36,21 @@ namespace BNG {
         public AudioClip ButtonClick;
         public AudioClip ButtonClickUp;
 
-        public UnityEvent onButtonDown;
-        public UnityEvent onButtonUp;
+
+        // Commented these out and used these variables on my own event
+        // public UnityEvent onButtonDown;
+        // public UnityEvent onButtonUp;
 
         AudioSource audioSource;
         Rigidbody rigid;
+
+
+        // My own code
+        public MyCrisisTypeEvent onButtonDown;
+        public MyCrisisTypeEvent onButtonUp;
+
+        [Header("Select crisis type the button will solve")]
+        public CrisisSubType crisisSubType;
 
         void Start() {
             joint = GetComponent<SpringJoint>();
@@ -47,7 +65,26 @@ namespace BNG {
             transform.localPosition = new Vector3(transform.localPosition.x, MaxLocalY, transform.localPosition.z);
 
             audioSource = GetComponent<AudioSource>();
+
+
+            // Add buttonclicks to my custom event
+            if (onButtonDown == null)
+                onButtonDown = new MyCrisisTypeEvent();
+
+            if (onButtonDown == null)
+                onButtonUp = new MyCrisisTypeEvent();
+
+            // Add listener for custom event
+            onButtonDown.AddListener(Ping);
+
         }
+
+        //My listener for custom event
+        void Ping(CrisisSubType crisisSubType)
+        {
+            Debug.Log("Pressed " + crisisSubType + " button");
+        }
+
 
         // These have been hard coded for hand speed
         float ButtonSpeed = 15f;
@@ -137,7 +174,7 @@ namespace BNG {
 
             // Call event
             if (onButtonDown != null) {
-                onButtonDown.Invoke();
+                onButtonDown.Invoke(crisisSubType);
             }
         }
 
@@ -151,7 +188,7 @@ namespace BNG {
 
             // Call event
             if (onButtonUp != null) {
-                onButtonUp.Invoke();
+                onButtonUp.Invoke(crisisSubType);
             }
         }
 
