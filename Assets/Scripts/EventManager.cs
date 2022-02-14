@@ -11,6 +11,7 @@ public enum PuzzleComponent
     Radar,
     Rudder,
     Hull,
+    Environment,
 }
 
 public enum CrisisSubType
@@ -21,6 +22,7 @@ public enum CrisisSubType
     BatteryEmpty,
     Failure,
     Explosion,
+    Rocks,
 }
 
 

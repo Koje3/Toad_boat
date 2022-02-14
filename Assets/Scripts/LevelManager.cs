@@ -19,13 +19,13 @@ public class LevelManager : MonoBehaviour
     private float pieceLenghtSum;
 
     public float shipSpeed;
-    [SerializeField] private float speedDelta;
+    public float speedDelta;
 
     [SerializeField] private int currentPieceNumber;
     [SerializeField] public EventManager currentPiece;
-    [SerializeField] private float currentPieceLenght;
-    [SerializeField] private float currentPieceTravelled;
-    [SerializeField] private float levelTravelled;
+    [SerializeField] public float currentPieceLenght { get; private set; } 
+    [SerializeField] public float currentPieceTravelled { get; private set; }
+    [SerializeField] public float levelTravelled { get; private set; }
     [SerializeField] public float currentPieceDistance;
     [SerializeField] private bool levelCleared;
 

@@ -8,6 +8,13 @@ namespace BNG {
     /// <summary>
     /// An example weapon script that can fire Raycasts or Projectile objects
     /// </summary>
+    /// 
+
+    [System.Serializable]
+    public class MyOnRayCastHitCrisisTypeEvent : UnityEvent<CrisisSubType>
+    {
+    }
+
     public class RaycastWeapon : GrabbableEvents {
 
         [Header("General : ")]
@@ -237,6 +244,15 @@ namespace BNG {
 
         [Tooltip("Passes along Raycast Hit info whenever a Raycast hit is successfully detected. Use this to display fx, add force, etc.")]
         public RaycastHitEvent onRaycastHitEvent;
+
+        [Header("Select crisis type destroyed will solve")]
+        public CrisisSubType crisisSubType;
+
+        [Header("Link object that has to be hit")]
+        public GameObject raycastHitObject;
+
+        public MyOnRayCastHitCrisisTypeEvent onRayCastHitCrisisTypeEvent;
+
 
         /// <summary>
         /// Is the slide / receiver forced back due to last shot
@@ -483,6 +499,16 @@ namespace BNG {
             if (onRaycastHitEvent != null) {
                 onRaycastHitEvent.Invoke(hit);
             }
+
+            //Call Crisistype event
+            if (onRayCastHitCrisisTypeEvent != null)
+            {
+                if (raycastHitObject == hit.transform.gameObject)
+                {
+                onRayCastHitCrisisTypeEvent.Invoke(crisisSubType);
+                }
+            }
+
         }
 
         public virtual void ApplyParticleFX(Vector3 position, Quaternion rotation, Collider attachTo) {

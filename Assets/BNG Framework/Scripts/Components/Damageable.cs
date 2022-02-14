@@ -10,6 +10,13 @@ namespace BNG {
     /// <summary>
     /// A basic damage implementation. Call a function on death. Allow for respawning.
     /// </summary>
+    /// 
+
+    [System.Serializable]
+    public class MyOnDestroyedCrisisTypeEvent : UnityEvent<CrisisSubType>
+    {
+    }
+
     public class Damageable : MonoBehaviour {
 
         public float Health = 100;
@@ -66,6 +73,11 @@ namespace BNG {
 
         [Tooltip("Optional Event to be called once health is <= 0")]
         public UnityEvent onDestroyed;
+
+        [Header("Select crisis type destroyed will solve")]
+        public CrisisSubType crisisSubType;
+
+        public MyOnDestroyedCrisisTypeEvent onDestroyedCrisisType;
 
         [Tooltip("Optional Event to be called once the object has been respawned, if Respawn is true and after RespawnTime")]
         public UnityEvent onRespawn;
@@ -156,6 +168,11 @@ namespace BNG {
             // Invoke Callback Event
             if (onDestroyed != null) {
                 onDestroyed.Invoke();
+            }
+
+            if (onDestroyedCrisisType != null)
+            {
+                onDestroyedCrisisType.Invoke(crisisSubType);
             }
 
             if (DestroyOnDeath) {
