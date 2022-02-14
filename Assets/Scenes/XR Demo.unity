@@ -1490,6 +1490,7 @@ MonoBehaviour:
   onButtonUp:
     m_PersistentCalls:
       m_Calls: []
+  crisisSubType: 0
 --- !u!145 &25407686
 SpringJoint:
   m_ObjectHideFlags: 0
@@ -51394,6 +51395,10 @@ PrefabInstance:
       propertyPath: HeldItem
       value: 
       objectReference: {fileID: 1275456963}
+    - target: {fileID: 1096409194168961129, guid: c99145ded050f544f93c5c074bff5ac0, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1096409194469741107, guid: c99145ded050f544f93c5c074bff5ac0, type: 3}
       propertyPath: HeldItem
       value: 
@@ -67142,7 +67147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1275456963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105948,6 +105953,7 @@ MonoBehaviour:
   onButtonUp:
     m_PersistentCalls:
       m_Calls: []
+  crisisSubType: 0
 --- !u!145 &1875859203
 SpringJoint:
   m_ObjectHideFlags: 0
