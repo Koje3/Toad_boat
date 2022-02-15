@@ -36,6 +36,8 @@ namespace BNG {
         public AudioClip ButtonClick;
         public AudioClip ButtonClickUp;
 
+        public Tutka SolverGameObject;
+
 
         // Commented these out and used these variables on my own event
         // public UnityEvent onButtonDown;
@@ -172,9 +174,13 @@ namespace BNG {
                 audioSource.Play();
             }
 
+
+          
+
             // Call event
-            if (onButtonDown != null) {
+            if (onButtonDown != null && SolverGameObject.PuzzleRadarSolved == true) {  
                 onButtonDown.Invoke(crisisSubType);
+                Debug.Log("Lähetetty Napista Crisis subtype");
             }
         }
 
