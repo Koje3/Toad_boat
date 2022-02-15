@@ -104,8 +104,8 @@ MonoBehaviour:
   BeingHeld: 0
   GrabButton: 0
   Grabtype: 0
-  GrabPhysics: 0
-  GrabMechanic: 0
+  GrabPhysics: 3
+  GrabMechanic: 1
   GrabSpeed: 10
   RemoteGrabbable: 0
   RemoteGrabMechanic: 0
@@ -154,7 +154,8 @@ MonoBehaviour:
   SecondaryLookOffset: {x: 0, y: 0, z: 0}
   SecondaryLookAtTransform: {fileID: 0}
   LocalOffsetTransform: {fileID: 0}
-  GrabPoints: []
+  GrabPoints:
+  - {fileID: 717578566662331059}
   UseCustomInspector: 1
   lastFlickTime: 0
   FlickForce: 1
@@ -282,10 +283,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90ed01ac5d94e9468b242b4c38496a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HapticsOnValidPickup: 1
+  HapticsOnValidPickup: 0
   HapticsOnValidRemotePickup: 0
   HapticsOnCollision: 0
-  HapticsOnGrab: 1
+  HapticsOnGrab: 0
   VibrateFrequency: 0.3
   VibrateAmplitude: 0.1
   VibrateDuration: 0.1
@@ -317,5 +318,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25328875, y: 0.15368305, z: 0.2}
-  m_Center: {x: 0.02885731, y: -0.031841476, z: 0}
+  m_Size: {x: 0.010310889, y: 0.00811807, z: 0.08165485}
+  m_Center: {x: -0.000274634, y: -0.0006913845, z: 0.003512615}
