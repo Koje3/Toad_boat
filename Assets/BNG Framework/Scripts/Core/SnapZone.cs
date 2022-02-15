@@ -80,6 +80,7 @@ namespace BNG {
         /// <summary>
         /// Optional Unity Event  to be called when something is snapped to this SnapZone. Passes in the Grabbable that was attached.
         /// </summary>
+        public GameObject OikeaElementToTrigger;
         public GrabbableEvent OnSnapEvent;
 
         /// <summary>
