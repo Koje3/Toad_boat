@@ -5,31 +5,42 @@ using UnityEngine;
 public class Tutka : MonoBehaviour
 {
 
-//public GameObject antenni;
-public GameObject mastooni;
-public GameObject plate;
+
+Transform toimii;
+
 public bool PuzzleRadarSolved = false;
 
-
 Vector3 radarDownPosition = new Vector3(0,-1,0);
-Vector3 radarUpPosition;
+Vector3 radarUpPosition = new Vector3(0,0,0);
 
-float speed = 0.2f;
+public float speed = 2f;
 
  
     void Start()
     {
-        plate.transform.SetParent(mastooni.transform);
-       Vector3 radarUpPosition = mastooni.transform.localPosition;
-       mastooni.transform.localPosition = radarDownPosition;
-       
+      
+    toimii = this.gameObject.transform.GetChild(2);
+    CloseLid();
+      
+             
     }
 
     
+    void Update()
+    {
+
+
+        if(Input.GetKeyDown(KeyCode.J))
+        {
+        StartPuzzle();
+        }
+    }
+
+
     public void StartPuzzle()
     {
-      //  mastooni.transform.localPosition = Vector3.Lerp(transform.localPosition, radarUpPosition, speed * Time.deltaTime);
-      mastooni.transform.localPosition = radarUpPosition;
+     // toimii.transform.localPosition = Vector3.Lerp(radarUpPosition, radarUpPosition, speed * Time.deltaTime);
+     toimii.transform.localPosition = radarUpPosition;
 
     }
 
@@ -37,8 +48,8 @@ float speed = 0.2f;
     public void CloseLid()
     {
 
-    mastooni.transform.localPosition = radarDownPosition;
-  //  mastooni.transform.localPosition = Vector3.Lerp(mastooni.transform.localPosition, radarDownPosition, speed * Time.deltaTime);
+    toimii.transform.localPosition = radarDownPosition;
+  //  toimii.transform.localPosition = Vector3.Lerp(radarUpPosition, radarDownPosition, speed * Time.deltaTime);
 
     }
 
@@ -46,12 +57,9 @@ float speed = 0.2f;
     {
     PuzzleRadarSolved = true;
     Debug.Log("Radar Solved");
+    CloseLid();
     }
 
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.J))
-        StartPuzzle();
-    }
+
 }
