@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4308665257104947270}
   - component: {fileID: 6867777248623049350}
   - component: {fileID: 317888656948855341}
+  - component: {fileID: 2479659830676746044}
   m_Layer: 0
   m_Name: "MastoYl\xE4"
   m_TagString: Untagged
@@ -84,6 +85,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2479659830676746044
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184429795160525732}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7387706064836869012, guid: 7428453d381274840931d9e6433d054d, type: 3}
 --- !u!1 &2231413613454364033
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +764,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 377acbb499865954181b4c54d7c7ccef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PuzzleRadarSolved: 0
+  radarBatteryEmptySolved: 0
+  radarBatteryEmpty: 0
   speed: 2
 --- !u!114 &6478095695744672436
 MonoBehaviour:
