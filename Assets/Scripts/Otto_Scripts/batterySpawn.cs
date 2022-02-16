@@ -17,7 +17,9 @@ public int numberOfItemsToSpawn;
     {
        // GameObject OBelement = GameObject.FindGameObjectWithTag("overBoard");
         // piilottaa elementit
-        SpawnBatteriesBegin();
+
+        //jesse
+       // SpawnBatteriesBegin();
 
 
     }
@@ -34,17 +36,20 @@ public int numberOfItemsToSpawn;
 void Update() 
 {
     
+        /* jesse
+         
         if(Input.GetKeyDown(KeyCode.F))
         {
             Instantiate(objectToSpawn, spawnedObjectsLocations[0], Quaternion.identity);
         }
 
+        */
 
 }
 
 
 
-void PuzzleStart()
+public void PuzzleStart()
 {
         SpawnBatteriesBegin();
 }

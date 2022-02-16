@@ -36,7 +36,8 @@ namespace BNG {
         public AudioClip ButtonClick;
         public AudioClip ButtonClickUp;
 
-        public Tutka SolverGameObject;
+        //Commented this out -Jesse
+        //public Tutka SolverGameObject;
 
 
         // Commented these out and used these variables on my own event
@@ -46,13 +47,22 @@ namespace BNG {
         AudioSource audioSource;
         Rigidbody rigid;
 
+        [Space(3)]
 
-        // My own code
+        // My own code -Jesse
+        [Header("Select crisis type the button will solve")]
+        public CrisisSubType crisisSubType;
+
+        [Space (3)]
+        
         public MyCrisisTypeEvent onButtonDown;
         public MyCrisisTypeEvent onButtonUp;
 
-        [Header("Select crisis type the button will solve")]
-        public CrisisSubType crisisSubType;
+        [Space(3)]
+
+        [Header("Is button active?")]
+        public bool buttonActive;
+
 
         void Start() {
             joint = GetComponent<SpringJoint>();
@@ -69,14 +79,15 @@ namespace BNG {
             audioSource = GetComponent<AudioSource>();
 
 
-            // Add buttonclicks to my custom event
-            if (onButtonDown == null)
-                onButtonDown = new MyCrisisTypeEvent();
+            // Add buttonclicks to my custom event -Jesse           
 
             if (onButtonDown == null)
-                onButtonUp = new MyCrisisTypeEvent();
+                    onButtonDown = new MyCrisisTypeEvent();
 
-            // Add listener for custom event
+            if (onButtonDown == null)
+                    onButtonUp = new MyCrisisTypeEvent();
+
+            // Add listener for custom event - Jesse
             onButtonDown.AddListener(Ping);
 
         }
@@ -173,14 +184,11 @@ namespace BNG {
                 audioSource.clip = ButtonClick;
                 audioSource.Play();
             }
-
-
           
 
             // Call event
-            if (onButtonDown != null && SolverGameObject.PuzzleRadarSolved == true) {  
-                onButtonDown.Invoke(crisisSubType);
-                Debug.Log("Lähetetty Napista Crisis subtype");
+            if (onButtonDown != null && buttonActive == true) {  
+                onButtonDown.Invoke(crisisSubType);                
             }
         }
 
@@ -193,9 +201,19 @@ namespace BNG {
             }
 
             // Call event
-            if (onButtonUp != null) {
+            if (onButtonUp != null && buttonActive == true) {
                 onButtonUp.Invoke(crisisSubType);
             }
+        }
+
+        public void ActivateButton()
+        {
+            buttonActive = true;
+        }
+
+        public void DeactivateButton()
+        {
+            buttonActive = false;
         }
 
         void OnTriggerEnter(Collider other) {

@@ -6,58 +6,92 @@ public class Tutka : MonoBehaviour
 {
 
 
-Transform toimii;
+    Transform radarBatteryLid;
+    GameObject radarPlate;
 
-public bool PuzzleRadarSolved = false;
+    public bool radarBatteryEmptySolved;
 
-Vector3 radarDownPosition = new Vector3(0,-1,0);
-Vector3 radarUpPosition = new Vector3(0,0,0);
+    //jesse
+    public bool radarBatteryEmpty;
 
-public float speed = 2f;
+    Vector3 radarDownPosition = new Vector3(0,-1,0);
+    Vector3 radarUpPosition = new Vector3(0,0,0);
+
+    public float speed = 2f;
 
  
     void Start()
     {
       
-    toimii = this.gameObject.transform.GetChild(2);
-    CloseLid();
-      
-             
+        radarBatteryLid = this.gameObject.transform.GetChild(2);
+        radarPlate = this.gameObject.transform.GetChild(2).GetChild(0).gameObject;
+
+
+        CloseRadarLid();
+
+        //jesse
+        radarBatteryEmptySolved = false;
+
     }
 
     
     void Update()
     {
 
-
+        /* jesse
+         
         if(Input.GetKeyDown(KeyCode.J))
         {
         StartPuzzle();
         }
-    }
 
+        */
 
-    public void StartPuzzle()
-    {
-     // toimii.transform.localPosition = Vector3.Lerp(radarUpPosition, radarUpPosition, speed * Time.deltaTime);
-     toimii.transform.localPosition = radarUpPosition;
-
-    }
-
-
-    public void CloseLid()
-    {
-
-    toimii.transform.localPosition = radarDownPosition;
-  //  toimii.transform.localPosition = Vector3.Lerp(radarUpPosition, radarDownPosition, speed * Time.deltaTime);
+        if (radarBatteryEmpty == false)
+        {
+            RotateRadarPlate();
+        }
 
     }
 
-    public void Solved()
+
+    public void StartBatteryEmptyPuzzle()
     {
-    PuzzleRadarSolved = true;
-    Debug.Log("Radar Solved");
-    CloseLid();
+        // radarBatteryLid.localPosition = Vector3.Lerp(radarDownPosition, radarUpPosition, speed * Time.deltaTime);
+
+        //jesse
+        radarBatteryEmpty = true;
+
+        OpenRadarLid();
+    }
+
+    void OpenRadarLid()
+    {
+        radarBatteryLid.transform.localPosition = radarUpPosition;
+    }
+
+    void CloseRadarLid()
+    {
+
+    radarBatteryLid.localPosition = radarDownPosition;
+        //  radarBatteryLid.localPosition = Vector3.Lerp(radarUpPosition, radarDownPosition, speed * Time.deltaTime);
+
+    }
+
+     void RotateRadarPlate()
+    {
+        radarPlate.transform.Rotate(0, 0, 10 * Time.deltaTime);
+    }
+
+
+    public void BatteryEmptySolved()
+    {
+        radarBatteryEmptySolved = true;        
+        Debug.Log("Radar Solved");
+        CloseRadarLid();
+
+        //jesse
+        radarBatteryEmpty = false;
     }
 
 

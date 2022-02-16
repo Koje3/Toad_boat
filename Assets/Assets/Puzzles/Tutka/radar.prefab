@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4308665257104947270}
   - component: {fileID: 6867777248623049350}
   - component: {fileID: 317888656948855341}
-  - component: {fileID: 1184429795160525735}
   m_Layer: 0
   m_Name: "MastoYl\xE4"
   m_TagString: Untagged
@@ -85,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1184429795160525735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1184429795160525732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 377acbb499865954181b4c54d7c7ccef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  antenni: {fileID: 0}
-  PuzzleRadarSolved: 0
 --- !u!1 &2231413613454364033
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +95,6 @@ GameObject:
   - component: {fileID: 2948212513867686227}
   - component: {fileID: 2634432161071848970}
   - component: {fileID: 7630357879055040814}
-  - component: {fileID: 2231413613454364032}
   m_Layer: 0
   m_Name: lautanen
   m_TagString: Untagged
@@ -183,20 +167,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2231413613454364032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2231413613454364033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 377acbb499865954181b4c54d7c7ccef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  antenni: {fileID: 0}
-  PuzzleRadarSolved: 0
 --- !u!1 &4955735920391589249
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +709,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7044197372533902716}
   - component: {fileID: 7676900810054162369}
+  - component: {fileID: 6478095695744672436}
   m_Layer: 0
   m_Name: radar
   m_TagString: Untagged
@@ -778,8 +749,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 377acbb499865954181b4c54d7c7ccef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  antenni: {fileID: 0}
   PuzzleRadarSolved: 0
+  speed: 2
+--- !u!114 &6478095695744672436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7676900810054162374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e36caa70245614babbc991963086ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleComponent: 2
+  crisisTypes:
+  - crisisType: 3
+    onCrisisStartEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onCrisisStopEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &7909691767130216691
 GameObject:
   m_ObjectHideFlags: 0
