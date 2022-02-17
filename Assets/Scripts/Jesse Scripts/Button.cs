@@ -40,29 +40,34 @@ namespace BNG {
         //public Tutka SolverGameObject;
 
 
-        // Commented these out and used these variables on my own event
-        // public UnityEvent onButtonDown;
-        // public UnityEvent onButtonUp;
+        [Header("Regular Unity event")]
+        public UnityEvent onButtonDown;
+        public UnityEvent onButtonUp;
 
         AudioSource audioSource;
         Rigidbody rigid;
 
+
         [Space(3)]
 
-        // My own code -Jesse
+        // My own code starts -Jesse
+
         [Header("Select crisis type the button will solve")]
         public CrisisSubType crisisSubType;
 
         [Space (3)]
-        
-        public MyCrisisTypeEvent onButtonDown;
-        public MyCrisisTypeEvent onButtonUp;
+
+        [Header("Custom crisisType event")]
+        public MyCrisisTypeEvent onButtonDownCrisisType;
+        public MyCrisisTypeEvent onButtonUpCrisisType;
 
         [Space(3)]
 
-        [Header("Is button active?")]
+        [Header("IS BUTTON ACTIVE")]
+        [Space(2)]
         public bool buttonActive;
 
+        // My own code ends -Jesse
 
         void Start() {
             joint = GetComponent<SpringJoint>();
@@ -79,23 +84,36 @@ namespace BNG {
             audioSource = GetComponent<AudioSource>();
 
 
+            if (onButtonDown == null)
+                onButtonDown = new UnityEvent();
+
+            if (onButtonDown == null)
+                onButtonUp = new UnityEvent();
+
+            onButtonDown.AddListener(Ping);
+
             // Add buttonclicks to my custom event -Jesse           
 
-            if (onButtonDown == null)
-                    onButtonDown = new MyCrisisTypeEvent();
+            if (onButtonDownCrisisType == null)
+                    onButtonDownCrisisType = new MyCrisisTypeEvent();
 
-            if (onButtonDown == null)
-                    onButtonUp = new MyCrisisTypeEvent();
+            if (onButtonDownCrisisType == null)
+                    onButtonUpCrisisType = new MyCrisisTypeEvent();
 
             // Add listener for custom event - Jesse
-            onButtonDown.AddListener(Ping);
+            onButtonDownCrisisType.AddListener(PingCrisis);
 
         }
 
         //My listener for custom event
-        void Ping(CrisisSubType crisisSubType)
+        void PingCrisis(CrisisSubType crisisSubType)
         {
             Debug.Log("Pressed " + crisisSubType + " button");
+        }
+
+        void Ping()
+        {
+            Debug.Log("Pressed button");
         }
 
 
@@ -184,11 +202,16 @@ namespace BNG {
                 audioSource.clip = ButtonClick;
                 audioSource.Play();
             }
-          
 
-            // Call event
-            if (onButtonDown != null && buttonActive == true) {  
-                onButtonDown.Invoke(crisisSubType);                
+            // Call event if button is active!
+            if (onButtonDown != null && buttonActive == true)
+            {
+                onButtonDown.Invoke();
+            }
+
+            // Call CrisisType event if button is active!
+            if (onButtonDownCrisisType != null && buttonActive == true) {  
+                onButtonDownCrisisType.Invoke(crisisSubType);                
             }
         }
 
@@ -200,12 +223,19 @@ namespace BNG {
                 audioSource.Play();
             }
 
-            // Call event
-            if (onButtonUp != null && buttonActive == true) {
-                onButtonUp.Invoke(crisisSubType);
+            // Call event if button is active!
+            if (onButtonUp != null && buttonActive == true)
+            {
+                onButtonUp.Invoke();
+            }
+
+            // Call crisistype event if button is active!
+            if (onButtonUpCrisisType != null && buttonActive == true) {
+                onButtonUpCrisisType.Invoke(crisisSubType);
             }
         }
 
+        //My activate/deactivate functions -Jesse
         public void ActivateButton()
         {
             buttonActive = true;
@@ -215,6 +245,8 @@ namespace BNG {
         {
             buttonActive = false;
         }
+        //My activate/deactivate functions -Jesse
+
 
         void OnTriggerEnter(Collider other) {
             // Check Grabber
