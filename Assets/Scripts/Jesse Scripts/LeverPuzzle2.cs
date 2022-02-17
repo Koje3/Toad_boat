@@ -6,8 +6,13 @@ using UnityEngine.Events;
 
 public class LeverPuzzle2 : MonoBehaviour
 {
-    public Material leverIncorrect;
-    public Material leverCorrect;
+    public Material indicatorMaterialIncorrect;
+    public Material indicatorMaterialCorrect;
+
+    public ShipComponent puzzleObject;
+    public CrisisSubType crisisTypeToSolve;
+
+    public bool puzzleOpen = false;
 
     public List<LeverInfo> levers;
 
@@ -17,8 +22,8 @@ public class LeverPuzzle2 : MonoBehaviour
     {
         foreach (LeverInfo item in levers)
         {            
-            item.lever.onLeverChange.AddListener(LeverValueChanged);
-            
+            item.lever.onLeverChange.AddListener(LeverValueChanged);            
+            item.indicator = item.lever.gameObject.transform.parent.Find("LeverIndicator").gameObject;
         }
     }
 
@@ -32,14 +37,14 @@ public class LeverPuzzle2 : MonoBehaviour
 
     public void StartPuzzle()
     {
-
+        puzzleOpen = true;
     }
 
     public bool CheckAreLeversSolved()
     {
         foreach (LeverInfo item in levers)
         {
-            if (item.currentLeverValue != item.solvedValue)
+            if (item.currentLeverValue < item.solvedValue - 1 || item.currentLeverValue > item.solvedValue + 1)
             {
                 Debug.Log("One or more levers are incorrect position");
                 Debug.Log( item.lever.gameObject.transform.parent.name + " is incorrect position");
@@ -56,16 +61,16 @@ public class LeverPuzzle2 : MonoBehaviour
 
     public void LeverValueChanged(float leverValue)
     {
-
-
+        if (puzzleOpen == true)
+        {
             foreach (LeverInfo item in levers)
             {
                 item.currentLeverValue = item.lever.LeverPercentage;
 
-                if (item.currentLeverValue == item.solvedValue)
+                if (item.currentLeverValue > item.solvedValue - 1 && item.currentLeverValue < item.solvedValue + 1)
                 {
                     if (item.indicator != null)
-                        item.indicator.GetComponent<Renderer>().material = leverCorrect;
+                        item.indicator.GetComponent<Renderer>().material = indicatorMaterialCorrect;
 
                     if (item.leverCorrectAction != null)
                         item.leverCorrectAction.Invoke();
@@ -74,14 +79,14 @@ public class LeverPuzzle2 : MonoBehaviour
                 else
                 {
                     if (item.indicator != null)
-                        item.indicator.GetComponent<Renderer>().material = leverIncorrect;
+                        item.indicator.GetComponent<Renderer>().material = indicatorMaterialIncorrect;
 
                     if (item.leverInCorrectAction != null)
                         item.leverInCorrectAction.Invoke();
                 }
             }
-
-
+        }
+         
     }
 
     public void CheckIsPuzzleSolved()
@@ -89,6 +94,10 @@ public class LeverPuzzle2 : MonoBehaviour
         if (CheckAreLeversSolved() == true)
         {
             Debug.Log("Puzzle is solved!");
+
+            puzzleOpen = false;
+
+            puzzleObject.FixCrisis(crisisTypeToSolve);
         }
     }
 

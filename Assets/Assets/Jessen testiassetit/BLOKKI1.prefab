@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 3088170333463057950}
   - component: {fileID: 1299803317198432220}
   - component: {fileID: 3994143266511957267}
+  - component: {fileID: 3732284861484656372}
   m_Layer: 0
   m_Name: ground
   m_TagString: Untagged
@@ -166,6 +167,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3732284861484656372
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2355295575604352700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2977981768884665668, guid: be39ac94b126c4d4c989fa8fc5fe9f88, type: 3}
 --- !u!1 &2980948094020253989
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,6 +557,14 @@ MonoBehaviour:
     isCrisisStarted: 0
     startPuzzleTick: 0.079
     failPuzzleTick: 0.825
+    isCrisisFixed: 0
+    isCrisisEnded: 0
+  - puzzleComponent: 1
+    crisisSubType: 4
+    stopShipSpeed: 0
+    isCrisisStarted: 0
+    startPuzzleTick: 0.17
+    failPuzzleTick: 0.924
     isCrisisFixed: 0
     isCrisisEnded: 0
 --- !u!1 &6668255233604820345
