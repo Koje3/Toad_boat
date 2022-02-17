@@ -5,14 +5,23 @@ using UnityEngine;
 public class Lever_Puzzle : MonoBehaviour
 {
   
-//public GameObject lever1;
+public enum PuzzleState{ Stopped,Ongoing,End };
+
+
+// Check in inspector if reset is available
+// to start StartPuzzle();
+
+
+
+
+
 
 
 public bool isVipuPuzzleActive = false; 
 
 [Header("Vipu 1")]
  public BNG.Lever leverYksi;
- public float lever1Value;
+ private float lever1Value;
  public float lever1RatkaisuArvo;
 public bool isVipu1Open = true;
 
@@ -20,7 +29,7 @@ public GameObject lever1indicator;
 
 [Header("Vipu 2")]
  public BNG.Lever leverKaksi;
- public float lever2Value;
+ private float lever2Value;
  public float lever2RatkaisuArvo;
 
  public GameObject lever2indicator;
@@ -28,7 +37,7 @@ public GameObject lever1indicator;
 
 [Header("Vipu 3")]
  public BNG.Lever leverKolme;
- public float lever3Value;
+ private float lever3Value;
  public float lever3RatkaisuArvo;
 
  public GameObject lever3indicator;
@@ -38,30 +47,44 @@ public GameObject lever1indicator;
 
 [Header("Muuta")]
 
+public PuzzleState puzzleState = PuzzleState.Stopped;
 public Material Red;
 public Material Green;
 
+public bool isResetAvailable = false;
 public List<GameObject> keylist = new List<GameObject>();
+private List<BNG.Lever> levers = new List<BNG.Lever>();
+
+public BNG.Button button;
 
 
 
-    void Start()
-    {
-        StartPuzzle();
-      
-    }
 
- void StartPuzzle()
+void Start()
+{
+    levers.Add(leverYksi);
+    levers.Add(leverKaksi);
+    levers.Add(leverKolme);
+}
+
+public void StartPuzzle()
  {
-    isVipuPuzzleActive = true;
+    puzzleState = PuzzleState.Ongoing;
  }
 
 
 
-    void Update()
+void Update()
     {
+
+        if(Input.GetKeyDown(KeyCode.L) && isResetAvailable)
+        {
+            ResetPuzzle();
+
+        }
+
         
-        if(isVipuPuzzleActive == true)
+        if(puzzleState == PuzzleState.Ongoing)
             {
                 lever1Value = leverYksi.LeverPercentage;
                 lever2Value = leverKaksi.LeverPercentage;
@@ -70,102 +93,102 @@ public List<GameObject> keylist = new List<GameObject>();
 
     
 
-          if(keylist.Count<=2)
-            {
-                    if(lever1Value == lever1RatkaisuArvo && isVipu1Open == true)
-                        { 
-                        isVipu1Open = false;           
-                        LeverOneOpen();
-                        }
-                        
-                    else if(lever1Value != lever1RatkaisuArvo)
-                        {
-                        isVipu1Open = true;
-                        LelverOneClosed();
-                        }
+                if(keylist.Count<=2)
+                    {
+                            if(lever1Value == lever1RatkaisuArvo && isVipu1Open)
+                                { 
+                                isVipu1Open = false;           
+                                LeverOpen(lever1indicator);
+                                }
+                                
+                            else if(lever1Value != lever1RatkaisuArvo)
+                                {
+                                isVipu1Open = true;
+                                LeverClosed(lever1indicator);
+                                }
 
 
-                    if(lever2Value == lever2RatkaisuArvo && isVipu2Open == true)
-                        { 
-                        isVipu2Open = false;           
-                        LeverTwoOpen();
-                        }
-                        
-                    else if(lever2Value != lever2RatkaisuArvo)
-                        {
-                        isVipu2Open = true;
-                        LelverTwoClosed();
-                        }   
+                            if(lever2Value == lever2RatkaisuArvo && isVipu2Open)
+                                { 
+                                isVipu2Open = false;           
+                                LeverOpen(lever2indicator);
+                                }
+                                
+                            else if(lever2Value != lever2RatkaisuArvo)
+                                {
+                                isVipu2Open = true;
+                                LeverClosed(lever2indicator);
+                                }   
 
 
-                    if(lever3Value == lever3RatkaisuArvo && isVipu3Open == true)
-                        { 
-                        isVipu3Open = false;           
-                        LeverThreeOpen();
-                        }
-                        
-                    else if(lever3Value != lever3RatkaisuArvo)
-                        {
-                        isVipu3Open = true;
-                        LelverThreeClosed();
-                        }   
-            }            
-        else
-        {
-            PuzzleSolved();
-        }
-
-
-                    
+                            if(lever3Value == lever3RatkaisuArvo && isVipu3Open)
+                                { 
+                                isVipu3Open = false;           
+                                LeverOpen(lever3indicator);
+                                }
+                                
+                            else if(lever3Value != lever3RatkaisuArvo)
+                                {
+                                isVipu3Open = true;
+                                LeverClosed(lever3indicator);
+                                }   
+                    }            
+                else
+                {
+                    PuzzleSolved();
+                    button.buttonActive = true;
+                }
+         
             }
     }
 
-void LeverOneOpen()
+
+void LeverOpen(GameObject indicator)
     {
-  
-    lever1indicator.GetComponent<Renderer>().material = Green;
-    keylist.Add(lever1indicator);
+    indicator.GetComponent<Renderer>().material = Green;
+    keylist.Add(indicator);
     }
 
-void LelverOneClosed()
+void LeverClosed(GameObject indicator)
     {
-  
-    lever1indicator.GetComponent<Renderer>().material = Red;
-    keylist.Remove(lever1indicator);    
+    indicator.GetComponent<Renderer>().material = Red;
+    keylist.Remove(indicator);     
     }
 
-void LeverTwoOpen()
+
+
+public void PuzzleSolved()
+        {
+            puzzleState = PuzzleState.End;
+            Debug.Log("Lever Puzzle Solved!!!");
+        }
+
+
+
+public void ResetPuzzle()
     {
 
-    lever2indicator.GetComponent<Renderer>().material = Green;
-    keylist.Add(lever2indicator);
+        foreach (BNG.Lever lever in levers)
+        {
+            lever.transform.localRotation = Quaternion.Euler(0,0,0);   
+        }
+
+        foreach (GameObject indicator in keylist)
+        {
+           indicator.GetComponent<Renderer>().material = Green;
+        }
+
+        keylist.Clear();
+
+        puzzleState = PuzzleState.Ongoing;
+
+        button.buttonActive = false;
+
+
     }
 
-void LelverTwoClosed()
-    {
-   
-    lever2indicator.GetComponent<Renderer>().material = Red;
-    keylist.Remove(lever2indicator);    
-    }
 
-    void LeverThreeOpen()
-    {
 
-    lever3indicator.GetComponent<Renderer>().material = Green;
-    keylist.Add(lever3indicator);
-    }
-
-void LelverThreeClosed()
-    {
-   
-    lever3indicator.GetComponent<Renderer>().material = Red;
-    keylist.Remove(lever3indicator);    
-    }
-
-void PuzzleSolved()
-{
-    Debug.Log("Lever Puzzle Solved!!!");
-}
 
 }
 
