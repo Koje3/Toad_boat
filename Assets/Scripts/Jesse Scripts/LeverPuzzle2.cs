@@ -24,20 +24,27 @@ public class LeverPuzzle2 : MonoBehaviour
         {            
             item.lever.onLeverChange.AddListener(LeverValueChanged);            
             item.indicator = item.lever.gameObject.transform.parent.Find("LeverIndicator").gameObject;
+            item.solvedValue = UnityEngine.Random.Range(0f, 100.0f);
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
 
-
-    }
 
     public void StartPuzzle()
     {
         puzzleOpen = true;
+    }
+
+    public void CheckIsPuzzleSolved()
+    {
+        if (CheckAreLeversSolved() == true)
+        {
+            Debug.Log("Puzzle is solved!");
+
+            puzzleOpen = false;
+
+            puzzleObject.FixCrisis(crisisTypeToSolve);
+        }
     }
 
     public bool CheckAreLeversSolved()
@@ -89,17 +96,17 @@ public class LeverPuzzle2 : MonoBehaviour
          
     }
 
-    public void CheckIsPuzzleSolved()
+    public void ResetPuzzle()
     {
-        if (CheckAreLeversSolved() == true)
+
+        foreach (LeverInfo item in levers)
         {
-            Debug.Log("Puzzle is solved!");
-
-            puzzleOpen = false;
-
-            puzzleObject.FixCrisis(crisisTypeToSolve);
+            item.lever.transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
+
     }
+
+
 
 }
 
