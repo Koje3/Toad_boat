@@ -46,6 +46,7 @@ namespace BNG {
         public float FiringRate = 0.2f;
         float lastShotTime;
 
+
         [Tooltip("Amount of force to apply to a Rigidbody once damaged")]
         public float BulletImpactForce = 1000f;
 

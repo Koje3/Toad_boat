@@ -450,5 +450,18 @@ namespace BNG {
 
             HeldItem = null;
         }
+
+
+
+        //Destroy currently held item - Jesse
+        public void DestroyHeldItem()
+        {
+            if (HeldItem == null)
+            {
+                return;
+            }
+
+            Destroy(HeldItem.gameObject);
+        }
     }
 }
