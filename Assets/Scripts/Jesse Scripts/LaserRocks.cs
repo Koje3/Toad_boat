@@ -8,7 +8,7 @@ public class LaserRocks : MonoBehaviour
     public GameObject explosionEffectPrefab;
 
 
-    public ShipComponent puzzleObject;
+    public PuzzleComponentManager puzzleObject;
     public CrisisSubType crisisTypeToSolve;
 
     private GameObject obstacle;

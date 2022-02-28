@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 
 
-public class ShipComponent : MonoBehaviour
+public class PuzzleComponentManager : MonoBehaviour
 {
 
     public PuzzleComponent puzzleComponent;
@@ -42,7 +42,7 @@ public class ShipComponent : MonoBehaviour
                     }
                     else
                     {
-                        StopCrisis(crisisType);
+                        StartCoroutine(StopCrisis(crisisType));
                     }
                 }
             }
@@ -83,12 +83,12 @@ public class ShipComponent : MonoBehaviour
     }
 
     // Stop crisis actions
-    public void StopCrisis(CrisisTypes stopCrisisType)
+    public IEnumerator StopCrisis(CrisisTypes stopCrisisType)
     {
-        stopCrisisType.onCrisisStopEvent.Invoke();
-        
-    }
+        yield return new WaitForSeconds(stopCrisisType.delayStopCrisisSeconds);
 
+        stopCrisisType.onCrisisStopEvent.Invoke();       
+    }
     
 
 }
@@ -100,6 +100,8 @@ public class CrisisTypes
     public CrisisSubType crisisType;
 
     public UnityEvent onCrisisStartEvent;
+
+    public float delayStopCrisisSeconds = 0;
     public UnityEvent onCrisisStopEvent;
 }
 

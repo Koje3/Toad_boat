@@ -9,7 +9,7 @@ public class LeverPuzzle2 : MonoBehaviour
     public Material indicatorMaterialIncorrect;
     public Material indicatorMaterialCorrect;
 
-    public ShipComponent puzzleObject;
+    public PuzzleComponentManager puzzleObject;
     public CrisisSubType crisisTypeToSolve;
 
     public bool puzzleOpen = false;

@@ -246,6 +246,8 @@ namespace BNG {
         [Tooltip("Passes along Raycast Hit info whenever a Raycast hit is successfully detected. Use this to display fx, add force, etc.")]
         public RaycastHitEvent onRaycastHitEvent;
 
+
+
         [Header("Select crisis type destroyed will solve")]
         public CrisisSubType crisisSubType;
 
@@ -377,8 +379,22 @@ namespace BNG {
                 return;
             }
 
+
+            // if internalAmmo is zero, play empty sound - Jesse
+            if (InternalAmmo == 0 && ReloadMethod == ReloadType.InternalAmmo)
+            {
+                // Only play empty sound once per trigger down
+                if (!playedEmptySound)
+                {
+                    VRUtils.Instance.PlaySpatialClipAt(EmptySound, transform.position, EmptySoundVolume, 0.5f);
+                    playedEmptySound = true;
+                }
+
+                return;
+            }
+
             // Need to release slide
-            if(ws != null && ws.LockedBack) {
+            if (ws != null && ws.LockedBack) {
                 VRUtils.Instance.PlaySpatialClipAt(EmptySound, transform.position, EmptySoundVolume, 0.5f);
                 return;
             }
@@ -582,6 +598,13 @@ namespace BNG {
 
             // Whenever we remove a bullet is a good time to check the chamber
             updateChamberedBullet();
+        }
+
+
+        // Remove all internal ammo from weapon - Jesse
+        public virtual void RemoveAllInternalAmmo()
+        {
+            InternalAmmo = 0;
         }
 
 
