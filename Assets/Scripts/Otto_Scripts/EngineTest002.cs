@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EngineTest001 : MonoBehaviour
+public class EngineTest002 : MonoBehaviour
 {
 
 public GameObject itemToSpawn;
@@ -11,7 +11,7 @@ public int howManyItemToSpawn = 2;
 public List<GameObject> spawnpoints = new List<GameObject>();
 
 
-
+/*
 
     void Start()
     {
@@ -53,6 +53,6 @@ public List<GameObject> spawnpoints = new List<GameObject>();
    
         }
     
-
+*/
 }
 

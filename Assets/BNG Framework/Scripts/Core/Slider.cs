@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace BNG {
     /// <summary>
     /// Helper class to interact with physical sliders
@@ -11,6 +12,11 @@ namespace BNG {
         /// <summary>
         /// How far away slider has moved from inital RangeLow position
         /// </summary>
+
+
+
+      
+
         public float SlidePercentage
         {
             get
