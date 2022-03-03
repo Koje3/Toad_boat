@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 namespace BNG {
@@ -15,7 +16,9 @@ namespace BNG {
 
 
 
-      
+      public Text sliderTxt;
+      string kylttiin;
+      string[] nimet = new string[] {"Trust", "Angle","Froster","Pressure","Lift","Cryss","DownShift","Phazers","Morale","Power","Span"};
 
         public float SlidePercentage
         {
@@ -44,9 +47,23 @@ namespace BNG {
             }
 
             slideRange = slideRangeHigh - slideRangeLow;
+        
+
+        // omaa koodia valitsee random nimen listasta/ Otto
+       
+        
+        kylttiin = nimet[Random.Range(0,nimet.Length)];
+            
+        
+        
         }
 
+
         void Update() {
+           
+           sliderTxt.text = kylttiin + " " + SlidePercentage + "%"; // omaa koodia / Otto
+            
+
             
             _slidePercentage = ( (transform.localPosition.x - 0.001f) + slideRangeHigh) / slideRange;
             _slidePercentage = Mathf.Ceil(_slidePercentage * 100);

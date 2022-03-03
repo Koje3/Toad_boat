@@ -3137,6 +3137,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8090420016154904585, guid: 99f47e11765001245a11dc1219c90ca0, type: 3}
+      propertyPath: sliderTxt
+      value: 
+      objectReference: {fileID: 1732185272}
+    - target: {fileID: 8090420016154904585, guid: 99f47e11765001245a11dc1219c90ca0, type: 3}
       propertyPath: onSliderChange.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3159,6 +3163,10 @@ PrefabInstance:
     - target: {fileID: 8090420016693408348, guid: 99f47e11765001245a11dc1219c90ca0, type: 3}
       propertyPath: m_Name
       value: Slide
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090420016693408348, guid: 99f47e11765001245a11dc1219c90ca0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8090420016693408349, guid: 99f47e11765001245a11dc1219c90ca0, type: 3}
       propertyPath: m_RootOrder
@@ -3360,46 +3368,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2110589763}
     m_Modifications:
-    - target: {fileID: 175945524, guid: 99f47e11765001245a11dc1219c90ca0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 175945525, guid: 99f47e11765001245a11dc1219c90ca0, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5241762246677352351, guid: 99f47e11765001245a11dc1219c90ca0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7885595437227007900, guid: 99f47e11765001245a11dc1219c90ca0, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8090420016154904585, guid: 99f47e11765001245a11dc1219c90ca0, type: 3}
-      propertyPath: onSliderChange.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8090420016154904585, guid: 99f47e11765001245a11dc1219c90ca0, type: 3}
-      propertyPath: onSliderChange.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8090420016154904585, guid: 99f47e11765001245a11dc1219c90ca0, type: 3}
-      propertyPath: onSliderChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8090420016154904585, guid: 99f47e11765001245a11dc1219c90ca0, type: 3}
-      propertyPath: onSliderChange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8090420016154904585, guid: 99f47e11765001245a11dc1219c90ca0, type: 3}
-      propertyPath: onSliderChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8090420016237831650, guid: 99f47e11765001245a11dc1219c90ca0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8090420016693408348, guid: 99f47e11765001245a11dc1219c90ca0, type: 3}
       propertyPath: m_Name
       value: Slide (1)
@@ -4017,6 +3985,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9b9a237349493c4ba449ee953f41834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1732185272 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5241762246677352351, guid: 99f47e11765001245a11dc1219c90ca0, type: 3}
+  m_PrefabInstance: {fileID: 1121782035}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1759893908
@@ -5021,3 +5000,4 @@ MonoBehaviour:
     wheelInCorrectAction:
       m_PersistentCalls:
         m_Calls: []
+  isSliderPuzzleActive: 0

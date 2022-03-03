@@ -18,12 +18,11 @@ public class SliderPuzzle : MonoBehaviour
     public BNG.Button button;
     
     public List<SliderInfo> sliderInfo;
+
+    public bool isSliderPuzzleActive = false;
         void Start()
         {
-            
-
-            
-
+                       
 
             foreach (SliderInfo item in sliderInfo)
             {
@@ -33,21 +32,28 @@ public class SliderPuzzle : MonoBehaviour
             slideFalse = item.slider.transform.GetChild(2).gameObject.GetComponent<MeshRenderer>().material; // set False Material
             
             item.solved = UnityEngine.Random.Range(0,100);
-            
                 
             }
 
-
-
         }
+
+
+public void StartSliderPuzzle()
+{
+
+isSliderPuzzleActive = true;
+
+
+}
+
 
 public void SliderValueChanged(float sliderValue)
 {
     
-
-
-        foreach (SliderInfo item in sliderInfo)
+    if(isSliderPuzzleActive == true)
         {
+        foreach (SliderInfo item in sliderInfo)
+            {
 
             MeshRenderer handle = item.slider.transform.GetChild(2).gameObject.GetComponent<MeshRenderer>();
             item.presentage = item.slider.transform.GetComponentInChildren<BNG.Slider>().SlidePercentage;
@@ -61,13 +67,15 @@ public void SliderValueChanged(float sliderValue)
                 handle.material = slideFalse;
 
 
+            }
         }
 
-        }
-  public  void Update()
+}
+  public void Update()
     {
 
-        CheckIsPuzzleSolved();
+    
+  //     CheckIsPuzzleSolved();
 
 
     }
