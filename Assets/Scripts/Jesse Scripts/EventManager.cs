@@ -35,21 +35,20 @@ public class EventManager : MonoBehaviour
     public List<Crises> crises;
 
 
+
     void Start()
     {
         foreach (Crises item in crises)
         {
-            item.SetVarsiablesFalse();
+            item.SetVarsiablesStart();
             Debug.Log("Set false ");
-
-
         }
     }
 
-    private void Update()
+    void Update()
     {
-
     }
+
 
     //LevelManager updates current Tick every frame
     public void Tick(float tick)
@@ -75,16 +74,37 @@ public class EventManager : MonoBehaviour
             if (item.puzzleComponent == newPuzzleComponent && item.crisisSubType == newCrisisSubType)
             {
                 item.isCrisisFixed = isCrisisFixed;
+
+                if (isCrisisFixed == true)
+                {
+                    item.stopShipSpeed = false;
+                }               
             }
         }
 
         if (IsPuzzleComponentFixed(newPuzzleComponent))
         {
             Debug.Log(newPuzzleComponent + " is fixed!");
+
+            if (CheckShouldShipMove())
+            {
+                LevelManager.instance.ChangeShipSpeed(8);
+            }
+
         }
     }
 
-
+    bool CheckShouldShipMove()
+    {
+        foreach (Crises item in crises)
+        {
+            if (item.stopShipSpeed == true && item.isCrisisStarted == true)
+            {               
+               return false;
+            }
+        }
+        return true;
+    }
 
     public bool GetCrisisState(PuzzleComponent newPuzzleComponent, CrisisSubType newCrisisSubType)
     {
@@ -185,12 +205,16 @@ public class Crises
     [Range(0f, 1f)]
     public float failPuzzleTick;
 
+    public bool gameOverAfterFail = false;
+
     public bool isCrisisFixed;
     public bool isCrisisEnded;
 
-    public void SetVarsiablesFalse()
+
+
+    public void SetVarsiablesStart()
     {
-        isCrisisFixed = false;
+        isCrisisFixed = true;
         isCrisisEnded = false;
         isCrisisStarted = false;
     }
@@ -199,17 +223,24 @@ public class Crises
     {
         if (!isCrisisStarted)
         {
+            //start crisis at certain tick
             if (tick > startPuzzleTick)
             {
-                Debug.Log(puzzleComponent + " " + crisisSubType + "Crisis started");
+
+                if (stopShipSpeed == true)
+                {
+                    LevelManager.instance.ChangeShipSpeed(0);
+                }
 
                 isCrisisStarted = true;               
                 LevelManager.instance.currentPiece.SetCrisisState(puzzleComponent, crisisSubType, false);
 
+                Debug.Log(puzzleComponent + " " + crisisSubType + "Crisis started");
             }
         }
         else
         {
+            //Check if crisis fails or passes at certain tick if it is larger than 0
             if (failPuzzleTick > 0 && tick > failPuzzleTick && !isCrisisEnded)
             {
                 isCrisisEnded = true;
@@ -217,14 +248,21 @@ public class Crises
                 if (isCrisisFixed)
                 {
                     Debug.Log(puzzleComponent + " " + crisisSubType + " crisis PASSED");
+
                 }
                 else 
                 {                    
                     Debug.Log(puzzleComponent + " " + crisisSubType + " crisis FAILED");
+
+                    if (gameOverAfterFail == true)
+                    {
+                        LevelManager.instance.GameOver();
+                    }
                 }               
             }
         }
-
     }
+
+
 }
 

@@ -537,10 +537,11 @@ MonoBehaviour:
   crises:
   - puzzleComponent: 1
     crisisSubType: 1
-    stopShipSpeed: 0
+    stopShipSpeed: 1
     isCrisisStarted: 0
     startPuzzleTick: 0.319
     failPuzzleTick: 0.955
+    gameOverAfterFail: 0
     isCrisisFixed: 0
     isCrisisEnded: 0
   - puzzleComponent: 5
@@ -548,7 +549,8 @@ MonoBehaviour:
     stopShipSpeed: 0
     isCrisisStarted: 0
     startPuzzleTick: 0.128
-    failPuzzleTick: 0.825
+    failPuzzleTick: 0.297
+    gameOverAfterFail: 1
     isCrisisFixed: 0
     isCrisisEnded: 0
   - puzzleComponent: 2
@@ -557,14 +559,16 @@ MonoBehaviour:
     isCrisisStarted: 0
     startPuzzleTick: 0.079
     failPuzzleTick: 0.825
+    gameOverAfterFail: 0
     isCrisisFixed: 0
     isCrisisEnded: 0
   - puzzleComponent: 1
     crisisSubType: 4
     stopShipSpeed: 0
     isCrisisStarted: 0
-    startPuzzleTick: 0.17
+    startPuzzleTick: 0.064
     failPuzzleTick: 0.924
+    gameOverAfterFail: 0
     isCrisisFixed: 0
     isCrisisEnded: 0
 --- !u!1 &6668255233604820345

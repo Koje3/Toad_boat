@@ -7,6 +7,13 @@ using UnityEngine;
 namespace CarterGames.Assets.SaveManager
 {
     public class SaveData
-    {
+    {            
+        public string examplePlayerName;
+        public float examplePlayerHealth;
+        public SaveVector3 examplePlayerPosition;
+        public CustomClass exampleCustomClass;
+        public SaveSprite examplePlayerSprite;
     }
+
+
 }
