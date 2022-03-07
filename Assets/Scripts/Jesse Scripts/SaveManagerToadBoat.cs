@@ -9,27 +9,14 @@ namespace CarterGames.Assets.SaveManager
 {
     public class SaveManagerToadBoat : MonoBehaviour
     {
-        // Input values
-        [Header("Input Fields")]
-        public Text playerName;
-        public Text playerHealth;
-        public Text playerPosition0;
-        public Text playerPosition1;
-        public Text playerPosition2;
-        public Text playerShield;
-        public Image playerSprite;
+        public static SaveManagerToadBoat instance;
 
-        // An instance of the custom class used in the example
-        private CustomClass customClassInt = new CustomClass();
 
-        // output values
-        [Header("Output Text Components")]
-        public Text displayPlayerName;
-        public Text displayPlayerHealth;
-        public Text displayPlayerPosition;
-        public Text displayPlayerShield;
-        public Image displayPlayerSprite;
+        private void Awake()
+        {
+            instance = this;
 
+        }
 
         public void SaveGame()
         {
@@ -37,17 +24,10 @@ namespace CarterGames.Assets.SaveManager
             var saveData = new SaveData();
 
             // Passing in values to be saved
-            saveData.examplePlayerName = playerName.text;
-            saveData.examplePlayerHealth = float.Parse(playerHealth.text);
-
-            // Creating a SaveVector3 and setting the Vector3 up before saving it.
-            var exampleVec = new Vector3(float.Parse(playerPosition0.text), float.Parse(playerPosition1.text), float.Parse(playerPosition2.text));
-            saveData.examplePlayerPosition = exampleVec;
-
-            saveData.examplePlayerSprite = playerSprite.sprite;
-
-            customClassInt.shield = int.Parse(playerShield.text);
-            saveData.exampleCustomClass = customClassInt;
+            saveData.levelNumber = LevelManager.instance.levelNumber;
+            saveData.pieceNumber = LevelManager.instance.currentPieceNumber;
+            saveData.levelTravelled = LevelManager.instance.levelTravelled;
+            saveData.restart = LevelManager.instance.restart;
 
 
             SaveManager.SaveGame(saveData);
@@ -57,11 +37,12 @@ namespace CarterGames.Assets.SaveManager
         {
             var loadData = SaveManager.LoadGame();
 
-            displayPlayerName.text = loadData.examplePlayerName;
-            displayPlayerHealth.text = loadData.examplePlayerHealth.ToString();
-            displayPlayerPosition.text = loadData.examplePlayerPosition.ToString();
-            displayPlayerShield.text = loadData.exampleCustomClass.shield.ToString();
-            displayPlayerSprite.sprite = loadData.examplePlayerSprite;
+
+            LevelManager.instance.loadedLevelNumber = loadData.levelNumber;
+            LevelManager.instance.loadedPieceNumber = loadData.pieceNumber;
+            LevelManager.instance.loadedLevelTravelled = loadData.levelTravelled;
+            LevelManager.instance.restart = loadData.restart;
+
         }
     }
 

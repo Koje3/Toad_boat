@@ -13,35 +13,42 @@ public class LevelManager : MonoBehaviour
 
     public GameObject[] level1;
     public GameObject stream1;
-    private int levelNumber;
+    public int levelNumber = 1;
 
 
     public GameObject emptyObject;
     private GameObject levelObjectParent;
-    private float pieceLenghtSum;
+    public float pieceLenghtSum;
 
     public float shipSpeed;
-    public float shipGoalSpeed = 8;
+    public float shipStartSpeed = 8;
+    public float shipGoalSpeed;
     public float speedDelta;
     public float deaccelerationSpeed = 0.1f;
     public float accelerationSpeed = 0.1f;
 
-    [SerializeField] private int currentPieceNumber;
-    [SerializeField] public EventManager currentPiece;
-    [SerializeField] public float currentPieceLenght { get; private set; } 
-    [SerializeField] public float currentPieceTravelled { get; private set; }
-    [SerializeField] public float levelTravelled { get; private set; }
-    [SerializeField] public float currentPieceDistance;
+     public int currentPieceNumber = 0;
+     public EventManager currentPiece;
+     public float currentPieceLenght { get; private set; } 
+     public float currentPieceTravelled { get; private set; }
+     public float levelTravelled = 0f;
+     public float currentPieceDistance;
     [SerializeField] private bool levelCleared;
+    public bool restart;
+
+    public int loadedLevelNumber;
+    public int loadedPieceNumber;
+    public float loadedLevelTravelled;
 
     private bool gameOver;
-    private float screenFade = 0f;
-    private float screenFadeGoal = 1f;
-    private float screenFadeSpeed = 0.1f;
+    private float screenFade;
+    private float screenFadeGoal;
+    private float screenFadeSpeed;
 
     public Volume volume { get; private set; }
     [ColorUsageAttribute(true, true)]
     private ColorAdjustments colorAdjustments;
+
 
     private void Awake()
     {
@@ -57,11 +64,20 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         gameOver = false;
+        restart = false;
 
-        currentPieceNumber = 0;
-        levelTravelled = 0;
+        shipGoalSpeed = shipStartSpeed;
+
+        //screen fade to black variables set to starting state
+        screenFadeGoal = 0f;
+        screenFade = 1f;
+        screenFadeSpeed = 0.4f;
+        colorAdjustments.postExposure.value = -15f;
+
         levelCleared = false;
         MakeLevel(levelNumber);
+
+        ContinueAfterRestart();
 
     }
 
@@ -77,13 +93,14 @@ public class LevelManager : MonoBehaviour
 
         MatchShipGoalSpeed();
         GameOverSequence();
+        ScreenFadeTowardsFadeGoal();
 
     }
 
     void MakeLevel(int levelNumber)
     {
         levelObjectParent = Instantiate(emptyObject, new Vector3(0, 0, 0), Quaternion.identity);
-        pieceLenghtSum = 0;
+        pieceLenghtSum = 0f;
 
         for (int i = 0; i < level1.Length; i++)
         {
@@ -97,6 +114,29 @@ public class LevelManager : MonoBehaviour
 
         GameObject stream = Instantiate(stream1, new Vector3(0, 0, -5), Quaternion.identity);
         stream.transform.parent = levelObjectParent.transform;
+
+    }
+
+    //Load last game and transform the level to the last piece the ship was
+    void ContinueAfterRestart()
+    {
+        CarterGames.Assets.SaveManager.SaveManagerToadBoat.instance.LoadGame();
+        pieceLenghtSum = 0f;
+
+        if (restart)
+        {
+            for (int i = 0; i < loadedPieceNumber; i++)
+            {
+                float pieceLenght = level1[i].transform.localScale.z;
+                pieceLenghtSum += pieceLenght;
+            }
+
+            levelTravelled = pieceLenghtSum;
+            currentPieceNumber = loadedPieceNumber;
+            levelObjectParent.transform.Translate(Vector3.back * levelTravelled);
+
+            shipSpeed = shipGoalSpeed;
+        }
 
     }
 
@@ -158,11 +198,16 @@ public class LevelManager : MonoBehaviour
                 currentPieceTravelled = 0;
                 currentPieceDistance = 0;
 
+                restart = true;
+                CarterGames.Assets.SaveManager.SaveManagerToadBoat.instance.SaveGame();
+
                 if (currentPieceNumber < level1.Length)
                 {
                     // New piece!
                     currentPiece = level1[currentPieceNumber].GetComponent<EventManager>();
                     currentPieceLenght = currentPiece.transform.localScale.z;
+
+
                 }
                 else
                 {
@@ -186,24 +231,55 @@ public class LevelManager : MonoBehaviour
 
     public void GameOver()
     {
-        gameOver = true;        
+        gameOver = true;
+        screenFadeGoal = 1;
+        screenFadeSpeed = 0.2f;
     }
 
     void GameOverSequence()
     {    
         if (gameOver == true)
         {
-            if (screenFade < screenFadeGoal)
+            if (screenFade >= screenFadeGoal)
             {
-                screenFade += screenFadeSpeed * Time.deltaTime;
-                colorAdjustments.postExposure.value = Mathf.Lerp(0f, -15f, screenFade);
-            }
-            else
-            {
-                SceneManager.LoadScene(levelNumber);
                 gameOver = false;
+
+                CarterGames.Assets.SaveManager.SaveManagerToadBoat.instance.LoadGame();
+                SceneManager.LoadScene(loadedLevelNumber);                
             }
         }        
+    }
+
+    void GameStartSequence()
+    {
+
+    }
+
+    //Lerps screenFade value towards ScreenFadeGoal if it changes
+    void ScreenFadeTowardsFadeGoal()
+    {        
+        if (screenFade > screenFadeGoal)
+        {
+            screenFade -= screenFadeSpeed * Time.deltaTime;
+
+            if (screenFade <= screenFadeGoal)
+            {
+                screenFade = screenFadeGoal;
+            }
+
+            colorAdjustments.postExposure.value = Mathf.Lerp(0f, -15f, screenFade);
+        }
+        else if (screenFade < screenFadeGoal)
+        {
+            screenFade += screenFadeSpeed * Time.deltaTime;
+
+            if (screenFade >= screenFadeGoal)
+            {
+                screenFade = screenFadeGoal;
+            }
+
+            colorAdjustments.postExposure.value = Mathf.Lerp(0f, -15f, screenFade);
+        }
     }
 
 }
