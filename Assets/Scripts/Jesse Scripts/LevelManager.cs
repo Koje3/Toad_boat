@@ -11,8 +11,9 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
 
-    public GameObject[] level1;
-    public GameObject stream1;
+    public GameObject[] levelPieces;
+    public GameObject[] levelBackPieces;
+    public GameObject riverStreamPrefab;
     public int levelNumber = 1;
 
 
@@ -102,17 +103,30 @@ public class LevelManager : MonoBehaviour
         levelObjectParent = Instantiate(emptyObject, new Vector3(0, 0, 0), Quaternion.identity);
         pieceLenghtSum = 0f;
 
-        for (int i = 0; i < level1.Length; i++)
+        for (int i = 0; i < levelPieces.Length; i++)
         {
-            float pieceLenght = level1[i].transform.localScale.z;
+            float pieceLenght = levelPieces[i].transform.localScale.z;
 
-            GameObject levelPiece = Instantiate(level1[i], new Vector3(0, 0, pieceLenghtSum), Quaternion.identity);
+            GameObject levelPiece = Instantiate(levelPieces[i], new Vector3(0, 0, pieceLenghtSum), Quaternion.identity);
             levelPiece.transform.parent = levelObjectParent.transform;
-            level1[i] = levelPiece;
+            levelPieces[i] = levelPiece;
             pieceLenghtSum += pieceLenght;
         }
 
-        GameObject stream = Instantiate(stream1, new Vector3(0, 0, -5), Quaternion.identity);
+        float backPieceLenghtSum = 0f;
+
+        for (int i = 0; i < levelBackPieces.Length; i++)
+        {
+            float pieceLenght = levelBackPieces[i].transform.localScale.z;
+            backPieceLenghtSum += pieceLenght;
+
+            GameObject levelPiece = Instantiate(levelBackPieces[i], new Vector3(0, 0, -backPieceLenghtSum), Quaternion.identity);
+            levelPiece.transform.parent = levelObjectParent.transform;
+            levelBackPieces[i] = levelPiece;
+            
+        }
+
+        GameObject stream = Instantiate(riverStreamPrefab, new Vector3(0, 0, -5), Quaternion.identity);
         stream.transform.parent = levelObjectParent.transform;
 
     }
@@ -120,14 +134,14 @@ public class LevelManager : MonoBehaviour
     //Load last game and transform the level to the last piece the ship was
     void ContinueAfterRestart()
     {
-        CarterGames.Assets.SaveManager.SaveManagerToadBoat.instance.LoadGame();
+        CarterGames.Assets.SaveManager.GameManager.instance.LoadGame();
         pieceLenghtSum = 0f;
 
         if (restart)
         {
             for (int i = 0; i < loadedPieceNumber; i++)
             {
-                float pieceLenght = level1[i].transform.localScale.z;
+                float pieceLenght = levelPieces[i].transform.localScale.z;
                 pieceLenghtSum += pieceLenght;
             }
 
@@ -184,7 +198,7 @@ public class LevelManager : MonoBehaviour
         {
             if (currentPiece == null)
             {
-                currentPiece = level1[currentPieceNumber].GetComponent<EventManager>();
+                currentPiece = levelPieces[currentPieceNumber].GetComponent<EventManager>();
                 if (currentPiece == null)
                 {
                     Debug.Log("Couldn't get event manager (currentPieceNumber: " + currentPieceNumber + ")");
@@ -199,12 +213,12 @@ public class LevelManager : MonoBehaviour
                 currentPieceDistance = 0;
 
                 restart = true;
-                CarterGames.Assets.SaveManager.SaveManagerToadBoat.instance.SaveGame();
+                CarterGames.Assets.SaveManager.GameManager.instance.SaveGame();
 
-                if (currentPieceNumber < level1.Length)
+                if (currentPieceNumber < levelPieces.Length)
                 {
                     // New piece!
-                    currentPiece = level1[currentPieceNumber].GetComponent<EventManager>();
+                    currentPiece = levelPieces[currentPieceNumber].GetComponent<EventManager>();
                     currentPieceLenght = currentPiece.transform.localScale.z;
 
 
@@ -244,7 +258,7 @@ public class LevelManager : MonoBehaviour
             {
                 gameOver = false;
 
-                CarterGames.Assets.SaveManager.SaveManagerToadBoat.instance.LoadGame();
+                CarterGames.Assets.SaveManager.GameManager.instance.LoadGame();
                 SceneManager.LoadScene(loadedLevelNumber);                
             }
         }        

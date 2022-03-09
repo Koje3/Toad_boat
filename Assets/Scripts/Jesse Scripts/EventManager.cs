@@ -224,7 +224,7 @@ public class Crises
         if (!isCrisisStarted)
         {
             //start crisis at certain tick
-            if (tick > startPuzzleTick)
+            if (tick > startPuzzleTick && tick <= 1)
             {
 
                 if (stopShipSpeed == true)
