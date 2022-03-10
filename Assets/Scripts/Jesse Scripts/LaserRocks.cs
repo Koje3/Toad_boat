@@ -38,8 +38,8 @@ public class LaserRocks : MonoBehaviour
         {
             if (crisis.crisisSubType == CrisisSubType.Rocks)
             {
-                float rocksSpawnZ = LevelManager.instance.currentPieceLenght * crisis.failPuzzleTick - 12f;
-                obstacle = Instantiate(obstaclePrefab, new Vector3(0, 0, rocksSpawnZ), Quaternion.identity);
+                float rocksSpawnZ = LevelManager.instance.currentPieceLenght * crisis.failPuzzleTick;
+                obstacle = Instantiate(obstaclePrefab, new Vector3(0, 0, rocksSpawnZ - 50f), Quaternion.identity);
             }
         }
 
