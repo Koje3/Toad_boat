@@ -14,6 +14,11 @@ public class LaserRocks : MonoBehaviour
     private GameObject obstacle;
     private bool puzzleOpen;
 
+    public int obstacleCount;
+    public float obstacleSpacing;
+
+    // public bool scrollObstacles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +28,12 @@ public class LaserRocks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (obstacle != null)
         {
             ScrollObstacles();
         }
+        */
     }
 
 
@@ -34,12 +41,28 @@ public class LaserRocks : MonoBehaviour
     {
         puzzleOpen = true;
 
+        // scrollObstacles = true;
+
         foreach (Crises crisis in LevelManager.instance.currentPiece.crises)
         {
             if (crisis.crisisSubType == CrisisSubType.Rocks)
             {
                 float rocksSpawnZ = LevelManager.instance.currentPieceLenght * crisis.failPuzzleTick;
-                obstacle = Instantiate(obstaclePrefab, new Vector3(0, 0, rocksSpawnZ - 50f), Quaternion.identity);
+                obstacle = Instantiate(obstaclePrefab, new Vector3(0, 0, rocksSpawnZ), Quaternion.identity);            
+
+                break;
+            }
+
+            if (crisis.crisisSubType == CrisisSubType.Rocks2)
+            {
+                float rocksSpawnZ = LevelManager.instance.currentPieceLenght * crisis.failPuzzleTick;
+
+                for (int i = 0; i < obstacleCount; i++)
+                {
+                    obstacle = Instantiate(obstaclePrefab, new Vector3(0, 0, rocksSpawnZ + obstacleSpacing * i), Quaternion.identity);
+                }
+
+                break;
             }
         }
 
@@ -91,10 +114,13 @@ public class LaserRocks : MonoBehaviour
         puzzleObject.FixCrisis(crisisTypeToSolve);
     }
 
-
+/*
     public void ScrollObstacles()
     {
+        if (scrollObstacles)
         obstacle.transform.Translate(Vector3.back * LevelManager.instance.speedDelta);
        
     }
+*/
+
 }
