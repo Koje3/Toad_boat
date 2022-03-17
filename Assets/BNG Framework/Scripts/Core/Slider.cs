@@ -61,7 +61,8 @@ namespace BNG {
 
         void Update() {
            
-           sliderTxt.text = kylttiin + " " + SlidePercentage + "%"; // omaa koodia / Otto
+            if (sliderTxt != null)
+            sliderTxt.text = kylttiin + " " + SlidePercentage + "%"; // omaa koodia / Otto
             
 
             
