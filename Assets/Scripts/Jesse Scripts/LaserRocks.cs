@@ -59,7 +59,7 @@ public class LaserRocks : MonoBehaviour
 
                 for (int i = 0; i < obstacleCount; i++)
                 {
-                    obstacle = Instantiate(obstaclePrefab, new Vector3(0, 0, rocksSpawnZ + obstacleSpacing * i), Quaternion.identity);
+                    obstacle = Instantiate(obstaclePrefab, new Vector3(Random.Range(-8, 8), 0, rocksSpawnZ + obstacleSpacing * i), Quaternion.identity);
                 }
 
                 break;
