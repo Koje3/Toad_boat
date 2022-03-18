@@ -81,10 +81,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Ambient_Strength: -0.05
+    - Ambient_Strength: 0
     - Falloff_Amount: 4.82
-    - Fresnel_Size: 100
-    - Lighting_Cutoff: -0.47
+    - Fresnel_Size: 5
+    - Lighting_Cutoff: 100
     - Smoothness: 12.85
     - _AlphaClip: 0
     - _Blend: 0
@@ -99,6 +99,7 @@ Material:
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
+    - _GlossinessSource: 0
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
@@ -106,8 +107,11 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Shininess: 0
     - _Smoothness: 0.5
+    - _SmoothnessSource: 0
     - _SmoothnessTextureChannel: 0
+    - _SpecSource: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
@@ -115,10 +119,10 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Diffuse_Color: {r: 0.14117648, g: 0.14117648, b: 0.14117648, a: 0}
-    - Fresnel_Color: {r: 0, g: 1, b: 0.940187, a: 0}
+    - Fresnel_Color: {r: 0, g: 0.087367296, b: 1, a: 0}
     - Specular_Color: {r: 0.24968849, g: 0.26980945, b: 0.2924528, a: 0}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.3962264, g: 0.22614808, b: 0.26166275, a: 1}
+    - _Color: {r: 0.39622638, g: 0.22614804, b: 0.26166272, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
