@@ -23,6 +23,7 @@ public enum CrisisSubType
     Failure,
     Explosion,
     Rocks,
+    Rocks2,
 }
 
 
@@ -88,7 +89,7 @@ public class EventManager : MonoBehaviour
 
             if (CheckShouldShipMove())
             {
-                LevelManager.instance.ChangeShipSpeed(8);
+                LevelManager.instance.ChangeShipSpeed(8, 0.1f);
             }
 
         }
@@ -145,47 +146,6 @@ public class EventManager : MonoBehaviour
 }
 
 
-/*
-
-[Serializable]
-public class EngineCrisis
-{
-    [Header("Select Engine State")]
-    public EngineState engineCrisis;
-
-    [Space(2)]
-
-    [Header("Does ship's speed stop?")]
-    public bool shipSpeedStop;
-
-    [Space(2)]
-
-    public bool isCrisisStarted;
-
-    public float startPuzzleTick;
-    public float failPuzzleTick;
-    public void Tick(float tick)
-    {
-        if (!isCrisisStarted)
-        {
-            if (tick > startPuzzleTick)
-            {
-                LevelManager.instance.currentPiece.changeEngineCrisisState(engineCrisis);
-                isCrisisStarted = true;
-            }
-        }
-        else
-        {
-            if (failPuzzleTick > 0 && tick > failPuzzleTick)
-            {
-                // enginecrises is failing
-            }
-        }
-
-    }
-
-}
-*/
 
 [Serializable]
 public class Crises
@@ -229,7 +189,7 @@ public class Crises
 
                 if (stopShipSpeed == true)
                 {
-                    LevelManager.instance.ChangeShipSpeed(0);
+                    LevelManager.instance.ChangeShipSpeed(0, 0.1f);
                 }
 
                 isCrisisStarted = true;               
