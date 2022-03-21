@@ -45,7 +45,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7071dbdf4e4b00458f0a7c3fc0961cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crises: []
+  crises:
+  - puzzleComponent: 5
+    crisisSubType: 6
+    stopShipSpeed: 0
+    isCrisisStarted: 0
+    startPuzzleTick: 0.058
+    failPuzzleTick: 0.281
+    gameOverAfterFail: 0
+    isCrisisFixed: 0
+    isCrisisEnded: 0
+  - puzzleComponent: 5
+    crisisSubType: 7
+    stopShipSpeed: 0
+    isCrisisStarted: 0
+    startPuzzleTick: 0.073
+    failPuzzleTick: 0.708
+    gameOverAfterFail: 0
+    isCrisisFixed: 0
+    isCrisisEnded: 0
+  - puzzleComponent: 2
+    crisisSubType: 3
+    stopShipSpeed: 0
+    isCrisisStarted: 0
+    startPuzzleTick: 0.037
+    failPuzzleTick: 0.708
+    gameOverAfterFail: 0
+    isCrisisFixed: 0
+    isCrisisEnded: 0
 --- !u!1 &7366874450568838618
 GameObject:
   m_ObjectHideFlags: 0
