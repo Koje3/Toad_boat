@@ -15,7 +15,7 @@ C:/Users/paja/Desktop/Toad_boat
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60816
+59464
 Successfully changed project path to: C:/Users/paja/Desktop/Toad_boat
 C:/Users/paja/Desktop/Toad_boat
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,8 +47,8 @@ C:/Users/paja/Desktop/Toad_boat
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 162.74 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 2.37 ms.
+Refreshing native plugins compatible for Editor in 263.77 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 3.74 ms.
 Initialize engine version: 2021.2.10f1 (ee872746220e)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/paja/Desktop/Toad_boat/Assets
@@ -63,51 +63,51 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56860
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56836
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005017 seconds.
+Registered in 0.005176 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 142.06 ms, found 13 plugins.
+Refreshing native plugins compatible for Editor in 226.13 ms, found 13 plugins.
 Preloading 1 native plugins for Editor in 0.07 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.711 seconds
+- Completed reload, in  0.780 seconds
 Domain Reload Profiling:
-	ReloadAssembly (711ms)
-		BeginReloadAssembly (80ms)
+	ReloadAssembly (780ms)
+		BeginReloadAssembly (73ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (540ms)
-			LoadAssemblies (79ms)
+		EndReloadAssembly (631ms)
+			LoadAssemblies (72ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (118ms)
+			SetupTypeCache (111ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (25ms)
-			SetupLoadedEditorAssemblies (336ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (440ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (14ms)
+				InitializePlatformSupportModulesInManaged (16ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (142ms)
+				RefreshPlugins (226ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (137ms)
-				ProcessInitializeOnLoadMethodAttributes (42ms)
+				ProcessInitializeOnLoadAttributes (145ms)
+				ProcessInitializeOnLoadMethodAttributes (52ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.010764 seconds.
+Registered in 0.013566 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 166.45 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.09 ms.
+Refreshing native plugins compatible for Editor in 162.38 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 0.07 ms.
 Package Manager log level set to [2]
 System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
   at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00040] in C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:250 
@@ -125,43 +125,43 @@ UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
 
 Mono: successfully reloaded assembly
-- Completed reload, in  2.747 seconds
+- Completed reload, in  3.033 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2748ms)
-		BeginReloadAssembly (109ms)
+	ReloadAssembly (3034ms)
+		BeginReloadAssembly (174ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (10ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (23ms)
-		EndReloadAssembly (2550ms)
-			LoadAssemblies (106ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (2724ms)
+			LoadAssemblies (133ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (473ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (92ms)
-			SetupLoadedEditorAssemblies (1821ms)
+			SetupTypeCache (390ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (90ms)
+			SetupLoadedEditorAssemblies (2071ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (10ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (167ms)
-				BeforeProcessingInitializeOnLoad (152ms)
-				ProcessInitializeOnLoadAttributes (1388ms)
-				ProcessInitializeOnLoadMethodAttributes (98ms)
+				RefreshPlugins (163ms)
+				BeforeProcessingInitializeOnLoad (185ms)
+				ProcessInitializeOnLoadAttributes (1598ms)
+				ProcessInitializeOnLoadMethodAttributes (110ms)
 				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 2.92 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.09 ms.
+Refreshing native plugins compatible for Editor in 2.97 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 0.11 ms.
 Unloading 7057 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 281 unused Assets / (1.9 MB). Loaded Objects now: 7470.
-Memory consumption went from 290.7 MB to 288.8 MB.
-Total: 10.564600 ms (FindLiveObjects: 0.850700 ms CreateObjectMapping: 0.977000 ms MarkObjects: 7.500900 ms  DeleteObjects: 1.234300 ms)
+Memory consumption went from 290.6 MB to 288.7 MB.
+Total: 9.082600 ms (FindLiveObjects: 0.741300 ms CreateObjectMapping: 1.292100 ms MarkObjects: 5.857200 ms  DeleteObjects: 1.190400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -175,374 +175,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 20892.911518 seconds.
-  path: Assets/Assets/Veera/1st Block Jungle.prefab
-  artifactKey: Guid(b59271aa9160dd34c81e651fc0c6e081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/1st Block Jungle.prefab using Guid(b59271aa9160dd34c81e651fc0c6e081) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tree prefab at index 0 is missing.
-Tree prefab at index 1 is missing.
-Tree prefab at index 2 is missing.
-The tree tree04 couldn't be instanced because the prefab contains no valid mesh renderer.
-Tree prefab at index 4 is missing.
-Tree prefab at index 5 is missing.
-Tree prefab at index 6 is missing.
-The tree P_AncientRuins_Sword must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
-The tree Rock must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
-The tree mushroom_All2 couldn't be instanced because the prefab contains no valid mesh renderer.
-The tree P_AncientRuins_Plants7 must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
-The tree tree couldn't be instanced because the prefab contains no valid mesh renderer.
-The tree Col_1_tree_6 Variant 1 couldn't be instanced because one of the materials is missing.
-The tree Col_1_tree_6 Variant 1 couldn't be instanced because the mesh renderer material is null.
-The tree Col_1_tree_6 Variant 1 couldn't be instanced because one of the materials is missing.
- -> (artifact id: '3bcd5edea466d61fe9143d0bf95792de') in 1.099882 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Assets/Veera/Veera_Jesse_TestScene.unity
-  artifactKey: Guid(8691d0a51b7e36145a3669e20326342f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Veera_Jesse_TestScene.unity using Guid(8691d0a51b7e36145a3669e20326342f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7bf28284e2c5d776d34c1a690111dcf') in 0.007855 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.083200 seconds.
-  path: Assets/Scenes/Otto_Venttiili.unity
-  artifactKey: Guid(c3185f681e4b7884089f10374f514b2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Otto_Venttiili.unity using Guid(c3185f681e4b7884089f10374f514b2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64558b94b9624f05151a667d199309d3') in 0.005811 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.278520 seconds.
-  path: Assets/Scenes/Otto_Test.unity
-  artifactKey: Guid(3bd9c616a3eb80f4e8a0888daa30c320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Otto_Test.unity using Guid(3bd9c616a3eb80f4e8a0888daa30c320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e894c47a26a69ae8b7d599851b7aeb3') in 0.010105 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.482667 seconds.
-  path: Assets/Scenes/Jesse_Test_Scene1.unity
-  artifactKey: Guid(dfed7aa942adf61468ae19a3c9a5a87d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Jesse_Test_Scene1.unity using Guid(dfed7aa942adf61468ae19a3c9a5a87d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '168b0c47cb9a8735de5b2160577dd1ad') in 0.006700 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 42.659773 seconds.
-  path: Assets/Assets/Veera/Veera_Test_Scene_Jesse.unity
-  artifactKey: Guid(8438b5d4a78ae454984357fc161fe31c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Veera_Test_Scene_Jesse.unity using Guid(8438b5d4a78ae454984357fc161fe31c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77d48fe38cc3d7b5081eb4d02dd876f8') in 0.006683 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 30.503259 seconds.
-  path: Assets/Assets/Veera/Models/LaserGun_V2.fbx
-  artifactKey: Guid(b367dff58d47e264dbf63687e6e99833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Models/LaserGun_V2.fbx using Guid(b367dff58d47e264dbf63687e6e99833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '626ae81568f52309bee1a7b229c265cb') in 0.442975 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 69.017650 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_V2_Base_AlbedoTransparency.1001.png
-  artifactKey: Guid(df4cd5a7674f2314396fae24533f9768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_V2_Base_AlbedoTransparency.1001.png using Guid(df4cd5a7674f2314396fae24533f9768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be82d26b61486e9b5c751ca8a577e4ab') in 0.035422 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_V2_Handles_AlbedoTransparency.1001.png
-  artifactKey: Guid(af0aad293daba1b46a825bf4d0b48e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_V2_Handles_AlbedoTransparency.1001.png using Guid(af0aad293daba1b46a825bf4d0b48e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b33da33f06cba3c96dd2c5c8ba77a33') in 0.022909 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_V2_LaserGunBase_AlbedoTransparency.1001.png
-  artifactKey: Guid(9d59fdc43c22bea4e9b910fd415966b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_V2_LaserGunBase_AlbedoTransparency.1001.png using Guid(9d59fdc43c22bea4e9b910fd415966b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9bc0e605439520d3f672c8e223217e6') in 0.028466 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_V2_Hatch_AlbedoTransparency.1001.png
-  artifactKey: Guid(1eed6edfa0a56da40acfd1734ec9c7b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_V2_Hatch_AlbedoTransparency.1001.png using Guid(1eed6edfa0a56da40acfd1734ec9c7b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b7e8e7068b8e39f359b9c1e7668af8a') in 0.031773 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 19.781213 seconds.
-  path: Assets/Assets/Veera/Materials/LaserGun_V2_Handles_AlbedoTransparency.1001.mat
-  artifactKey: Guid(00e961f2ff64a7c4db4391772734af53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Materials/LaserGun_V2_Handles_AlbedoTransparency.1001.mat using Guid(00e961f2ff64a7c4db4391772734af53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3939cbb116a5b45a12a1b68d412f49fa') in 0.020989 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 13.624391 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_Handles.mat
-  artifactKey: Guid(19f3487f72d884a4ba97f5b2996ab049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_Handles.mat using Guid(19f3487f72d884a4ba97f5b2996ab049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '347dc64e03652da75927447880f6ee26') in 0.022747 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 88.193259 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_Handles 1.mat
-  artifactKey: Guid(35f5ba105f1f0364283fe0334da99a85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_Handles 1.mat using Guid(35f5ba105f1f0364283fe0334da99a85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0642bbc69ae4ea5ac6e01f30047ba1ac') in 0.027752 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.297553 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_Base.mat
-  artifactKey: Guid(35f5ba105f1f0364283fe0334da99a85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_Base.mat using Guid(35f5ba105f1f0364283fe0334da99a85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72a7d7c8901c24afece115752c93cf80') in 0.025005 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 98.523244 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_Base.mat
-  artifactKey: Guid(35f5ba105f1f0364283fe0334da99a85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_Base.mat using Guid(35f5ba105f1f0364283fe0334da99a85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd74816d14422dfc6daf28f8af78d987e') in 0.021743 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.932558 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_Details.mat
-  artifactKey: Guid(2a0b505dfae496e4991c82013d3d0956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_Details.mat using Guid(2a0b505dfae496e4991c82013d3d0956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2ce632714b81bc42a4546bb1216f946') in 0.022992 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 47.356068 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_Details 1.mat
-  artifactKey: Guid(7d7e9a3bce375b0478bd714987e1b4a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_Details 1.mat using Guid(7d7e9a3bce375b0478bd714987e1b4a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cf9b2f6393a985341784b892c33538b') in 0.023456 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.940560 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_GunPipe.mat
-  artifactKey: Guid(7d7e9a3bce375b0478bd714987e1b4a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_GunPipe.mat using Guid(7d7e9a3bce375b0478bd714987e1b4a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae46bd5a7e91eb965b80fadfa0ab04c7') in 0.021032 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 35.838969 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_GunPipe 1.mat
-  artifactKey: Guid(b378d1f14963dcf44aa92bb70a0e9e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_GunPipe 1.mat using Guid(b378d1f14963dcf44aa92bb70a0e9e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2709fb96a1d9e1002947ffbc747985a') in 0.022085 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.032300 seconds.
-  path: Assets/Assets/Veera/Textures/Hatch.mat
-  artifactKey: Guid(b378d1f14963dcf44aa92bb70a0e9e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/Hatch.mat using Guid(b378d1f14963dcf44aa92bb70a0e9e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a4a496a1ea6cb1eee829a82c44f2120') in 0.023096 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 34.953164 seconds.
-  path: Assets/Assets/Veera/Textures/Hatch.mat
-  artifactKey: Guid(b378d1f14963dcf44aa92bb70a0e9e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/Hatch.mat using Guid(b378d1f14963dcf44aa92bb70a0e9e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '614fcd57d390df0ec4d3718a6a201c1e') in 0.019935 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.206853 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_Gun_Base.mat
-  artifactKey: Guid(67d926e4b161fac478d2810b513e7401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_Gun_Base.mat using Guid(67d926e4b161fac478d2810b513e7401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce9ac1106341b377e4b847e177cbd888') in 0.035830 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 53.837549 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_Gun_Base 1.mat
-  artifactKey: Guid(6fdc89c40a6e04d4f9af4fc4b3cf02ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_Gun_Base 1.mat using Guid(6fdc89c40a6e04d4f9af4fc4b3cf02ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd758fd29c878fce022b4bab01079706b') in 0.023579 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.855183 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_MiddlePart.mat
-  artifactKey: Guid(6fdc89c40a6e04d4f9af4fc4b3cf02ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_MiddlePart.mat using Guid(6fdc89c40a6e04d4f9af4fc4b3cf02ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06ce503ce0776ad86bfee94062bc98fc') in 0.021117 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.013877 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.89 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.11 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00040] in C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:250 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:235 
-  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
-  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-   --- End of inner exception stack trace ---
-  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <ac4382394009481fa61779d0ab47a96f>:0 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.799 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1799ms)
-		BeginReloadAssembly (169ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (70ms)
-		EndReloadAssembly (1525ms)
-			LoadAssemblies (118ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (400ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (70ms)
-			SetupLoadedEditorAssemblies (803ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (16ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (120ms)
-				ProcessInitializeOnLoadAttributes (569ms)
-				ProcessInitializeOnLoadMethodAttributes (89ms)
-				AfterProcessingInitializeOnLoad (6ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (23ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.75 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.10 ms.
-Unloading 6801 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 71 unused Assets / (1.9 MB). Loaded Objects now: 7651.
-Memory consumption went from 350.6 MB to 348.8 MB.
-Total: 6.916500 ms (FindLiveObjects: 0.731100 ms CreateObjectMapping: 0.538100 ms MarkObjects: 5.151500 ms  DeleteObjects: 0.493900 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 1518.039927 seconds.
-  path: Assets/Assets/Veera/Materials/Metals/Black.mat
-  artifactKey: Guid(812084966345ac04ea62285113d75cb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Materials/Metals/Black.mat using Guid(812084966345ac04ea62285113d75cb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b8f22c93f7248daec22cb72995de214') in 0.178073 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1536.483187 seconds.
-  path: Assets/Assets/Veera/Materials/BlueLight 1.mat
-  artifactKey: Guid(429f880f15bd24543a8e7720e50c57f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Materials/BlueLight 1.mat using Guid(429f880f15bd24543a8e7720e50c57f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0da44d218d831ed64ad3a045b5c5fb47') in 0.036467 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.386656 seconds.
-  path: Assets/Assets/Veera/Materials/RedLight.mat
-  artifactKey: Guid(429f880f15bd24543a8e7720e50c57f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Materials/RedLight.mat using Guid(429f880f15bd24543a8e7720e50c57f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2eec9903759bae611f887117f3b3454a') in 0.015849 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 135.471924 seconds.
-  path: Assets/Assets/Veera/Textures/Hatch.mat
-  artifactKey: Guid(b378d1f14963dcf44aa92bb70a0e9e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/Hatch.mat using Guid(b378d1f14963dcf44aa92bb70a0e9e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef0684c9277fed9b71afede53b05c3d8') in 0.018621 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_Gun_Base.mat
-  artifactKey: Guid(67d926e4b161fac478d2810b513e7401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_Gun_Base.mat using Guid(67d926e4b161fac478d2810b513e7401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c1efe28fda88a3eb7fe90d15e49540e') in 0.017141 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_MiddlePart.mat
-  artifactKey: Guid(6fdc89c40a6e04d4f9af4fc4b3cf02ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_MiddlePart.mat using Guid(6fdc89c40a6e04d4f9af4fc4b3cf02ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ff5262283b5378e6e317af2fa849d66') in 0.030175 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000076 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_Details.mat
-  artifactKey: Guid(2a0b505dfae496e4991c82013d3d0956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_Details.mat using Guid(2a0b505dfae496e4991c82013d3d0956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59df0af7263f3afc051b77e8fe427c39') in 0.029435 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.012717 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.76 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.08 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00040] in C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:250 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:235 
-  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
-  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-   --- End of inner exception stack trace ---
-  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <ac4382394009481fa61779d0ab47a96f>:0 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.569 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1570ms)
-		BeginReloadAssembly (163ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (9ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (67ms)
-		EndReloadAssembly (1318ms)
-			LoadAssemblies (90ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (342ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (70ms)
-			SetupLoadedEditorAssemblies (730ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (11ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (113ms)
-				ProcessInitializeOnLoadAttributes (522ms)
-				ProcessInitializeOnLoadMethodAttributes (76ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (20ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 12.44 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.14 ms.
-Unloading 6789 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 68 unused Assets / (1.9 MB). Loaded Objects now: 7707.
-Memory consumption went from 350.2 MB to 348.3 MB.
-Total: 9.372000 ms (FindLiveObjects: 1.245400 ms CreateObjectMapping: 1.126800 ms MarkObjects: 6.492600 ms  DeleteObjects: 0.505600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 2222.134765 seconds.
-  path: Assets/Assets/Veera/Materials/RedLight.mat
-  artifactKey: Guid(429f880f15bd24543a8e7720e50c57f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Materials/RedLight.mat using Guid(429f880f15bd24543a8e7720e50c57f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c88a6b5d58923535016dfd4f37649a4c') in 0.167793 seconds 
+  Time since last request: 27819.154859 seconds.
+  path: Assets/Scenes/LAIVA FINAL.unity
+  artifactKey: Guid(2fcf836b68658c549945649fae60dcce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/LAIVA FINAL.unity using Guid(2fcf836b68658c549945649fae60dcce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c15e4b4c274cc91efd2f1e7bfe870862') in 0.019553 seconds 
