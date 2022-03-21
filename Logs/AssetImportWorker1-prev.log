@@ -15,7 +15,7 @@ C:/Users/paja/Desktop/Toad_boat
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-60816
+59464
 Successfully changed project path to: C:/Users/paja/Desktop/Toad_boat
 C:/Users/paja/Desktop/Toad_boat
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,8 +47,8 @@ C:/Users/paja/Desktop/Toad_boat
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 159.63 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 2.44 ms.
+Refreshing native plugins compatible for Editor in 281.14 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 3.48 ms.
 Initialize engine version: 2021.2.10f1 (ee872746220e)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/paja/Desktop/Toad_boat/Assets
@@ -63,51 +63,51 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56668
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56740
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004838 seconds.
+Registered in 0.004991 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 151.17 ms, found 13 plugins.
+Refreshing native plugins compatible for Editor in 167.18 ms, found 13 plugins.
 Preloading 1 native plugins for Editor in 0.10 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.675 seconds
+- Completed reload, in  0.839 seconds
 Domain Reload Profiling:
-	ReloadAssembly (675ms)
-		BeginReloadAssembly (74ms)
+	ReloadAssembly (840ms)
+		BeginReloadAssembly (77ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (525ms)
-			LoadAssemblies (73ms)
+		EndReloadAssembly (686ms)
+			LoadAssemblies (75ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
 			SetupTypeCache (106ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (25ms)
-			SetupLoadedEditorAssemblies (344ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (423ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (14ms)
+				InitializePlatformSupportModulesInManaged (15ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (151ms)
+				RefreshPlugins (167ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (133ms)
-				ProcessInitializeOnLoadMethodAttributes (45ms)
+				ProcessInitializeOnLoadAttributes (178ms)
+				ProcessInitializeOnLoadMethodAttributes (61ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.011145 seconds.
+Registered in 0.015792 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 160.10 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.07 ms.
+Refreshing native plugins compatible for Editor in 167.86 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
 Package Manager log level set to [2]
 System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
   at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00040] in C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:250 
@@ -125,320 +125,43 @@ UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
 
 Mono: successfully reloaded assembly
-- Completed reload, in  2.748 seconds
+- Completed reload, in  2.853 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2749ms)
-		BeginReloadAssembly (103ms)
+	ReloadAssembly (2854ms)
+		BeginReloadAssembly (131ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (11ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (22ms)
-		EndReloadAssembly (2544ms)
-			LoadAssemblies (118ms)
+			CreateAndSetChildDomain (23ms)
+		EndReloadAssembly (2615ms)
+			LoadAssemblies (97ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (456ms)
+			SetupTypeCache (424ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (100ms)
-			SetupLoadedEditorAssemblies (1817ms)
+			RebuildScriptCaches (104ms)
+			SetupLoadedEditorAssemblies (1933ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (10ms)
+				InitializePlatformSupportModulesInManaged (12ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (160ms)
-				BeforeProcessingInitializeOnLoad (156ms)
-				ProcessInitializeOnLoadAttributes (1394ms)
-				ProcessInitializeOnLoadMethodAttributes (91ms)
+				RefreshPlugins (168ms)
+				BeforeProcessingInitializeOnLoad (172ms)
+				ProcessInitializeOnLoadAttributes (1480ms)
+				ProcessInitializeOnLoadMethodAttributes (97ms)
 				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 2.43 ms, found 13 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 2.00 ms, found 13 plugins.
 Preloading 1 native plugins for Editor in 0.09 ms.
 Unloading 7057 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 281 unused Assets / (1.9 MB). Loaded Objects now: 7470.
 Memory consumption went from 290.7 MB to 288.8 MB.
-Total: 11.305100 ms (FindLiveObjects: 0.831100 ms CreateObjectMapping: 0.826600 ms MarkObjects: 8.551100 ms  DeleteObjects: 1.094500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 20893.043896 seconds.
-  path: Assets/Assets/Veera/2nd BlockVariation.prefab
-  artifactKey: Guid(aa63a27e43d3b2e409a2ec7ab824fe06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/2nd BlockVariation.prefab using Guid(aa63a27e43d3b2e409a2ec7ab824fe06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dd2b22925a71a58c1f50a2206ee2658') in 0.932973 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Assets/Veera/3rd BlockJungle.prefab
-  artifactKey: Guid(2c3124788d329ec4ca4b6d370b3471db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/3rd BlockJungle.prefab using Guid(2c3124788d329ec4ca4b6d370b3471db) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The tree mushroom_All2 couldn't be instanced because the prefab contains no valid mesh renderer.
- -> (artifact id: '16c97982d06f912c1ecc916dcfd91a1d') in 0.249791 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 152.344002 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_V2_Details_AlbedoTransparency.1001.png
-  artifactKey: Guid(8b232d373ad9cd94b824551498f1f96c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_V2_Details_AlbedoTransparency.1001.png using Guid(8b232d373ad9cd94b824551498f1f96c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a4c0eb8ad4aedcba1986ba704ff4d64') in 0.035739 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_V2_MiddlePart_AlbedoTransparency.1001.png
-  artifactKey: Guid(cd512704e829d834daa05b09d95193d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_V2_MiddlePart_AlbedoTransparency.1001.png using Guid(cd512704e829d834daa05b09d95193d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '620a386967205443dc476bf69666068e') in 0.025117 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_V2_GunPipe_AlbedoTransparency.1001.png
-  artifactKey: Guid(b8225e0e83b25f8418afd85c44c4cbda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_V2_GunPipe_AlbedoTransparency.1001.png using Guid(b8225e0e83b25f8418afd85c44c4cbda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '555cfaa730ee98553913cbb2638a252e') in 0.028654 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 121.726979 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_Handles.mat
-  artifactKey: Guid(19f3487f72d884a4ba97f5b2996ab049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_Handles.mat using Guid(19f3487f72d884a4ba97f5b2996ab049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc5c34c59dcd958023c00a596ef4847c') in 0.036365 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 105.852157 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_Handles 1.mat
-  artifactKey: Guid(2a0b505dfae496e4991c82013d3d0956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_Handles 1.mat using Guid(2a0b505dfae496e4991c82013d3d0956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb1d911b0260d37d062477cc7b4fb4d1') in 0.020597 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 53.327310 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_Details.mat
-  artifactKey: Guid(2a0b505dfae496e4991c82013d3d0956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_Details.mat using Guid(2a0b505dfae496e4991c82013d3d0956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db57a4bd855c3e951afc8c011ef25fd1') in 0.019165 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 41.818119 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_GunPipe.mat
-  artifactKey: Guid(7d7e9a3bce375b0478bd714987e1b4a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_GunPipe.mat using Guid(7d7e9a3bce375b0478bd714987e1b4a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ca04526212b809a632b982ce9f0848d') in 0.020657 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 42.025534 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_Details 1.mat
-  artifactKey: Guid(67d926e4b161fac478d2810b513e7401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_Details 1.mat using Guid(67d926e4b161fac478d2810b513e7401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bedd6574dc37793cd4287bc22308397e') in 0.018063 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 61.101675 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_Gun_Base.mat
-  artifactKey: Guid(67d926e4b161fac478d2810b513e7401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_Gun_Base.mat using Guid(67d926e4b161fac478d2810b513e7401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '752f176bb2dab720cfd4f24893a3a901') in 0.021431 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.018857 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.78 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.14 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00040] in C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:250 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:235 
-  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
-  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-   --- End of inner exception stack trace ---
-  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <ac4382394009481fa61779d0ab47a96f>:0 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.777 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1777ms)
-		BeginReloadAssembly (168ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (67ms)
-		EndReloadAssembly (1521ms)
-			LoadAssemblies (120ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (416ms)
-			ReleaseScriptCaches (4ms)
-			RebuildScriptCaches (71ms)
-			SetupLoadedEditorAssemblies (785ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (16ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (120ms)
-				ProcessInitializeOnLoadAttributes (558ms)
-				ProcessInitializeOnLoadMethodAttributes (82ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (20ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.89 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.09 ms.
-Unloading 6800 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 71 unused Assets / (1.9 MB). Loaded Objects now: 7627.
-Memory consumption went from 339.1 MB to 337.2 MB.
-Total: 9.663300 ms (FindLiveObjects: 0.804100 ms CreateObjectMapping: 0.915700 ms MarkObjects: 7.295600 ms  DeleteObjects: 0.646000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 1525.935638 seconds.
-  path: Assets/Assets/Veera/Materials/Metals/Pipes_EngineRoom.mat
-  artifactKey: Guid(da3f1dddcc4dd814395ef41ba66962f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Materials/Metals/Pipes_EngineRoom.mat using Guid(da3f1dddcc4dd814395ef41ba66962f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '668d3aed85538b4117276f905068336b') in 0.186710 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1676.417018 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_Base.mat
-  artifactKey: Guid(35f5ba105f1f0364283fe0334da99a85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_Base.mat using Guid(35f5ba105f1f0364283fe0334da99a85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07893ef293adfc02ff977332799fd32f') in 0.034590 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_GunPipe.mat
-  artifactKey: Guid(7d7e9a3bce375b0478bd714987e1b4a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_GunPipe.mat using Guid(7d7e9a3bce375b0478bd714987e1b4a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a002ad5925e06559cfdd62fa899496b') in 0.019655 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000060 seconds.
-  path: Assets/Assets/Veera/Textures/LaserGun_Handles.mat
-  artifactKey: Guid(19f3487f72d884a4ba97f5b2996ab049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Textures/LaserGun_Handles.mat using Guid(19f3487f72d884a4ba97f5b2996ab049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dff4603696b7b4221f85f069a17c5491') in 0.036784 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.013564 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.80 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.08 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Error loading file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path C:\Users\paja\Desktop\Toad_boat\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
-  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize) [0x00055] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks) [0x00000] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.StreamReader..ctor(string,System.Text.Encoding,bool)
-  at System.IO.File.InternalReadAllText (System.String path, System.Text.Encoding encoding) [0x00000] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at System.IO.File.ReadAllText (System.String path, System.Text.Encoding encoding) [0x00034] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at UnityEditor.StateCache`1[T].GetState (UnityEngine.Hash128 key, T defaultValue) [0x00041] in <ac4382394009481fa61779d0ab47a96f>:0 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.StateCache`1<UnityEditor.Tools/LayerSettings>:GetState (UnityEngine.Hash128,UnityEditor.Tools/LayerSettings)
-UnityEditor.Tools:OnEnable ()
-UnityEngine.ScriptableObject:CreateInstance (System.Type)
-UnityEngine.ScriptableObject:CreateInstance<UnityEditor.Tools> ()
-UnityEditor.Tools:get_get ()
-UnityEditor.Tools:get_visibleLayers ()
-UnityEditor.Animations.Rigging.BoneRendererUtils:.cctor () (at Library/PackageCache/com.unity.animation.rigging@1.1.1/Editor/Utils/BoneRendererUtils.cs:121)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: Library/PackageCache/com.unity.animation.rigging@1.1.1/Editor/Utils/BoneRendererUtils.cs Line: 121)
-
-System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00040] in C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:250 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\paja\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:235 
-  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
-  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-   --- End of inner exception stack trace ---
-  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <ac4382394009481fa61779d0ab47a96f>:0 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.583 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1584ms)
-		BeginReloadAssembly (165ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (9ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (68ms)
-		EndReloadAssembly (1328ms)
-			LoadAssemblies (96ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (343ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (70ms)
-			SetupLoadedEditorAssemblies (737ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (11ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (114ms)
-				ProcessInitializeOnLoadAttributes (532ms)
-				ProcessInitializeOnLoadMethodAttributes (72ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (20ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 3.56 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.14 ms.
-Unloading 6789 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 68 unused Assets / (1.9 MB). Loaded Objects now: 7683.
-Memory consumption went from 338.4 MB to 336.5 MB.
-Total: 8.819000 ms (FindLiveObjects: 0.993700 ms CreateObjectMapping: 0.813700 ms MarkObjects: 6.293900 ms  DeleteObjects: 0.716000 ms)
+Total: 7.290200 ms (FindLiveObjects: 0.746900 ms CreateObjectMapping: 0.906900 ms MarkObjects: 4.812900 ms  DeleteObjects: 0.821500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
