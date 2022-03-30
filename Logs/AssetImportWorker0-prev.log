@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2021.2/staging' branch; Version is '2021.2.10f1 (ee872746220e) revision 15632167'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22000) 64bit Professional' Language: 'fi' Physical Memory: 32682 MB
+OS: 'Windows 10  (10.0.19044) 64bit Enterprise' Language: 'en' Physical Memory: 32440 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
 COMMAND LINE ARGUMENTS:
@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2021.2.10f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/Annika/Desktop/Toad_boat
+C:/Users/annikavh/Desktop/Toad_boat
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-55073
-Successfully changed project path to: C:/Users/Annika/Desktop/Toad_boat
-C:/Users/Annika/Desktop/Toad_boat
+55428
+Successfully changed project path to: C:/Users/annikavh/Desktop/Toad_boat
+C:/Users/annikavh/Desktop/Toad_boat
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,100 +47,71 @@ C:/Users/Annika/Desktop/Toad_boat
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 127.81 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.63 ms.
+Refreshing native plugins compatible for Editor in 212.36 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 3.01 ms.
 Initialize engine version: 2021.2.10f1 (ee872746220e)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/Annika/Desktop/Toad_boat/Assets
+[Subsystems] Discovering subsystems at path C:/Users/annikavh/Desktop/Toad_boat/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3080 (ID=0x2216)
+    Renderer: NVIDIA Quadro P5000 (ID=0x1bb0)
     Vendor:   NVIDIA
-    VRAM:     10078 MB
-    Driver:   30.0.14.9649
+    VRAM:     16255 MB
+    Driver:   30.0.14.7141
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56460
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56696
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003648 seconds.
+Registered in 0.010789 seconds.
 Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 118.55 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.06 ms.
+Refreshing native plugins compatible for Editor in 188.40 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 0.12 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.500 seconds
+- Completed reload, in  0.966 seconds
 Domain Reload Profiling:
-	ReloadAssembly (500ms)
-		BeginReloadAssembly (48ms)
+	ReloadAssembly (967ms)
+		BeginReloadAssembly (127ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (397ms)
-			LoadAssemblies (46ms)
+		EndReloadAssembly (709ms)
+			LoadAssemblies (124ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (72ms)
+			SetupTypeCache (170ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (19ms)
-			SetupLoadedEditorAssemblies (267ms)
+			RebuildScriptCaches (37ms)
+			SetupLoadedEditorAssemblies (429ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
+				InitializePlatformSupportModulesInManaged (19ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (119ms)
+				RefreshPlugins (189ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (102ms)
-				ProcessInitializeOnLoadMethodAttributes (32ms)
+				ProcessInitializeOnLoadAttributes (165ms)
+				ProcessInitializeOnLoadMethodAttributes (55ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008757 seconds.
+Registered in 0.016581 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\Annika\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\Annika\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\annikavh\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\annikavh\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 112.38 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.06 ms.
+Refreshing native plugins compatible for Editor in 184.64 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 0.10 ms.
 Package Manager log level set to [2]
-Error saving file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path C:\Users\Annika\Desktop\Toad_boat\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding, System.Int32 bufferSize) [0x00055] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding) [0x00000] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.StreamWriter..ctor(string,bool,System.Text.Encoding)
-  at System.IO.File.WriteAllText (System.String path, System.String contents, System.Text.Encoding encoding) [0x00034] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at UnityEditor.StateCache`1[T].SetState (UnityEngine.Hash128 key, T obj) [0x0004b] in <ac4382394009481fa61779d0ab47a96f>:0 
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-UnityEditor.StateCache`1<UnityEditor.Tools/LayerSettings>:SetState (UnityEngine.Hash128,UnityEditor.Tools/LayerSettings)
-UnityEditor.Tools:set_lockedLayers (int)
-UnityEditor.Tools:OnEnable ()
-UnityEngine.ScriptableObject:CreateInstance (System.Type)
-UnityEngine.ScriptableObject:CreateInstance<UnityEditor.Tools> ()
-UnityEditor.Tools:get_get ()
-UnityEditor.Tools:get_visibleLayers ()
-UnityEditor.Animations.Rigging.BoneRendererUtils:.cctor () (at Library/PackageCache/com.unity.animation.rigging@1.1.1/Editor/Utils/BoneRendererUtils.cs:121)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: Library/PackageCache/com.unity.animation.rigging@1.1.1/Editor/Utils/BoneRendererUtils.cs Line: 121)
-
 System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00040] in C:\Users\Annika\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:250 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\Annika\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:235 
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00040] in C:\Users\annikavh\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:250 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\annikavh\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:235 
   at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
   at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
    --- End of inner exception stack trace ---
@@ -154,43 +125,43 @@ UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.791 seconds
+- Completed reload, in  3.524 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1791ms)
-		BeginReloadAssembly (79ms)
+	ReloadAssembly (3525ms)
+		BeginReloadAssembly (158ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (7ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (17ms)
-		EndReloadAssembly (1642ms)
-			LoadAssemblies (64ms)
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (3216ms)
+			LoadAssemblies (147ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (229ms)
+			SetupTypeCache (535ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (59ms)
-			SetupLoadedEditorAssemblies (1249ms)
+			RebuildScriptCaches (148ms)
+			SetupLoadedEditorAssemblies (2331ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
+				InitializePlatformSupportModulesInManaged (14ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (113ms)
-				BeforeProcessingInitializeOnLoad (117ms)
-				ProcessInitializeOnLoadAttributes (942ms)
-				ProcessInitializeOnLoadMethodAttributes (63ms)
-				AfterProcessingInitializeOnLoad (5ms)
+				RefreshPlugins (185ms)
+				BeforeProcessingInitializeOnLoad (258ms)
+				ProcessInitializeOnLoadAttributes (1764ms)
+				ProcessInitializeOnLoadMethodAttributes (100ms)
+				AfterProcessingInitializeOnLoad (10ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (3ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 1.55 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.07 ms.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 3.22 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 0.18 ms.
 Unloading 7059 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 281 unused Assets / (1.9 MB). Loaded Objects now: 7475.
-Memory consumption went from 290.3 MB to 288.3 MB.
-Total: 4.901100 ms (FindLiveObjects: 0.493000 ms CreateObjectMapping: 0.184200 ms MarkObjects: 3.632600 ms  DeleteObjects: 0.590600 ms)
+Unloading 281 unused Assets / (1.9 MB). Loaded Objects now: 7471.
+Memory consumption went from 289.6 MB to 287.7 MB.
+Total: 11.758700 ms (FindLiveObjects: 0.990800 ms CreateObjectMapping: 1.164900 ms MarkObjects: 8.202400 ms  DeleteObjects: 1.399100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -204,139 +175,559 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 25363.694731 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack.fbx
-  artifactKey: Guid(453e07401f965a743b52fcf575cb9f58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack.fbx using Guid(453e07401f965a743b52fcf575cb9f58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cac4e349b709d25de5e91f25e14f99c5') in 0.220669 seconds 
+  Time since last request: 15530.360933 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/effects/Smoke.mat
+  artifactKey: Guid(12e8a6de4a126b0438e4eb45589ad132) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/effects/Smoke.mat using Guid(12e8a6de4a126b0438e4eb45589ad132) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c62c22a4c2c8e6041e842ff8c1a82c8') in 0.343229 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 13.242472 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Material.002_Base_color.png
-  artifactKey: Guid(ef9349d63944090459bad8b882d62346) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Material.002_Base_color.png using Guid(ef9349d63944090459bad8b882d62346) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68f7a1f7d56e6a57055214fbaa0fa20b') in 0.020715 seconds 
+  Time since last request: 0.000042 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/effects/IMG_0743.PNG
+  artifactKey: Guid(be1ed27468e38c74b8c0f662df2baade) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/effects/IMG_0743.PNG using Guid(be1ed27468e38c74b8c0f662df2baade) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9265bab0dbefecd0e4124b3d1d5459fc') in 0.089876 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.876420 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Material_Base_color.png
-  artifactKey: Guid(3226256cc27a07443a7bac6a4c23ea78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Material_Base_color.png using Guid(3226256cc27a07443a7bac6a4c23ea78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '284b6d7bf8774b99f153b56a3f733fb2') in 0.014798 seconds 
+  Time since last request: 19.465017 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Log
+  artifactKey: Guid(9c9a3b36296a6fa439b65cf57612aa33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Log using Guid(9c9a3b36296a6fa439b65cf57612aa33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f92f30d5808eb81c249ba8584b624c52') in 0.010627 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 16.516507 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack.mat
-  artifactKey: Guid(e67fe5390b57228488c4d1bd92c01d0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack.mat using Guid(e67fe5390b57228488c4d1bd92c01d0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c0789bdeabd8dfb6954ccbb064e550c') in 0.011048 seconds 
+  Time since last request: 0.046735 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Log/DefaultMaterial_Base_color 1.png
+  artifactKey: Guid(ea63f422027a0784ebb07051a0583b4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Log/DefaultMaterial_Base_color 1.png using Guid(ea63f422027a0784ebb07051a0583b4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a89a9970181258feb4285c16fceaf17e') in 0.022564 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 48.986903 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack.mat
-  artifactKey: Guid(e67fe5390b57228488c4d1bd92c01d0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack.mat using Guid(e67fe5390b57228488c4d1bd92c01d0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0e8bca8ff715df80d43bd365251c0ed') in 0.015194 seconds 
+  Time since last request: 0.000039 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Log/Log.mat
+  artifactKey: Guid(a408d26c90e4f374e941d62ced433b19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Log/Log.mat using Guid(a408d26c90e4f374e941d62ced433b19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6af57983937c10c4e62374770dd618be') in 0.028498 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 45.263694 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack
-  artifactKey: Guid(635ff9f7f9e37314ea5b50251a56c4dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack using Guid(635ff9f7f9e37314ea5b50251a56c4dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41bb7d461f810bc06e1aa0c89f71f199') in 0.001468 seconds 
+  Time since last request: 185.934795 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(e6d8c724c016e064fb5ee914cbd0759a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(e6d8c724c016e064fb5ee914cbd0759a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48e7ea482616c714cb3dd2925a2c23fa') in 0.007046 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 9.576765 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack/cigarettePack.prefab
-  artifactKey: Guid(0c64a3581cca9ce4d9cbcddcebccfffc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack/cigarettePack.prefab using Guid(0c64a3581cca9ce4d9cbcddcebccfffc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd22bd2d618b935c82e91c4e1841ada1') in 0.011360 seconds 
+  Time since last request: 23.633430 seconds.
+  path: Assets/Scenes/FINAL SCENES
+  artifactKey: Guid(3bca6ed7157cd98429e8d87ba2840b94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/FINAL SCENES using Guid(3bca6ed7157cd98429e8d87ba2840b94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05a8b1614de90854df4268a62a0db86c') in 0.007211 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 17.611172 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack/cigarettePack.prefab
-  artifactKey: Guid(0c64a3581cca9ce4d9cbcddcebccfffc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack/cigarettePack.prefab using Guid(0c64a3581cca9ce4d9cbcddcebccfffc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00d107136bd135c273a954103f50239b') in 0.013484 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 102.171031 seconds.
+  Time since last request: 3.842342 seconds.
   path: Assets/Scenes/FINAL SCENES/LAIVA FINAL.unity
   artifactKey: Guid(2fcf836b68658c549945649fae60dcce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/FINAL SCENES/LAIVA FINAL.unity using Guid(2fcf836b68658c549945649fae60dcce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb583cd6322630be55ef81f64767f1c9') in 0.005193 seconds 
+Start importing Assets/Scenes/FINAL SCENES/LAIVA FINAL.unity using Guid(2fcf836b68658c549945649fae60dcce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4f76c264e956cc298193fad74d7c5c4') in 0.006817 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 35.186783 seconds.
-  path: Assets/Assets/JungleBlock stuff/rock4_collider.fbx
-  artifactKey: Guid(9551d23f5681244a5bf687feb1b45c62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/JungleBlock stuff/rock4_collider.fbx using Guid(9551d23f5681244a5bf687feb1b45c62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '174a413305c5d2eb0ba27dc65c17398c') in 0.027747 seconds 
+  Time since last request: 116.098325 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack/cigarettePack.fbx
+  artifactKey: Guid(453e07401f965a743b52fcf575cb9f58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack/cigarettePack.fbx using Guid(453e07401f965a743b52fcf575cb9f58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd395f726dca2fc2cdd8bdbec46cd44ad') in 0.114147 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack/cigarettePack2.mat
+  artifactKey: Guid(07031e78f13d28144840fafda5eb9761) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack/cigarettePack2.mat using Guid(07031e78f13d28144840fafda5eb9761) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fadc23a334fd08ab56b94158b6e8e19d') in 0.045095 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.929169 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Sam1sRoom/Materials
+  artifactKey: Guid(516db18ac8fdac844b68ceb794b94ad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Sam1sRoom/Materials using Guid(516db18ac8fdac844b68ceb794b94ad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38da2d1bf924bc0a638d2cbb9ae1510c') in 0.001832 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.555366 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/PlayFrog/magazine.prefab
+  artifactKey: Guid(6040ce18fda9fb34c945e96d942ada54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/PlayFrog/magazine.prefab using Guid(6040ce18fda9fb34c945e96d942ada54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '922e2f112876c4035c4f6a4f0a13a935') in 0.025885 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/PlayFrog/Pink.mat
+  artifactKey: Guid(2c169b219ce09b1408a59826f7773f3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/PlayFrog/Pink.mat using Guid(2c169b219ce09b1408a59826f7773f3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8eda54dd578d659d7815e48f1106e252') in 0.018607 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000100 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/PlayFrog/PlayFrog3.jpg
+  artifactKey: Guid(e27ae2342f3165940a7143fc42cd8da7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/PlayFrog/PlayFrog3.jpg using Guid(e27ae2342f3165940a7143fc42cd8da7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a3249b31462afff34d1b7cd3ef83da2') in 0.021146 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/PlayFrog/PlayFrog4.1.jpg
+  artifactKey: Guid(937ed0c359afa444d92a3ffd3349f766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/PlayFrog/PlayFrog4.1.jpg using Guid(937ed0c359afa444d92a3ffd3349f766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1c646f6236fe6a62c20da3b1d0c787d') in 0.498480 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/PlayFrog/Playfrog3.mat
+  artifactKey: Guid(a6b197f60d7f77841b27f544ee7d6841) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/PlayFrog/Playfrog3.mat using Guid(a6b197f60d7f77841b27f544ee7d6841) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9049de3ec66b9bd93b3405ccd4b2505') in 0.022573 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/PlayFrog/magazine3.prefab
+  artifactKey: Guid(d7373db5d00ce184a83975d514784904) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/PlayFrog/magazine3.prefab using Guid(d7373db5d00ce184a83975d514784904) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c346e16f8d9b5e9bc2322365f9d89727') in 0.045789 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Sam1sRoom/Book.fbx
+  artifactKey: Guid(d4edcf34f3b106141968c373e769d89d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Sam1sRoom/Book.fbx using Guid(d4edcf34f3b106141968c373e769d89d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '772bd4a4ba20cf852585f04bed383568') in 0.058042 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/PlayFrog/PlayFrog4.mat
+  artifactKey: Guid(9cc5036427005e742a872f1244965629) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/PlayFrog/PlayFrog4.mat using Guid(9cc5036427005e742a872f1244965629) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37662ff95210dd797905956735834175') in 0.040334 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.877168 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/StartMenu/StartMenuMetal.mat
+  artifactKey: Guid(5c35ee53cd1c2824598bc270ec3a2f61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/StartMenu/StartMenuMetal.mat using Guid(5c35ee53cd1c2824598bc270ec3a2f61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '504d8ebc1582de6d245b15a74b9f63fa') in 0.016408 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 31.946623 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Materials.mat
+  artifactKey: Guid(d22b2a6450a290c4abeca24cda651dd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Materials.mat using Guid(d22b2a6450a290c4abeca24cda651dd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f681628b8b2eb5ffa57dfb824740609') in 0.010319 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.056559 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Materials
+  artifactKey: Guid(e462f3377e2ba614ab49816106685e55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Materials using Guid(e462f3377e2ba614ab49816106685e55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64148c985a957819739b0c00ef674327') in 0.002174 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.046235 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Materials/New Material.mat
+  artifactKey: Guid(6fbc754f5bbbfc44397b79dcc2a73a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Materials/New Material.mat using Guid(6fbc754f5bbbfc44397b79dcc2a73a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe4b4167d83aed2421c7c8291fa211e4') in 0.016009 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.947928 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Materials/DresserMaterial.mat
+  artifactKey: Guid(6fbc754f5bbbfc44397b79dcc2a73a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Materials/DresserMaterial.mat using Guid(6fbc754f5bbbfc44397b79dcc2a73a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2804e987051e3d213a6d857ed730a4cd') in 0.015320 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 180.284466 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/effects/Particle System.prefab
+  artifactKey: Guid(f25e1efebba301543b3c64805fb13d2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/effects/Particle System.prefab using Guid(f25e1efebba301543b3c64805fb13d2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '217276b686cf659bfcf8aa67e2de2801') in 0.019048 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 54.671459 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/effects/Electricity.prefab
+  artifactKey: Guid(f25e1efebba301543b3c64805fb13d2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/effects/Electricity.prefab using Guid(f25e1efebba301543b3c64805fb13d2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff6eb5be0b3999f2ac147344587881a1') in 0.014599 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 365.583304 seconds.
+  path: Assets/Assets/Jassun assetteja/kitchen/Materials/Atlas_1A_D.mat
+  artifactKey: Guid(0a62dd91a3c0698498289745bbd3c24d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/kitchen/Materials/Atlas_1A_D.mat using Guid(0a62dd91a3c0698498289745bbd3c24d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57bec6b3d05f7bda412b03a3d03d3b7f') in 0.020186 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Materials/Boxes.mat
+  artifactKey: Guid(0a912b563420de147828aee5fb6148da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Materials/Boxes.mat using Guid(0a912b563420de147828aee5fb6148da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a20c0ab71dcf271aecf9c1d87b7fa0b5') in 0.077882 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Assets/Jassun assetteja/office/Materials/Atlas_1A_D.mat
+  artifactKey: Guid(03e91afe63ff3d649ba249dd067ad831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/office/Materials/Atlas_1A_D.mat using Guid(03e91afe63ff3d649ba249dd067ad831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77e6bf7fe686ad2959ee4d9432b0b168') in 0.013167 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000040 seconds.
-  path: Assets/Assets/JungleBlock stuff/T_AncientRuins_Rocks_D.png
-  artifactKey: Guid(8b48d41a1a078504a8712cd3309a0b4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/JungleBlock stuff/T_AncientRuins_Rocks_D.png using Guid(8b48d41a1a078504a8712cd3309a0b4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61d6657b00e3858b9e2ff1ba3d8a8f68') in 0.019761 seconds 
+  path: Assets/Assets/Jassun assetteja/office/Materials/Atlas_Lights_1A_D.mat
+  artifactKey: Guid(3e20766e204fc954dbd31a8f586a5ebf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/office/Materials/Atlas_Lights_1A_D.mat using Guid(3e20766e204fc954dbd31a8f586a5ebf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36937e73dddc1d539d634799363c7e81') in 0.011487 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Assets/JungleBlock stuff/T_AncientRuins_Props_AO.png
-  artifactKey: Guid(70c24d24aad6f23489c466d68da503cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/JungleBlock stuff/T_AncientRuins_Props_AO.png using Guid(70c24d24aad6f23489c466d68da503cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19f416215ea97d393b0ca5d4a94a23e8') in 0.017975 seconds 
+  Time since last request: 0.000031 seconds.
+  path: Assets/Assets/Jassun assetteja/light props/Materials/Atlas_1A_D.mat
+  artifactKey: Guid(bd36d490e8898284e877346d2e6cfa91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/light props/Materials/Atlas_1A_D.mat using Guid(bd36d490e8898284e877346d2e6cfa91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db1c63e4bbdd3f60abbcacc19b895561') in 0.011703 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Assets/JungleBlock stuff/Terrain_(-706.84, 2.24, 1711.20).prefab
-  artifactKey: Guid(a806f564849ef4447a3328218d8866de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/JungleBlock stuff/Terrain_(-706.84, 2.24, 1711.20).prefab using Guid(a806f564849ef4447a3328218d8866de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04462c2a8a6820b759beec3e86c337c1') in 0.008248 seconds 
+  Time since last request: 1.328770 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Dice/Dice1.mat
+  artifactKey: Guid(7876eae1e3b4a1347844e5324a875a68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Dice/Dice1.mat using Guid(7876eae1e3b4a1347844e5324a875a68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df9dfbf46223174972f61be30be02cb8') in 0.020561 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Assets/JungleBlock stuff/T_Plants_NOpenGL.png
-  artifactKey: Guid(b13692f49b72ef54d8eabbaa70f98fd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/JungleBlock stuff/T_Plants_NOpenGL.png using Guid(b13692f49b72ef54d8eabbaa70f98fd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa5c7f64a1e31ac95fccfde05f1cd971') in 0.023437 seconds 
+  Time since last request: 0.000041 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Materials/DresserMaterial.mat
+  artifactKey: Guid(6fbc754f5bbbfc44397b79dcc2a73a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Materials/DresserMaterial.mat using Guid(6fbc754f5bbbfc44397b79dcc2a73a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54fd016d436be066948fa763799329dc') in 0.018212 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Assets/JungleBlock stuff/rocks_nm.PNG
-  artifactKey: Guid(5048b8ba3627749ca97fb49b9bda9f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/JungleBlock stuff/rocks_nm.PNG using Guid(5048b8ba3627749ca97fb49b9bda9f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e73279b36de78479a4742d05536790f6') in 0.047129 seconds 
+  Time since last request: 0.000028 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Dice/Dice3.mat
+  artifactKey: Guid(2f844fe305c3b8246ac74716bdb16eea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Dice/Dice3.mat using Guid(2f844fe305c3b8246ac74716bdb16eea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d7b3c93288f574844f6096ec44bdeb1') in 0.020625 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Dice/Dice4.mat
+  artifactKey: Guid(d320362d504ce6e43aab70800fca033c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Dice/Dice4.mat using Guid(d320362d504ce6e43aab70800fca033c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08ee0ce626c434b5f0ee455bc36af022') in 0.016207 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.192845 seconds.
+  path: Assets/Assets/Jassun assetteja/kitchen/Materials/Glass-Objects_1A_D.mat
+  artifactKey: Guid(86c595f1279d08e4bad4bb6dc0d201d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/kitchen/Materials/Glass-Objects_1A_D.mat using Guid(86c595f1279d08e4bad4bb6dc0d201d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a90c4816e839f8d803bab759c6eae80') in 0.014967 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.024376 seconds.
+  path: Assets/Assets/Jassun assetteja/general ship props/Materials/Glass_Windows_01A_D.mat
+  artifactKey: Guid(0d2ec401052212a48a67373437c363a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/general ship props/Materials/Glass_Windows_01A_D.mat using Guid(0d2ec401052212a48a67373437c363a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22d69d45a35c7a35f6f90d8003ec0b03') in 0.017961 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Assets/Jessen testiassetit/Materials/green glow.mat
+  artifactKey: Guid(b2170c079be4c88449e202d235ad0ecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jessen testiassetit/Materials/green glow.mat using Guid(b2170c079be4c88449e202d235ad0ecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d6b1e1711ab59769af94710686a37b3') in 0.022412 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.066463 seconds.
+  path: Assets/Assets/Jessen testiassetit/Effects/Smoke & Steam Effects/Materials/GroundFog.mat
+  artifactKey: Guid(f96090edaea7c564c80586f4385918fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jessen testiassetit/Effects/Smoke & Steam Effects/Materials/GroundFog.mat using Guid(f96090edaea7c564c80586f4385918fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b353a59f00d9513efbce39141234d0e0') in 0.060044 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Assets/Veera/Textures/LaserGun_Gun_Base.mat
+  artifactKey: Guid(67d926e4b161fac478d2810b513e7401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Veera/Textures/LaserGun_Gun_Base.mat using Guid(67d926e4b161fac478d2810b513e7401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40f62d5d33c8d4a41e49e549186dbb1a') in 0.028721 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Assets/Veera/Textures/LaserGun_Base.mat
+  artifactKey: Guid(35f5ba105f1f0364283fe0334da99a85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Veera/Textures/LaserGun_Base.mat using Guid(35f5ba105f1f0364283fe0334da99a85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba3ec8e22d05ca93f42a2212b176cd83') in 0.026690 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Materials/IMG_0741.mat
+  artifactKey: Guid(a3b6bc47ebdb10b42b6b39b7b6b64b29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Materials/IMG_0741.mat using Guid(a3b6bc47ebdb10b42b6b39b7b6b64b29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd6380e3cc0fd12c1b9e49ec981bc4fe') in 0.016767 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Materials/IMG_741.mat
+  artifactKey: Guid(209adf37a3cd2d54f98c3c1a97b14cb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Materials/IMG_741.mat using Guid(209adf37a3cd2d54f98c3c1a97b14cb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb0075a63ca1e3dc2a571e1f33cb32df') in 0.025382 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Assets/Veera/Textures/LaserGun_GunPipe.mat
+  artifactKey: Guid(7d7e9a3bce375b0478bd714987e1b4a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Veera/Textures/LaserGun_GunPipe.mat using Guid(7d7e9a3bce375b0478bd714987e1b4a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18c964d7b531bc97ccacc1320c73e63e') in 0.024531 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Assets/Veera/Textures/LaserGun_MiddlePart.mat
+  artifactKey: Guid(6fdc89c40a6e04d4f9af4fc4b3cf02ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Veera/Textures/LaserGun_MiddlePart.mat using Guid(6fdc89c40a6e04d4f9af4fc4b3cf02ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33039c2ea901c63c6f820484863d912b') in 0.020308 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Assets/Veera/Textures/LaserGun_Handles.mat
+  artifactKey: Guid(19f3487f72d884a4ba97f5b2996ab049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Veera/Textures/LaserGun_Handles.mat using Guid(19f3487f72d884a4ba97f5b2996ab049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7c77f1859cf4a632624aa01a97ebb80') in 0.022346 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Assets/Veera/Textures/Hatch.mat
+  artifactKey: Guid(b378d1f14963dcf44aa92bb70a0e9e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Veera/Textures/Hatch.mat using Guid(b378d1f14963dcf44aa92bb70a0e9e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bab56d77c731314a7bc1beed90ab704') in 0.020918 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Assets/Veera/Textures/LaserGun_Details.mat
+  artifactKey: Guid(2a0b505dfae496e4991c82013d3d0956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Veera/Textures/LaserGun_Details.mat using Guid(2a0b505dfae496e4991c82013d3d0956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '811f226b45880fd9d2660852d43230fb') in 0.023407 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.821878 seconds.
+  path: Assets/Assets/Jassun assetteja/scifi barrel/Material/New Sci fi Barrel.mat
+  artifactKey: Guid(aa07edefe97d3cf46908134579f6def3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/scifi barrel/Material/New Sci fi Barrel.mat using Guid(aa07edefe97d3cf46908134579f6def3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9ce1aa2b2c80b70eaabeaffc7e51618') in 0.089895 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Assets/Jassun assetteja/scifi barrel/Texture/Materials/New_Sci_fi_barrel_MetallicSmoothness.mat
+  artifactKey: Guid(a9eed3602560d1a4d94650df4ce23b54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/scifi barrel/Texture/Materials/New_Sci_fi_barrel_MetallicSmoothness.mat using Guid(a9eed3602560d1a4d94650df4ce23b54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81d6889257590c352910a5cbc1bf57dc') in 0.019211 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.849754 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/PlayFrog/Materials/PlayFrog3.mat
+  artifactKey: Guid(74ca3e39bae5a1d4d9d8b7446751db62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/PlayFrog/Materials/PlayFrog3.mat using Guid(74ca3e39bae5a1d4d9d8b7446751db62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c574f408636576bf972a9f093f23959') in 0.023342 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.335567 seconds.
+  path: Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Materials/Radio.mat
+  artifactKey: Guid(509fc16fb26e4e647bb128d95cbfd187) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Materials/Radio.mat using Guid(509fc16fb26e4e647bb128d95cbfd187) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c4f1186a2f198709d7f44849107d4da') in 0.018383 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.025213 seconds.
+  path: Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Materials/Sand.mat
+  artifactKey: Guid(94b171b990f48e94f88dffe53ec3cb0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Materials/Sand.mat using Guid(94b171b990f48e94f88dffe53ec3cb0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca0b4569a3ac6e8102d2b29462cb2ede') in 0.021955 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.456528 seconds.
+  path: Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Materials/Tire.mat
+  artifactKey: Guid(8e588133e20dc764cb4d246e85ca2774) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Materials/Tire.mat using Guid(8e588133e20dc764cb4d246e85ca2774) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e98c51709980bf511b4fa027bcfba4f') in 0.029534 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.652191 seconds.
+  path: Assets/Assets/Jassun assetteja/scifi barrel/Texture/Materials/Used_Sci fi barrel_AlbedoTransparency.mat
+  artifactKey: Guid(071ec9e39cec9a243a552a4b1583440e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/scifi barrel/Texture/Materials/Used_Sci fi barrel_AlbedoTransparency.mat using Guid(071ec9e39cec9a243a552a4b1583440e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5988105ec9c34916b5decdde7dc449fc') in 0.020411 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Assets/Jessen testiassetit/Simple Water Shader/Resources/Water_mat_01.mat
+  artifactKey: Guid(141d9d6ca43b6c843965491604c6deff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jessen testiassetit/Simple Water Shader/Resources/Water_mat_01.mat using Guid(141d9d6ca43b6c843965491604c6deff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eee310cf9d436659019ec504d8129df8') in 0.045941 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 95.110121 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack
+  artifactKey: Guid(635ff9f7f9e37314ea5b50251a56c4dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/cigarettePack using Guid(635ff9f7f9e37314ea5b50251a56c4dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'defe0c5861b7d2474738fac16b50367f') in 0.006524 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 312.297107 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Dice/1.png
+  artifactKey: Guid(d7fa64bb07651a74f918d208734f2b7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Dice/1.png using Guid(d7fa64bb07651a74f918d208734f2b7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '602ac1e974efb9c9defa1c6a158cc152') in 0.053572 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Dice/6.png
+  artifactKey: Guid(1a26adcba7ee99b4fa5c0d40819402d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Dice/6.png using Guid(1a26adcba7ee99b4fa5c0d40819402d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7a1da82391226f0088995d0952f4232') in 0.040571 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Dice/3.png
+  artifactKey: Guid(5d5e97cf12217254b9957da0c367150d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Dice/3.png using Guid(5d5e97cf12217254b9957da0c367150d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8062785c311978ad1b26be109d65df1') in 0.039791 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1318.892076 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Kasvihuone/platform.fbx
+  artifactKey: Guid(85a435822873c7e42b38803b3cd6d1a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Kasvihuone/platform.fbx using Guid(85a435822873c7e42b38803b3cd6d1a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '795e9afc57af7ebdbb1dfb685617c26f') in 0.222294 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 873.078556 seconds.
+  path: Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Meshes/Barrel.FBX
+  artifactKey: Guid(87e15378adbdf5f419f53c072bf97b50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Meshes/Barrel.FBX using Guid(87e15378adbdf5f419f53c072bf97b50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd81d36741d7a74f927ed638369847b75') in 0.029761 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Meshes/Brick_2.FBX
+  artifactKey: Guid(52d236991fac2dd4fba4c792867bc904) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Meshes/Brick_2.FBX using Guid(52d236991fac2dd4fba4c792867bc904) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a112f4b22b2f557381a252a9b83a5d35') in 0.032436 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Meshes/Brick_1.FBX
+  artifactKey: Guid(df335cf11d53d3544be0a29ed0130c7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Meshes/Brick_1.FBX using Guid(df335cf11d53d3544be0a29ed0130c7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad95d040fcb6497c425e04dcd219e359') in 0.023394 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.300492 seconds.
+  path: Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Prefabs/Barrel.prefab
+  artifactKey: Guid(2a50c600c02247440ad48ca1f358d1b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Prefabs/Barrel.prefab using Guid(2a50c600c02247440ad48ca1f358d1b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '302f7cabe3977c4d36a6eac8a5eff047') in 0.013540 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Prefabs/Brick_2.prefab
+  artifactKey: Guid(882caf5b1bbeb8341a225c39e7d0c71e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Prefabs/Brick_2.prefab using Guid(882caf5b1bbeb8341a225c39e7d0c71e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5ffd6a460c1aa13bf24cb27f754c8b9') in 0.014909 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Prefabs/Box_2.prefab
+  artifactKey: Guid(b59bf6a163c105e4985405750426f447) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Prefabs/Box_2.prefab using Guid(b59bf6a163c105e4985405750426f447) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfef1c09913ba9e09ad2a873a1f6def6') in 0.011911 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.005276 seconds.
+  path: Assets/BNG Framework/Prefabs/Desk2.prefab
+  artifactKey: Guid(409c29609963914488169a846ec3ecdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BNG Framework/Prefabs/Desk2.prefab using Guid(409c29609963914488169a846ec3ecdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '919c2ddea8ed6e56745979b196f6495c') in 0.047152 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Assets/Veera/Alstrainfinite/KitchenAppliances/Prefabs/(Old) Version1.0/Dryer.prefab
+  artifactKey: Guid(3103dcc75cee1ec4cba217971fd184be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Veera/Alstrainfinite/KitchenAppliances/Prefabs/(Old) Version1.0/Dryer.prefab using Guid(3103dcc75cee1ec4cba217971fd184be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dffd3945aab9401ba77dfdb41fd8a44') in 0.019965 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 583.798315 seconds.
+  path: Assets/Assets/Jassun assetteja/general ship props/TH_Fire_Extinguisher_01A.fbx
+  artifactKey: Guid(7fc3452cec204904792083a85cb951a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/general ship props/TH_Fire_Extinguisher_01A.fbx using Guid(7fc3452cec204904792083a85cb951a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad6104c94536ff8af88275d6d20a7092') in 0.097060 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Assets/Jassun assetteja/general ship props/TH_Fire_Extinguisher_01B_Fixed.fbx
+  artifactKey: Guid(ac375bc67c83883419d55ec8a9a0c245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/general ship props/TH_Fire_Extinguisher_01B_Fixed.fbx using Guid(ac375bc67c83883419d55ec8a9a0c245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a37ebec9589ba39ffc873c7cabb6036f') in 0.051261 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Assets/Jassun assetteja/general ship props/TH_Metal_Cable_Waste_01D.fbx
+  artifactKey: Guid(1da014211d4643f45952163af02649c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/general ship props/TH_Metal_Cable_Waste_01D.fbx using Guid(1da014211d4643f45952163af02649c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20f629157acb931d413931eb67d275c3') in 0.050058 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Assets/Jassun assetteja/general ship props/TH_Fire_Extinguisher_01B.fbx
+  artifactKey: Guid(5c4c49c1b70d72247b7ac63a48351d27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/general ship props/TH_Fire_Extinguisher_01B.fbx using Guid(5c4c49c1b70d72247b7ac63a48351d27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '493bdee8e211db1f23c482008749120c') in 0.030438 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.932859 seconds.
+  path: Assets/Assets/Jassun assetteja/office/TH_Office_Notepad_01A.fbx
+  artifactKey: Guid(58b3249a1c7f6544d92d149e9c1d7e01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/office/TH_Office_Notepad_01A.fbx using Guid(58b3249a1c7f6544d92d149e9c1d7e01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7ea2975f81ebe5ccafd5230be7fa33b') in 0.030221 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Assets/Jassun assetteja/office/TH_Office_Sticky_Note_01A.fbx
+  artifactKey: Guid(29d7c321d7b86eb439b23f7183f8f52a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/office/TH_Office_Sticky_Note_01A.fbx using Guid(29d7c321d7b86eb439b23f7183f8f52a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68ff61e4dcba9e94dfc37a61dfa23749') in 0.029264 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Assets/Jassun assetteja/office/TH_Office_Sticky_Notes_01A.fbx
+  artifactKey: Guid(b416acb038ef8ea4bbd3dc069fdca2c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/office/TH_Office_Sticky_Notes_01A.fbx using Guid(b416acb038ef8ea4bbd3dc069fdca2c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fa5256a4e43b73207e1bc1ed1e05496') in 0.032440 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Assets/Jassun assetteja/office/TH_Office_Paper_Stack_01A.fbx
+  artifactKey: Guid(d7d6a41e6804b244498cf65fe9954160) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/office/TH_Office_Paper_Stack_01A.fbx using Guid(d7d6a41e6804b244498cf65fe9954160) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8199caea6d38422c9af87433fa89600f') in 0.032557 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Assets/Jassun assetteja/office/TH_PC_Vintage_Screen_01A.fbx
+  artifactKey: Guid(85d285f60abdf6a40ac1d90b39b8a062) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/office/TH_PC_Vintage_Screen_01A.fbx using Guid(85d285f60abdf6a40ac1d90b39b8a062) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2ca6d72302a20319bde70c8c9b8cc98') in 0.030846 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 28.866471 seconds.
+  path: Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Prefabs
+  artifactKey: Guid(a805529b79196314c9409b190a2c2cb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Prefabs using Guid(a805529b79196314c9409b190a2c2cb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a540e729b246dc966dfd709b382d28d7') in 0.011355 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.053618 seconds.
+  path: Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Prefabs/Props.prefab
+  artifactKey: Guid(39a0b72655472ce4b8810605c4a5a0ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Prefabs/Props.prefab using Guid(39a0b72655472ce4b8810605c4a5a0ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb85dd9e5c61765d4109d76a6355c000') in 0.171688 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Prefabs/Sign_1.prefab
+  artifactKey: Guid(72d0ca7670d2185439d886f4af805734) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Prefabs/Sign_1.prefab using Guid(72d0ca7670d2185439d886f4af805734) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e1b83a5507d999678363db084978a27') in 0.032232 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Prefabs/Tire.prefab
+  artifactKey: Guid(b0eb2d4d990969844b1b54f631f158b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Prefabs/Tire.prefab using Guid(b0eb2d4d990969844b1b54f631f158b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef2cbb369532ae9045c75c5fecffcd5a') in 0.028752 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.046650 seconds.
+  path: Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Meshes/Props.FBX
+  artifactKey: Guid(43f711e1c73e0c0419fffa16169a0ed2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Meshes/Props.FBX using Guid(43f711e1c73e0c0419fffa16169a0ed2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '636d52b194107d95d146f3583fe8df8e') in 0.108338 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000027 seconds.
-  path: Assets/Assets/JungleBlock stuff/shadow.png
-  artifactKey: Guid(72f5e509a5e5ca04a9cc9e1b40193f99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/JungleBlock stuff/shadow.png using Guid(72f5e509a5e5ca04a9cc9e1b40193f99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7d55153dc49043e47d4eba8ece39b04') in 0.013273 seconds 
+  path: Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Meshes/Tire.FBX
+  artifactKey: Guid(3a01940208708b149bd273a7967a7b4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Meshes/Tire.FBX using Guid(3a01940208708b149bd273a7967a7b4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6e33db3574d5a32f1203d730389d018') in 0.019990 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Assets/JungleBlock stuff/T_AncientRuins_Props_MS.png
-  artifactKey: Guid(5d353b39ce56abc46909eacae7d7d8f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/JungleBlock stuff/T_AncientRuins_Props_MS.png using Guid(5d353b39ce56abc46909eacae7d7d8f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4472e6fb91d99cc8349e322e0171be4') in 0.017419 seconds 
+  Time since last request: 175.632842 seconds.
+  path: Assets/Assets/Jassun assetteja/light props/Materials
+  artifactKey: Guid(c98f77e5c2866ea4994e35b9a077f36d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/light props/Materials using Guid(c98f77e5c2866ea4994e35b9a077f36d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eaeb9156a913c814a0a524f643f05f99') in 0.006410 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Assets/JungleBlock stuff/T_AncientRuins_Rocks_AO.png
-  artifactKey: Guid(3a06cea9832a62a42950e1d2e6aab1c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/JungleBlock stuff/T_AncientRuins_Rocks_AO.png using Guid(3a06cea9832a62a42950e1d2e6aab1c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a112040647db30250b143d2a0444efea') in 0.019947 seconds 
+  Time since last request: 3.419084 seconds.
+  path: Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Meshes
+  artifactKey: Guid(120206618007a3540a8c74ef3d025287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Jassun assetteja/Lowpoly_Wasteland_Props/Meshes using Guid(120206618007a3540a8c74ef3d025287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2895e10e61bc5e9134eb59354daf2e28') in 0.006505 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Assets/JungleBlock stuff/T_AncientRuins_Props_D.png
-  artifactKey: Guid(34f06fdd0e95457418dfb081a084d13f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/JungleBlock stuff/T_AncientRuins_Props_D.png using Guid(34f06fdd0e95457418dfb081a084d13f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8505110fab07c4c11909131351c37db') in 0.016871 seconds 
+  Time since last request: 478.485936 seconds.
+  path: Assets/Assets/Annika/AnnikasStartScene.unity
+  artifactKey: Guid(d76be3c4ec9bb9b45bb1cba336e79bd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/AnnikasStartScene.unity using Guid(d76be3c4ec9bb9b45bb1cba336e79bd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12e6c2af3ec2a3353ca42560472ba03b') in 0.007213 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Assets/JungleBlock stuff/T_AncientRuins_Rocks_MS.png
-  artifactKey: Guid(1d83625685d0c5a4c940feb0a3d7bfe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/JungleBlock stuff/T_AncientRuins_Rocks_MS.png using Guid(1d83625685d0c5a4c940feb0a3d7bfe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37d08a180fc9576bde903b7be1b221a4') in 0.017032 seconds 
+  Time since last request: 345.198922 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Materials/IMG_741.mat
+  artifactKey: Guid(209adf37a3cd2d54f98c3c1a97b14cb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Materials/IMG_741.mat using Guid(209adf37a3cd2d54f98c3c1a97b14cb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5699a8734155a07bd69f4337fbe448cb') in 0.020478 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 217.675462 seconds.
-  path: Assets/Assets/Jessen testiassetit/STREAM.prefab
-  artifactKey: Guid(43ea7d3ee69af5047802e63e1fe3e994) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Jessen testiassetit/STREAM.prefab using Guid(43ea7d3ee69af5047802e63e1fe3e994) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e47a58c900548dbd23e2c66c1fcfbccf') in 0.075784 seconds 
+  Time since last request: 552.851167 seconds.
+  path: Assets/Scenes/FINAL SCENES/LAIVA FINAL.unity
+  artifactKey: Guid(2fcf836b68658c549945649fae60dcce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/FINAL SCENES/LAIVA FINAL.unity using Guid(2fcf836b68658c549945649fae60dcce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84bffd29f1c7255d17ffe6c1f2fa205d') in 0.007796 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 187.760253 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Decals
-  artifactKey: Guid(d31f795ae85b2c947a9de97faee5fb57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Decals using Guid(d31f795ae85b2c947a9de97faee5fb57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89b150834d8f1caa7ef780f10e04b63e') in 0.005197 seconds 
+  Time since last request: 912.874910 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Book.fbx
+  artifactKey: Guid(d7367f6d89f68894b919a2fb976caa80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Book.fbx using Guid(d7367f6d89f68894b919a2fb976caa80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c6d18f053b2211692712615a65c374e') in 0.052583 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 599.137060 seconds.
-  path: Assets/Assets/Annika/AnnikaTestScene.unity
-  artifactKey: Guid(cff6cfa3d0d0efa429064341890cef9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/AnnikaTestScene.unity using Guid(cff6cfa3d0d0efa429064341890cef9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '927db3e1fa319553c6bf469d49249347') in 0.005537 seconds 
+  Time since last request: 97.873759 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Materials/Book.mat
+  artifactKey: Guid(afb94306c33e5434b9f0f129e6726208) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Materials/Book.mat using Guid(afb94306c33e5434b9f0f129e6726208) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd92cda72d7fcbcdb6735b6f8c0682111') in 0.011744 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 40.395179 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Materials/Beige.mat
+  artifactKey: Guid(afb94306c33e5434b9f0f129e6726208) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Materials/Beige.mat using Guid(afb94306c33e5434b9f0f129e6726208) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c49acc0620df6d26f0d3e1b536a264de') in 0.015647 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 385.945076 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Cigarette.fbx
+  artifactKey: Guid(8fa6c8d9738a5324e9417e3b67e47dce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Cigarette.fbx using Guid(8fa6c8d9738a5324e9417e3b67e47dce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cd13a2e76925fd31cd5036a2ff466d1') in 0.069622 seconds 
