@@ -7,7 +7,7 @@ namespace BNG
 {
     public class ShootLaser : MonoBehaviour
     {
-        public Animator laserGunAnimator;
+        // public Animator laserGunAnimator;
         public Animator laserBeamAnimator;       
         public Transform MuzzlePointTransform;
         public float MaxRange;
