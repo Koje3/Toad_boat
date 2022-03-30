@@ -15,7 +15,7 @@ C:/Users/Annika/Desktop/Toad_boat
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-62190
+50209
 Successfully changed project path to: C:/Users/Annika/Desktop/Toad_boat
 C:/Users/Annika/Desktop/Toad_boat
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,8 +47,8 @@ C:/Users/Annika/Desktop/Toad_boat
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 125.08 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.50 ms.
+Refreshing native plugins compatible for Editor in 128.58 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 0.67 ms.
 Initialize engine version: 2021.2.10f1 (ee872746220e)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/Annika/Desktop/Toad_boat/Assets
@@ -63,54 +63,54 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56980
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56652
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003495 seconds.
+Registered in 0.005288 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 126.30 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.07 ms.
+Refreshing native plugins compatible for Editor in 141.39 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.522 seconds
+- Completed reload, in  0.527 seconds
 Domain Reload Profiling:
-	ReloadAssembly (522ms)
-		BeginReloadAssembly (49ms)
+	ReloadAssembly (527ms)
+		BeginReloadAssembly (47ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (409ms)
-			LoadAssemblies (48ms)
+		EndReloadAssembly (423ms)
+			LoadAssemblies (45ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (71ms)
+			SetupTypeCache (75ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (20ms)
-			SetupLoadedEditorAssemblies (278ms)
+			RebuildScriptCaches (19ms)
+			SetupLoadedEditorAssemblies (288ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (13ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (126ms)
+				RefreshPlugins (142ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (106ms)
-				ProcessInitializeOnLoadMethodAttributes (31ms)
+				ProcessInitializeOnLoadAttributes (101ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008919 seconds.
+Registered in 0.008223 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Annika\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Annika\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 128.53 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.06 ms.
+Refreshing native plugins compatible for Editor in 134.13 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 0.07 ms.
 Package Manager log level set to [2]
 System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
   at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00040] in C:\Users\Annika\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:250 
@@ -128,43 +128,43 @@ UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.861 seconds
+- Completed reload, in  1.910 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1862ms)
-		BeginReloadAssembly (78ms)
+	ReloadAssembly (1911ms)
+		BeginReloadAssembly (88ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (15ms)
-		EndReloadAssembly (1715ms)
-			LoadAssemblies (66ms)
+			CreateAndSetChildDomain (20ms)
+		EndReloadAssembly (1755ms)
+			LoadAssemblies (65ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (225ms)
+			SetupTypeCache (223ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (59ms)
-			SetupLoadedEditorAssemblies (1323ms)
+			RebuildScriptCaches (65ms)
+			SetupLoadedEditorAssemblies (1367ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (9ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (129ms)
-				BeforeProcessingInitializeOnLoad (116ms)
-				ProcessInitializeOnLoadAttributes (976ms)
-				ProcessInitializeOnLoadMethodAttributes (88ms)
-				AfterProcessingInitializeOnLoad (5ms)
+				RefreshPlugins (134ms)
+				BeforeProcessingInitializeOnLoad (130ms)
+				ProcessInitializeOnLoadAttributes (1018ms)
+				ProcessInitializeOnLoadMethodAttributes (71ms)
+				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (3ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 1.66 ms, found 13 plugins.
+Refreshing native plugins compatible for Editor in 2.08 ms, found 13 plugins.
 Preloading 1 native plugins for Editor in 0.08 ms.
 Unloading 7060 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 281 unused Assets / (1.9 MB). Loaded Objects now: 7476.
-Memory consumption went from 290.3 MB to 288.4 MB.
-Total: 7.062900 ms (FindLiveObjects: 0.532400 ms CreateObjectMapping: 0.216800 ms MarkObjects: 5.647400 ms  DeleteObjects: 0.665300 ms)
+Unloading 281 unused Assets / (1.9 MB). Loaded Objects now: 7477.
+Memory consumption went from 290.4 MB to 288.5 MB.
+Total: 4.998200 ms (FindLiveObjects: 0.518700 ms CreateObjectMapping: 0.174400 ms MarkObjects: 3.675200 ms  DeleteObjects: 0.629200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -178,277 +178,49 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 25841.832797 seconds.
-  path: Assets/TerrainBlokki1.fbx
-  artifactKey: Guid(4313132495f9b974da6ecb286a154cb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TerrainBlokki1.fbx using Guid(4313132495f9b974da6ecb286a154cb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2bdf84317f583d663bae25d2e94ee2b') in 0.101267 seconds 
+  Time since last request: 29074.954771 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Materials
+  artifactKey: Guid(e462f3377e2ba614ab49816106685e55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Materials using Guid(e462f3377e2ba614ab49816106685e55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9604464284401e2c7d598491544ca72') in 0.014981 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 214.672853 seconds.
-  path: Assets/Assets/Sami1/Sam1FinalWMaterials.prefab
-  artifactKey: Guid(087c5a7827050734ea94fabf28fc907d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Sami1/Sam1FinalWMaterials.prefab using Guid(087c5a7827050734ea94fabf28fc907d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc79f8ca330a24df6647916187acc9b3') in 0.226142 seconds 
+  Time since last request: 8.857651 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/Materials/New Material.mat
+  artifactKey: Guid(e7428c1210a744749861ede9260241e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/Materials/New Material.mat using Guid(e7428c1210a744749861ede9260241e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cf4fdba2e9997c8c5cf1e785dbdc7ce') in 0.164139 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 272.082981 seconds.
-  path: Assets/BNG Framework/Models/BNG_Buttons.fbx
-  artifactKey: Guid(5a7d15da9040a6b43b2b2e7f08ac44f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/BNG_Buttons.fbx using Guid(5a7d15da9040a6b43b2b2e7f08ac44f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aff6d3547298019000deb806da49f19a') in 0.235855 seconds 
+  Time since last request: 151.842749 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/effects/New Material.mat
+  artifactKey: Guid(2a38f6fa3eeb6ec4cbc5badcd495a8de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/effects/New Material.mat using Guid(2a38f6fa3eeb6ec4cbc5badcd495a8de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbb810e32ba75fd9b615f61b15d434cd') in 0.009178 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/l_hand_relax_mid_fist_anim.fbx
-  artifactKey: Guid(ce6184a26b41c254ea24a5968f59d34e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/l_hand_relax_mid_fist_anim.fbx using Guid(ce6184a26b41c254ea24a5968f59d34e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dff1d1bc7abd414cffefd083c9e81a23') in 0.013172 seconds 
+  Time since last request: 428.217233 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/effects/IMG_0745.PNG
+  artifactKey: Guid(87b1aaf22e26a0a449902f309e24e170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/effects/IMG_0745.PNG using Guid(87b1aaf22e26a0a449902f309e24e170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '170b6d90429300f40adbe34c32123991') in 0.031010 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/l_hand_skeletal_lowres.fbx
-  artifactKey: Guid(ca20b3907ff1c794cb89c1ad2cce8282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/l_hand_skeletal_lowres.fbx using Guid(ca20b3907ff1c794cb89c1ad2cce8282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c35f6d6001da1101fac66e16432bf60') in 0.027321 seconds 
+  Time since last request: 7.653827 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/effects/IMG_0746.PNG
+  artifactKey: Guid(0fb8aea114281084d8c852638ea27ced) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/effects/IMG_0746.PNG using Guid(0fb8aea114281084d8c852638ea27ced) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b731053c1b043204a64c5b5500733ad4') in 0.063737 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/BNG Framework/Models/Oculus/OculusTouchForQuest2/OculusTouchForQuest2_Left.fbx
-  artifactKey: Guid(8b83018900d13bb4f8e0ad895cb004e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Oculus/OculusTouchForQuest2/OculusTouchForQuest2_Left.fbx using Guid(8b83018900d13bb4f8e0ad895cb004e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dce56060323b2ec15abef1724071041') in 0.044968 seconds 
+  Time since last request: 3.644665 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/effects/IMG_0745.PNG
+  artifactKey: Guid(87b1aaf22e26a0a449902f309e24e170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/effects/IMG_0745.PNG using Guid(87b1aaf22e26a0a449902f309e24e170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7aa812da6dfe263d94e84a4c3b116c7') in 0.052053 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Assets/Veera/Models/EngineParts.fbx
-  artifactKey: Guid(145f04ba4e6035449b477a40480cc2a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Models/EngineParts.fbx using Guid(145f04ba4e6035449b477a40480cc2a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a2679f3c62f284f828242536bc6106a') in 0.168818 seconds 
+  Time since last request: 1647.224749 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/effects/New Material.mat
+  artifactKey: Guid(2a38f6fa3eeb6ec4cbc5badcd495a8de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/effects/New Material.mat using Guid(2a38f6fa3eeb6ec4cbc5badcd495a8de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af5c868e519156f7132ff2c814e5209e') in 0.572487 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/BNG Framework/Models/Crowbar.fbx
-  artifactKey: Guid(3d3080f03ac0dcd4494b19283fbb0744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Crowbar.fbx using Guid(3d3080f03ac0dcd4494b19283fbb0744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c9940b4f83d69ecc2c917264a72c1b9') in 0.021855 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Materials/Beige.mat
-  artifactKey: Guid(afb94306c33e5434b9f0f129e6726208) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Materials/Beige.mat using Guid(afb94306c33e5434b9f0f129e6726208) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b34694b25cbd0d0683007d4761fce29') in 0.019939 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Decals/Dirt.mat
-  artifactKey: Guid(7bbf88dbf8004774d9887e7893cb2ba1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Decals/Dirt.mat using Guid(7bbf88dbf8004774d9887e7893cb2ba1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5d2ff4a032c02bf9086fc582c109b90') in 0.013453 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Materials/DresserMaterial.mat
-  artifactKey: Guid(6fbc754f5bbbfc44397b79dcc2a73a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Materials/DresserMaterial.mat using Guid(6fbc754f5bbbfc44397b79dcc2a73a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f685ae26c654e2262bd5279829752cdb') in 0.011494 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Assets/Veera/Materials/Basement/EngineBackPanel.mat
-  artifactKey: Guid(6c569ba7d9c27c94c8569c3b8b5ce57f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Materials/Basement/EngineBackPanel.mat using Guid(6c569ba7d9c27c94c8569c3b8b5ce57f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a1de26627cf9d5b7c48fd2194c413ea') in 0.018405 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Assets/Veera/Materials/Metals/EngineParts_Red.mat
-  artifactKey: Guid(73996fb624caf6545948415f1032b1dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Materials/Metals/EngineParts_Red.mat using Guid(73996fb624caf6545948415f1032b1dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '782bb666a41b9d1593f6931b0414b93b') in 0.011228 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/l_hand_hold_ping_pong_ball_anim.fbx
-  artifactKey: Guid(a49c22e69aed68a4e9c458fe4276065c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/l_hand_hold_ping_pong_ball_anim.fbx using Guid(a49c22e69aed68a4e9c458fe4276065c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '164204e27be749c169a9538156355629') in 0.014495 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/BNG Framework/Models/Oculus/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Left.fbx
-  artifactKey: Guid(32fbc8bcebb64584da5868aeeb086cda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Oculus/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Left.fbx using Guid(32fbc8bcebb64584da5868aeeb086cda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '299ddcc80ee39acc1ed0158ae6070163') in 0.039935 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Cigarette.fbx
-  artifactKey: Guid(8fa6c8d9738a5324e9417e3b67e47dce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Cigarette.fbx using Guid(8fa6c8d9738a5324e9417e3b67e47dce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c59d089f44390bf793781c4f3d8aad72') in 0.029698 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Packages/com.unity.render-pipelines.core/Editor/Resources/DebugProbe.fbx
-  artifactKey: Guid(9e1c97fc44f9a8744b61b58f72c56de4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.core/Editor/Resources/DebugProbe.fbx using Guid(9e1c97fc44f9a8744b61b58f72c56de4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d2983d1c85226ca60e788a4a26455cb') in 0.019454 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/l_hand_cap_touch_index_mask_anim.fbx
-  artifactKey: Guid(8f30ac6cbbbe39d43886ad7626f7e2b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/l_hand_cap_touch_index_mask_anim.fbx using Guid(8f30ac6cbbbe39d43886ad7626f7e2b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d2135ec542abafaa3ec4446b9a1e6b5') in 0.013524 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/l_hand_hold_l_controller_anim.fbx
-  artifactKey: Guid(f29e0ae9b6aa173489854687db6a05bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/l_hand_hold_l_controller_anim.fbx using Guid(f29e0ae9b6aa173489854687db6a05bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df82ace2aa53f9fcdd17c1417bba8a24') in 0.013899 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/BNG Framework/Models/Oculus/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Right.fbx
-  artifactKey: Guid(37ba10a26a648144fa2390c8adfb2c8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Oculus/OculusTouchForQuestAndRiftS/OculusTouchForQuestAndRiftS_Right.fbx using Guid(37ba10a26a648144fa2390c8adfb2c8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df8b46d560c21c14f4d7b2724126339a') in 0.038665 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Assets/Jassun assetteja/general ship props/Materials/Atlas_1A_D.mat
-  artifactKey: Guid(6c1f1f72d676d59438e7939f26ef052e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Jassun assetteja/general ship props/Materials/Atlas_1A_D.mat using Guid(6c1f1f72d676d59438e7939f26ef052e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b03e64ecdcc713c59a50dc24cec6ea7') in 0.012430 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/l_hand_hold_generic_anim.fbx
-  artifactKey: Guid(b8943b5ee74fcd945a2746d0051466cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/l_hand_hold_generic_anim.fbx using Guid(b8943b5ee74fcd945a2746d0051466cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50f8ad183e6ff7cbe35ccc5225b61b42') in 0.013172 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Assets/Veera/Materials/Ship/EngineRoom.mat
-  artifactKey: Guid(3a2d35d2c1972ee4aa2d5124df31c0a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Materials/Ship/EngineRoom.mat using Guid(3a2d35d2c1972ee4aa2d5124df31c0a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9051c03e17444d04e7ce34740f3b387') in 0.232604 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 20.038290 seconds.
-  path: Assets/Assets/Veera/Materials/Ship/Garden.mat
-  artifactKey: Guid(dcf859a4d6598df40b9db5d8218323d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Materials/Ship/Garden.mat using Guid(dcf859a4d6598df40b9db5d8218323d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '279dbdab68eab1067446868f03267813') in 0.011143 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.804698 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Materials/IMG_741.mat
-  artifactKey: Guid(209adf37a3cd2d54f98c3c1a97b14cb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/Materials/IMG_741.mat using Guid(209adf37a3cd2d54f98c3c1a97b14cb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '881c95b95c004baa98ad832ed3b19b74') in 0.019629 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.404499 seconds.
-  path: Assets/Assets/Veera/Models/valve.fbx
-  artifactKey: Guid(ab726ce5725da7c4e8cb35b2189f9f1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Models/valve.fbx using Guid(ab726ce5725da7c4e8cb35b2189f9f1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4c82c99497a0788409a3e6b5845e7d7') in 0.034739 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.054460 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Kasvihuone/platform.fbx
-  artifactKey: Guid(85a435822873c7e42b38803b3cd6d1a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Kasvihuone/platform.fbx using Guid(85a435822873c7e42b38803b3cd6d1a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e66591e0a917a3ce4c26f64e3ba562c6') in 0.129146 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.567096 seconds.
-  path: Assets/SaranMatsut/mikro.mat
-  artifactKey: Guid(91de0f21e8f34cf4ab362df4a5434436) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SaranMatsut/mikro.mat using Guid(91de0f21e8f34cf4ab362df4a5434436) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e5eda42e95521785da9bd1a0b83532c') in 0.010400 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.593179 seconds.
-  path: Assets/SaranMatsut/puutaso.mat
-  artifactKey: Guid(834b2aaaf57b6174b8c311ab22668b3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SaranMatsut/puutaso.mat using Guid(834b2aaaf57b6174b8c311ab22668b3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '124e6a0cfd5648ad89c9f9b2cef9a95b') in 0.012637 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.122971 seconds.
-  path: Assets/Assets/Veera/Alstrainfinite/KitchenAppliances/Materials/Texture.mat
-  artifactKey: Guid(1b82656b189f3744a98cb2f389cc1c79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Alstrainfinite/KitchenAppliances/Materials/Texture.mat using Guid(1b82656b189f3744a98cb2f389cc1c79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f9c26f54d68b2e63a038a9b944e442a') in 0.010979 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.978086 seconds.
-  path: Assets/Assets/Veera/Materials/Metals/Valve_Red.mat
-  artifactKey: Guid(f4b35237270e93e41b852348f356a30b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Materials/Metals/Valve_Red.mat using Guid(f4b35237270e93e41b852348f356a30b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07380889687827e5d6d83ff990926e9a') in 0.011081 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Assets/Veera/Decals/Wall_Left.mat
-  artifactKey: Guid(8de6a21b56ce4e745b05ab89d460627f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Decals/Wall_Left.mat using Guid(8de6a21b56ce4e745b05ab89d460627f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1e496051ad443a17eafa125c9d334bd') in 0.012175 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 775.952993 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar
-  artifactKey: Guid(2063545f2fc7dff4c993d58012708eb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar using Guid(2063545f2fc7dff4c993d58012708eb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fe4a7f253d759acbc9ead3171c6e9de') in 0.004360 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 142.630568 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar.png
-  artifactKey: Guid(1aa68a35c329e384995cdd39f74d6a40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar.png using Guid(1aa68a35c329e384995cdd39f74d6a40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1f9a4e768cff47d0a94c2aaf1cc87ce') in 0.019400 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.373950 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar2.png
-  artifactKey: Guid(41ffaee20ab6b0541b49d34e766d522e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar2.png using Guid(41ffaee20ab6b0541b49d34e766d522e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c78ce76cb1fcef88d79286feb38c3aeb') in 0.013023 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar4.png
-  artifactKey: Guid(9cb233c43fd51c24eb3a53a87976b382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar4.png using Guid(9cb233c43fd51c24eb3a53a87976b382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f736c72e1afc599c445ad4214457a1a6') in 0.010912 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.612256 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar.png
-  artifactKey: Guid(1aa68a35c329e384995cdd39f74d6a40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar.png using Guid(1aa68a35c329e384995cdd39f74d6a40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c062b28bef3f209130cfb32e01d28b0') in 0.143907 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.095895 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar2.png
-  artifactKey: Guid(41ffaee20ab6b0541b49d34e766d522e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar2.png using Guid(41ffaee20ab6b0541b49d34e766d522e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd880222c35a8dd109531934d69628a48') in 0.098857 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.499803 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar3.png
-  artifactKey: Guid(5503ba81b5c224745b54d523e935c805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar3.png using Guid(5503ba81b5c224745b54d523e935c805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14a04858e2a58bd268d5be2d30162fc0') in 0.111441 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.361051 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar4.png
-  artifactKey: Guid(9cb233c43fd51c24eb3a53a87976b382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar4.png using Guid(9cb233c43fd51c24eb3a53a87976b382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2a14938e0767023e61b1c753baa70b7') in 0.105692 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 95.375411 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar.anim
-  artifactKey: Guid(bdfc75e425dc9e5449b9fe49c12f9e90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar.anim using Guid(bdfc75e425dc9e5449b9fe49c12f9e90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '160728a8fa9e9f58c3f28b3d7a9c1ca6') in 0.003284 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 353.637827 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/RadarAnimation.anim
-  artifactKey: Guid(441d33d2ef0840244b2eefb8888323d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/RadarAnimation.anim using Guid(441d33d2ef0840244b2eefb8888323d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '742358996c62e8fc1897a3ff8fef1d6e') in 0.005052 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 146.418327 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/effects/Electricity.prefab
-  artifactKey: Guid(f25e1efebba301543b3c64805fb13d2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/effects/Electricity.prefab using Guid(f25e1efebba301543b3c64805fb13d2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1876184aa2cc070738a83f659467dfe') in 0.013124 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 302.634694 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/EnergyTree/EnergyTree1.png
-  artifactKey: Guid(7e807560e38bad04abf61509f48415a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/EnergyTree/EnergyTree1.png using Guid(7e807560e38bad04abf61509f48415a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd7e08b113a4f723e67a284c6bead701') in 0.083327 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/EnergyTree/IMG_0737.PNG
-  artifactKey: Guid(b7de8e60a6618e64fb17e1f0739517dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/EnergyTree/IMG_0737.PNG using Guid(b7de8e60a6618e64fb17e1f0739517dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0806bc9ade3959c48b236e01e3d9fbf') in 0.131481 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/EnergyTree/EnergyTree4.png
-  artifactKey: Guid(ab359bd9fc1e7804da8fcb02e662a2fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/EnergyTree/EnergyTree4.png using Guid(ab359bd9fc1e7804da8fcb02e662a2fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2839ef21667d451373b20ac33e5acb8') in 0.109027 seconds 
+  Time since last request: 6.321901 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/effects/Explosion.prefab
+  artifactKey: Guid(35a3a21e5a930e64b9421002356318e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/effects/Explosion.prefab using Guid(35a3a21e5a930e64b9421002356318e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '212c0b73e7999a4e47242b0658da894c') in 0.025727 seconds 
