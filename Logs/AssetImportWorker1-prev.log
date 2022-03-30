@@ -15,7 +15,7 @@ C:/Users/Annika/Desktop/Toad_boat
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-62190
+50209
 Successfully changed project path to: C:/Users/Annika/Desktop/Toad_boat
 C:/Users/Annika/Desktop/Toad_boat
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,8 +47,8 @@ C:/Users/Annika/Desktop/Toad_boat
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 128.77 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.58 ms.
+Refreshing native plugins compatible for Editor in 125.17 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 0.66 ms.
 Initialize engine version: 2021.2.10f1 (ee872746220e)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/Annika/Desktop/Toad_boat/Assets
@@ -63,54 +63,54 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56688
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56880
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003376 seconds.
+Registered in 0.003685 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 119.29 ms, found 13 plugins.
+Refreshing native plugins compatible for Editor in 133.31 ms, found 13 plugins.
 Preloading 1 native plugins for Editor in 0.06 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.497 seconds
+- Completed reload, in  0.537 seconds
 Domain Reload Profiling:
-	ReloadAssembly (498ms)
-		BeginReloadAssembly (48ms)
+	ReloadAssembly (537ms)
+		BeginReloadAssembly (49ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (0ms)
-		EndReloadAssembly (395ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (435ms)
 			LoadAssemblies (47ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (70ms)
+			SetupTypeCache (69ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (20ms)
-			SetupLoadedEditorAssemblies (266ms)
+			SetupLoadedEditorAssemblies (304ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (13ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (119ms)
+				RefreshPlugins (133ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (101ms)
-				ProcessInitializeOnLoadMethodAttributes (32ms)
+				ProcessInitializeOnLoadAttributes (105ms)
+				ProcessInitializeOnLoadMethodAttributes (51ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008824 seconds.
+Registered in 0.008147 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Annika\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Annika\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Native extension for WindowsStandalone target not found
 Native extension for OSXStandalone target not found
-Refreshing native plugins compatible for Editor in 130.03 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.06 ms.
+Refreshing native plugins compatible for Editor in 121.96 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
 Package Manager log level set to [2]
 System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
   at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00040] in C:\Users\Annika\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:250 
@@ -128,43 +128,43 @@ UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.884 seconds
+- Completed reload, in  1.928 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1885ms)
-		BeginReloadAssembly (76ms)
+	ReloadAssembly (1928ms)
+		BeginReloadAssembly (90ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (15ms)
-		EndReloadAssembly (1738ms)
-			LoadAssemblies (62ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (1756ms)
+			LoadAssemblies (78ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (220ms)
+			SetupTypeCache (223ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (62ms)
-			SetupLoadedEditorAssemblies (1348ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (1361ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (9ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (130ms)
-				BeforeProcessingInitializeOnLoad (119ms)
-				ProcessInitializeOnLoadAttributes (1006ms)
-				ProcessInitializeOnLoadMethodAttributes (79ms)
-				AfterProcessingInitializeOnLoad (4ms)
+				RefreshPlugins (122ms)
+				BeforeProcessingInitializeOnLoad (123ms)
+				ProcessInitializeOnLoadAttributes (1018ms)
+				ProcessInitializeOnLoadMethodAttributes (84ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (3ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 1.54 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.07 ms.
+Refreshing native plugins compatible for Editor in 1.84 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
 Unloading 7060 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 281 unused Assets / (1.9 MB). Loaded Objects now: 7476.
-Memory consumption went from 290.3 MB to 288.4 MB.
-Total: 5.938300 ms (FindLiveObjects: 0.802500 ms CreateObjectMapping: 0.227500 ms MarkObjects: 4.288400 ms  DeleteObjects: 0.618800 ms)
+Unloading 281 unused Assets / (1.9 MB). Loaded Objects now: 7477.
+Memory consumption went from 290.4 MB to 288.5 MB.
+Total: 5.907700 ms (FindLiveObjects: 0.543800 ms CreateObjectMapping: 0.382100 ms MarkObjects: 4.260700 ms  DeleteObjects: 0.720000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -178,169 +178,13 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 26328.939830 seconds.
-  path: Assets/BNG Framework/Models/BNG_Melee_Knife.fbx
-  artifactKey: Guid(4cfe08750b57e6347bbcf63d5b7e6095) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/BNG_Melee_Knife.fbx using Guid(4cfe08750b57e6347bbcf63d5b7e6095) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2471595ad27f5b1451f56d0389689d31') in 0.241822 seconds 
+  Time since last request: 28948.717802 seconds.
+  path: Assets/Assets/Annika/AnnikaTestScene.unity
+  artifactKey: Guid(cff6cfa3d0d0efa429064341890cef9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/AnnikaTestScene.unity using Guid(cff6cfa3d0d0efa429064341890cef9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8abdf6a5c40ab7a254b77c85423a91dd') in 0.018802 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/old_l_hand_pinch_anim.fbx
-  artifactKey: Guid(e7d2f46c372333a47a3d2cb064903562) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/old_l_hand_pinch_anim.fbx using Guid(e7d2f46c372333a47a3d2cb064903562) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c0abe2a47e44f99905da2e9937bfcd0') in 0.014497 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/BNG Framework/Models/Oculus/OculusTouchForQuest2/OculusTouchForQuest2_Right.fbx
-  artifactKey: Guid(25b5eb0761edb6346b0b3444af76b55e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Oculus/OculusTouchForQuest2/OculusTouchForQuest2_Right.fbx using Guid(25b5eb0761edb6346b0b3444af76b55e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca991f991e90433aadc723e3eb80fe10') in 0.050075 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Assets/Veera/Models/motor.FBX
-  artifactKey: Guid(10db8d991ffa7014686d462ae4d44f88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Models/motor.FBX using Guid(10db8d991ffa7014686d462ae4d44f88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f936812dce43a11f1bd696b7dde21bdf') in 0.045521 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/old_r_hand_pinch_anim.fbx
-  artifactKey: Guid(6e0d791d9e2bdcd4f80b32d42036676f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/old_r_hand_pinch_anim.fbx using Guid(6e0d791d9e2bdcd4f80b32d42036676f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da06dfe73b9243250abe08081f3f5b54') in 0.013985 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/l_hand_fist_anim.fbx
-  artifactKey: Guid(7cb2e1480bb51ce4282f540ea3f41d4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/l_hand_fist_anim.fbx using Guid(7cb2e1480bb51ce4282f540ea3f41d4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e11f0910c3dabbea54cd8edc4f6cb82c') in 0.013635 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/l_hand_thumbs_up_anim.fbx
-  artifactKey: Guid(38245a3244d4c904e9a7c93dfc8ffbaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/l_hand_thumbs_up_anim.fbx using Guid(38245a3244d4c904e9a7c93dfc8ffbaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c88ccfb0a1a60e5a3eda4db2e6da45f') in 0.014555 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/BNG Framework/Models/Hands/hands_r_gloves_mat06.fbx
-  artifactKey: Guid(95ce9f4c6f9d92a46b626a353c690dac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/hands_r_gloves_mat06.fbx using Guid(95ce9f4c6f9d92a46b626a353c690dac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6571608c8432493db79c2f3f0093970c') in 0.065874 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/l_hand_point_anim.fbx
-  artifactKey: Guid(7a701167f3382f3469c311bb308142af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/l_hand_point_anim.fbx using Guid(7a701167f3382f3469c311bb308142af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41eab77b2675d9fdd8800865ec8c4488') in 0.013096 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Assets/Veera/Materials/Metals/Black.mat
-  artifactKey: Guid(812084966345ac04ea62285113d75cb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Materials/Metals/Black.mat using Guid(812084966345ac04ea62285113d75cb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14ccf28a2e38ef5a53ea38a804aebc6d') in 0.017811 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Assets/Veera/Materials/Ship/EngineRoom 1.mat
-  artifactKey: Guid(af448cef2ca1ec1499967fcfe8d5d6ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Materials/Ship/EngineRoom 1.mat using Guid(af448cef2ca1ec1499967fcfe8d5d6ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c26a9a10aa3f79408999f1146481ed4') in 0.231422 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/l_hand_cap_touch_anim.fbx
-  artifactKey: Guid(16a87db82a90e2b40986857ee65aea51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/l_hand_cap_touch_anim.fbx using Guid(16a87db82a90e2b40986857ee65aea51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d982579e54bd33640bf91267f85ae1e') in 0.011613 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/l_hand_cap_touch_thumb_mask_anim.fbx
-  artifactKey: Guid(73af2d5eb4aa5f84c9489fec88acb742) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/l_hand_cap_touch_thumb_mask_anim.fbx using Guid(73af2d5eb4aa5f84c9489fec88acb742) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe0cea96864cffe8eacadf5fd1e4ada9') in 0.013092 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/l_hand_default_anim.fbx
-  artifactKey: Guid(1ae9aefe37a62de429ddc2edd1ca36f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/l_hand_default_anim.fbx using Guid(1ae9aefe37a62de429ddc2edd1ca36f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c32f7cc5ce83e74af1a65697379bbee') in 0.013601 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/l_hand_squirtgun_squeeze.fbx
-  artifactKey: Guid(808dcbebdf91d4538b1a35ab4f5a5684) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/l_hand_squirtgun_squeeze.fbx using Guid(808dcbebdf91d4538b1a35ab4f5a5684) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62032e7bd0176c1555277106b7a3f62a') in 0.015198 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/l_hand_squirtgun_hold.fbx
-  artifactKey: Guid(43171d57359ad41adb9be2572f17ca1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/l_hand_squirtgun_hold.fbx using Guid(43171d57359ad41adb9be2572f17ca1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b7d0c5150581cdeaf07db4c5ca50047') in 0.013133 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/l_hand_hold_billiard_ball_anim.fbx
-  artifactKey: Guid(bca4c48c730914fff8cceefbcaa0c11f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/l_hand_hold_billiard_ball_anim.fbx using Guid(bca4c48c730914fff8cceefbcaa0c11f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e24ffb7ba5f58c65a50b73f19eb6ce2') in 0.014078 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/l_hand_pinch_anim.fbx
-  artifactKey: Guid(a91ff20f7450bf446a6bf0bfb5e932ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/l_hand_pinch_anim.fbx using Guid(a91ff20f7450bf446a6bf0bfb5e932ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d8a2655ad5c200a23364548f3addd20') in 0.013774 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Book.fbx
-  artifactKey: Guid(d7367f6d89f68894b919a2fb976caa80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Book.fbx using Guid(d7367f6d89f68894b919a2fb976caa80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dac3f230752afe8ab2e6ef3dbf689653') in 0.027371 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/BNG Framework/Models/Hands/OculusHands/l_hand_relax_3qtr_fist_anim.fbx
-  artifactKey: Guid(79e0d96a3e30fec46a930ab7dd95ef5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/BNG Framework/Models/Hands/OculusHands/l_hand_relax_3qtr_fist_anim.fbx using Guid(79e0d96a3e30fec46a930ab7dd95ef5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '260be4ebb8d70991267a72d68c598247') in 0.013456 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 22.036175 seconds.
-  path: Assets/SaranMatsut/Jääkaappi.mat
-  artifactKey: Guid(6f636849022c49941b54eda0c215b2d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SaranMatsut/Jääkaappi.mat using Guid(6f636849022c49941b54eda0c215b2d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eff97cdc4a7a130fa6f5ea83abc66411') in 0.022862 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.822082 seconds.
-  path: Assets/Assets/Jessen testiassetit/Materials/RedGlowPipe.mat
-  artifactKey: Guid(0501972d8c35be24f93937ffba06e0a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Jessen testiassetit/Materials/RedGlowPipe.mat using Guid(0501972d8c35be24f93937ffba06e0a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '692921ab9d5e537fcc0e38df5b3d7115') in 0.013577 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.121637 seconds.
-  path: Assets/Assets/Veera/Decals/Wall_Corner.mat
-  artifactKey: Guid(10c44a40159245e4abe244b21897ec88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Decals/Wall_Corner.mat using Guid(10c44a40159245e4abe244b21897ec88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0502a02dd80dcbcaece7ff34df84a702') in 0.012109 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Assets/Veera/Decals/Wall_Right.mat
-  artifactKey: Guid(013e156e05a033649b51292ff5d4d98b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Veera/Decals/Wall_Right.mat using Guid(013e156e05a033649b51292ff5d4d98b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d025685a24f7712faa7afef59a4b6e8') in 0.011460 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 921.002293 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar3.png
-  artifactKey: Guid(5503ba81b5c224745b54d523e935c805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Bridge/Radar/Radar3.png using Guid(5503ba81b5c224745b54d523e935c805) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3559aff1ce491a406f838568a3ba6157') in 0.031770 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 917.190050 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/EnergyTree/EnergyTree2.png
-  artifactKey: Guid(5d3143fea2c314f49b15a39eb4a6d49a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/EnergyTree/EnergyTree2.png using Guid(5d3143fea2c314f49b15a39eb4a6d49a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebbde4bc3bc677397a1622ddb899e92e') in 0.068298 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/EnergyTree/EnergyTree5.png
-  artifactKey: Guid(78dfa04e60c903345ac89f646090911d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/EnergyTree/EnergyTree5.png using Guid(78dfa04e60c903345ac89f646090911d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81a636ec69805f02ca292aff9dc62a49') in 0.115474 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/EnergyTree/EnergyTree6.png
-  artifactKey: Guid(7740d6891ee21314598d2cd76432cb5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Annika/Rooms & Assets/Bridge/Stickers/EnergyTree/EnergyTree6.png using Guid(7740d6891ee21314598d2cd76432cb5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4bf8bec2e33c8d8a413b098b84011f0') in 0.143633 seconds 
+  Time since last request: 715.344266 seconds.
+  path: Assets/Assets/Annika/Rooms & Assets/effects/IMG_0746.PNG
+  artifactKey: Guid(0fb8aea114281084d8c852638ea27ced) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets/Annika/Rooms & Assets/effects/IMG_0746.PNG using Guid(0fb8aea114281084d8c852638ea27ced) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5eacd1c107c0c37ad9633a6c0f3a2d10') in 0.041276 seconds 
