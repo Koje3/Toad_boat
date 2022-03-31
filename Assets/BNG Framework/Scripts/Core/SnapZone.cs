@@ -392,6 +392,18 @@ namespace BNG {
             return true;
         }
 
+        // Jessen koodia
+        public void CanRemoveItemFalse()
+        {
+            CanRemoveItem = false;
+        }
+
+        public void CanRemoveItemTrue()
+        {
+            CanRemoveItem = true;
+        }
+        // Jessen koodi päättyy
+
         /// <summary>
         /// Release  everything snapped to us
         /// </summary>

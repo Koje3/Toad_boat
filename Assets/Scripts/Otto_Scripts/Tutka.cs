@@ -6,8 +6,8 @@ public class Tutka : MonoBehaviour
 {
 
 
-    Transform radarBatteryLid;
-    GameObject radarPlate;
+    public Transform radarBatteryLid;
+    public GameObject radarPlate;
 
     public bool radarBatteryEmptySolved;
 
@@ -23,11 +23,7 @@ public class Tutka : MonoBehaviour
     void Start()
     {
       
-        radarBatteryLid = this.gameObject.transform.GetChild(2);
-        radarPlate = this.gameObject.transform.GetChild(2).GetChild(0).gameObject;
-
-
-        CloseRadarLid();
+        //CloseRadarLid();
 
         //jesse
         radarBatteryEmptySolved = false;
@@ -37,15 +33,6 @@ public class Tutka : MonoBehaviour
     
     void Update()
     {
-
-        /* jesse
-         
-        if(Input.GetKeyDown(KeyCode.J))
-        {
-        StartPuzzle();
-        }
-
-        */
 
         if (radarBatteryEmpty == false)
         {
@@ -62,7 +49,7 @@ public class Tutka : MonoBehaviour
         //jesse
         radarBatteryEmpty = true;
 
-        OpenRadarLid();
+        // OpenRadarLid();
     }
 
     void OpenRadarLid()
@@ -88,7 +75,7 @@ public class Tutka : MonoBehaviour
     {
         radarBatteryEmptySolved = true;        
         Debug.Log("Radar Solved");
-        CloseRadarLid();
+       // CloseRadarLid();
 
         //jesse
         radarBatteryEmpty = false;
