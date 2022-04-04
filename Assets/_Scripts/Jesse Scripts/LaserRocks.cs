@@ -45,7 +45,7 @@ public class LaserRocks : MonoBehaviour
 
         foreach (Crises crisis in LevelManager.instance.currentPiece.crises)
         {
-            if (crisis.crisisSubType == CrisisSubType.Rocks)
+            if (crisis.crisisSubType == CrisisSubType.Obstacle)
             {
                 float rocksSpawnZ = LevelManager.instance.currentPieceLenght * crisis.failPuzzleTick;
                 obstacle = Instantiate(obstaclePrefab, new Vector3(0, 0, rocksSpawnZ), Quaternion.identity);            
@@ -53,7 +53,7 @@ public class LaserRocks : MonoBehaviour
                 break;
             }
 
-            if (crisis.crisisSubType == CrisisSubType.Rocks2)
+            if (crisis.crisisSubType == CrisisSubType.MultipleObstacles)
             {
                 float rocksSpawnZ = LevelManager.instance.currentPieceLenght * crisis.failPuzzleTick;
 
@@ -114,13 +114,5 @@ public class LaserRocks : MonoBehaviour
         puzzleObject.FixCrisis(crisisTypeToSolve);
     }
 
-/*
-    public void ScrollObstacles()
-    {
-        if (scrollObstacles)
-        obstacle.transform.Translate(Vector3.back * LevelManager.instance.speedDelta);
-       
-    }
-*/
 
 }

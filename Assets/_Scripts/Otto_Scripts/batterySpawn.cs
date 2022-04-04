@@ -33,72 +33,56 @@ public int numberOfItemsToSpawn;
 
 
 
-void Update() 
-{
-    
-        /* jesse
-         
-        if(Input.GetKeyDown(KeyCode.F))
-        {
-            Instantiate(objectToSpawn, spawnedObjectsLocations[0], Quaternion.identity);
-        }
-
-        */
-
-}
-
-
-
-public void PuzzleStart()
-{
-        SpawnBatteriesBegin();
-}
-
-void PuzzleSolved()
-{
-
-}
-
-    public void SpawnBatteriesBegin()
+    void Update()
     {
 
-        if(numberOfItemsToSpawn>0)
+
+
+    }
+
+
+
+
+    public void SpawnBatteries()
+    {
+
+        if (numberOfItemsToSpawn > 0)
         {
 
             Debug.Log("Listassa on " + locationsToSpawn.Count);
-        
-                for(int i = 0; i < numberOfItemsToSpawn; i++)
-                {
-                    //MaxRange
-                    int maxRange = locationsToSpawn.Count;
 
-                    //get random value
-                    int randomValue = Random.Range(0,maxRange);
-                    
-                    //get object from list
-                    GameObject objectFromList = locationsToSpawn[randomValue];
-                
-                    //ger location 
-                    Vector3 spawnLocation = objectFromList.transform.position;
-                
-                    //instanciate object and add it to new list
-                    GameObject SpawnedObject =  Instantiate(objectToSpawn, spawnLocation, Quaternion.identity);
-                    
-                    Vector3 saveLocation = SpawnedObject.transform.position;
-                    spawnedObjectsLocations.Add(saveLocation);
+            for (int i = 0; i < numberOfItemsToSpawn; i++)
+            {
+                //MaxRange
+                int maxRange = locationsToSpawn.Count;
 
-                    //Remove location from list
-                    locationsToSpawn.RemoveAt(randomValue);
+                //get random value
+                int randomValue = Random.Range(0, maxRange);
 
-                }
-            
+                //get object from list
+                GameObject objectFromList = locationsToSpawn[randomValue];
+
+                //ger location 
+                Vector3 spawnLocation = objectFromList.transform.position;
+
+                //instanciate object and add it to new list
+                GameObject SpawnedObject = Instantiate(objectToSpawn, spawnLocation, Quaternion.identity);
+
+                Vector3 saveLocation = SpawnedObject.transform.position;
+                spawnedObjectsLocations.Add(saveLocation);
+
+                //Remove location from list
+                locationsToSpawn.RemoveAt(randomValue);
+
+            }
+
 
         }
 
         else
-            {
-                Debug.Log("Listassa ei ole mitään");
-            }
+        {
+            Debug.Log("Listassa ei ole mitään");
+        }
 
     }
 

@@ -22,8 +22,8 @@ public enum CrisisSubType
     BatteryEmpty,
     Failure,
     Explosion,
-    Rocks,
-    Rocks2,
+    Obstacle,
+    MultipleObstacles,
 }
 
 
