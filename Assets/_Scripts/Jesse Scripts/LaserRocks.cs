@@ -17,9 +17,7 @@ public class LaserRocks : MonoBehaviour
     public int obstacleCount;
     public float obstacleSpacing;
 
-    // public bool scrollObstacles;
 
-    // Start is called before the first frame update
     void Start()
     {
         puzzleOpen = false;
