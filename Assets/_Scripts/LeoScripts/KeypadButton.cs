@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class KeypadButton : MonoBehaviour {
     public int keyValue;
-    private KeypadPuzzle keypadCode;
-    // Start is called before the first frame update
+    [SerializeField] private KeypadPuzzle keypadCode;
+
     private void Start() {
         keypadCode = GetComponentInParent<KeypadPuzzle>();
     }
