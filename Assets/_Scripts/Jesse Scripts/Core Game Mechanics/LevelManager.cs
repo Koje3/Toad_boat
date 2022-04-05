@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
     public float deaccelerationSpeed = 0.1f;
     public float accelerationSpeed = 0.1f;
 
-    //Level info and events
+    //Level info
      public int currentPieceNumber = 0;
      public EventManager currentPiece;
      public float currentPieceLenght { get; private set; } 
@@ -34,12 +34,13 @@ public class LevelManager : MonoBehaviour
      public float levelTravelled = 0f;
      public float currentPieceDistance;
     [SerializeField] private bool levelCleared;
-    public bool restart;
+
 
     //Level loading and saving related
     public int currentLevel;
     public int loadedPieceNumber;
     public float currentLevelTravelled;
+    public bool continueGame;
 
 
 
@@ -50,16 +51,23 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        restart = false;
-
+        continueGame = false;
         shipGoalSpeed = shipStartSpeed;
 
 
         levelCleared = false;
         MakeLevel(levelNumber);
 
-        ContinueAfterRestart();
+        //If there is a SaveFile, loadgame and check if game continues from last spot
+        if (CarterGames.Assets.SaveManager.SaveManager.HasSaveFile())
+        {
+            CarterGames.Assets.SaveManager.SaveLoadController.LoadGame();
 
+            if (continueGame == true)
+                ContinueGame();
+        }
+
+        CarterGames.Assets.SaveManager.SaveLoadController.SaveGame();
     }
 
 
@@ -110,27 +118,23 @@ public class LevelManager : MonoBehaviour
     }
 
     //Load last game and transform the level to the last piece the ship was
-    void ContinueAfterRestart()
+    void ContinueGame()
     {
-        CarterGames.Assets.SaveManager.SaveLoadController.LoadGame();
         pieceLenghtSum = 0f;
 
-        if (restart)
+        for (int i = 0; i < loadedPieceNumber; i++)
         {
-            for (int i = 0; i < loadedPieceNumber; i++)
-            {
-                float pieceLenght = levelPieces[i].transform.localScale.z;
-                pieceLenghtSum += pieceLenght;
-            }
-
-            levelTravelled = pieceLenghtSum;
-            currentPieceNumber = loadedPieceNumber;
-            levelObjectParent.transform.Translate(Vector3.back * levelTravelled);
-
-            shipSpeed = shipGoalSpeed;
+            float pieceLenght = levelPieces[i].transform.localScale.z;
+            pieceLenghtSum += pieceLenght;
         }
 
+        levelTravelled = pieceLenghtSum;
+        currentPieceNumber = loadedPieceNumber;
+        levelObjectParent.transform.Translate(Vector3.back * levelTravelled);
+
+        shipSpeed = shipGoalSpeed;
     }
+
 
     void ScrollEnvironment()
     {
@@ -194,7 +198,7 @@ public class LevelManager : MonoBehaviour
                 currentPieceTravelled = 0;
                 currentPieceDistance = 0;
 
-                restart = true;
+                continueGame = true;
                 CarterGames.Assets.SaveManager.SaveLoadController.SaveGame();
 
                 if (currentPieceNumber < levelPieces.Length)

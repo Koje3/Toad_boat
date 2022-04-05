@@ -23,7 +23,7 @@ namespace CarterGames.Assets.SaveManager
             saveData.levelNumber = LevelManager.instance.levelNumber;
             saveData.pieceNumber = LevelManager.instance.currentPieceNumber;
             saveData.levelTravelled = LevelManager.instance.levelTravelled;
-            saveData.restart = LevelManager.instance.restart;
+            saveData.continueGame = LevelManager.instance.continueGame;
 
 
             SaveManager.SaveGame(saveData);
@@ -37,7 +37,7 @@ namespace CarterGames.Assets.SaveManager
             LevelManager.instance.currentLevel = loadData.levelNumber;
             LevelManager.instance.loadedPieceNumber = loadData.pieceNumber;
             LevelManager.instance.currentLevelTravelled = loadData.levelTravelled;
-            LevelManager.instance.restart = loadData.restart;
+            LevelManager.instance.continueGame = loadData.continueGame;
 
         }
     }

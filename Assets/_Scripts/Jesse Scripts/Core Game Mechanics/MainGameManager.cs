@@ -20,14 +20,13 @@ public class MainGameManager : MonoBehaviour
     [SerializeField]
     private BNG.ScreenFader screenFader;
 
-    public bool restart;
     private bool gameOver;
     private float postExposure;
     private float postExposureGoal;
     private float postExposureSpeed;
 
-
     public float gameOverDelay = 1f;
+
 
 
     private void Awake()
@@ -54,9 +53,7 @@ public class MainGameManager : MonoBehaviour
             screenFader = xrRig.GetComponentInChildren<BNG.ScreenFader>();
         }
 
-
         gameOver = false;
-        restart = false;
 
         GameStartSequence();
     }
@@ -75,7 +72,7 @@ public class MainGameManager : MonoBehaviour
         colorAdjustments.postExposure.value = 0f;
         */
 
-        screenFader.DoFadeOut();
+        ScreenFadeOut();
     }
 
 
@@ -85,10 +82,8 @@ public class MainGameManager : MonoBehaviour
         postExposureGoal = 1;
         postExposureSpeed = 0.2f;
         */
-
-        gameOver = true;
         
-        if (gameOver == true)
+        if (gameOver == false)
         {
             StartCoroutine(GameOverSequence());
         }
@@ -97,8 +92,8 @@ public class MainGameManager : MonoBehaviour
 
     public IEnumerator GameOverSequence()
     {
-        gameOver = false;
-        screenFader.DoFadeIn();
+        gameOver = true;
+        ScreenFadeIn();
 
         yield return new WaitForSeconds(gameOverDelay);
 
@@ -106,6 +101,17 @@ public class MainGameManager : MonoBehaviour
         SceneManager.LoadScene(LevelManager.instance.currentLevel);
 
     }
+
+    public void ScreenFadeIn()
+    {
+        screenFader.DoFadeIn();
+    }
+
+    public void ScreenFadeOut()
+    {
+        screenFader.DoFadeOut();
+    }
+
 
     //Lerps post exposure value towards postExposureGoal if it changes
     void PostExposureTowardsGoal()

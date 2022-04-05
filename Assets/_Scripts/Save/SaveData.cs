@@ -12,6 +12,6 @@ namespace CarterGames.Assets.SaveManager
         public int pieceNumber = 0;
         public float levelTravelled = 0f;
 
-        public bool restart = false;
+        public bool continueGame = false;
     }
 }
