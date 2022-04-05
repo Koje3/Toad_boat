@@ -20,7 +20,7 @@ public class ObstacleCollision : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstacle")
         {
-            LevelManager.instance.GameOver();
+            MainGameManager.instance.GameOver();
             LevelManager.instance.ChangeShipSpeed(0, 0.5f);
 
             other.gameObject.GetComponent<Obstacle>().scrollObstacle = false;

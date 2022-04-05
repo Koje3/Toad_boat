@@ -16,7 +16,7 @@ public class EngineOverheatAudio : MonoBehaviour {
     //Import audio components
     private AudioManager aM;
     AudioSource audioSource;
-    [SerializeField] private AudioInspector audio;
+    [SerializeField] private AudioInspector audioInspector;
 
     private void Awake() { //Find audiosource from this object
         audioSource = GetComponent<AudioSource>();
@@ -26,13 +26,13 @@ public class EngineOverheatAudio : MonoBehaviour {
         aM = AudioManager.Instance;
 
         // Check whether to use generic sound (from audio manager object) or if this object already has a custom sound
-        if (audio.fireStartSound == null) {
-            audio.fireStartSound = aM.sfxEngineFireStart;
+        if (audioInspector.fireStartSound == null) {
+            audioInspector.fireStartSound = aM.sfxEngineFireStart;
         }
-        if (audio.fireLoopSound == null) {
-            audio.fireLoopSound = aM.sfxEngineFireLoop;
+        if (audioInspector.fireLoopSound == null) {
+            audioInspector.fireLoopSound = aM.sfxEngineFireLoop;
         }
 
-        audioSource.PlayOneShot(audio.fireStartSound, 1f);
+        audioSource.PlayOneShot(audioInspector.fireStartSound, 1f);
     }
 }
