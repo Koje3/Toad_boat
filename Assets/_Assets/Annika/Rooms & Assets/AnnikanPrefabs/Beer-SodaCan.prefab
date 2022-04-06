@@ -209,6 +209,8 @@ GameObject:
   - component: {fileID: 4987272987516156658}
   - component: {fileID: 4987272987516156669}
   - component: {fileID: 4987272987516156668}
+  - component: {fileID: 5531752731322496512}
+  - component: {fileID: 4638337995216026780}
   m_Layer: 0
   m_Name: Beer-SodaCan
   m_TagString: Untagged
@@ -312,7 +314,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5655829501993377861}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b5b1b54556836a49948cf0f09394c28, type: 3}
   m_Name: 
@@ -345,8 +347,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.38330102, y: 0.13638492, z: 0.37778634}
+  m_Center: {x: -0.0067740534, y: 0.60536784, z: -0.002088866}
 --- !u!54 &4987272987516156668
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -363,3 +365,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &5531752731322496512
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5655829501993377861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.38330102, y: 0.051553924, z: 0.37778634}
+  m_Center: {x: -0.0067740534, y: -0.6436263, z: -0.002088866}
+--- !u!136 &4638337995216026780
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5655829501993377861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.33244693
+  m_Height: 1.3739302
+  m_Direction: 1
+  m_Center: {x: -0.009271005, y: -0.051453467, z: 0.0037064815}
