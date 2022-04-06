@@ -73,7 +73,7 @@ public class MenuFunctions : MonoBehaviour
 
     private IEnumerator LoadScene()
     {
-        MainGameManager.instance.ScreenFadeIn();
+        StartCoroutine(MainGameManager.instance.ScreenFadeIn(0));
         yield return new WaitForSeconds(sceneLoadDelay);
 
         SceneManager.LoadScene(startLevelNumber);

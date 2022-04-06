@@ -26,6 +26,12 @@ public class MainGameManager : MonoBehaviour
     private float postExposureSpeed;
 
     public float gameOverDelay = 1f;
+    public float showSaveIconTime = 2f;
+
+    private float timer;
+    public float timerMaxTime = 5f;
+
+    public GameObject saveIcon;
 
 
 
@@ -60,7 +66,20 @@ public class MainGameManager : MonoBehaviour
 
     private void Update()
     {
+        Timer();
+
         PostExposureTowardsGoal();
+
+    }
+
+    public float Timer()
+    {
+        timer += Time.deltaTime;
+
+        if (timer > timerMaxTime)
+            timer = 0;
+
+        return timer;
     }
 
     void GameStartSequence()
@@ -72,7 +91,7 @@ public class MainGameManager : MonoBehaviour
         colorAdjustments.postExposure.value = 0f;
         */
 
-        ScreenFadeOut();
+        StartCoroutine(ScreenFadeOut(1));
     }
 
 
@@ -93,7 +112,7 @@ public class MainGameManager : MonoBehaviour
     public IEnumerator GameOverSequence()
     {
         gameOver = true;
-        ScreenFadeIn();
+        StartCoroutine(ScreenFadeIn(0));
 
         yield return new WaitForSeconds(gameOverDelay);
 
@@ -102,13 +121,17 @@ public class MainGameManager : MonoBehaviour
 
     }
 
-    public void ScreenFadeIn()
+    //Fade screen from transparent to solid
+    public IEnumerator ScreenFadeIn(float waitTime)
     {
+        yield return new WaitForSeconds(waitTime);
         screenFader.DoFadeIn();
     }
 
-    public void ScreenFadeOut()
+    //Fade screen from solid to transparent
+    public IEnumerator ScreenFadeOut(float waitTime)
     {
+        yield return new WaitForSeconds(waitTime);
         screenFader.DoFadeOut();
     }
 
@@ -137,6 +160,17 @@ public class MainGameManager : MonoBehaviour
             }
 
             colorAdjustments.postExposure.value = Mathf.Lerp(0f, -15f, postExposure);
+        }
+    }
+
+
+    public void ShowSaveIcon()
+    {
+        timer = 0;
+
+        while (Timer() < showSaveIconTime)
+        {
+
         }
     }
 }
