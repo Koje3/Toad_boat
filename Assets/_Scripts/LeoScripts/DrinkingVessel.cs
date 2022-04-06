@@ -8,12 +8,25 @@ public class DrinkingVessel : MonoBehaviour
     [SerializeField] private bool isEmpty = false;
     public ParticleSystem pouringEffect;
     public GameObject coffee;
+    private GameObject centerEye;
 
-    public float timeRemaining;
+    [SerializeField] private float distanceToPlayer;
+    public float drinkingDistance;
+
+    public float timeRemaining = 1.5f;
+
+    private void Start()
+    {
+        coffee = GetComponentInChildren<Wobble>().gameObject;
+
+        centerEye = GameObject.FindGameObjectWithTag("MainCamera");
+    }
     void Update()
     {
+        //measure distance from this to player
+        distanceToPlayer = Vector3.Distance(centerEye.transform.position, transform.position);
+
         RaycastHit hit;
-        // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.up), out hit, Mathf.Infinity))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.up) * hit.distance, Color.yellow);
@@ -34,7 +47,7 @@ public class DrinkingVessel : MonoBehaviour
                     TiltEnded();
                 }
             }
-        }        
+        }
         if (isTilted == true)
         {
             if (timeRemaining > 0)
@@ -49,7 +62,7 @@ public class DrinkingVessel : MonoBehaviour
         }
     }
     void TiltStarted()
-    {       
+    {
         isTilted = true;
 
         var emission = pouringEffect.emission;
@@ -66,6 +79,10 @@ public class DrinkingVessel : MonoBehaviour
 
     void VesselEmpty()
     {
+        if (distanceToPlayer <= drinkingDistance)
+        {
+            //YOU DRANK THE COFFEE
+        }
         isEmpty = true;
         coffee.SetActive(false);
         var emission = pouringEffect.emission;
