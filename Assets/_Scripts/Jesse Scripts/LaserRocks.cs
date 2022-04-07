@@ -17,6 +17,7 @@ public class LaserRocks : MonoBehaviour
     public int obstacleCount;
     public float obstacleSpacing;
 
+    public float obstacleSpawnZ;
 
     void Start()
     {
@@ -45,19 +46,19 @@ public class LaserRocks : MonoBehaviour
         {
             if (crisis.crisisSubType == CrisisSubType.Obstacle)
             {
-                float rocksSpawnZ = LevelManager.instance.currentPieceLenght * crisis.failPuzzleTick;
-                obstacle = Instantiate(obstaclePrefab, new Vector3(0, 0, rocksSpawnZ), Quaternion.identity);            
+                obstacleSpawnZ = LevelManager.instance.currentPieceLenght * (crisis.failPuzzleTick - crisis.startPuzzleTick);
+                obstacle = Instantiate(obstaclePrefab, new Vector3(0, 0, obstacleSpawnZ), Quaternion.identity);            
 
                 break;
             }
 
             if (crisis.crisisSubType == CrisisSubType.MultipleObstacles)
             {
-                float rocksSpawnZ = LevelManager.instance.currentPieceLenght * crisis.failPuzzleTick;
+                obstacleSpawnZ = LevelManager.instance.currentPieceLenght * (crisis.failPuzzleTick - crisis.startPuzzleTick);
 
                 for (int i = 0; i < obstacleCount; i++)
                 {
-                    obstacle = Instantiate(obstaclePrefab, new Vector3(Random.Range(-10, 10), 0, rocksSpawnZ + obstacleSpacing * i), Quaternion.identity);
+                    obstacle = Instantiate(obstaclePrefab, new Vector3(Random.Range(-10, 10), 0, obstacleSpawnZ + obstacleSpacing * i), Quaternion.identity);
                 }
 
                 break;

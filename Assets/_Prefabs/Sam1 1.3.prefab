@@ -3057,7 +3057,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469b392dbfe788641b9df319bb51332e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePositionTransform: {fileID: 0}
+  movePositionsParent: {fileID: 0}
+  timer: 0
+  randomTimeMax: 0
+  pointOfInterest: {fileID: 0}
+  proximityRadius: 1.25
+  adjustColliderX: 0
+  adjustColliderY: 0.46
+  rotateSpeed: 20
 --- !u!195 &8469321775091820209
 NavMeshAgent:
   m_ObjectHideFlags: 0

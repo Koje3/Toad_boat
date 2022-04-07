@@ -14,6 +14,13 @@ public class SamController : MonoBehaviour
     [SerializeField]
     private float randomTimeMax;
     private Transform currentMoveTransform;
+    public PointOfInterest pointOfInterest;
+
+    public float proximityRadius = 1;
+    public float adjustColliderX;
+    public float adjustColliderY;
+    public float rotateSpeed = 1;
+
 
     private void Awake()
     {
@@ -40,6 +47,8 @@ public class SamController : MonoBehaviour
     void Update()
     {
         RandomMoveTimer();
+
+        TurnAroundWhenPlayerIsNear();
     }
 
     void RandomMoveTimer()
@@ -66,6 +75,45 @@ public class SamController : MonoBehaviour
         int randomPosition = Random.Range(0, movePositions.Length);
         currentMoveTransform = movePositions[randomPosition];
         navMeshAgent.destination = currentMoveTransform.position;
+    }
+
+    void TurnAroundWhenPlayerIsNear()
+    {
+        Collider[] cols = Physics.OverlapSphere(transform.position + transform.forward * adjustColliderX + transform.up * adjustColliderY, proximityRadius);
+
+        pointOfInterest = null;
+
+        foreach (Collider col in cols)
+        {
+
+            if (col.GetComponent<PointOfInterest>())
+            {
+                pointOfInterest = col.GetComponent<PointOfInterest>();
+                break;
+            }
+        }
+
+
+        if (pointOfInterest != null)
+        {
+            Vector3 targetPosition;
+
+            targetPosition = pointOfInterest.GetLookTarget().position;
+
+            float speed = rotateSpeed / 10;
+
+            Quaternion rotation = Quaternion.LookRotation(targetPosition - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speed);
+
+            Debug.DrawRay(transform.position, targetPosition, Color.red);
+        }
+
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red * 0.5f;
+        Gizmos.DrawWireSphere(transform.position + transform.forward * adjustColliderX + transform.up * adjustColliderY, proximityRadius);
     }
 
 }
