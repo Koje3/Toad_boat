@@ -39,6 +39,9 @@ namespace CarterGames.Assets.SaveManager
         /// <param name="data">The SaveData to save.</param>
         public static void SaveGame(SaveData data)
         {
+            MainGameManager.instance.ShowSaveIcon();
+            Debug.Log("Saving...");
+
             // Erased the old save file, done to avoid problems loading as the class changing will cause an error is not done.
             if (File.Exists(SavePath))
                 File.Delete(SavePath);
@@ -48,6 +51,8 @@ namespace CarterGames.Assets.SaveManager
 
             _formatter.Serialize(_stream, data);
             _stream.Close();
+
+
         }
 
 

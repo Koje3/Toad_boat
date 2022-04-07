@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5005051617933556916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5005051617933556918}
+  - component: {fileID: 5005051617933556917}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5005051617933556918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5005051617933556916}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.0661438, y: -1.3687781, z: 0.85851216}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5005051617933556917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5005051617933556916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3e870e0d7b19c2409a731d0d043443f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelPieces:
+  - {fileID: 3294887180321509542, guid: 0ba615464778e614b9cd5f878055acc7, type: 3}
+  - {fileID: 1660227527033583740, guid: 685c70d626353a447ae8381a850b90e2, type: 3}
+  - {fileID: 100169681379321019, guid: 08cbc82769323bf40ac1f565c820d4f3, type: 3}
+  - {fileID: 3294887180321509542, guid: 0ba615464778e614b9cd5f878055acc7, type: 3}
+  levelBackPieces:
+  - {fileID: 3294887180321509542, guid: 33ee413f6b88d764e8ff66143e5286b6, type: 3}
+  - {fileID: 3294887180321509542, guid: 33ee413f6b88d764e8ff66143e5286b6, type: 3}
+  riverStreamPrefab: {fileID: 616177454331132942, guid: 43ea7d3ee69af5047802e63e1fe3e994, type: 3}
+  levelNumber: 1
+  emptyObject: {fileID: 8477211959396097788, guid: 3a15be2642ef0b24bbd9d41cecfc1cac, type: 3}
+  pieceLenghtSum: 0
+  shipSpeed: 0
+  shipStartSpeed: 8
+  shipGoalSpeed: 8
+  speedDelta: 0
+  deaccelerationSpeed: 0.5
+  accelerationSpeed: 0.5
+  currentPieceNumber: 0
+  currentPiece: {fileID: 0}
+  levelTravelled: 0
+  currentPieceDistance: 0
+  levelCleared: 0
+  currentLevel: 0
+  loadedPieceNumber: 0
+  currentLevelTravelled: 0
+  continueGame: 0

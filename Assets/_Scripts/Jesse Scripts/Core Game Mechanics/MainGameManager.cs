@@ -28,10 +28,14 @@ public class MainGameManager : MonoBehaviour
     public float gameOverDelay = 1f;
     public float showSaveIconTime = 2f;
 
+    [SerializeField]
     private float timer;
     public float timerMaxTime = 5f;
 
-    public GameObject saveIcon;
+    public GameObject saveIconPrefab;
+    private GameObject saveIconObject;
+    private string saveIconName = "SaveIcon";
+    private bool showSaveIcon = false;
 
 
 
@@ -59,17 +63,17 @@ public class MainGameManager : MonoBehaviour
             screenFader = xrRig.GetComponentInChildren<BNG.ScreenFader>();
         }
 
-        gameOver = false;
-
+        showSaveIcon = false;
+        InitializeSaveIcon();
         GameStartSequence();
+
     }
 
     private void Update()
     {
         Timer();
-
         PostExposureTowardsGoal();
-
+        SaveIcon();
     }
 
     public float Timer()
@@ -84,13 +88,7 @@ public class MainGameManager : MonoBehaviour
 
     void GameStartSequence()
     {
-        /*
-        postExposureGoal = 0f;
-        postExposure = 1f;
-        postExposureSpeed = 0.4f;
-        colorAdjustments.postExposure.value = 0f;
-        */
-
+        gameOver = false;
         StartCoroutine(ScreenFadeOut(1));
     }
 
@@ -166,11 +164,47 @@ public class MainGameManager : MonoBehaviour
 
     public void ShowSaveIcon()
     {
+        showSaveIcon = true;
         timer = 0;
+    }
 
-        while (Timer() < showSaveIconTime)
+    public void SaveIcon()
+    {
+        if (saveIconObject != null && showSaveIcon == true)
         {
+            Debug.Log("Show save icon");
+            
+            if (timer < showSaveIconTime)
+            {
+                saveIconObject.SetActive(true);
+                saveIconObject.transform.Rotate(0, 0, 40 * Time.deltaTime);
+            }
+            else
+            {
+                showSaveIcon = false;
+                saveIconObject.SetActive(false);
+            }
+        }
+    }
 
+    private void InitializeSaveIcon()
+    {
+        // Create a Canvas that will be placed directly over the camera
+        if (saveIconPrefab != null)
+        {
+            saveIconObject = Instantiate(saveIconPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+
+            saveIconObject.transform.parent = xrRig.transform.Find("PlayerController/CameraRig/TrackingSpace/CenterEyeAnchor").gameObject.transform;
+            saveIconObject.transform.localPosition = new Vector3(0.53f, -0.47f, 0.5f);
+            saveIconObject.transform.localEulerAngles = Vector3.zero;
+            saveIconObject.transform.name = saveIconName;
+
+            saveIconObject.SetActive(false);
+
+        }
+        else
+        {
+            Debug.Log("Theres no saveIconPrefab set");
         }
     }
 }
