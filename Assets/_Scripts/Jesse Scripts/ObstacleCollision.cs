@@ -23,7 +23,7 @@ public class ObstacleCollision : MonoBehaviour
             MainGameManager.instance.GameOver();
             LevelManager.instance.ChangeShipSpeed(0, 0.5f);
 
-            other.gameObject.GetComponent<Obstacle>().scrollObstacle = false;
+            other.gameObject.GetComponent<ObstacleMovement>().scrollObstacle = false;
         }
     }
 }

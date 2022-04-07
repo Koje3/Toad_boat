@@ -827,7 +827,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9150943, g: 0.71577007, b: 0.58272517, a: 1}
-  m_Intensity: 30
+  m_Intensity: 20
   m_Range: 4
   m_SpotAngle: 159.96266
   m_InnerSpotAngle: 104.92232
@@ -30196,6 +30196,7 @@ GameObject:
   - component: {fileID: 7555793613629597778}
   - component: {fileID: 7555793613629597780}
   - component: {fileID: 7555793613629597779}
+  - component: {fileID: 2023710329}
   m_Layer: 0
   m_Name: Cube.001 (1)
   m_TagString: Untagged
@@ -30268,6 +30269,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2023710329
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7555793613629597777}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4493585093827132993, guid: 145f04ba4e6035449b477a40480cc2a2, type: 3}
 --- !u!1 &7555793613646634411
 GameObject:
   m_ObjectHideFlags: 0
@@ -40354,6 +40369,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10db8d991ffa7014686d462ae4d44f88, type: 3}
+--- !u!1 &7213354366163480888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 10db8d991ffa7014686d462ae4d44f88, type: 3}
+  m_PrefabInstance: {fileID: 7555793612515232873}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &797161880
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7213354366163480888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -530131240172089429, guid: 10db8d991ffa7014686d462ae4d44f88, type: 3}
 --- !u!1001 &7555793612529374235
 PrefabInstance:
   m_ObjectHideFlags: 0
