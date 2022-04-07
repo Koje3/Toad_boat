@@ -15,7 +15,7 @@ C:/Users/annikavh/Desktop/Toad_boat
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-64177
+51402
 Successfully changed project path to: C:/Users/annikavh/Desktop/Toad_boat
 C:/Users/annikavh/Desktop/Toad_boat
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,8 +47,8 @@ C:/Users/annikavh/Desktop/Toad_boat
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 168.42 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 2.37 ms.
+Refreshing native plugins compatible for Editor in 164.06 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 2.45 ms.
 Initialize engine version: 2021.2.10f1 (ee872746220e)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/annikavh/Desktop/Toad_boat/Assets
@@ -63,37 +63,37 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56196
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56188
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004674 seconds.
+Registered in 0.004525 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 148.90 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.08 ms.
+Refreshing native plugins compatible for Editor in 175.65 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 0.07 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.658 seconds
+- Completed reload, in  0.722 seconds
 Domain Reload Profiling:
-	ReloadAssembly (658ms)
-		BeginReloadAssembly (67ms)
+	ReloadAssembly (722ms)
+		BeginReloadAssembly (70ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (523ms)
-			LoadAssemblies (64ms)
+		EndReloadAssembly (581ms)
+			LoadAssemblies (68ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (102ms)
+			SetupTypeCache (132ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (30ms)
-			SetupLoadedEditorAssemblies (341ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (363ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
+				InitializePlatformSupportModulesInManaged (14ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (149ms)
+				RefreshPlugins (176ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (135ms)
+				ProcessInitializeOnLoadAttributes (129ms)
 				ProcessInitializeOnLoadMethodAttributes (42ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
@@ -101,14 +101,40 @@ Domain Reload Profiling:
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.010560 seconds.
+Registered in 0.010921 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\annikavh\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\annikavh\Desktop\Toad_boat\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 148.33 ms, found 13 plugins.
+Refreshing native plugins compatible for Editor in 160.57 ms, found 13 plugins.
 Preloading 1 native plugins for Editor in 0.07 ms.
 Package Manager log level set to [2]
+Error saving file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path C:\Users\annikavh\Desktop\Toad_boat\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
+  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding, System.Int32 bufferSize) [0x00055] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
+  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding) [0x00000] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamWriter..ctor(string,bool,System.Text.Encoding)
+  at System.IO.File.WriteAllText (System.String path, System.String contents, System.Text.Encoding encoding) [0x00034] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
+  at UnityEditor.StateCache`1[T].SetState (UnityEngine.Hash128 key, T obj) [0x0004b] in <ac4382394009481fa61779d0ab47a96f>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.StateCache`1<UnityEditor.Tools/LayerSettings>:SetState (UnityEngine.Hash128,UnityEditor.Tools/LayerSettings)
+UnityEditor.Tools:set_lockedLayers (int)
+UnityEditor.Tools:OnEnable ()
+UnityEngine.ScriptableObject:CreateInstance (System.Type)
+UnityEngine.ScriptableObject:CreateInstance<UnityEditor.Tools> ()
+UnityEditor.Tools:get_get ()
+UnityEditor.Tools:get_visibleLayers ()
+UnityEditor.Animations.Rigging.BoneRendererUtils:.cctor () (at Library/PackageCache/com.unity.animation.rigging@1.1.1/Editor/Utils/BoneRendererUtils.cs:121)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Library/PackageCache/com.unity.animation.rigging@1.1.1/Editor/Utils/BoneRendererUtils.cs Line: 121)
+
 System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
   at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00040] in C:\Users\annikavh\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:250 
   at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\annikavh\Desktop\Toad_boat\Library\PackageCache\com.unity.xr.oculus@1.11.2\Runtime\OculusLoader.cs:235 
@@ -125,43 +151,43 @@ UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
 
 Mono: successfully reloaded assembly
-- Completed reload, in  2.485 seconds
+- Completed reload, in  2.475 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2486ms)
-		BeginReloadAssembly (108ms)
+	ReloadAssembly (2476ms)
+		BeginReloadAssembly (103ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (22ms)
-		EndReloadAssembly (2292ms)
-			LoadAssemblies (99ms)
+		EndReloadAssembly (2285ms)
+			LoadAssemblies (96ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (334ms)
+			SetupTypeCache (345ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (85ms)
-			SetupLoadedEditorAssemblies (1729ms)
+			RebuildScriptCaches (87ms)
+			SetupLoadedEditorAssemblies (1709ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (9ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (148ms)
-				BeforeProcessingInitializeOnLoad (155ms)
-				ProcessInitializeOnLoadAttributes (1342ms)
-				ProcessInitializeOnLoadMethodAttributes (69ms)
-				AfterProcessingInitializeOnLoad (5ms)
+				RefreshPlugins (161ms)
+				BeforeProcessingInitializeOnLoad (166ms)
+				ProcessInitializeOnLoadAttributes (1306ms)
+				ProcessInitializeOnLoadMethodAttributes (60ms)
+				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.24 seconds
-Refreshing native plugins compatible for Editor in 2.95 ms, found 13 plugins.
-Preloading 1 native plugins for Editor in 0.10 ms.
-Unloading 7067 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 281 unused Assets / (1.9 MB). Loaded Objects now: 7484.
-Memory consumption went from 292.4 MB to 290.4 MB.
-Total: 6.814300 ms (FindLiveObjects: 0.728600 ms CreateObjectMapping: 0.733400 ms MarkObjects: 4.595300 ms  DeleteObjects: 0.755600 ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 1.93 ms, found 13 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
+Unloading 7070 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 281 unused Assets / (1.9 MB). Loaded Objects now: 7487.
+Memory consumption went from 293.2 MB to 291.3 MB.
+Total: 6.450500 ms (FindLiveObjects: 0.754100 ms CreateObjectMapping: 0.766600 ms MarkObjects: 4.184300 ms  DeleteObjects: 0.744400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -175,103 +201,19 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 16828.232003 seconds.
-  path: Assets/_Assets/Annika/Rooms & Assets/Materials/New Material.mat
-  artifactKey: Guid(b72de0864b68fa94aba8ce25ee444e06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/New Material.mat using Guid(b72de0864b68fa94aba8ce25ee444e06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5f0f8a7188ffba2907907bfd36249e6') in 0.245607 seconds 
+  Time since last request: 35141.499838 seconds.
+  path: Assets/_Assets/Annika/Rooms & Assets/Sam1.2.1 cellshaded (1).prefab
+  artifactKey: Guid(91b139358996e2a43b66ec53179c9ec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/Annika/Rooms & Assets/Sam1.2.1 cellshaded (1).prefab using Guid(91b139358996e2a43b66ec53179c9ec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33ba255605a6e2658f6d653966198f36') in 0.459793 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 129.797935 seconds.
-  path: Assets/_Assets/Annika/Rooms & Assets/AnnikanPrefabs/FatFrogCan.prefab
-  artifactKey: Guid(4008c7dc629a7984e97fa6c6b95991df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Assets/Annika/Rooms & Assets/AnnikanPrefabs/FatFrogCan.prefab using Guid(4008c7dc629a7984e97fa6c6b95991df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '067b1fe7aa35af9dba0987fec10576dc') in 0.035218 seconds 
+  Time since last request: 2435.812150 seconds.
+  path: Assets/_Assets/Annika/Rooms & Assets/Materials/Dashboard/Pin.Part2.001_Base_color.png
+  artifactKey: Guid(8ff9e5bde9d5961458c2cf91d64fcd99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/Dashboard/Pin.Part2.001_Base_color.png using Guid(8ff9e5bde9d5961458c2cf91d64fcd99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc6fb5c7eb1ec1c52e5af49c96efc292') in 0.028441 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 8271.625738 seconds.
-  path: Assets/_Assets/Annika/Rooms & Assets/Materials/Bed/Pillow.mat
-  artifactKey: Guid(212edc8818f2d07489ce969eea2a95e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/Bed/Pillow.mat using Guid(212edc8818f2d07489ce969eea2a95e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8b42c2f787be7467a0345b26409cc5d') in 0.034216 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2704.945664 seconds.
-  path: Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Material.003_Base_color.png
-  artifactKey: Guid(4ba14c87afc1db54c99b04e648531ae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Material.003_Base_color.png using Guid(4ba14c87afc1db54c99b04e648531ae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5035ee54a5639fe022f2c67d3152969') in 0.030075 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Material_Base_color.png
-  artifactKey: Guid(fa1f047c228a95a4f82be8cc44c4bc45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Material_Base_color.png using Guid(fa1f047c228a95a4f82be8cc44c4bc45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e3a44776fccdad38375f3219222e119') in 0.012722 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 53.803705 seconds.
-  path: Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Dresser2.mat
-  artifactKey: Guid(c30f5498493521f419ce2a42fe7d6ab8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Dresser2.mat using Guid(c30f5498493521f419ce2a42fe7d6ab8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd96dbf06d8e42c11c6852d35dd1e3402') in 0.026537 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2537.739615 seconds.
-  path: Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Material.003_Base_color.png
-  artifactKey: Guid(4ba14c87afc1db54c99b04e648531ae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Material.003_Base_color.png using Guid(4ba14c87afc1db54c99b04e648531ae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d222f40d8a869bab444bcb9026fb5e3') in 0.012140 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Material_Base_color 1.png
-  artifactKey: Guid(f61a3f40d5fb37746931d117f474264a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Material_Base_color 1.png using Guid(f61a3f40d5fb37746931d117f474264a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c263324c22b73edf67a31c3421319ab0') in 0.015088 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Material.006_Base_color.png
-  artifactKey: Guid(ea699279c6d823e4988799590001e425) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Material.006_Base_color.png using Guid(ea699279c6d823e4988799590001e425) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39afe368a7bfa0cda812b31792ab346a') in 0.016765 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 270.909571 seconds.
-  path: Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Dresser3.mat
-  artifactKey: Guid(399d5c8278eb5e545b70e47ebf7459bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Dresser3.mat using Guid(399d5c8278eb5e545b70e47ebf7459bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cf3c679d8534a1300b4e904838b527b') in 0.015681 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 40.407003 seconds.
-  path: Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Dresser4.mat
-  artifactKey: Guid(a322c24c85bc16847a3b689ca3c78009) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Dresser4.mat using Guid(a322c24c85bc16847a3b689ca3c78009) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0903211f705a334555cade6c09e9f54d') in 0.017674 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 38.075024 seconds.
-  path: Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Dresser5.mat
-  artifactKey: Guid(4b08c412cc1acb4498445f8434a9602f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Dresser5.mat using Guid(4b08c412cc1acb4498445f8434a9602f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '570fd5bba39b917b86393f03d9189709') in 0.021221 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 129.675130 seconds.
-  path: Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Dresser6.mat
-  artifactKey: Guid(0dda6011744cc004880fc8a5da3f22c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Dresser6.mat using Guid(0dda6011744cc004880fc8a5da3f22c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37d50fb95642e8e650bf1b111b380971') in 0.022909 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 48.620122 seconds.
-  path: Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Dresser7.mat
-  artifactKey: Guid(3a2f541f1ca054c4093bec5920e70575) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/Dresser/Dresser7.mat using Guid(3a2f541f1ca054c4093bec5920e70575) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd5f9fdd110c6899d120410319199125') in 0.018772 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2748.118096 seconds.
-  path: Assets/_Assets/Annika/Rooms & Assets/Materials/Clock/Material.012_Base_color.png
-  artifactKey: Guid(e630efe1b2ff572499e42232b8e7ebbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/Clock/Material.012_Base_color.png using Guid(e630efe1b2ff572499e42232b8e7ebbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c46de6c609e9cf73fcbb2477756f5fe') in 0.018493 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 128.880271 seconds.
-  path: Assets/_Assets/Annika/Rooms & Assets/Materials/Clock/Clock2.mat
-  artifactKey: Guid(fb48ddcb2f417a44b9ebb16d5dfc6355) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/Clock/Clock2.mat using Guid(fb48ddcb2f417a44b9ebb16d5dfc6355) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1c55b21fddce41e6b3e29d4eeb3c82a') in 0.013362 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 515.525720 seconds.
-  path: Assets/_Assets/Annika/Rooms & Assets/Materials/Clock/Clock2.mat
-  artifactKey: Guid(fb48ddcb2f417a44b9ebb16d5dfc6355) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/Clock/Clock2.mat using Guid(fb48ddcb2f417a44b9ebb16d5dfc6355) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc0b4f97bb96238ab9f86fb4b0442dd7') in 0.017119 seconds 
+  Time since last request: 382.215841 seconds.
+  path: Assets/_Assets/Annika/Rooms & Assets/Materials/Dashboard/Dashboard2.mat
+  artifactKey: Guid(ef97552feedba234b8a4ab1901593d95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/Annika/Rooms & Assets/Materials/Dashboard/Dashboard2.mat using Guid(ef97552feedba234b8a4ab1901593d95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30a8a2e6a04580f386e615656f560140') in 0.037231 seconds 
