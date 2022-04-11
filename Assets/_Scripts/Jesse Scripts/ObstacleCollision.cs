@@ -21,9 +21,9 @@ public class ObstacleCollision : MonoBehaviour
         if (other.gameObject.tag == "Obstacle")
         {
             MainGameManager.instance.GameOver();
-            LevelManager.instance.ChangeShipSpeed(0, 0.5f);
+            LevelManager.instance.ChangeShipSpeed(0, 2f);
 
-            other.gameObject.GetComponent<ObstacleMovement>().scrollObstacle = false;
+            // other.gameObject.GetComponent<ObstacleMovement>().scrollObstacle = false;
         }
     }
 }

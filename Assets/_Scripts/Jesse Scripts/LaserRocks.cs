@@ -27,12 +27,7 @@ public class LaserRocks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (obstacle != null)
-        {
-            ScrollObstacles();
-        }
-        */
+
     }
 
 
@@ -47,7 +42,7 @@ public class LaserRocks : MonoBehaviour
             if (crisis.crisisSubType == CrisisSubType.Obstacle)
             {
                 obstacleSpawnZ = LevelManager.instance.currentPieceLenght * (crisis.failPuzzleTick - crisis.startPuzzleTick);
-                obstacle = Instantiate(obstaclePrefab, new Vector3(0, 0, obstacleSpawnZ), Quaternion.identity);            
+                obstacle = Instantiate(obstaclePrefab, new Vector3(Random.Range(-20, 20), -3, obstacleSpawnZ), Quaternion.Euler(Random.Range(-15f, 15f), Random.Range(-15f, 15f), Random.Range(-15f, 15f)));            
 
                 break;
             }
@@ -58,7 +53,7 @@ public class LaserRocks : MonoBehaviour
 
                 for (int i = 0; i < obstacleCount; i++)
                 {
-                    obstacle = Instantiate(obstaclePrefab, new Vector3(Random.Range(-10, 10), 0, obstacleSpawnZ + obstacleSpacing * i), Quaternion.identity);
+                    obstacle = Instantiate(obstaclePrefab, new Vector3(Random.Range(-20, 20), -3, obstacleSpawnZ - (obstacleSpacing * i * Random.Range(1f, 2f))), Quaternion.Euler(Random.Range(-15f, 15f), Random.Range(-15f, 15f), Random.Range(-15f, 15f)));
                 }
 
                 break;
