@@ -2,88 +2,78 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class batterySpawn : MonoBehaviour
+public class BatterySpawn : MonoBehaviour
 {
 
-public List<GameObject> locationsToSpawn = new List<GameObject>();
-public List<Vector3> spawnedObjectsLocations = new List<Vector3>();
-public GameObject objectToSpawn;
-GameObject OBelement;
+    public BNG.SnapZone[] snapZonesToSpawn = new BNG.SnapZone[6];
+    public bool[] spawnedObjectsLocations = new bool[6];
+    public GameObject objectToSpawn;
 
-public int numberOfItemsToSpawn;
+
+    public int numberOfItemsToSpawn;
+
+    private float timer;
+    public float spawnDelay = 0.5f;
+    private bool batteriesSpawning;
 
 
     void Start()
     {
-       // GameObject OBelement = GameObject.FindGameObjectWithTag("overBoard");
-        // piilottaa elementit
-
-        //jesse
-       // SpawnBatteriesBegin();
-
-
+        batteriesSpawning = false;
     }
-
-
-   public void SpawnBatteriesThatAreOverboard()
-    {
-          Instantiate(objectToSpawn, spawnedObjectsLocations[0], Quaternion.identity);
-    }
-
-
 
 
     void Update()
     {
 
-
-
     }
-
-
-
 
     public void SpawnBatteries()
     {
+        if (batteriesSpawning == false)
+            StartCoroutine(BatterySpawner());
+    }
 
-        if (numberOfItemsToSpawn > 0)
+
+    public IEnumerator BatterySpawner()
+    {
+
+        if (numberOfItemsToSpawn > 0 && objectToSpawn != null)
         {
+            batteriesSpawning = true;
 
-            Debug.Log("Listassa on " + locationsToSpawn.Count);
+            Debug.Log("Listassa on " + snapZonesToSpawn.Length);
 
+            //Spawn this many batteries
             for (int i = 0; i < numberOfItemsToSpawn; i++)
             {
-                //MaxRange
-                int maxRange = locationsToSpawn.Count;
+                yield return new WaitForSeconds(spawnDelay);
 
-                //get random value
-                int randomValue = Random.Range(0, maxRange);
+                //Go through spawn locations and find the first empty one
+                for (int e = 0; e < snapZonesToSpawn.Length; e++)
+                {
+                    //if theres no battery at location, spawn it and break out of loop
+                    if (snapZonesToSpawn[e].HeldItem == null)
+                    {
+                        Vector3 spawnPosition = snapZonesToSpawn[e].gameObject.transform.position + (Vector3.up * 0.1f);
 
-                //get object from list
-                GameObject objectFromList = locationsToSpawn[randomValue];
+                        GameObject spawnedObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.Euler(90, 0, 0));
 
-                //ger location 
-                Vector3 spawnLocation = objectFromList.transform.position;
+                        spawnedObject.name = "Battery_VRIF";
 
-                //instanciate object and add it to new list
-                GameObject SpawnedObject = Instantiate(objectToSpawn, spawnLocation, Quaternion.identity);
-
-                Vector3 saveLocation = SpawnedObject.transform.position;
-                spawnedObjectsLocations.Add(saveLocation);
-
-                //Remove location from list
-                locationsToSpawn.RemoveAt(randomValue);
-
+                        break;
+                    }
+                }
+                
             }
 
-
         }
-
         else
         {
-            Debug.Log("Listassa ei ole mitään");
+            Debug.LogError("Theres " + numberOfItemsToSpawn + " " + objectToSpawn + " objects to spawn");
         }
 
+        batteriesSpawning = false;
     }
 
 }

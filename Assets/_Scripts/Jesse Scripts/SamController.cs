@@ -6,20 +6,45 @@ using UnityEngine.AI;
 public class SamController : MonoBehaviour
 {
     private NavMeshAgent navMeshAgent;
+
+    [Header("Position for random movement")]
     public Transform movePositionsParent;
 
     private Transform[] movePositions;
-    [SerializeField]
-    private float timer;
-    [SerializeField]
-    private float randomTimeMax;
-    private Transform currentMoveTransform;
-    public PointOfInterest pointOfInterest;
 
+    [Header("Proximity collider adjustments")]
     public float proximityRadius = 1;
     public float adjustColliderX;
     public float adjustColliderY;
-    public float rotateSpeed = 1;
+
+    [Header("Turning settings")]
+    public float turnSpeed = 20;
+    public float maxTimeForTurning = 1.5f;
+    public float timeToWaitAfterRotation = 3f;
+
+
+
+    [Header("For Debugging (don't change)")]
+
+    [SerializeField]
+    private float moveTimer;
+
+    [SerializeField]
+    private float randomMoveInterval;
+
+    [SerializeField]
+    private Transform currentMoveTransform;
+
+    [SerializeField]
+    private Vector3 targetRotationPosition;
+
+    [SerializeField]
+    private float rotationIntervalTimer;
+    [SerializeField]
+    private float turnTimer;
+
+    public PointOfInterest pointOfInterest;
+
 
 
     private void Awake()
@@ -37,8 +62,9 @@ public class SamController : MonoBehaviour
             movePositions[i] = movePositionsParent.transform.GetChild(i);
         }
 
-        //reset timer
-        timer = 0;
+        //reset timers
+        moveTimer = 0;
+        turnTimer = 0;
 
         ChangePosition();
     }
@@ -46,25 +72,31 @@ public class SamController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RandomMoveTimer();
+        
+        turnTimer += Time.deltaTime;
+        rotationIntervalTimer += Time.deltaTime;
+        CheckPointOfInterestCollision();
+        RotateTowardsPlayer();
 
-        TurnAroundWhenPlayerIsNear();
+        RandomMoveAfterTime();
+
+       // TurnAroundWhenPlayerIsNear();
     }
 
-    void RandomMoveTimer()
+    void RandomMoveAfterTime()
     {
-        timer += Time.deltaTime;
+        moveTimer += Time.deltaTime;
 
         //if sam hasn't moved to position yet, reset timer
         if (transform.position.x != currentMoveTransform.position.x)
         {
-            timer = 0;
+            moveTimer = 0;
         }
 
-        if (timer > randomTimeMax)
+        if (moveTimer > randomMoveInterval)
         {
-            timer = 0;
-            randomTimeMax = Random.Range(3f, 10f);
+            moveTimer = 0;
+            randomMoveInterval = Random.Range(3f, 10f);
 
             ChangePosition();
         }
@@ -76,7 +108,7 @@ public class SamController : MonoBehaviour
         currentMoveTransform = movePositions[randomPosition];
         navMeshAgent.destination = currentMoveTransform.position;
     }
-
+/*
     void TurnAroundWhenPlayerIsNear()
     {
         Collider[] cols = Physics.OverlapSphere(transform.position + transform.forward * adjustColliderX + transform.up * adjustColliderY, proximityRadius);
@@ -96,6 +128,71 @@ public class SamController : MonoBehaviour
 
         if (pointOfInterest != null)
         {
+            if (turnTimer > turnTimeMax)
+            {
+                targetPosition = pointOfInterest.GetLookTarget().position;
+                turnTimer = 0;
+            }
+
+            float speed = rotateSpeed / 10;
+
+            Quaternion rotation = Quaternion.LookRotation(targetPosition - transform.position);
+
+            Debug.DrawRay(transform.position, targetPosition, Color.red);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speed);
+
+        }
+
+    }
+
+*/
+
+    void CheckPointOfInterestCollision()
+    {
+        if (rotationIntervalTimer > timeToWaitAfterRotation)
+        {
+            Collider[] cols = Physics.OverlapSphere(transform.position + transform.forward * adjustColliderX + transform.up * adjustColliderY, proximityRadius);
+
+            pointOfInterest = null;
+
+            foreach (Collider col in cols)
+            {
+
+                if (col.GetComponent<PointOfInterest>())
+                {
+                    targetRotationPosition = col.GetComponent<PointOfInterest>().GetLookTarget().position;
+                    rotationIntervalTimer = 0f;
+                    turnTimer = 0f;
+                    break;
+                }
+            }
+        }
+    }
+
+    void RotateTowardsPlayer()
+    {
+        if (turnTimer < maxTimeForTurning)
+        {
+            float speed = turnSpeed / 10;
+
+            Quaternion rotation = Quaternion.LookRotation(targetRotationPosition - transform.position);
+
+            Debug.DrawRay(transform.position, targetRotationPosition, Color.red);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speed);
+
+            rotationIntervalTimer = 0f;
+        }
+
+    }
+
+/*
+    public void TurnTowardsPointOfInterest(PointOfInterest pointOfInterest)
+    {
+        //only turn if enough time has gone from last turn
+        if (turnTimer > turnTimeMax)
+        {
             Vector3 targetPosition;
 
             targetPosition = pointOfInterest.GetLookTarget().position;
@@ -106,10 +203,11 @@ public class SamController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speed);
 
             Debug.DrawRay(transform.position, targetPosition, Color.red);
+
+            turnTimer = 0;
         }
-
     }
-
+*/
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red * 0.5f;

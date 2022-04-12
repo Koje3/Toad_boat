@@ -48,7 +48,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &67186157
 MonoBehaviour:
@@ -70,7 +70,7 @@ MonoBehaviour:
   ScaleItem: 1
   DisableColliders: 1
   DuplicateItemOnGrab: 0
-  MaxDropTime: 0.1
+  MaxDropTime: 1
   LastSnapTime: 0
   OnlyAllowNames:
   - Battery_VRIF
@@ -389,7 +389,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &837898828
 MonoBehaviour:
@@ -411,7 +411,7 @@ MonoBehaviour:
   ScaleItem: 1
   DisableColliders: 1
   DuplicateItemOnGrab: 0
-  MaxDropTime: 0.1
+  MaxDropTime: 0.5
   LastSnapTime: 0
   OnlyAllowNames:
   - Battery_VRIF
@@ -1165,7 +1165,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1485227128
 MonoBehaviour:
@@ -1187,7 +1187,7 @@ MonoBehaviour:
   ScaleItem: 1
   DisableColliders: 1
   DuplicateItemOnGrab: 0
-  MaxDropTime: 0.1
+  MaxDropTime: 1
   LastSnapTime: 0
   OnlyAllowNames:
   - Battery_VRIF
@@ -1361,7 +1361,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1735042022
 MonoBehaviour:
@@ -1383,7 +1383,7 @@ MonoBehaviour:
   ScaleItem: 1
   DisableColliders: 1
   DuplicateItemOnGrab: 0
-  MaxDropTime: 0.1
+  MaxDropTime: 1
   LastSnapTime: 0
   OnlyAllowNames:
   - Battery_VRIF
@@ -1702,7 +1702,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1889038857
 MonoBehaviour:
@@ -1724,7 +1724,7 @@ MonoBehaviour:
   ScaleItem: 1
   DisableColliders: 1
   DuplicateItemOnGrab: 0
-  MaxDropTime: 0.1
+  MaxDropTime: 1
   LastSnapTime: 0
   OnlyAllowNames:
   - Battery_VRIF
@@ -1898,7 +1898,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1992405954
 MonoBehaviour:
@@ -1920,7 +1920,7 @@ MonoBehaviour:
   ScaleItem: 1
   DisableColliders: 1
   DuplicateItemOnGrab: 0
-  MaxDropTime: 0.1
+  MaxDropTime: 1
   LastSnapTime: 0
   OnlyAllowNames:
   - Battery_VRIF
@@ -2540,7 +2540,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4696539546064797807}
-          m_TargetAssemblyTypeName: batterySpawn, Assembly-CSharp
+          m_TargetAssemblyTypeName: BatterySpawn, Assembly-CSharp
           m_MethodName: SpawnBatteries
           m_Mode: 1
           m_Arguments:
@@ -2951,16 +2951,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e09ab30938276b44bd09d54b46d2906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  locationsToSpawn:
-  - {fileID: 837898826}
-  - {fileID: 1485227126}
-  - {fileID: 67186155}
-  - {fileID: 1735042020}
-  - {fileID: 1889038855}
-  - {fileID: 1992405952}
-  spawnedObjectsLocations: []
+  snapZonesToSpawn:
+  - {fileID: 837898828}
+  - {fileID: 1485227128}
+  - {fileID: 67186157}
+  - {fileID: 1735042022}
+  - {fileID: 1889038857}
+  - {fileID: 1992405954}
+  spawnedObjectsLocations: 
   objectToSpawn: {fileID: 4641687043358574936, guid: 73de614f72a5b5741a5c40032fecdb90, type: 3}
   numberOfItemsToSpawn: 4
+  spawnDelay: 0.5
 --- !u!1 &4696539546174710641
 GameObject:
   m_ObjectHideFlags: 0

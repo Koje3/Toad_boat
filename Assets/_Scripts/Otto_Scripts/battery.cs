@@ -25,19 +25,6 @@ void OnTriggerExit(Collider elemetnt)
         }
     }
 
-void Update()
-{
 
-    if(Input.GetKeyDown(KeyCode.G))
-    {
-        SpawnNewBattery();
-    }
-
-}
-
-void SpawnNewBattery()
-    {
-        BatterySpawnerElement.GetComponent<batterySpawn>().SpawnBatteriesThatAreOverboard();
-    }
 
 }

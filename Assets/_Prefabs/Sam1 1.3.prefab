@@ -3058,13 +3058,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePositionsParent: {fileID: 0}
-  timer: 0
-  randomTimeMax: 0
-  pointOfInterest: {fileID: 0}
-  proximityRadius: 1.25
+  proximityRadius: 1.3
   adjustColliderX: 0
   adjustColliderY: 0.46
-  rotateSpeed: 20
+  turnSpeed: 20
+  maxTimeForTurning: 1.5
+  timeToWaitAfterRotation: 3
+  moveTimer: 0
+  randomMoveInterval: 0
+  currentMoveTransform: {fileID: 0}
+  targetRotationPosition: {x: 0, y: 0, z: 0}
+  rotationIntervalTimer: 0
+  turnTimer: 0
+  pointOfInterest: {fileID: 0}
 --- !u!195 &8469321775091820209
 NavMeshAgent:
   m_ObjectHideFlags: 0
