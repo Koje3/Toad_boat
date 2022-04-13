@@ -7829,6 +7829,20 @@ MonoBehaviour:
   ThumbBlendMin: 0
   ThumbBlendMax: 0
   ShowAngleGizmo: 1
+--- !u!114 &4096083375548791372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812175500220097069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804203cdc71657347bc071dfeba41047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalPositionOffset: {x: 0, y: 0, z: 0}
+  LocalRotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &1835542005081867847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8538,6 +8552,21 @@ CapsuleCollider:
   m_Height: 0.32065055
   m_Direction: 1
   m_Center: {x: 0.00000038459328, y: 0.16032527, z: 0.00034506066}
+--- !u!114 &3452628017059334440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4146201175286719366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b5b1b54556836a49948cf0f09394c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RingOnValidPickup: 1
+  RingOnValidRemotePickup: 0
+  RingHelperScale: 0.2
 --- !u!114 &7720651412681225313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10144,6 +10173,20 @@ MonoBehaviour:
   UseCustomInspector: 1
   lastFlickTime: 0
   FlickForce: 1
+--- !u!114 &6043087292399033279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4189268215874205635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804203cdc71657347bc071dfeba41047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalPositionOffset: {x: 0, y: 0, z: 0}
+  LocalRotationOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &4189268215914012264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12740,6 +12783,55 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 6f636849022c49941b54eda0c215b2d4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d47242c9dad9fd94da628bcf6fb36c2e, type: 3}
+--- !u!1 &11884237107647114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5041360207576235655, guid: d47242c9dad9fd94da628bcf6fb36c2e, type: 3}
+  m_PrefabInstance: {fileID: 4189268217041736691}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1112303446726050920
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11884237107647114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.50720525, y: 1.7352504, z: 0.3049471}
+  m_Center: {x: 0.25343403, y: 0.8676252, z: 0.09426074}
+--- !u!1 &829430583022687948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3576420538344719679, guid: d47242c9dad9fd94da628bcf6fb36c2e, type: 3}
+  m_PrefabInstance: {fileID: 4189268217041736691}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &176058109568120357
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829430583022687948}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.39566654, y: 0.023914764, z: 0.36792457}
+  m_Center: {x: -0.04299738, y: 0.30466807, z: -0.07167402}
+--- !u!65 &1952039398311990388
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829430583022687948}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.39566654, y: 0.053317893, z: 0.36792457}
+  m_Center: {x: -0.04299738, y: 0.5893854, z: -0.07167402}
 --- !u!4 &4443359868164125720 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d47242c9dad9fd94da628bcf6fb36c2e, type: 3}
@@ -13462,6 +13554,21 @@ MonoBehaviour:
   UseCustomInspector: 1
   lastFlickTime: 0
   FlickForce: 1
+--- !u!114 &6738692412061448323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4402826930875404870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b5b1b54556836a49948cf0f09394c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RingOnValidPickup: 1
+  RingOnValidRemotePickup: 0
+  RingHelperScale: 0.2
 --- !u!114 &8621922086293991928
 MonoBehaviour:
   m_ObjectHideFlags: 0
