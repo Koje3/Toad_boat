@@ -33,12 +33,12 @@ public class Tutka : MonoBehaviour
     
     void Update()
     {
-
+        /*
         if (radarBatteryEmpty == false)
         {
             RotateRadarPlate();
         }
-
+        */
     }
 
 
