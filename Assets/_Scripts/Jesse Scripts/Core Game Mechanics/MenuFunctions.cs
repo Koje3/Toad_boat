@@ -12,6 +12,9 @@ public class MenuFunctions : MonoBehaviour
     public GameObject controls;
     public GameObject credits;
 
+    public AudioClip UISound;
+    public AudioSource audioSource;
+
     public float sceneLoadDelay = 3;
 
     private int startLevelNumber;
@@ -77,6 +80,12 @@ public class MenuFunctions : MonoBehaviour
         yield return new WaitForSeconds(sceneLoadDelay);
 
         SceneManager.LoadScene(startLevelNumber);
+    }
+
+    public void PlayUISound()
+    {
+        audioSource.clip = UISound;
+        audioSource.Play();
     }
 
     

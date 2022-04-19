@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class SamController : MonoBehaviour
 {
@@ -22,7 +23,16 @@ public class SamController : MonoBehaviour
     public float maxTimeForTurning = 1.5f;
     public float timeToWaitAfterRotation = 3f;
 
+    private bool randomMove;
 
+    [Header("UI")]
+    public GameObject samUI;
+    public Text UIText;
+
+    [Header("Sound")]
+    public AudioSource audioSource;
+    public AudioClip sfxDialogueStart;
+    public AudioClip sfxDialogueEnd;
 
     [Header("For Debugging (don't change)")]
 
@@ -66,7 +76,19 @@ public class SamController : MonoBehaviour
         moveTimer = 0;
         turnTimer = 0;
 
-        ChangePosition();
+        audioSource = GetComponent<AudioSource>();
+        samUI.SetActive(false);
+
+        if (LevelManager.instance.continueGame == false)
+        {
+            randomMove = false;
+            StartCoroutine(StartingSequence());
+        }
+        else
+        {
+            randomMove = true;
+            ChangePositionRandom();
+        }
     }
 
     // Update is called once per frame
@@ -78,7 +100,8 @@ public class SamController : MonoBehaviour
         CheckPointOfInterestCollision();
         RotateTowardsPlayer();
 
-        RandomMoveAfterTime();
+        if (randomMove == true)
+            RandomMoveAfterTime();
 
        // TurnAroundWhenPlayerIsNear();
     }
@@ -98,15 +121,43 @@ public class SamController : MonoBehaviour
             moveTimer = 0;
             randomMoveInterval = Random.Range(3f, 10f);
 
-            ChangePosition();
+            ChangePositionRandom();
         }
     }
 
-    void ChangePosition()
+    void ChangePositionRandom()
     {
         int randomPosition = Random.Range(0, movePositions.Length);
         currentMoveTransform = movePositions[randomPosition];
         navMeshAgent.destination = currentMoveTransform.position;
+    }
+
+    IEnumerator StartingSequence()
+    {
+        yield return new WaitForSeconds(3);
+
+        currentMoveTransform = movePositions[4];
+        navMeshAgent.destination = currentMoveTransform.position;
+
+        yield return new WaitForSeconds(2);
+        samUI.SetActive(true);
+        audioSource.Play();
+
+        yield return new WaitForSeconds(5);
+        UIText.text = "During your sleep things went bad and I couldn't fix it by myself.";
+        audioSource.Play();
+
+        yield return new WaitForSeconds(7);
+        UIText.text = "I really need your help.";
+        audioSource.Play();
+
+        yield return new WaitForSeconds(5);
+        audioSource.clip = sfxDialogueEnd;
+        audioSource.Play();
+        samUI.SetActive(false);
+
+        yield return new WaitForSeconds(3);
+        randomMove = true;
     }
 /*
     void TurnAroundWhenPlayerIsNear()
@@ -185,6 +236,21 @@ public class SamController : MonoBehaviour
             rotationIntervalTimer = 0f;
         }
 
+    }
+
+    public void ShowUIText(string newText)
+    {
+        samUI.SetActive(true);
+        UIText.text = newText;
+        audioSource.clip = sfxDialogueStart;
+        audioSource.Play();
+    }
+
+    public void HideUIText()
+    {
+        samUI.SetActive(false);
+        audioSource.clip = sfxDialogueEnd;
+        audioSource.Play();
     }
 
 /*

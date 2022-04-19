@@ -20,6 +20,7 @@ public class BatterySpawn : MonoBehaviour
     void Start()
     {
         batteriesSpawning = false;
+        SpawnBatteries();
     }
 
 
