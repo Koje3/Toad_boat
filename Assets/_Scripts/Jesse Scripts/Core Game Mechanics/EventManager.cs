@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 //This script should be put in every level piece, even when there are no specified events happening in that piece
 
@@ -90,7 +91,7 @@ public class EventManager : MonoBehaviour
 
             if (CheckShouldShipMove())
             {
-                LevelManager.instance.ChangeShipSpeed(8, 0.1f);
+                LevelManager.instance.ChangeShipSpeed(8, 0.5f);
             }
 
         }
@@ -171,7 +172,7 @@ public class Crises
     public bool isCrisisFixed;
     public bool isCrisisEnded;
 
-
+    public UnityEvent crisisFailsEvents;
 
     public void SetVarsiablesStart()
     {
@@ -217,6 +218,7 @@ public class Crises
 
                     if (gameOverAfterFail == true)
                     {
+                        crisisFailsEvents.Invoke();
                         MainGameManager.instance.GameOver();
                     }
                 }               

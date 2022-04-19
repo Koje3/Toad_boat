@@ -19,6 +19,8 @@ public class Tutka : MonoBehaviour
 
     public float speed = 2f;
 
+    public BNG.Button radarButton;
+
  
     void Start()
     {
@@ -27,6 +29,9 @@ public class Tutka : MonoBehaviour
 
         //jesse
         radarBatteryEmptySolved = false;
+
+
+        StartCoroutine(DeactivateWithDelay());
 
     }
 
@@ -39,6 +44,13 @@ public class Tutka : MonoBehaviour
             RotateRadarPlate();
         }
         */
+    }
+
+    IEnumerator DeactivateWithDelay()
+    {
+        yield return new WaitForSeconds(2);
+
+        radarButton.DeactivateButton();
     }
 
 

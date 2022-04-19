@@ -90,7 +90,7 @@ namespace BNG {
             // Play Open Sound
             if (angle > 10) {
                 if(!playedOpenSound) {
-                    VRUtils.Instance.PlaySpatialClipAt(DoorOpenSound, transform.position, 1f, 1f);
+                    VRUtils.Instance.PlaySpatialClipAt(DoorOpenSound, transform.position, 0.2f, 1f);
                     playedOpenSound = true;
                 }
             }
@@ -111,7 +111,7 @@ namespace BNG {
 
             // Play Close Sound
             if (readyToPlayCloseSound && angle < 2) {
-                VRUtils.Instance.PlaySpatialClipAt(DoorCloseSound, transform.position, 1f, 1f);
+                VRUtils.Instance.PlaySpatialClipAt(DoorCloseSound, transform.position, 0.2f, 1f);
                 readyToPlayCloseSound = false;
             }
 

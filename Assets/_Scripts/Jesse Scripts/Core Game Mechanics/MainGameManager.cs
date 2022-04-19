@@ -74,6 +74,11 @@ public class MainGameManager : MonoBehaviour
         Timer();
         PostExposureTowardsGoal();
         SaveIcon();
+
+        if (xrRig.transform.position.y < -5f)
+        {
+            GameOver();
+        }
     }
 
     public float Timer()

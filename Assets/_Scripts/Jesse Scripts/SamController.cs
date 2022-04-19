@@ -240,10 +240,18 @@ public class SamController : MonoBehaviour
 
     public void ShowUIText(string newText)
     {
+        StartCoroutine(UITextWithDelay(newText));
+    }
+
+    IEnumerator UITextWithDelay(string newText)
+    {
+        yield return new WaitForSeconds(3);
+
         samUI.SetActive(true);
         UIText.text = newText;
         audioSource.clip = sfxDialogueStart;
         audioSource.Play();
+
     }
 
     public void HideUIText()

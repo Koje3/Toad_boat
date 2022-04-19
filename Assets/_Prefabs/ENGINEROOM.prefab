@@ -974,7 +974,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f8ccbab9dacd8374298d77f6604e8973, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.208
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -982,8 +982,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.5
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1018,7 +1018,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -8072,7 +8072,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f1ffc69186e0f2242a8d17dc5494bfd4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.498
+  m_Volume: 0.241
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -20243,7 +20243,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3ceadf14726b0864fb39bb646c0f9ba0, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.75
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -20252,7 +20252,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -20287,7 +20287,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -38903,6 +38903,14 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6822511453305184320, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822511453305184320, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6822511453582510537, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -38950,6 +38958,78 @@ PrefabInstance:
     - target: {fileID: 6822511453582510538, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
       propertyPath: m_Name
       value: KeypadParent
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822511453899569042, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822511453899569042, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822511454083798426, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822511454083798426, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822511454350778646, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822511454350778646, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822511454445260987, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822511454445260987, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822511454637608364, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822511454637608364, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822511454810831240, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822511454810831240, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822511455180968305, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822511455180968305, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822511455260319635, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822511455260319635, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991964781487200995, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8991964781487200995, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90aad9267c431f940804d8b264ef786c, type: 3}
@@ -39936,7 +40016,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 37f0e369647744f45af43be628371239, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -39980,7 +40060,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

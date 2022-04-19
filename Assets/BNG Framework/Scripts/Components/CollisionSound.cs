@@ -20,12 +20,12 @@ namespace BNG {
         /// <summary>
         /// Volume will never be played below this amount. 0-1
         /// </summary>
-        public float MinimumVolume = 0.25f;
+        public float MinimumVolume = 0.15f;
 
         /// <summary>
         /// Cap volume at this level 0 - 1
         /// </summary>
-        public float MaximumVolume = 1f;
+        public float MaximumVolume = 0.5f;
 
         public bool RecentlyPlayedSound = false;
 
