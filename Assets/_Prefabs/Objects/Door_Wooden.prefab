@@ -210,12 +210,12 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 2.1314316, y: 0.04558325, z: -19.468117}
   m_UseSpring: 1
   m_Spring:
-    spring: 0.5
+    spring: 0.2
     damper: 0.5
-    targetPosition: 0
+    targetPosition: 105
   m_UseMotor: 0
   m_Motor:
     targetVelocity: 0
@@ -486,7 +486,7 @@ MonoBehaviour:
   SelectedHandPose: {fileID: 0}
   HandPose: 0
   LeftHandIsValid: 1
-  RightHandIsValid: 1
+  RightHandIsValid: 0
   HandPosition: {fileID: 0}
   MaxDegreeDifferenceAllowed: 180
   IndexBlendMin: 0
@@ -709,7 +709,7 @@ MonoBehaviour:
   SelectedHandPose: {fileID: 0}
   HandPose: 0
   LeftHandIsValid: 1
-  RightHandIsValid: 1
+  RightHandIsValid: 0
   HandPosition: {fileID: 0}
   MaxDegreeDifferenceAllowed: 180
   IndexBlendMin: 0
@@ -825,8 +825,8 @@ Transform:
   m_GameObject: {fileID: 6888532395017717087}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 1.931, y: 0.02, z: -16.105}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.85, y: 1.85, z: 1.85}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1396539059943742938}
   - {fileID: 4037163463611655329}
@@ -1051,6 +1051,8 @@ MonoBehaviour:
   GrabPoints:
   - {fileID: 3182533545521168690}
   - {fileID: 8536533740270483195}
+  - {fileID: 7490820819131691386}
+  - {fileID: 7490820818910005248}
   UseCustomInspector: 1
   lastFlickTime: 0
   FlickForce: 1
@@ -1115,7 +1117,7 @@ MonoBehaviour:
   handPoseType: 1
   SelectedHandPose: {fileID: 0}
   HandPose: 0
-  LeftHandIsValid: 1
+  LeftHandIsValid: 0
   RightHandIsValid: 1
   HandPosition: {fileID: 0}
   MaxDegreeDifferenceAllowed: 180
@@ -1171,7 +1173,7 @@ MonoBehaviour:
   handPoseType: 1
   SelectedHandPose: {fileID: 0}
   HandPose: 0
-  LeftHandIsValid: 1
+  LeftHandIsValid: 0
   RightHandIsValid: 1
   HandPosition: {fileID: 0}
   MaxDegreeDifferenceAllowed: 180

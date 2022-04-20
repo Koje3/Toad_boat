@@ -143,20 +143,20 @@ public class SamController : MonoBehaviour
         samUI.SetActive(true);
         audioSource.Play();
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
         UIText.text = "During your sleep things went bad and I couldn't fix it by myself.";
         audioSource.Play();
 
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(5);
         UIText.text = "I really need your help.";
         audioSource.Play();
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
         audioSource.clip = sfxDialogueEnd;
         audioSource.Play();
         samUI.SetActive(false);
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         randomMove = true;
     }
 /*
