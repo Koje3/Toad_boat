@@ -107,6 +107,7 @@ public class MainGameManager : MonoBehaviour
         
         if (gameOver == false)
         {
+            gameOver = true;
             StartCoroutine(GameOverSequence());
         }
 

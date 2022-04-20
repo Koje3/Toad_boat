@@ -974,7 +974,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f8ccbab9dacd8374298d77f6604e8973, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.208
+  m_Volume: 0.288
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -20045,7 +20045,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7555793613302446330
 Transform:
@@ -39206,6 +39206,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 7555793613902374576}
     m_Modifications:
     - target: {fileID: 4865509686629684641, guid: 29b5a1465b2e947438e68f69e35a8fd2, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865509686629684641, guid: 29b5a1465b2e947438e68f69e35a8fd2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f0dae970218555746bd00d2b27f03948, type: 2}
@@ -39361,6 +39365,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f0dae970218555746bd00d2b27f03948, type: 2}
+    - target: {fileID: 4865509688404896770, guid: 29b5a1465b2e947438e68f69e35a8fd2, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4865509688404896770, guid: 29b5a1465b2e947438e68f69e35a8fd2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -40563,7 +40571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4088779761337023189, guid: 1f75a4a1ec4271442a6c51de842cadf0, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4088779762850046594, guid: 1f75a4a1ec4271442a6c51de842cadf0, type: 3}
       propertyPath: m_DynamicPixelsPerUnit
@@ -40579,7 +40587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4088779762850046648, guid: 1f75a4a1ec4271442a6c51de842cadf0, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4088779762850046649, guid: 1f75a4a1ec4271442a6c51de842cadf0, type: 3}
       propertyPath: m_Pivot.x

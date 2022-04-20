@@ -231,7 +231,7 @@ public class SamController : MonoBehaviour
 
             Debug.DrawRay(transform.position, targetRotationPosition, Color.red);
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x, rotation.eulerAngles.y, transform.rotation.eulerAngles.z), Time.deltaTime * speed);
 
             rotationIntervalTimer = 0f;
         }
