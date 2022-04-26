@@ -1,12 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 
 namespace BNG
 {
     public class ShootLaser : MonoBehaviour
     {
+        #region VariablesClasses
+        //declare audio clip variables
+        [Serializable]
+        public class AudioInspector {
+            public AudioClip gunChargeSound;
+            public AudioClip gunShootSound;
+        }
+        #endregion
+
         // public Animator laserGunAnimator;
         public Animator laserBeamAnimator;       
         public Transform MuzzlePointTransform;
@@ -25,12 +35,27 @@ namespace BNG
         [ColorUsage(true, true)]
         public Color activeColor;
 
+        //Import audio components
+        private AudioManager aM;
+        AudioSource audioSource;
+        [SerializeField] private AudioInspector audioInspector;
+
         public RaycastHitEvent onRaycastHitEvent;
 
-        // Start is called before the first frame update
+        private void Awake() { //Find audiosource from this object
+            audioSource = GetComponent<AudioSource>();
+        }
+
         void Start()
         {
-            
+            aM = AudioManager.Instance;
+
+            if (audioInspector.gunChargeSound == null) {
+                audioInspector.gunChargeSound = aM.sfxLaserChargeUp;
+            }
+            if (audioInspector.gunShootSound == null) {
+                audioInspector.gunShootSound = aM.sfxLaserShoot;
+            }
         }
 
         // Update is called once per frame
@@ -42,6 +67,8 @@ namespace BNG
         public IEnumerator ShootRaycastWithDelay()
         {
             laserBeamAnimator.Play("shoot_laser");
+
+            audioSource.PlayOneShot(audioInspector.gunShootSound);
 
             pipeColorChangeTime = 9;
 

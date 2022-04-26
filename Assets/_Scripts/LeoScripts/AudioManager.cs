@@ -25,4 +25,6 @@ public class AudioManager : MonoBehaviour {
     [Header("Tasks")]
     public AudioClip sfxEngineFireStart;
     public AudioClip sfxEngineFireLoop;
+    public AudioClip sfxLaserChargeUp;
+    public AudioClip sfxLaserShoot;
 }
