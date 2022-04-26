@@ -16329,6 +16329,38 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9144173001357582489, guid: 75a3900178a32194a9fc769807347679, type: 3}
+      propertyPath: firingSource
+      value: 
+      objectReference: {fileID: 161593222411938823}
+    - target: {fileID: 9144173001357582489, guid: 75a3900178a32194a9fc769807347679, type: 3}
+      propertyPath: laserShootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0af768b503b892545bf9c9d4de2ae9f5, type: 3}
+    - target: {fileID: 9144173001357582489, guid: 75a3900178a32194a9fc769807347679, type: 3}
+      propertyPath: laserChargeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: fc33e2b5e4d52234b9c7a24240cbbc09, type: 3}
+    - target: {fileID: 9144173001357582489, guid: 75a3900178a32194a9fc769807347679, type: 3}
+      propertyPath: shootSoundVolume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144173001357582489, guid: 75a3900178a32194a9fc769807347679, type: 3}
+      propertyPath: chargeSoundVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144173001357582489, guid: 75a3900178a32194a9fc769807347679, type: 3}
+      propertyPath: laserTriggerSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 682be5806501f9f48bf9dd4167149cdd, type: 3}
+    - target: {fileID: 9144173001357582489, guid: 75a3900178a32194a9fc769807347679, type: 3}
+      propertyPath: laserActivateSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 497ad0358effa4544bd6863c2d10b43c, type: 3}
+    - target: {fileID: 9144173001357582489, guid: 75a3900178a32194a9fc769807347679, type: 3}
+      propertyPath: triggerSoundVolume
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 9144173001357582490, guid: 75a3900178a32194a9fc769807347679, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -16417,12 +16449,51 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -0.6130006
       objectReference: {fileID: 0}
+    - target: {fileID: 9144173002369925944, guid: 75a3900178a32194a9fc769807347679, type: 3}
+      propertyPath: OnSnapEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144173002369925944, guid: 75a3900178a32194a9fc769807347679, type: 3}
+      propertyPath: OnSnapEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144173002369925944, guid: 75a3900178a32194a9fc769807347679, type: 3}
+      propertyPath: OnSnapEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 161593220528950256}
+    - target: {fileID: 9144173002369925944, guid: 75a3900178a32194a9fc769807347679, type: 3}
+      propertyPath: OnSnapEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144173002369925944, guid: 75a3900178a32194a9fc769807347679, type: 3}
+      propertyPath: OnSnapEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayChargeUpSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144173002369925944, guid: 75a3900178a32194a9fc769807347679, type: 3}
+      propertyPath: OnSnapEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: BNG.ShootLaser, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144173002369925944, guid: 75a3900178a32194a9fc769807347679, type: 3}
+      propertyPath: OnSnapEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 9144173002704209775, guid: 75a3900178a32194a9fc769807347679, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75a3900178a32194a9fc769807347679, type: 3}
+--- !u!114 &161593220528950256 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9144173001357582489, guid: 75a3900178a32194a9fc769807347679, type: 3}
+  m_PrefabInstance: {fileID: 8996143425294150505}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161593220528950258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ae4a80d9acbd1428c5348bf126375b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &161593220528950258 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9144173001357582491, guid: 75a3900178a32194a9fc769807347679, type: 3}
@@ -16484,7 +16555,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -16529,6 +16600,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9144173001357582490, guid: 75a3900178a32194a9fc769807347679, type: 3}
   m_PrefabInstance: {fileID: 8996143425294150505}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &161593222411938823 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9144173002704209774, guid: 75a3900178a32194a9fc769807347679, type: 3}
+  m_PrefabInstance: {fileID: 8996143425294150505}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae1334e1a843914ea215ac160781472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9208134890002075971
 PrefabInstance:
   m_ObjectHideFlags: 0
