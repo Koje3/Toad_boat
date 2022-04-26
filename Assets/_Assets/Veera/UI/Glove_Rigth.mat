@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1480325137028370494
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -7,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Hand_left_Base
+  m_Name: Glove_Rigth
   m_Shader: {fileID: -6465566751694194690, guid: af4f9ddffb5d3bc49a57d664ccfa8aa4, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,15 +33,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Diffuse_Texture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d8ab513e103e35144b7673a80230c430, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: efc4885edcaf0ac4dbe898ac12379fa3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6c1c36f0ebad97b44ab9bed0253081a1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 5259b6cedd7f2e240b7a78aa26e137a0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -48,7 +61,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: efc4885edcaf0ac4dbe898ac12379fa3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6c1c36f0ebad97b44ab9bed0253081a1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -60,7 +73,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 7ee653d17994d6247803e9d89fa1f208, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -81,11 +94,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Ambient_Strength: 0
-    - Falloff_Amount: 0.7
+    - Ambient_Strength: 21
+    - Falloff_Amount: 0.02
     - Fresnel_Size: 0.1
     - Lighting_Cutoff: 0
-    - Smoothness: 10
+    - Smoothness: 11
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -98,16 +111,16 @@ Material:
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 0.1
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Parallax: 0.02
+    - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0
+    - _Smoothness: 0.1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -116,24 +129,11 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Diffuse_Color: {r: 0.15294118, g: 0.1882353, b: 0.16473877, a: 0}
-    - Fresnel_Color: {r: 0.1372549, g: 0.3963005, b: 0.5764706, a: 0}
-    - Specular_Color: {r: 0, g: 0, b: 0, a: 0}
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - Diffuse_Color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 0}
+    - Fresnel_Color: {r: 0.2983746, g: 0.04018334, b: 0.4056604, a: 0}
+    - Specular_Color: {r: 0.24909225, g: 0.28235295, b: 0, a: 0}
+    - _BaseColor: {r: 0.70848167, g: 0.75117403, b: 0.8207547, a: 1}
+    - _Color: {r: 0.70848167, g: 0.751174, b: 0.8207547, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &7726090522773379501
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
