@@ -3265,6 +3265,7 @@ GameObject:
   - component: {fileID: 8469321775091820207}
   - component: {fileID: 8469321775091820209}
   - component: {fileID: 874849275}
+  - component: {fileID: 1969888030}
   m_Layer: 0
   m_Name: Sam1 1.3
   m_TagString: Untagged
@@ -3391,11 +3392,6 @@ MonoBehaviour:
   turnSpeed: 20
   maxTimeForTurning: 1.5
   timeToWaitAfterRotation: 3
-  samUI: {fileID: 1905036851}
-  UIText: {fileID: 228252179}
-  audioSource: {fileID: 0}
-  sfxDialogueStart: {fileID: 8300000, guid: 73798fdda84f50d4385f33aa4ff938ab, type: 3}
-  sfxDialogueEnd: {fileID: 8300000, guid: 639159ad9724aee4fb77c30786a55af0, type: 3}
   moveTimer: 0
   randomMoveInterval: 0
   currentMoveTransform: {fileID: 0}
@@ -3521,6 +3517,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1969888030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8469321775091820206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c935e31d89b1e174193e4cfc57840593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  samUI: {fileID: 1905036851}
+  UIText: {fileID: 228252179}
+  audioSource: {fileID: 874849275}
+  sfxDialogueStart: {fileID: 8300000, guid: 73798fdda84f50d4385f33aa4ff938ab, type: 3}
+  sfxDialogueEnd: {fileID: 8300000, guid: 639159ad9724aee4fb77c30786a55af0, type: 3}
+  minDialogueTime: 2
+  timePerCharacter: 0.05
+  maxCharactersPerSlide: 95
+  dialogueTimer: 0
+  currentStringQueue: []
+  dialogueActive: 0
 --- !u!1 &8469321775122471218
 GameObject:
   m_ObjectHideFlags: 0

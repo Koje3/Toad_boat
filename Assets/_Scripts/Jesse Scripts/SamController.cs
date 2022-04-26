@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
+
 
 public class SamController : MonoBehaviour
 {
@@ -25,14 +25,6 @@ public class SamController : MonoBehaviour
 
     private bool randomMove;
 
-    [Header("UI")]
-    public GameObject samUI;
-    public Text UIText;
-
-    [Header("Sound")]
-    public AudioSource audioSource;
-    public AudioClip sfxDialogueStart;
-    public AudioClip sfxDialogueEnd;
 
     [Header("For Debugging (don't change)")]
 
@@ -76,13 +68,11 @@ public class SamController : MonoBehaviour
         moveTimer = 0;
         turnTimer = 0;
 
-        audioSource = GetComponent<AudioSource>();
-        samUI.SetActive(false);
+
 
         if (LevelManager.instance.continueGame == false)
         {
             randomMove = false;
-            StartCoroutine(StartingSequence());
         }
         else
         {
@@ -132,33 +122,6 @@ public class SamController : MonoBehaviour
         navMeshAgent.destination = currentMoveTransform.position;
     }
 
-    IEnumerator StartingSequence()
-    {
-        yield return new WaitForSeconds(3);
-
-        currentMoveTransform = movePositions[4];
-        navMeshAgent.destination = currentMoveTransform.position;
-
-        yield return new WaitForSeconds(2);
-        samUI.SetActive(true);
-        audioSource.Play();
-
-        yield return new WaitForSeconds(4);
-        UIText.text = "During your sleep things went bad and I couldn't fix it by myself.";
-        audioSource.Play();
-
-        yield return new WaitForSeconds(5);
-        UIText.text = "I really need your help.";
-        audioSource.Play();
-
-        yield return new WaitForSeconds(4);
-        audioSource.clip = sfxDialogueEnd;
-        audioSource.Play();
-        samUI.SetActive(false);
-
-        yield return new WaitForSeconds(2);
-        randomMove = true;
-    }
 /*
     void TurnAroundWhenPlayerIsNear()
     {
@@ -238,28 +201,7 @@ public class SamController : MonoBehaviour
 
     }
 
-    public void ShowUIText(string newText)
-    {
-        StartCoroutine(UITextWithDelay(newText));
-    }
 
-    IEnumerator UITextWithDelay(string newText)
-    {
-        yield return new WaitForSeconds(3);
-
-        samUI.SetActive(true);
-        UIText.text = newText;
-        audioSource.clip = sfxDialogueStart;
-        audioSource.Play();
-
-    }
-
-    public void HideUIText()
-    {
-        samUI.SetActive(false);
-        audioSource.clip = sfxDialogueEnd;
-        audioSource.Play();
-    }
 
 /*
     public void TurnTowardsPointOfInterest(PointOfInterest pointOfInterest)
