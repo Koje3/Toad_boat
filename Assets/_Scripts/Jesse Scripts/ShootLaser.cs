@@ -8,14 +8,6 @@ namespace BNG
 {
     public class ShootLaser : MonoBehaviour
     {
-        #region VariablesClasses
-        //declare audio clip variables
-        [Serializable]
-        public class AudioInspector {
-            public AudioClip gunChargeSound;
-            public AudioClip gunShootSound;
-        }
-        #endregion
 
         // public Animator laserGunAnimator;
         public Animator laserBeamAnimator;       
@@ -35,27 +27,34 @@ namespace BNG
         [ColorUsage(true, true)]
         public Color activeColor;
 
-        //Import audio components
-        private AudioManager aM;
-        AudioSource audioSource;
-        [SerializeField] private AudioInspector audioInspector;
+        [Header("Audio Components")]
+        private AudioSource audioSource;
+        public RaycastWeapon firingSource;
+        public AudioClip laserTriggerSound;
+        [Range(0.0f, 1f)]
+        public float triggerSoundVolume;
+        public AudioClip laserShootSound;
+        [Range(0.0f, 1f)]
+        public float shootSoundVolume;
+        public AudioClip laserActivateSound;
+        public AudioClip laserDeactivateSound;
+        public AudioClip laserChargeSound;
+        [Range(0.0f, 1f)]
+        public float chargeSoundVolume;
 
         public RaycastHitEvent onRaycastHitEvent;
 
-        private void Awake() { //Find audiosource from this object
-            audioSource = GetComponent<AudioSource>();
-        }
-
         void Start()
         {
-            aM = AudioManager.Instance;
+            audioSource = GetComponent<AudioSource>();
 
-            if (audioInspector.gunChargeSound == null) {
-                audioInspector.gunChargeSound = aM.sfxLaserChargeUp;
-            }
-            if (audioInspector.gunShootSound == null) {
-                audioInspector.gunShootSound = aM.sfxLaserShoot;
-            }
+            firingSource.GunShotSound = laserShootSound;
+            firingSource.EmptySound = laserTriggerSound;
+
+            firingSource.GunShotVolume = shootSoundVolume;
+            firingSource.EmptySoundVolume = triggerSoundVolume;
+
+            audioSource.clip = laserActivateSound;
         }
 
         // Update is called once per frame
@@ -64,11 +63,13 @@ namespace BNG
             ChangePipesColorWhenShooting();
         }
 
+        public void PlayChargeUpSound() {
+            audioSource.PlayOneShot(laserChargeSound, chargeSoundVolume);
+        }
+
         public IEnumerator ShootRaycastWithDelay()
         {
             laserBeamAnimator.Play("shoot_laser");
-
-            audioSource.PlayOneShot(audioInspector.gunShootSound);
 
             pipeColorChangeTime = 9;
 
