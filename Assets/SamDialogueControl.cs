@@ -39,9 +39,12 @@ public class SamDialogueControl : MonoBehaviour
 
         AddDialogueToQueue("Tutorial1");
         AddDialogueToQueue("Test2");
+        AddDialogueToQueue("This is very long string. So long that it doesn't fit on one slide of speach bubble. It has to be broken in to sentences and showed separatly.");
 
-        string moi = "Hello everyone!";
-        currentStringQueue.Add(moi);
+        string moi = "This is a second string and it has even more sentences. " +
+            "There are so much I want to say to you right now but I don't have time. " +
+            "Look you have to fix the engine and the radar and shoot some stuff.";
+        AddDialogueToQueue(moi);
     }
 
 
@@ -49,33 +52,51 @@ public class SamDialogueControl : MonoBehaviour
     {
         if (dialogueTimer > 0)
         dialogueTimer -= Time.deltaTime;
+
+        ShowDialogueInQueue();
     }
 
     public void AddDialogueToQueue(string IDText)
     {
         // Use your relevant GameData -row data for this (Here it's sam1Dialogues)
-        foreach (Sam1Dialogue item in GameData.sam1Dialogues)
+        //foreach (var item in GameData.sam1Dialogues)
+        //{
+        //    if (item.IDText == IDText)
+        //    {
+
+        //        if (item.Dialogue.Length > maxCharactersPerSlide)
+        //        {
+        //            string[] splitStrings = item.Dialogue.Split(".");
+
+        //            for (int i = 0; i < splitStrings.Length; i++)
+        //            {
+        //                currentStringQueue.Add(splitStrings[i]);
+        //            }
+        //        }
+        //        else
+        //        {
+        //            currentStringQueue.Add(item.Dialogue);
+        //        }
+
+        //        break;
+        //    }
+        //}
+
+
+        if (IDText.Length > maxCharactersPerSlide)
         {
-            if (item.IDText == IDText)
+            string[] splitStrings = IDText.Split(". ");
+
+            for (int i = 0; i < splitStrings.Length; i++)
             {
-
-                if (item.Dialogue.Length > maxCharactersPerSlide)
-                {
-                    string[] splitStrings = item.Dialogue.Split(".");
-
-                    for (int i = 0; i < splitStrings.Length; i++)
-                    {
-                        currentStringQueue.Add(splitStrings[i]);
-                    }
-                }
-                else
-                {
-                    currentStringQueue.Add(item.Dialogue);
-                }
-
-                break;
+                currentStringQueue.Add(splitStrings[i]);
             }
         }
+        else
+        {
+            currentStringQueue.Add(IDText);
+        }
+
     }
 
     public void ShowDialogueInQueue()
