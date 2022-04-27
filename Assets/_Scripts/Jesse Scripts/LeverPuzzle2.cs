@@ -84,8 +84,8 @@ public class LeverPuzzle2 : MonoBehaviour
                     {
                         if (item.leverCorrectAction != null)
                         {
-                            item.leverCorrectAction.Invoke();
                             firstSuccessLoopCompleted = true;
+                            item.leverCorrectAction.Invoke();                            
                         }
                     }
                 }
