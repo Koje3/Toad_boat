@@ -6,29 +6,33 @@ using GameEnums;
 // Add all data objects here. Use exact same names for variables as headers in the spreadsheet.
 // Data types that are nullable are optional in the spreasheet: they can be empty by design.
 
-public class Sam1Dialogue : BaseRow
+[System.Serializable]
+public class Sam1BehaviorRow : BaseRow
 {
     public string IDText;
     public string Dialogue;
+    public Location Location;
+    public Mood Mood;
+    public string NextIDText;
 }
 
 
 
-public class CelestialBodiesRow : BaseRow
-{
-    public string IDText;
-    public StellarBody BodyType;
-    public Element? Element1;
-    public int? Element1Value;
-    public Element? Element2;
-    public int? Element2Value;
-    public Element? Element3;
-    public int? Element3Value;
-    public Element? Element4;
-    public int? Element4Value;
-    public string Icon;
-    public string Audio;
-}
+//public class CelestialBodiesRow : BaseRow
+//{
+//    public string IDText;
+//    public StellarBody BodyType;
+//    public Element? Element1;
+//    public int? Element1Value;
+//    public Element? Element2;
+//    public int? Element2Value;
+//    public Element? Element3;
+//    public int? Element3Value;
+//    public Element? Element4;
+//    public int? Element4Value;
+//    public string Icon;
+//    public string Audio;
+//}
 
 
 // Examples

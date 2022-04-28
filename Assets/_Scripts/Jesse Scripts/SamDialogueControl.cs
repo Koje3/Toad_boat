@@ -18,17 +18,21 @@ public class SamDialogueControl : MonoBehaviour
     [Header("Dialogue Setup")]
     public float minDialogueTime = 2f;
     public float timePerCharacter = 0.05f;
+    public float coolDownTimeAfterDialogue = 1f;
     public int maxCharactersPerSlide = 95;
     public float dialogueTimer;
-   // private float currentDialogueTime;
     public List<string> currentStringQueue = new List<string>();
     public bool dialogueActive = false;
+    public bool dialogueContinues = false;
+    [HideInInspector]
+    public bool letSamSpeak;
 
-    public string IDText;
+    public SamController samController;
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        samController = GetComponent<SamController>();
     }
 
     void Start()
@@ -36,15 +40,8 @@ public class SamDialogueControl : MonoBehaviour
         samUI.SetActive(false);
         dialogueTimer = 3f;
         dialogueActive = false;
-
-        AddDialogueToQueue("Tutorial1");
-        AddDialogueToQueue("Test2");
-        AddDialogueToQueue("This is very long string. So long that it doesn't fit on one slide of speach bubble. It has to be broken in to sentences and showed separatly.");
-
-        string moi = "This is a second string and it has even more sentences. " +
-            "There are so much I want to say to you right now but I don't have time. " +
-            "Look you have to fix the engine and the radar and shoot some stuff.";
-        AddDialogueToQueue(moi);
+        dialogueContinues = false;
+        letSamSpeak = true;
     }
 
 
@@ -53,20 +50,38 @@ public class SamDialogueControl : MonoBehaviour
         if (dialogueTimer > 0)
         dialogueTimer -= Time.deltaTime;
 
+        if (letSamSpeak)
         ShowDialogueInQueue();
+
     }
+
 
     public void AddDialogueToQueue(string IDText)
     {
-        // Use your relevant GameData -row data for this (Here it's sam1Dialogues)
-        //foreach (var item in GameData.sam1Dialogues)
+
+        if (IDText.Length > maxCharactersPerSlide)
+        {
+            string[] splitStrings = IDText.Split(". ");
+
+            for (int i = 0; i < splitStrings.Length; i++)
+            {
+                currentStringQueue.Add(splitStrings[i]);
+            }
+        }
+        else
+        {
+            currentStringQueue.Add(IDText);
+        }
+
+
+        //foreach (var item in GameData.Sam1Behavior)
         //{
         //    if (item.IDText == IDText)
         //    {
 
         //        if (item.Dialogue.Length > maxCharactersPerSlide)
         //        {
-        //            string[] splitStrings = item.Dialogue.Split(".");
+        //            string[] splitStrings = item.Dialogue.Split(". ");
 
         //            for (int i = 0; i < splitStrings.Length; i++)
         //            {
@@ -83,22 +98,12 @@ public class SamDialogueControl : MonoBehaviour
         //}
 
 
-        if (IDText.Length > maxCharactersPerSlide)
-        {
-            string[] splitStrings = IDText.Split(". ");
 
-            for (int i = 0; i < splitStrings.Length; i++)
-            {
-                currentStringQueue.Add(splitStrings[i]);
-            }
-        }
-        else
-        {
-            currentStringQueue.Add(IDText);
-        }
 
     }
 
+    
+    //if theres dialogue in list show the first one and then delete it -> repeat
     public void ShowDialogueInQueue()
     {
         if (currentStringQueue.Count > 0)
@@ -124,16 +129,49 @@ public class SamDialogueControl : MonoBehaviour
         }
         else if (dialogueActive == true && dialogueTimer <= 0)
         {
+            dialogueTimer = coolDownTimeAfterDialogue;
             dialogueActive = false;
-            DialogueEnded();
+
+            if (dialogueContinues == false)
+            {
+                DialogueEnded();
+            }
+
+            dialogueContinues = false;
         }
     }
+
 
     public void DialogueEnded()
     {
         samUI.SetActive(false);
-        audioSource.clip = sfxDialogueStart;
+        audioSource.clip = sfxDialogueEnd;
         audioSource.Play();
+    }
+
+    public bool IsDialogueEnded()
+    {
+        if (dialogueActive == false)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void SilenceSam()
+    {
+        letSamSpeak = false;
+        samUI.SetActive(false);
+        audioSource.clip = sfxDialogueEnd;
+        audioSource.Play();
+    }
+
+    public void LetSamSpeak()
+    {
+        letSamSpeak = true;
     }
 
     public void ShowUIText(string newText)

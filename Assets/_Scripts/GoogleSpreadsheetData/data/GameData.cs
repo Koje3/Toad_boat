@@ -8,9 +8,8 @@ public static class GameData
 	public static bool IsLoaded { get; private set; }
 
 	// Sheets
-	public static CelestialBodiesRow[] CelestialBodies;
 
-	public static Sam1Dialogue[] sam1Dialogues;
+	public static Sam1BehaviorRow[] Sam1Behavior;
 
 	// Examples
 	//public static StatRow[] Stats;

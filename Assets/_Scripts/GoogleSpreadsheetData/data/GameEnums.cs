@@ -24,6 +24,24 @@ namespace GameEnums
         BodyStellar
     }
 
+    public enum Location
+    {
+        BackDeck,
+        Bridge,
+        EngineRoom,
+        FrontDeck,
+        Kitchen,
+        SamsRoom,
+    }
+
+    public enum Mood
+    {
+        Default,
+        Sarcastic,
+        Angry,
+        Panicking
+    }
+
     [System.Serializable]
     public class ElementForces
     {
@@ -52,14 +70,14 @@ namespace GameEnums
                 Arcane += addedForce.Arcane;
             }
         }
-        public ElementForces(CelestialBodiesRow row)
-        {
-            id = row.IDText;
-            if (row.Element1 != null && row.Element1Value != null) AddElementValue((Element)row.Element1, (int)row.Element1Value);
-            if (row.Element2 != null && row.Element2Value != null) AddElementValue((Element)row.Element2, (int)row.Element2Value);
-            if (row.Element3 != null && row.Element3Value != null) AddElementValue((Element)row.Element3, (int)row.Element3Value);
-            if (row.Element4 != null && row.Element4Value != null) AddElementValue((Element)row.Element4, (int)row.Element4Value);
-        }
+        //public ElementForces(CelestialBodiesRow row)
+        //{
+        //    id = row.IDText;
+        //    if (row.Element1 != null && row.Element1Value != null) AddElementValue((Element)row.Element1, (int)row.Element1Value);
+        //    if (row.Element2 != null && row.Element2Value != null) AddElementValue((Element)row.Element2, (int)row.Element2Value);
+        //    if (row.Element3 != null && row.Element3Value != null) AddElementValue((Element)row.Element3, (int)row.Element3Value);
+        //    if (row.Element4 != null && row.Element4Value != null) AddElementValue((Element)row.Element4, (int)row.Element4Value);
+        //}
         void AddElementValue(Element element, int value)
         {
             switch (element)
@@ -83,9 +101,9 @@ namespace GameEnums
                     Light += value;
                     break;
                 case Element.Arcane:
-                     Arcane += value;
+                    Arcane += value;
                     break;
-               
+
                 default:
                     Debug.Log("No element case for: " + element);
                     break;
@@ -135,7 +153,7 @@ namespace GameEnums
 
             foreach (var item in this.GetType().GetFields())
             {
-                if (item.GetType() == typeof(int) && item.GetValue(BindingFlags.Public | BindingFlags.Instance).ToString() != "0" )
+                if (item.GetType() == typeof(int) && item.GetValue(BindingFlags.Public | BindingFlags.Instance).ToString() != "0")
                 {
                     rv += "\n" + item.Name + " " + item.GetValue(BindingFlags.Public | BindingFlags.Instance).ToString();
                 }

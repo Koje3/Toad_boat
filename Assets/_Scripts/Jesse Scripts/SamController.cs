@@ -3,6 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+public enum SamBehavior
+{
+    Tutorial1,
+    Tutorial2,
+    WaitPlayer,
+    Speak,
+    GoToPlayer,
+    GoToPlayerToSpeak,
+    NearPlayer,
+    SpeakNearPlayer,
+    GoToNextWaypoint,
+    MoveAroungShipRandom
+}
+
+
+
 
 public class SamController : MonoBehaviour
 {
@@ -25,21 +41,30 @@ public class SamController : MonoBehaviour
 
     private bool randomMove;
 
+    [Header("Other settings")]
+    public SamDialogueControl samDialogueController;
+
+
+    [Header("Behavior (read only)")]
+    public string IDText;
+    public List<Sam1BehaviorRow> samBehaviorQueue = new List<Sam1BehaviorRow>();
+    public SamBehavior samBehavior { get; private set; }
+
+    public GameEnums.Location samLocation;
+    public GameEnums.Mood samMood;
+    public string nextIDText;
+    private bool executingBehavior;
 
     [Header("For Debugging (don't change)")]
 
     [SerializeField]
     private float moveTimer;
-
     [SerializeField]
     private float randomMoveInterval;
-
     [SerializeField]
     private Transform currentMoveTransform;
-
     [SerializeField]
     private Vector3 targetRotationPosition;
-
     [SerializeField]
     private float rotationIntervalTimer;
     [SerializeField]
@@ -79,9 +104,14 @@ public class SamController : MonoBehaviour
             randomMove = true;
             ChangePositionRandom();
         }
+
+        AddSamBehaviorToQueue("Tutorial1");
+        AddSamBehaviorToQueue("Test1");
+        AddSamBehaviorToQueue("Test2");
+
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -93,8 +123,105 @@ public class SamController : MonoBehaviour
         if (randomMove == true)
             RandomMoveAfterTime();
 
-       // TurnAroundWhenPlayerIsNear();
+        ExecuteBehaviorsFromQueue();
+
     }
+
+    //Add defined behavior to the list
+    public void AddSamBehaviorToQueue(string IDText)
+    {
+        foreach (Sam1BehaviorRow item in GameData.Sam1Behavior)
+        {
+            if (item.IDText == IDText)
+            {
+                samBehaviorQueue.Add(item);
+
+                break;
+            }
+        }
+    }
+
+    public void ExecuteBehaviorsFromQueue()
+    {
+        //execute behavior in the list if there's no more dialogue to be done from the previous behavior. Then delete the first behavior in the list
+
+        if (samBehaviorQueue.Count > 0 && samDialogueController.IsDialogueEnded() == true)
+        {
+            executingBehavior = true;
+
+            samDialogueController.AddDialogueToQueue(samBehaviorQueue[0].Dialogue);
+            samLocation = samBehaviorQueue[0].Location;
+            samMood = samBehaviorQueue[0].Mood;
+
+            //if theres nextIDText defined, add that next in the list
+            if (samBehaviorQueue[0].NextIDText != null)
+            {
+                foreach (Sam1BehaviorRow item in GameData.Sam1Behavior)
+                {
+                    if (item.IDText == samBehaviorQueue[0].NextIDText)
+                    {
+                        samBehaviorQueue.Insert(1, item);
+
+                        //if there is dialogue in the next behavior row, dont close the dialogue bubble
+                        if (item.Dialogue != null)
+                        {
+                            samDialogueController.dialogueContinues = true;
+                        }
+
+                        break;
+                    }
+                }
+            }
+
+            samBehaviorQueue.RemoveAt(0);
+
+        }
+    }
+
+
+    void UpdateSamBehaviorTransitions()
+    {
+        // Handle transitions 
+        switch (samBehavior)
+        {
+            case SamBehavior.Tutorial1:
+
+
+                break;
+
+            case SamBehavior.Speak:
+
+
+                break;
+            case SamBehavior.NearPlayer:
+
+
+                break;
+        }
+    }
+
+    void UpdateCurrentSamBehavior()
+    {
+        // Handle logic 
+        switch (samBehavior)
+        {
+            case SamBehavior.Tutorial1:
+                samDialogueController.AddDialogueToQueue("Tutorial dialogue");
+
+
+                break;
+            case SamBehavior.Speak:
+
+                break;
+            case SamBehavior.GoToPlayer:
+
+                break;
+            case SamBehavior.MoveAroungShipRandom:
+
+                break;
+        }
+    }
+
 
     void RandomMoveAfterTime()
     {
@@ -122,45 +249,6 @@ public class SamController : MonoBehaviour
         navMeshAgent.destination = currentMoveTransform.position;
     }
 
-/*
-    void TurnAroundWhenPlayerIsNear()
-    {
-        Collider[] cols = Physics.OverlapSphere(transform.position + transform.forward * adjustColliderX + transform.up * adjustColliderY, proximityRadius);
-
-        pointOfInterest = null;
-
-        foreach (Collider col in cols)
-        {
-
-            if (col.GetComponent<PointOfInterest>())
-            {
-                pointOfInterest = col.GetComponent<PointOfInterest>();
-                break;
-            }
-        }
-
-
-        if (pointOfInterest != null)
-        {
-            if (turnTimer > turnTimeMax)
-            {
-                targetPosition = pointOfInterest.GetLookTarget().position;
-                turnTimer = 0;
-            }
-
-            float speed = rotateSpeed / 10;
-
-            Quaternion rotation = Quaternion.LookRotation(targetPosition - transform.position);
-
-            Debug.DrawRay(transform.position, targetPosition, Color.red);
-
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speed);
-
-        }
-
-    }
-
-*/
 
     void CheckPointOfInterestCollision()
     {

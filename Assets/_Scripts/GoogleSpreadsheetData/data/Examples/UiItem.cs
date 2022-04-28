@@ -30,41 +30,41 @@ public class UiItem : MonoBehaviour
     public void Activate()
     {
         // Use your relevant GameData -row data for this (Here it's CelestialBodies)
-        foreach (var item in GameData.CelestialBodies)
-        {
-            if (item.IDText == IDText)
-            {
-                // Text
-                description.text = item.IDText;
+    //    foreach (var item in GameData.CelestialBodies)
+    //    {
+    //        if (item.IDText == IDText)
+    //        {
+    //            // Text
+    //            description.text = item.IDText;
 
-                // Sprite
-                if (item.Icon != null)
-                {
-                    Sprite[] sprites = Resources.LoadAll<Sprite>(item.Icon.Split('_')[0]); // Atlas name parsed from icon name
-                    if (sprites == null)
-                    {
-                        Debug.LogError("Unable to find sprite atlas for " + IDText + ": " + item.Icon.Split('_')[0] + "\nFor images in SpriteMode:multiple, use '_' -separator: assetName_spriteName");
-                        return;
-                    }
-                    foreach (var sprite in sprites)
-                    {
-                        if (sprite.name == item.Icon)
-                        {
-                            icon.sprite = sprite;
-                            break;
-                        }
-                    }
-                    if (icon.sprite == null) { Debug.LogError("Couldn't load resource"); return; }
-                }
+    //            // Sprite
+    //            if (item.Icon != null)
+    //            {
+    //                Sprite[] sprites = Resources.LoadAll<Sprite>(item.Icon.Split('_')[0]); // Atlas name parsed from icon name
+    //                if (sprites == null)
+    //                {
+    //                    Debug.LogError("Unable to find sprite atlas for " + IDText + ": " + item.Icon.Split('_')[0] + "\nFor images in SpriteMode:multiple, use '_' -separator: assetName_spriteName");
+    //                    return;
+    //                }
+    //                foreach (var sprite in sprites)
+    //                {
+    //                    if (sprite.name == item.Icon)
+    //                    {
+    //                        icon.sprite = sprite;
+    //                        break;
+    //                    }
+    //                }
+    //                if (icon.sprite == null) { Debug.LogError("Couldn't load resource"); return; }
+    //            }
 
-                if (audioSource != null && item.Audio != null && item.Audio != "")
-                {
-                    audioSource.clip = Resources.Load<AudioClip>(item.Audio);
-                    if (audioSource.clip == null) { Debug.LogError("Unable to find audioClip asset named: " + item.Audio); return; }
-                    else audioSource.Play();
-                }
-            }
-        }
+    //            if (audioSource != null && item.Audio != null && item.Audio != "")
+    //            {
+    //                audioSource.clip = Resources.Load<AudioClip>(item.Audio);
+    //                if (audioSource.clip == null) { Debug.LogError("Unable to find audioClip asset named: " + item.Audio); return; }
+    //                else audioSource.Play();
+    //            }
+    //        }
+    //    }
     }
 
 
