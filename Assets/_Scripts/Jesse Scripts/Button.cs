@@ -83,22 +83,7 @@ namespace BNG {
 
             audioSource = GetComponent<AudioSource>();
 
-
-            if (onButtonDown == null)
-                onButtonDown = new UnityEvent();
-
-            if (onButtonDown == null)
-                onButtonUp = new UnityEvent();
-
             onButtonDown.AddListener(Ping);
-
-            // Add buttonclicks to my custom event -Jesse           
-
-            if (onButtonDownCrisisType == null)
-                    onButtonDownCrisisType = new MyCrisisTypeEvent();
-
-            if (onButtonDownCrisisType == null)
-                    onButtonUpCrisisType = new MyCrisisTypeEvent();
 
             // Add listener for custom event - Jesse
             onButtonDownCrisisType.AddListener(PingCrisis);

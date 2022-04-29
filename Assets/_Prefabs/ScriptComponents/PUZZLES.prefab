@@ -2070,13 +2070,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3052190516282155585}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4696539545237508357}
-  m_RootOrder: 0
+  m_Father: {fileID: 4696539544729692455}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2867440515316423974
 MonoBehaviour:
@@ -2095,6 +2095,7 @@ MonoBehaviour:
   puzzleObject: {fileID: 4696539545237508378}
   crisisTypeToSolve: 4
   puzzleOpen: 0
+  firstSuccessLoopCompleted: 0
   levers:
   - lever: {fileID: 0}
     solvedValue: 50
@@ -2157,6 +2158,7 @@ Transform:
   - {fileID: 4696539546064797804}
   - {fileID: 4696539544934023043}
   - {fileID: 4696539544905032989}
+  - {fileID: 2535203217040365458}
   - {fileID: 4696539545237508357}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -2866,10 +2868,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2535203217040365458}
+  m_Children: []
   m_Father: {fileID: 4696539544729692455}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4696539545237508378
 MonoBehaviour:
