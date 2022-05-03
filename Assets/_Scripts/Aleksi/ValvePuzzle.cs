@@ -8,32 +8,41 @@ public class ValvePuzzle : MonoBehaviour
 {
     [Header("Buffer Value +/-")]
     public float buffer = 10f;
-
-    //public BNG.Button button;
-
     public List<ValveInfo> valves;
-    public Material valveFalse;
-    public Material valveCorrect;
+    public Material valveIndicatorFalse;
+    public Material valveIndicatorCorrect;
+
+    [SerializeField]
+    private PuzzleComponentManager puzzleObject;
+    [SerializeField]
+    private CrisisSubType crisisTypeToSolve;
+    public UnityEvent onStartEarly;
 
     [Header("Debugging")]
     public uint solvedAmount;
     private bool[] solved;
     public bool isActive = false;
     public bool isFixed = false;
-    
+
 
     void Start()
     {    
         foreach (var item in valves)
         {
             // Start listening to value changes and initialize puzzle
-            item.steeringWheel.onAngleChange.AddListener(WheelValueChanged);
+            item.steeringWheel.onAngleChange.AddListener(ValveAngleChanged);
             item.indicator = item.steeringWheel.transform.Find("Indicator").GetComponent<Renderer>();
-            item.indicator.material = valveCorrect;
+            item.indicator.material = valveIndicatorCorrect;
             item.valveScript = item.steeringWheel.GetComponent<ValveInteractable>();
         }
 
         solved = new bool[valves.Count];
+    }
+
+    void Update()
+    {
+        if (!isFixed && solvedAmount >= valves.Count)
+            CheckIsPuzzleSolved();
     }
 
     public void StartPuzzle()
@@ -41,23 +50,9 @@ public class ValvePuzzle : MonoBehaviour
         isActive = true;
         isFixed = false;
 
-        ValveInfo item;
-
-        for (int i = 0; i < valves.Count; i++)
-        {
-            item = valves[i];
-
-            item.indicator.material = valveFalse;
-
-            if (item.wheelInCorrectAction != null)
-                item.wheelInCorrectAction.Invoke();
-
-            item.valveScript.BreakValve();
-
-            solved[i] = false;
-        }
-
         solvedAmount = 0;
+
+        ValveAngleChanged(0);
 
         Debug.Log("Valve Puzzle Started");
     }
@@ -66,25 +61,19 @@ public class ValvePuzzle : MonoBehaviour
     {
         if (CheckAreValvesSolved() == true)
         {
-            isActive = false;
-
-            isFixed = true;
-
-            Debug.Log("Valve Puzzle Solved");
-
-            //button.buttonActive = true;
-
-            // puzzleObject.FixCrisis(crisisTypeToSolve);
+            PuzzleSolved();
         }
     }
 
-    void Update()
+    private void PuzzleSolved()
     {
-        if(Input.GetKeyDown(KeyCode.J))
-            ResetPuzzle();
+        isActive = false;
 
-        if(solvedAmount >= valves.Count)
-            CheckIsPuzzleSolved();
+        isFixed = true;
+
+        puzzleObject.FixCrisis(crisisTypeToSolve);
+
+        Debug.Log("Valve Puzzle Solved");
     }
 
     public bool CheckAreValvesSolved()
@@ -106,7 +95,7 @@ public class ValvePuzzle : MonoBehaviour
          return true;
     }
 
-    public void WheelValueChanged(float wheelValue)
+    public void ValveAngleChanged(float wheelValue)
     {
         ValveInfo item;
 
@@ -120,7 +109,7 @@ public class ValvePuzzle : MonoBehaviour
             {
                 if (item.currentValue > item.solvedValue - buffer && item.currentValue < item.solvedValue + buffer)
                 {
-                    item.indicator.material = valveCorrect;
+                    item.indicator.material = valveIndicatorCorrect;
 
                     solved[i] = true;
 
@@ -131,7 +120,7 @@ public class ValvePuzzle : MonoBehaviour
                 }
                 else
                 {
-                    item.indicator.material = valveFalse;
+                    item.indicator.material = valveIndicatorFalse;
 
                     solved[i] = false;
 
@@ -142,26 +131,24 @@ public class ValvePuzzle : MonoBehaviour
                 }
 
                 // Map value to 0.25 - 1 range and scale the steam with it
-                item.valveScript.ScaleEffectsOnValue(Mathf.Abs(Mathf.Abs(item.currentValue) / Mathf.Abs(item.solvedValue) - 1.00f) * .75f + .25f);
+                item.valveScript.ScaleEffectsOnValue(item.currentValue, item.solvedValue, 0.75f);
             }
             // TODO Make all the valves break after tempered after fix
             // If user is messing around with valve -> start the puzzle
             else if (!isFixed && (Mathf.Abs(item.currentValue) / Mathf.Abs(item.solvedValue)) > 0.25f)
             {
-                Debug.Log("Valve messed with before start");
-                
-                StartPuzzle();
+                puzzleObject.StartCrisis(puzzleObject.GetCrisisTypeWithSubType(crisisTypeToSolve));
+
+                onStartEarly.Invoke();
+
+                Debug.Log("Valve Puzzle started early");
             }
-            // If user is messing around with valve -> start the puzzle
-            else if (isFixed && (Mathf.Abs(item.currentValue) / Mathf.Abs(item.solvedValue)) < 0.75f)
+            // If user is messing around with valve after fix -> start the puzzle
+            else if (isFixed && !item.valveScript.wasTamperedAfterFix && (Mathf.Abs(item.currentValue) / Mathf.Abs(item.solvedValue)) < 0.75f)
             {
-                Debug.Log("Valve messed with after fix");
+                StartCoroutine(TamperedAfterFixEffect(item));
 
-                ResetPuzzle();
-
-                StartPuzzle();
-
-                return;
+                Debug.Log("Valve was tampered after fix");
             }
         }
 
@@ -179,16 +166,30 @@ public class ValvePuzzle : MonoBehaviour
         }
     }
 
-    public void ResetPuzzle()
+    private IEnumerator TamperedAfterFixEffect(ValveInfo valve)
     {
-        foreach (var item in valves)
-        {
-            //item.solvedValue = UnityEngine.Random.Range(item.steeringWheel.MinAngle,item.steeringWheel.MaxAngle); // valitsee uuden random arvon
+        valve.valveScript.BreakValve();
 
-            item.valveScript.ResetValveRotation();
+        valve.indicator.material = valveIndicatorFalse;
+
+        LevelManager.instance.ChangeShipSpeed(0);
+
+        float duration = 10, time = 0;
+
+        while(time < duration)
+        {
+            valve.valveScript.ScaleEffectsOnValue(time, duration, 1f);
+
+            time += Time.deltaTime;
+
+            yield return null;
         }
 
-        Debug.Log("Valve Puzzle Reset");
+        valve.valveScript.FixValve();
+
+        LevelManager.instance.ChangeShipSpeed(8);
+
+        valve.valveScript.wasTamperedAfterFix = true;
     }
 }
 

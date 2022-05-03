@@ -82,6 +82,20 @@ public class PuzzleComponentManager : MonoBehaviour
         startCrisisType.onCrisisStartEvent.Invoke();
     }
 
+    /// <returns>First CrisisType with given CrisisSubType.</returns>
+    public CrisisTypes GetCrisisTypeWithSubType(CrisisSubType crisisSubType)
+    {
+        for (int i = 0; i < crisisTypes.Count; i++)
+        {
+            if(crisisTypes[i].crisisType == crisisSubType)
+            {
+                return crisisTypes[i];
+            }
+        }
+
+        return null;
+    }
+
     // Stop crisis actions
     public IEnumerator StopCrisis(CrisisTypes stopCrisisType)
     {

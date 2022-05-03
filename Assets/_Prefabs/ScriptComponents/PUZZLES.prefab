@@ -2160,7 +2160,6 @@ Transform:
   - {fileID: 4696539544905032989}
   - {fileID: 2535203217040365458}
   - {fileID: 4696539545237508357}
-  - {fileID: 8332690265369221629}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2869,7 +2868,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8332690265369221629}
   m_Father: {fileID: 4696539544729692455}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2893,6 +2893,135 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2867440515316423974}
           m_TargetAssemblyTypeName: LeverPuzzle2, Assembly-CSharp
+          m_MethodName: StartPuzzle
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: BNG.Button, Assembly-CSharp
+          m_MethodName: ActivateButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 2409e75098bade540b9d75e00112fb0a, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: SamController, Assembly-CSharp
+          m_MethodName: ShowUIText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: "DIDN\u2019T YOU HEAR THE ENGINES CRASHING?!  HURRY
+              UP!  YOU NEED TO FIX IT!!"
+            m_BoolArgument: 1
+          m_CallState: 2
+    delayStopCrisisSeconds: 0
+    onCrisisStopEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: BNG.Button, Assembly-CSharp
+          m_MethodName: DeactivateButton
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+          m_MethodName: set_material
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2100000, guid: 353f49845e7345b43ae5e480a648fd5e, type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: SamController, Assembly-CSharp
+          m_MethodName: HideUIText
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: PlayOneShot
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0facda90efb1f214aa099e5b3bd02c4b, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - crisisType: 1
+    onCrisisStartEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8773705837691679953}
+          m_TargetAssemblyTypeName: ValvePuzzle, Assembly-CSharp
           m_MethodName: StartPuzzle
           m_Mode: 1
           m_Arguments:
@@ -3184,7 +3313,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8332690265369221629}
   - component: {fileID: 8773705837691679953}
-  - component: {fileID: 2460402467707845921}
   m_Layer: 0
   m_Name: ValvePuzzle
   m_TagString: Untagged
@@ -3199,13 +3327,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8554881612927560736}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4696539544729692455}
-  m_RootOrder: 5
+  m_Father: {fileID: 4696539545237508357}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8773705837691679953
 MonoBehaviour:
@@ -3232,40 +3360,13 @@ MonoBehaviour:
     wheelInCorrectAction:
       m_PersistentCalls:
         m_Calls: []
-  valveFalse: {fileID: 2100000, guid: 429f880f15bd24543a8e7720e50c57f6, type: 2}
-  valveCorrect: {fileID: 2100000, guid: 353f49845e7345b43ae5e480a648fd5e, type: 2}
+  valveIndicatorFalse: {fileID: 2100000, guid: 2409e75098bade540b9d75e00112fb0a, type: 2}
+  valveIndicatorCorrect: {fileID: 2100000, guid: 353f49845e7345b43ae5e480a648fd5e, type: 2}
+  puzzleObject: {fileID: 4696539545237508378}
+  crisisTypeToSolve: 1
+  onStartEarly:
+    m_PersistentCalls:
+      m_Calls: []
   solvedAmount: 0
---- !u!114 &2460402467707845921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8554881612927560736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21e36caa70245614babbc991963086ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puzzleComponent: 1
-  crisisTypes:
-  - crisisType: 1
-    onCrisisStartEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    delayStopCrisisSeconds: 0
-    onCrisisStopEvent:
-      m_PersistentCalls:
-        m_Calls: []
+  isActive: 0
+  isFixed: 0
