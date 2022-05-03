@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -53,6 +52,7 @@ public class SamController : MonoBehaviour
     public GameEnums.Mood samMood;
     public string nextIDText;
     private bool executingBehavior;
+    public bool changingPosition;
 
     [Header("For Debugging (don't change)")]
 
@@ -62,7 +62,8 @@ public class SamController : MonoBehaviour
     private float randomMoveInterval;
     [SerializeField]
     private Transform currentPosition;
-    private Transform targetMovePosition;
+    [SerializeField]
+    public Transform targetMovePosition;
     [SerializeField]
     private Vector3 targetRotationPosition;
     [SerializeField]
@@ -89,10 +90,12 @@ public class SamController : MonoBehaviour
             movePositions[i] = movePositionsParent.transform.GetChild(i);
         }
 
+
+        changingPosition = false;
+
         //reset timers
         moveTimer = 0;
         turnTimer = 0;
-
 
 
         if (LevelManager.instance.continueGame == false)
@@ -105,6 +108,8 @@ public class SamController : MonoBehaviour
             ChangePositionRandom();
         }
 
+        ChangePosition("BackDeck");
+
         AddSamBehaviorToQueue("ShipTour1");
         AddSamBehaviorToQueue("ShipTour2");
         AddSamBehaviorToQueue("ShipTour3");
@@ -114,9 +119,13 @@ public class SamController : MonoBehaviour
 
     void Update()
     {
-        
+
         turnTimer += Time.deltaTime;
         rotationIntervalTimer += Time.deltaTime;
+
+        moveTimer += Time.deltaTime;
+
+
         CheckPointOfInterestCollision();
         RotateTowardsPlayerWhenNear();
         UpdatePosition();
@@ -146,13 +155,14 @@ public class SamController : MonoBehaviour
     {
         //execute behavior in the list if there's no more dialogue to be done from the previous behavior. Then delete the first behavior in the list
 
-        if (samBehaviorQueue.Count > 0 && samDialogueController.IsDialogueEnded() == true)
+        if (samBehaviorQueue.Count > 0 && samDialogueController.IsDialogueEnded() && changingPosition == false)
         {
+
+            ChangePosition(samBehaviorQueue[0].Location);
+
             executingBehavior = true;
 
             samDialogueController.AddDialogueToQueue(samBehaviorQueue[0].Dialogue);
-
-            ChangePosition(samBehaviorQueue[0].Location);
 
             samMood = samBehaviorQueue[0].Mood;
 
@@ -228,8 +238,6 @@ public class SamController : MonoBehaviour
 
     void RandomMoveAfterTime()
     {
-        moveTimer += Time.deltaTime;
-
         //if sam hasn't moved to position yet, reset timer
         if (transform.position.x != currentPosition.position.x)
         {
@@ -268,9 +276,20 @@ public class SamController : MonoBehaviour
 
     void UpdatePosition()
     {
-        if (transform.position.x == targetMovePosition.position.x)
+
+        if (transform.position.x != targetMovePosition.position.x)
+        {
+            moveTimer = 0;
+        }
+
+        if (transform.position.x == targetMovePosition.position.x && moveTimer > 1f)
         {
             currentPosition = targetMovePosition;
+            changingPosition = false;
+        }
+        else
+        {
+            changingPosition = true;
         }
     }
 
@@ -329,27 +348,27 @@ public class SamController : MonoBehaviour
 
 
 
-/*
-    public void TurnTowardsPointOfInterest(PointOfInterest pointOfInterest)
-    {
-        //only turn if enough time has gone from last turn
-        if (turnTimer > turnTimeMax)
+    /*
+        public void TurnTowardsPointOfInterest(PointOfInterest pointOfInterest)
         {
-            Vector3 targetPosition;
+            //only turn if enough time has gone from last turn
+            if (turnTimer > turnTimeMax)
+            {
+                Vector3 targetPosition;
 
-            targetPosition = pointOfInterest.GetLookTarget().position;
+                targetPosition = pointOfInterest.GetLookTarget().position;
 
-            float speed = rotateSpeed / 10;
+                float speed = rotateSpeed / 10;
 
-            Quaternion rotation = Quaternion.LookRotation(targetPosition - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speed);
+                Quaternion rotation = Quaternion.LookRotation(targetPosition - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speed);
 
-            Debug.DrawRay(transform.position, targetPosition, Color.red);
+                Debug.DrawRay(transform.position, targetPosition, Color.red);
 
-            turnTimer = 0;
+                turnTimer = 0;
+            }
         }
-    }
-*/
+    */
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red * 0.5f;

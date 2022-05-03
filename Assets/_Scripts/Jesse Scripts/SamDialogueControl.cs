@@ -8,6 +8,7 @@ public class SamDialogueControl : MonoBehaviour
     [Header("UI")]
     public GameObject samUI;
     public Text UIText;
+    public HandUIController playerHandUI;
 
 
     [Header("Dialogue Sounds")]
@@ -62,7 +63,7 @@ public class SamDialogueControl : MonoBehaviour
 
         if (IDText.Length > maxCharactersPerSlide)
         {
-            string[] splitStrings = IDText.Split(". ");
+            string[] splitStrings = IDText.Split(new char[] {'.', '?', '!' });
 
             for (int i = 0; i < splitStrings.Length; i++)
             {
@@ -80,7 +81,7 @@ public class SamDialogueControl : MonoBehaviour
     //if theres dialogue in list show the first one and then delete it -> repeat
     public void ShowDialogueInQueue()
     {
-        if (currentStringQueue.Count > 0)
+        if (currentStringQueue.Count > 0 && transform.position.x == samController.targetMovePosition.position.x)
         {
             dialogueActive = true;
 
@@ -88,6 +89,10 @@ public class SamDialogueControl : MonoBehaviour
             {
                 samUI.SetActive(true);
                 UIText.text = currentStringQueue[0];
+
+                //change playerhandUI text also
+                playerHandUI.leftHandUI.SetActive(true);
+                playerHandUI.UIText.text = currentStringQueue[0];
 
                 audioSource.clip = sfxDialogueStart;
                 audioSource.Play();
@@ -121,6 +126,8 @@ public class SamDialogueControl : MonoBehaviour
         samUI.SetActive(false);
         audioSource.clip = sfxDialogueEnd;
         audioSource.Play();
+
+        playerHandUI.leftHandUI.SetActive(false);
     }
 
     public bool IsDialogueEnded()
@@ -141,6 +148,8 @@ public class SamDialogueControl : MonoBehaviour
         samUI.SetActive(false);
         audioSource.clip = sfxDialogueEnd;
         audioSource.Play();
+
+        playerHandUI.leftHandUI.SetActive(false);
     }
 
     public void LetSamSpeak()

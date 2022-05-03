@@ -3395,12 +3395,13 @@ MonoBehaviour:
   samDialogueController: {fileID: 1969888030}
   IDText: 
   samBehaviorQueue: []
-  samLocation: 0
   samMood: 0
   nextIDText: 
+  changingPosition: 0
   moveTimer: 0
   randomMoveInterval: 0
-  currentMoveTransform: {fileID: 0}
+  currentPosition: {fileID: 0}
+  targetMovePosition: {fileID: 0}
   targetRotationPosition: {x: 0, y: 0, z: 0}
   rotationIntervalTimer: 0
   turnTimer: 0
@@ -3441,6 +3442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   samUI: {fileID: 1905036851}
   UIText: {fileID: 228252179}
+  playerHandUI: {fileID: 0}
   audioSource: {fileID: 874849275}
   sfxDialogueStart: {fileID: 8300000, guid: 73798fdda84f50d4385f33aa4ff938ab, type: 3}
   sfxDialogueEnd: {fileID: 8300000, guid: 639159ad9724aee4fb77c30786a55af0, type: 3}
