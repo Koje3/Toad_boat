@@ -13,12 +13,17 @@ public class LeverPuzzle2 : MonoBehaviour
     public CrisisSubType crisisTypeToSolve;
 
     public bool puzzleOpen = false;
-    public bool firstSuccessLoopCompleted = false;
+    public bool firstSuccessLoopCompleted = false;    
+
+    //Audio
+    public AudioClip leverCorrectSound;
+    public float leverSoundVol;
+    //Audio timers
+    public float audioTimeRemaining = 0.5f;
+    private float audioTimeRemainingAtStart;
 
     public List<LeverInfo> levers;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         foreach (LeverInfo item in levers)
@@ -27,9 +32,29 @@ public class LeverPuzzle2 : MonoBehaviour
             item.indicator = item.lever.gameObject.transform.parent.Find("LeverIndicator").gameObject;
             item.solvedValue = UnityEngine.Random.Range(0f, 100.0f);
         }
+
+        audioTimeRemainingAtStart = audioTimeRemaining;
     }
 
-
+    private void Update()
+    {
+        if (firstSuccessLoopCompleted == true)
+        {
+            if (audioTimeRemaining > 0)
+            {
+                print(audioTimeRemaining);
+                audioTimeRemaining -= Time.deltaTime;
+            }
+            else
+            {
+                audioTimeRemaining = 0f;
+                {
+                    firstSuccessLoopCompleted = false;
+                    print("time's up! rdy for next sound.");
+                }
+            }
+        }
+    }
 
     public void StartPuzzle()
     {
@@ -82,16 +107,24 @@ public class LeverPuzzle2 : MonoBehaviour
 
                     if (firstSuccessLoopCompleted == false)
                     {
-                        if (item.leverCorrectAction != null)
+                        firstSuccessLoopCompleted = true;
+                        if (leverCorrectSound != null)
                         {
-                            firstSuccessLoopCompleted = true;
+                            print("playing lever audio!");
+                            item.lever.GetComponent<AudioSource>().PlayOneShot(leverCorrectSound, leverSoundVol);
+                            print("active audiosource: " + item.lever.GetComponent<AudioSource>().name);
+                            audioTimeRemaining = audioTimeRemainingAtStart;
+                            print("timer reset!");
+                        }
+
+                        if (item.leverCorrectAction != null)
+                        {                            
                             item.leverCorrectAction.Invoke();                            
                         }
                     }
                 }
                 else
-                {
-                    firstSuccessLoopCompleted = false;
+                {                    
                     if (item.indicator != null)
                         item.indicator.GetComponent<Renderer>().material = indicatorMaterialIncorrect;
 
