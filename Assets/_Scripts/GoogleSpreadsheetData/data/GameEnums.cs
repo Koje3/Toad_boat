@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System;
 using System.Reflection;
+using UnityEngine;
 
 namespace GameEnums
 {
@@ -24,22 +21,16 @@ namespace GameEnums
         BodyStellar
     }
 
-    public enum Location
-    {
-        BackDeck,
-        Bridge,
-        EngineRoom,
-        FrontDeck,
-        Kitchen,
-        SamsRoom,
-    }
-
     public enum Mood
     {
         Default,
         Sarcastic,
         Angry,
-        Panicking
+        Panicking,
+        Bored,
+        Annoyed,
+        Embarrassed,
+        Relieved
     }
 
     [System.Serializable]

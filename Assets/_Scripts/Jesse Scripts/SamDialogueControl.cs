@@ -50,6 +50,7 @@ public class SamDialogueControl : MonoBehaviour
         if (dialogueTimer > 0)
         dialogueTimer -= Time.deltaTime;
 
+        //if sam should speak, show the next dialogue in the list
         if (letSamSpeak)
         ShowDialogueInQueue();
 
@@ -72,33 +73,6 @@ public class SamDialogueControl : MonoBehaviour
         {
             currentStringQueue.Add(IDText);
         }
-
-
-        //foreach (var item in GameData.Sam1Behavior)
-        //{
-        //    if (item.IDText == IDText)
-        //    {
-
-        //        if (item.Dialogue.Length > maxCharactersPerSlide)
-        //        {
-        //            string[] splitStrings = item.Dialogue.Split(". ");
-
-        //            for (int i = 0; i < splitStrings.Length; i++)
-        //            {
-        //                currentStringQueue.Add(splitStrings[i]);
-        //            }
-        //        }
-        //        else
-        //        {
-        //            currentStringQueue.Add(item.Dialogue);
-        //        }
-
-        //        break;
-        //    }
-        //}
-
-
-
 
     }
 

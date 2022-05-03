@@ -145,11 +145,11 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    public void ChangeShipSpeed(float newShipSpeed, float newDeacclerationSpeed)
+    public void ChangeShipSpeed(float newShipSpeed, float newDeacclerationSpeed = 0.5f, float newAccelerationSpeed = 0.5f)
     {
         shipGoalSpeed = newShipSpeed;
         deaccelerationSpeed = newDeacclerationSpeed;
-
+        accelerationSpeed = newAccelerationSpeed;
     }
 
     //Update shipspeed if the goalshipspeed changes

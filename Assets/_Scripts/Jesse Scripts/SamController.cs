@@ -50,7 +50,6 @@ public class SamController : MonoBehaviour
     public List<Sam1BehaviorRow> samBehaviorQueue = new List<Sam1BehaviorRow>();
     public SamBehavior samBehavior { get; private set; }
 
-    public GameEnums.Location samLocation;
     public GameEnums.Mood samMood;
     public string nextIDText;
     private bool executingBehavior;
@@ -62,7 +61,8 @@ public class SamController : MonoBehaviour
     [SerializeField]
     private float randomMoveInterval;
     [SerializeField]
-    private Transform currentMoveTransform;
+    private Transform currentPosition;
+    private Transform targetMovePosition;
     [SerializeField]
     private Vector3 targetRotationPosition;
     [SerializeField]
@@ -105,9 +105,9 @@ public class SamController : MonoBehaviour
             ChangePositionRandom();
         }
 
-        AddSamBehaviorToQueue("Tutorial1");
-        AddSamBehaviorToQueue("Test1");
-        AddSamBehaviorToQueue("Test2");
+        AddSamBehaviorToQueue("ShipTour1");
+        AddSamBehaviorToQueue("ShipTour2");
+        AddSamBehaviorToQueue("ShipTour3");
 
 
     }
@@ -118,7 +118,8 @@ public class SamController : MonoBehaviour
         turnTimer += Time.deltaTime;
         rotationIntervalTimer += Time.deltaTime;
         CheckPointOfInterestCollision();
-        RotateTowardsPlayer();
+        RotateTowardsPlayerWhenNear();
+        UpdatePosition();
 
         if (randomMove == true)
             RandomMoveAfterTime();
@@ -150,7 +151,9 @@ public class SamController : MonoBehaviour
             executingBehavior = true;
 
             samDialogueController.AddDialogueToQueue(samBehaviorQueue[0].Dialogue);
-            samLocation = samBehaviorQueue[0].Location;
+
+            ChangePosition(samBehaviorQueue[0].Location);
+
             samMood = samBehaviorQueue[0].Mood;
 
             //if theres nextIDText defined, add that next in the list
@@ -174,7 +177,7 @@ public class SamController : MonoBehaviour
             }
 
             samBehaviorQueue.RemoveAt(0);
-
+            executingBehavior = false;
         }
     }
 
@@ -217,7 +220,7 @@ public class SamController : MonoBehaviour
 
                 break;
             case SamBehavior.MoveAroungShipRandom:
-
+                RandomMoveAfterTime();
                 break;
         }
     }
@@ -228,7 +231,7 @@ public class SamController : MonoBehaviour
         moveTimer += Time.deltaTime;
 
         //if sam hasn't moved to position yet, reset timer
-        if (transform.position.x != currentMoveTransform.position.x)
+        if (transform.position.x != currentPosition.position.x)
         {
             moveTimer = 0;
         }
@@ -245,8 +248,30 @@ public class SamController : MonoBehaviour
     void ChangePositionRandom()
     {
         int randomPosition = Random.Range(0, movePositions.Length);
-        currentMoveTransform = movePositions[randomPosition];
-        navMeshAgent.destination = currentMoveTransform.position;
+        currentPosition = movePositions[randomPosition];
+        navMeshAgent.destination = currentPosition.position;
+    }
+
+    void ChangePosition(string newPos)
+    {
+        foreach (Transform pos in movePositions)
+        {
+            if (newPos == pos.name)
+            {
+                targetMovePosition = pos;
+                break;
+            }
+        }
+
+        navMeshAgent.destination = targetMovePosition.position;
+    }
+
+    void UpdatePosition()
+    {
+        if (transform.position.x == targetMovePosition.position.x)
+        {
+            currentPosition = targetMovePosition;
+        }
     }
 
 
@@ -272,7 +297,7 @@ public class SamController : MonoBehaviour
         }
     }
 
-    void RotateTowardsPlayer()
+    void RotateTowardsPlayerWhenNear()
     {
         if (turnTimer < maxTimeForTurning)
         {
@@ -287,6 +312,19 @@ public class SamController : MonoBehaviour
             rotationIntervalTimer = 0f;
         }
 
+    }
+
+    void RotateTowardsPlayer()
+    {
+        float speed = turnSpeed / 10;
+
+        Quaternion rotation = Quaternion.LookRotation(targetRotationPosition - transform.position);
+
+        Debug.DrawRay(transform.position, targetRotationPosition, Color.red);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x, rotation.eulerAngles.y, transform.rotation.eulerAngles.z), Time.deltaTime * speed);
+
+        rotationIntervalTimer = 0f;
     }
 
 

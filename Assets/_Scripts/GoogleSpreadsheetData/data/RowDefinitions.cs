@@ -11,7 +11,7 @@ public class Sam1BehaviorRow : BaseRow
 {
     public string IDText;
     public string Dialogue;
-    public Location Location;
+    public string Location;
     public Mood Mood;
     public string NextIDText;
 }
