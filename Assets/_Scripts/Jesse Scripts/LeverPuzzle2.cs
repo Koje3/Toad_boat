@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.Events;
 
-public class LeverPuzzle2 : MonoBehaviour
+public class LeverPuzzle2 : BNG.GrabbableEvents
 {
     public Material indicatorMaterialIncorrect;
     public Material indicatorMaterialCorrect;
@@ -13,14 +13,10 @@ public class LeverPuzzle2 : MonoBehaviour
     public CrisisSubType crisisTypeToSolve;
 
     public bool puzzleOpen = false;
-    public bool firstSuccessLoopCompleted = false;    
 
     //Audio
     public AudioClip leverCorrectSound;
     public float leverSoundVol;
-    //Audio timers
-    public float audioTimeRemaining = 0.5f;
-    private float audioTimeRemainingAtStart;
 
     public List<LeverInfo> levers;
 
@@ -33,27 +29,6 @@ public class LeverPuzzle2 : MonoBehaviour
             item.solvedValue = UnityEngine.Random.Range(0f, 100.0f);
         }
 
-        audioTimeRemainingAtStart = audioTimeRemaining;
-    }
-
-    private void Update()
-    {
-        if (firstSuccessLoopCompleted == true)
-        {
-            if (audioTimeRemaining > 0)
-            {
-                print(audioTimeRemaining);
-                audioTimeRemaining -= Time.deltaTime;
-            }
-            else
-            {
-                audioTimeRemaining = 0f;
-                {
-                    firstSuccessLoopCompleted = false;
-                    print("time's up! rdy for next sound.");
-                }
-            }
-        }
     }
 
     public void StartPuzzle()
@@ -105,16 +80,16 @@ public class LeverPuzzle2 : MonoBehaviour
                     if (item.indicator != null)
                         item.indicator.GetComponent<Renderer>().material = indicatorMaterialCorrect;
 
-                    if (firstSuccessLoopCompleted == false)
+                    if (item.lever.GetComponentInParent<LeverFeedbackTimer>().timerEndEventTriggered == false)
                     {
-                        firstSuccessLoopCompleted = true;
+                        item.lever.GetComponentInParent<LeverFeedbackTimer>().timerEndEventTriggered = true;
+
+                        item.lever.GetComponentInParent<LeverFeedbackTimer>().timerIsOn = true; //activate current lever's timer
+
                         if (leverCorrectSound != null)
                         {
-                            print("playing lever audio!");
                             item.lever.GetComponent<AudioSource>().PlayOneShot(leverCorrectSound, leverSoundVol);
-                            print("active audiosource: " + item.lever.GetComponent<AudioSource>().name);
-                            audioTimeRemaining = audioTimeRemainingAtStart;
-                            print("timer reset!");
+                            //BNG.InputBridge.Instance.VibrateController(0.2f, 0.2f, 0.2f, thisGrabber.HandSide);                           
                         }
 
                         if (item.leverCorrectAction != null)
@@ -127,6 +102,12 @@ public class LeverPuzzle2 : MonoBehaviour
                 {                    
                     if (item.indicator != null)
                         item.indicator.GetComponent<Renderer>().material = indicatorMaterialIncorrect;
+
+                    if (item.lever.GetComponentInParent<LeverFeedbackTimer>().timeRemaining == 0f)
+                    {
+                        item.lever.GetComponentInParent<LeverFeedbackTimer>().ResetTime();
+                        item.lever.GetComponentInParent<LeverFeedbackTimer>().timerEndEventTriggered = false;
+                    }                    
 
                     if (item.leverInCorrectAction != null)
                         item.leverInCorrectAction.Invoke();
