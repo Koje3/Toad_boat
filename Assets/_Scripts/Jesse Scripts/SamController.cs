@@ -113,7 +113,9 @@ public class SamController : MonoBehaviour
         AddSamBehaviorToQueue("ShipTour1");
         AddSamBehaviorToQueue("ShipTour2");
         AddSamBehaviorToQueue("ShipTour3");
-
+        AddSamBehaviorToQueue("ShipTour4");
+        AddSamBehaviorToQueue("ShipTour5");
+        AddSamBehaviorToQueue("ShipTour6");
 
     }
 
@@ -219,7 +221,6 @@ public class SamController : MonoBehaviour
         switch (samBehavior)
         {
             case SamBehavior.Tutorial1:
-                samDialogueController.AddDialogueToQueue("Tutorial dialogue");
 
 
                 break;
