@@ -9,40 +9,68 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
 
     //Level building related
+
+    [Header("LEVEL GENERATION")]
     public GameObject[] levelPieces;
     public GameObject[] levelBackPieces;
     public GameObject riverStreamPrefab;
-    public int levelNumber = 1;
     public GameObject emptyObject;
+    public int levelNumber = 1;
     private GameObject levelObjectParent;
-    public float pieceLenghtSum;
 
+    [Header("ADJUST SHIP MOVEMENT")]
+
+    public float shipStartSpeed = 8;
+
+    [Space(6)]
+
+    public float rotateShipYAmount;
+    public float rotateShipYFrequency;
+
+    [Space (6)]
+
+    [Range(0f, 1f)]
+    public float rotateShipZAmount;
+    [Range(0f, 1f)]
+    public float rotateShipZFrequency;
+    private float rotateShipZtimer;
+
+    [Space(6)]
+
+    [Range(0f, 1f)]
+    public float floatingSpeed;
+    [Range(0f, 1f)]
+    public float floatingAmplitude;
+    private float floatTimer;
 
     //Ship speed related variables
+    [Header ("SHIP SPEED (Don't change via inspector)")]
     public float shipSpeed;
-    public float shipStartSpeed = 8;
     public float shipGoalSpeed;
     public float speedDelta;
     public float deaccelerationSpeed = 0.1f;
     public float accelerationSpeed = 0.1f;
 
     //Level info
-     public int currentPieceNumber = 0;
-     public EventManager currentPiece;
-     public float currentPieceLenght { get; private set; } 
-     public float currentPieceTravelled { get; private set; }
-     public float levelTravelled = 0f;
-     public float currentPieceDistance;
+    [Header("LEVEL INFO (Don't change via inspector)")]
+    public int currentPieceNumber = 0;
+    public float pieceLenghtSum;
+    public EventManager currentPiece;
+    public float currentPieceLenght { get; private set; } 
+    public float currentPieceTravelled { get; private set; }
+    public float levelTravelled = 0f;
+    public float currentPieceDistance;
     [SerializeField] private bool levelCleared;
 
 
     //Level loading and saving related
+    [Header("SAVE PARAMETERS (Don't change via inspector)")]
     public int currentLevel;
     public int loadedPieceNumber;
     public float currentLevelTravelled;
     public bool continueGame;
 
-
+    private float continuousTimer;
 
     private void Awake()
     {
@@ -73,6 +101,8 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
+        continuousTimer += Time.deltaTime;
+
         ScrollEnvironment();
         CalculateCurrentPieceMovement();
         GetCurrentPieceInfo();
@@ -81,6 +111,9 @@ public class LevelManager : MonoBehaviour
             currentPiece.Tick(currentPieceDistance);
 
         MatchShipGoalSpeed();
+
+        RockTheShip();
+        FloatTheShip();
 
     }
 
@@ -228,6 +261,25 @@ public class LevelManager : MonoBehaviour
         currentPieceDistance = currentPieceTravelled / currentPieceLenght;
 
     }
+
+    public void RockTheShip()
+    {
+        rotateShipZtimer += Time.deltaTime;
+
+        float d = Mathf.Sin(rotateShipZFrequency * rotateShipZtimer) * rotateShipZAmount;
+
+        levelObjectParent.transform.rotation = Quaternion.Euler(levelObjectParent.transform.rotation.eulerAngles.x, levelObjectParent.transform.rotation.eulerAngles.y, d);
+
+    }
+
+    public void FloatTheShip()
+    {
+        floatTimer += Time.deltaTime;
+
+        float d = Mathf.Sin(floatingSpeed * floatTimer) * floatingAmplitude;
+        levelObjectParent.transform.position = new Vector3(levelObjectParent.transform.position.x, 0 - d, levelObjectParent.transform.position.z);
+    }
+
 
 }
 
