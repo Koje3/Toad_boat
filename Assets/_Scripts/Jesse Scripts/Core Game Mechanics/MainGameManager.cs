@@ -48,6 +48,14 @@ public class MainGameManager : MonoBehaviour
         {
             Debug.LogError("ERROR: couldn't get ColorAdjustments from the Volume");
         }
+
+       //Destroy reference objects from the scene 
+        GameObject[] destroyOnStartUp = GameObject.FindGameObjectsWithTag("DestroyOnStartUp");
+
+        foreach (GameObject item in destroyOnStartUp)
+        {
+            Destroy(item);
+        }
     }
 
     private void Start()
