@@ -67,7 +67,6 @@ GameObject:
   - component: {fileID: 1757269580363936972}
   - component: {fileID: 3444348585984801641}
   - component: {fileID: 587789586804952995}
-  - component: {fileID: 2407780830971137598}
   m_Layer: 0
   m_Name: Cigarette
   m_TagString: Untagged
@@ -142,20 +141,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2407780830971137598
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380568738033659510}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.00006115607
-  m_Height: 0.00062921894
-  m_Direction: 2
-  m_Center: {x: 0.0000036910178, y: -0.00000060561115, z: 0.0000022409713}
 --- !u!1 &3617249642519081566
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +154,7 @@ GameObject:
   - component: {fileID: 5713443233391530132}
   - component: {fileID: 2721434859374018652}
   - component: {fileID: 4427206770313450930}
+  - component: {fileID: 5177090083937384219}
   m_Layer: 0
   m_Name: Cigarette1
   m_TagString: Untagged
@@ -313,6 +299,20 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!136 &5177090083937384219
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3617249642519081566}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.00006115607
+  m_Height: 0.00062921894
+  m_Direction: 2
+  m_Center: {x: 0.0000036910178, y: -0.00000060561115, z: 0.0000022409713}
 --- !u!1 &5516565698529420358
 GameObject:
   m_ObjectHideFlags: 0
