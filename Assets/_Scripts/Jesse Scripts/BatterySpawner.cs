@@ -1,80 +1,61 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BatterySpawner : MonoBehaviour
 {
-
-    public BNG.SnapZone[] snapZonesToSpawn = new BNG.SnapZone[6];
-    public bool[] spawnedObjectsLocations = new bool[6];
+    public List<BatteryPlantSoil> batteryPlantSoils = new List<BatteryPlantSoil>();
     public GameObject objectToSpawn;
-
-
-    public int numberOfItemsToSpawn;
-
-    private float timer;
     public float spawnDelay = 0.5f;
-    private bool batteriesSpawning;
 
+    private bool batteriesSpawning = false;
+    private int[] platformIndices = new int[] { 0, 1 };
 
     void Start()
     {
-        batteriesSpawning = false;
-        SpawnBatteries();
+        SpawnBatteries(platformIndices);
     }
 
-
-    void Update()
-    {
-
-    }
-
-    public void SpawnBatteries()
+    public void SpawnBatteries(int[] growPlatformIndices)
     {
         if (batteriesSpawning == false)
-            StartCoroutine(BatterySpawnerRoutine());
+            StartCoroutine(BatterySpawnerRoutine(growPlatformIndices));
     }
 
-
-    public IEnumerator BatterySpawnerRoutine()
+    public IEnumerator BatterySpawnerRoutine(int[] growPlatformIndices)
     {
-
-        if (numberOfItemsToSpawn > 0 && objectToSpawn != null)
+        if (objectToSpawn != null)
         {
             batteriesSpawning = true;
 
-            Debug.Log("Listassa on " + snapZonesToSpawn.Length);
-
             //Spawn this many batteries
-            for (int i = 0; i < numberOfItemsToSpawn; i++)
+            for (int i = 0; i < growPlatformIndices.Length; i++)
             {
-                yield return new WaitForSeconds(spawnDelay);
+                int index = growPlatformIndices[i];
 
-                //Go through spawn locations and find the first empty one
-                for (int e = 0; e < snapZonesToSpawn.Length; e++)
+                // Spawn objects in this platforms empty spawnPoints
+                for (int j = 0; j < batteryPlantSoils[index].spawnSnapZones.Count; j++)
                 {
-                    //if theres no battery at location, spawn it and break out of loop
-                    if (snapZonesToSpawn[e].HeldItem == null)
+                    yield return new WaitForSeconds(spawnDelay);
+
+                    // If theres no battery in this zone, instantiate it
+                    if (batteryPlantSoils[index].spawnSnapZones[j].HeldItem == null)
                     {
-                        Vector3 spawnPosition = snapZonesToSpawn[e].gameObject.transform.position + (Vector3.up * 0.1f);
+                        Vector3 spawnPosition = batteryPlantSoils[index].spawnSnapZones[j].gameObject.transform.position + (Vector3.up * 0.1f);
 
                         GameObject spawnedObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.Euler(90, 0, 0));
 
                         spawnedObject.name = "Battery_VRIF";
-
-                        break;
                     }
-                }
-                
-            }
 
+                    batteryPlantSoils[index].charge = 0;
+                }
+            }
         }
         else
-        {
-            Debug.LogError("Theres " + numberOfItemsToSpawn + " " + objectToSpawn + " objects to spawn");
-        }
+            Debug.LogError("No object to be spawned assign it in editor");
 
         batteriesSpawning = false;
     }
-
 }

@@ -12,6 +12,9 @@ public class BatteryPlant : MonoBehaviour
     private LineRenderer shockArc;
     [SerializeField]
     private ParticleSystem arcParticles;
+    [SerializeField]
+    private Animator _animator;
+    private BatteryPlantSoil _batteryPlantSoil;
 
     [Header("Debugging")]
     public bool shocked = false;
@@ -21,21 +24,50 @@ public class BatteryPlant : MonoBehaviour
     private Vector3[] arcPositions = new Vector3[] { default, default };
     private float originialEmissionRate;
     private InputBridge input;
+    private ParticleSystem.Burst burst;
 
     private void Start()
     {
-        _shockAudio = GetComponent<AudioSource>(); ;
+        _batteryPlantSoil = GetComponentInParent<BatteryPlantSoil>();
+        _shockAudio = GetComponent<AudioSource>();
 
         if (_shockAudio.clip == null)
             Debug.Log("No AudioClip for Batteryplant shock");
 
         _arcParticleEmission = arcParticles.emission;
         originialEmissionRate = _arcParticleEmission.rateOverTimeMultiplier;
+        burst = _arcParticleEmission.GetBurst(0);
 
         input = InputBridge.Instance;
     }
-    
-    
+
+    private void Update()
+    {
+        UpdateEffectsOnCharge();
+    }
+
+    private void UpdateEffectsOnCharge()
+    {
+        if (_batteryPlantSoil.chargeScaled < 1 && _animator.speed == 1)
+        {
+            _animator.speed = 0;
+
+            DisableBursts();
+
+            shocked = true;
+        }
+        else if (_animator.speed == 0 && _batteryPlantSoil.chargeScaled >= 1)
+        {
+            _animator.speed = 1;
+
+            EnableBursts();
+
+            shocked = false;
+        }
+
+        _arcParticleEmission.rateOverTimeMultiplier = GetMultipliedArcParticleRate(_batteryPlantSoil.chargeScaled);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         IShockable shockable;
@@ -58,9 +90,7 @@ public class BatteryPlant : MonoBehaviour
         shockArc.enabled = true;
 
         // Set bursts off when charging
-        ParticleSystem.Burst burst = _arcParticleEmission.GetBurst(0);
-        burst.count = 0;
-        _arcParticleEmission.SetBurst(0, burst);
+        DisableBursts();
 
         // Call OnShocked on target for custom effects
         target.GetComponent<IShockable>().OnShocked(shockDuration);
@@ -75,7 +105,7 @@ public class BatteryPlant : MonoBehaviour
                 shockArc.enabled = false;
 
             // Ramp particle emission back up as the plant gets "charge"
-            _arcParticleEmission.rateOverTimeMultiplier = time / shockInterval * originialEmissionRate;
+            _arcParticleEmission.rateOverTimeMultiplier = GetMultipliedArcParticleRate(time / shockInterval);
 
             SetShockArcLine(target);
 
@@ -85,10 +115,14 @@ public class BatteryPlant : MonoBehaviour
         }
 
         // Set particles back to normal
-        _arcParticleEmission.rateOverTimeMultiplier = originialEmissionRate;
-        _arcParticleEmission.SetBurst(0, burst);
+        EnableBursts();
 
         shocked = false;
+    }
+
+    private float GetMultipliedArcParticleRate(float multiplier)
+    {
+        return multiplier * originialEmissionRate;
     }
 
     /// <summary>
@@ -100,5 +134,17 @@ public class BatteryPlant : MonoBehaviour
         arcPositions[1] = target.position;
 
         shockArc.SetPositions(arcPositions);
+    }
+
+    private void DisableBursts()
+    {
+        burst.count = 0;
+        _arcParticleEmission.SetBurst(0, burst);
+    }
+
+    private void EnableBursts()
+    {
+        _arcParticleEmission.rateOverTimeMultiplier = originialEmissionRate;
+        _arcParticleEmission.SetBurst(0, burst);
     }
 }

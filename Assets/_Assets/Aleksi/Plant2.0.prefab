@@ -5475,6 +5475,7 @@ MonoBehaviour:
   shockDuration: 0.5
   shockArc: {fileID: 8970725270277502161}
   arcParticles: {fileID: 5662400096354887951}
+  _animator: {fileID: 4939691885789373380}
   shocked: 0
 --- !u!82 &6251045192672313078
 AudioSource:
@@ -5613,7 +5614,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8076791713730631340}
-  - component: {fileID: 8289363387378598491}
+  - component: {fileID: 4939691885789373380}
   m_Layer: 0
   m_Name: Plant2.0
   m_TagString: Untagged
@@ -5639,20 +5640,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!111 &8289363387378598491
-Animation:
+--- !u!95 &4939691885789373380
+Animator:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8889357901077662742}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: -4698876392567410384, guid: 23988bd20aa938047930c0970d368a92, type: 3}
-  m_Animations:
-  - {fileID: -4698876392567410384, guid: 23988bd20aa938047930c0970d368a92, type: 3}
-  - {fileID: 994687005076349894, guid: 23988bd20aa938047930c0970d368a92, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7888820f55d82c045ad4fc4de58fe299, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
