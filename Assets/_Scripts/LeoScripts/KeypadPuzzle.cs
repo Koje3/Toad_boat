@@ -11,6 +11,7 @@ public class KeypadPuzzle : MonoBehaviour {
     [SerializeField] private string presentCombination = "";
 
     public bool puzzleIsFinished = false;
+
     void Start() {
         presentCombination = "";
         screenText.text = "0000";

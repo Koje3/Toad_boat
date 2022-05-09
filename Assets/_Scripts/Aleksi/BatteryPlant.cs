@@ -46,6 +46,20 @@ public class BatteryPlant : MonoBehaviour
         UpdateEffectsOnCharge();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        IShockable shockable;
+        other.TryGetComponent(out shockable);
+
+        // If item is shockable and Shock coroutine isnt running start Shock
+        if (shockable != null && !shocked)
+        {
+            Debug.Log("Shocking: " + other.name);
+
+            StartCoroutine(Shock(other.transform));
+        }
+    }
+
     private void UpdateEffectsOnCharge()
     {
         if (_batteryPlantSoil.chargeScaled < 1 && _animator.speed == 1)
@@ -56,7 +70,7 @@ public class BatteryPlant : MonoBehaviour
 
             shocked = true;
         }
-        else if (_animator.speed == 0 && _batteryPlantSoil.chargeScaled >= 1)
+        else if (_batteryPlantSoil.chargeScaled >= 1 && _animator.speed == 0)
         {
             _animator.speed = 1;
 
@@ -66,20 +80,6 @@ public class BatteryPlant : MonoBehaviour
         }
 
         _arcParticleEmission.rateOverTimeMultiplier = GetMultipliedArcParticleRate(_batteryPlantSoil.chargeScaled);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        IShockable shockable;
-        other.TryGetComponent(out shockable);
-        
-        // If item is shockable and Shock coroutine isnt running start Shock
-        if (shockable != null && !shocked)
-        {
-            Debug.Log("Shocking: " + other.name);
-
-            StartCoroutine(Shock(other.transform));
-        }
     }
 
     private IEnumerator Shock(Transform target)
@@ -93,7 +93,7 @@ public class BatteryPlant : MonoBehaviour
         DisableBursts();
 
         // Call OnShocked on target for custom effects
-        target.GetComponent<IShockable>().OnShocked(shockDuration);
+        target.GetComponent<IShockable>().OnShocked(shockDuration, 1);
 
         _shockAudio.Play();
 

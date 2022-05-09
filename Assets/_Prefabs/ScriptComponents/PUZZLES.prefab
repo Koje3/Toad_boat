@@ -1282,9 +1282,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e09ab30938276b44bd09d54b46d2906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  batteryGrowPlatformInfos: []
+  batteryPlantSoils: []
+  batteryPlantMaterials:
+  - {fileID: 2100000, guid: 8ec89ca971338864590ddc0d1dae047e, type: 2}
+  - {fileID: 2100000, guid: 8c61b70120b3eef448f48b7125942760, type: 2}
+  plantDisabledColor: {r: 0, g: 0, b: 0, a: 1}
+  plantEnabledColor: {r: 0.3726415, g: 0.57335085, b: 1, a: 1}
   objectToSpawn: {fileID: 4641687043358574936, guid: 73de614f72a5b5741a5c40032fecdb90, type: 3}
-  spawnDelay: 1
+  spawnDelay: 3.33
 --- !u!1 &4696539546174710641
 GameObject:
   m_ObjectHideFlags: 0

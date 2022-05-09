@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WateringCan : MonoBehaviour
 {
-    [SerializeField] private bool isTilted = false;
+    [HideInInspector]
+    public bool isTilted = false;
     public float liquidParticleEmissionRate;
     public ParticleSystem pouringEffect;
 

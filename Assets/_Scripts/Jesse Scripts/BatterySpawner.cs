@@ -6,56 +6,85 @@ using UnityEngine;
 public class BatterySpawner : MonoBehaviour
 {
     public List<BatteryPlantSoil> batteryPlantSoils = new List<BatteryPlantSoil>();
+    [SerializeField]
+    private Material[] batteryPlantMaterials;
+    [SerializeField]
+    private Color plantDisabledColor = new Color(0, 0, 0);
+    [SerializeField]
+    private Color plantEnabledColor = new Color(0, 0, 1);
     public GameObject objectToSpawn;
-    public float spawnDelay = 0.5f;
+    public float spawnDelay = 3.33f;
 
-    private bool batteriesSpawning = false;
-    private int[] platformIndices = new int[] { 0, 1 };
 
-    void Start()
+    private void Start()
     {
-        SpawnBatteries(platformIndices);
+        for (int i = 0; i < batteryPlantMaterials.Length; i++)
+        {
+            batteryPlantMaterials[i].SetColor("_EmissionColor", plantDisabledColor);
+        }
     }
 
-    public void SpawnBatteries(int[] growPlatformIndices)
+    private void Update()
     {
-        if (batteriesSpawning == false)
-            StartCoroutine(BatterySpawnerRoutine(growPlatformIndices));
+        for (int i = 0; i < batteryPlantSoils.Count; i++)
+        {
+            if (!batteryPlantSoils[i].Disabled && BatterySpawnPointsEmpty(i) && !batteryPlantSoils[i].batteriesSpawning)
+            {
+                StartCoroutine(batteryPlantSoils[i].ResetCharge());
+
+                // Disable emission
+                batteryPlantMaterials[i].SetColor("_EmissionColor", plantDisabledColor);
+            }
+        }
     }
 
-    public IEnumerator BatterySpawnerRoutine(int[] growPlatformIndices)
+    public void SpawnBatteries(int index)
+    {
+        if (!batteryPlantSoils[index].batteriesSpawning)
+            StartCoroutine(BatterySpawnerRoutine(index));
+    }
+
+    public IEnumerator BatterySpawnerRoutine(int index)
     {
         if (objectToSpawn != null)
         {
-            batteriesSpawning = true;
+            batteryPlantSoils[index].batteriesSpawning = true;
 
-            //Spawn this many batteries
-            for (int i = 0; i < growPlatformIndices.Length; i++)
+            // Enable plants materials emission back to normal
+            batteryPlantMaterials[index].SetColor("_EmissionColor", plantEnabledColor);
+
+            // Spawn objects in this platforms empty spawnPoints
+            for (int j = 0; j < batteryPlantSoils[index].spawnSnapZones.Count; j++)
             {
-                int index = growPlatformIndices[i];
+                yield return new WaitForSeconds(spawnDelay);
 
-                // Spawn objects in this platforms empty spawnPoints
-                for (int j = 0; j < batteryPlantSoils[index].spawnSnapZones.Count; j++)
+                // If theres no battery in this zone, instantiate it
+                if (batteryPlantSoils[index].spawnSnapZones[j].HeldItem == null)
                 {
-                    yield return new WaitForSeconds(spawnDelay);
+                    Vector3 spawnPosition = batteryPlantSoils[index].spawnSnapZones[j].gameObject.transform.position + (Vector3.up * 0.1f);
 
-                    // If theres no battery in this zone, instantiate it
-                    if (batteryPlantSoils[index].spawnSnapZones[j].HeldItem == null)
-                    {
-                        Vector3 spawnPosition = batteryPlantSoils[index].spawnSnapZones[j].gameObject.transform.position + (Vector3.up * 0.1f);
+                    GameObject spawnedObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.Euler(90, 0, 0));
 
-                        GameObject spawnedObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.Euler(90, 0, 0));
-
-                        spawnedObject.name = "Battery_VRIF";
-                    }
-
-                    batteryPlantSoils[index].charge = 0;
+                    spawnedObject.name = "Battery_VRIF";
                 }
             }
         }
         else
             Debug.LogError("No object to be spawned assign it in editor");
 
-        batteriesSpawning = false;
+        batteryPlantSoils[index].batteriesSpawning = false;
+    }
+
+    private bool BatterySpawnPointsEmpty(int index)
+    {
+        for (int i = 0; i < batteryPlantSoils[index].spawnSnapZones.Count; i++)
+        {
+            if (batteryPlantSoils[index].spawnSnapZones[i].HeldItem != null)
+                return false;
+        }
+
+        Debug.Log("Battery spawn points are empty");
+
+        return true;
     }
 }

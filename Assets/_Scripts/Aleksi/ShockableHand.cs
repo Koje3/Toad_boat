@@ -14,8 +14,8 @@ public class ShockableHand : MonoBehaviour, IShockable
         input = InputBridge.Instance;
     }
 
-    void IShockable.OnShocked(float shockDuration)
+    void IShockable.OnShocked(float shockDuration, float amplitude)
     {
-        input.VibrateController(0.1f, 0.5f, shockDuration, handSide);
+        input.VibrateController(0.1f, amplitude, shockDuration, handSide);
     }
 }

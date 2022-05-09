@@ -18,35 +18,56 @@ public class BatteryPlantSoil : MonoBehaviour
     private UnityEvent onFullCharge;
     public UnityEvent onEmptyCharge;
 
-    private int[] growpPlatformIndices = new int[1] {0};
+    [Header("Debugging")]
+    [SerializeField]
+    private bool _disabled = true;
+    public bool batteriesSpawning = false;
 
-    private void Start()
-    {
-        growpPlatformIndices[0] = growPlatformIndex;
-    }
+    public bool Disabled { get => _disabled; }
 
     private void OnParticleCollision(GameObject other)
     {
-        if(chargeScaled < 1)
+        if(charge < secondsToFullyCharge)
         {
             charge += Time.deltaTime;
 
             chargeScaled = charge / secondsToFullyCharge;
-
-            if (charge >= secondsToFullyCharge)
-            {
-                OnFullCharge();
-            }
-
-            Debug.Log("Particle collision on Platform " + growPlatformIndex + "Charge: " + charge);
         }
-        
+        else if (charge >= secondsToFullyCharge)
+        {
+            OnFullCharge();
+        }
     }
 
     private void OnFullCharge()
     {
-        batterySpawner.SpawnBatteries(growpPlatformIndices);
+        _disabled = false;
+
+        batterySpawner.SpawnBatteries(growPlatformIndex);
 
         onFullCharge.Invoke();
+    }
+
+    public IEnumerator ResetCharge()
+    {
+        _disabled = true;
+
+        float time, duration = 1f;
+
+        time = duration;
+
+        while (time > 0)
+        {
+            time -= Time.deltaTime;
+
+            chargeScaled = time / duration;
+
+            yield return null;
+        }
+
+        charge = 0;
+        chargeScaled = 0;
+
+        onEmptyCharge.Invoke();
     }
 }
