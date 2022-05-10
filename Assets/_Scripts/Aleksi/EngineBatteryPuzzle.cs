@@ -37,11 +37,7 @@ public class EngineBatteryPuzzle : MonoBehaviour
         if(!isActive && !isFixed)
             foreach (var item in batteryInfos)
             {
-                item.snapZone.GetComponentInChildren<MeshRenderer>().material = glassBatteryInPlace;
-
-                item.bubbles.Play();
-
-                item.gearAnimation.Play();
+                EnableEffects(item);
             }
     }
 
@@ -61,11 +57,7 @@ public class EngineBatteryPuzzle : MonoBehaviour
         // Change material to indicate fault
         foreach (var item in batteryInfos)
         {
-            item.snapZone.GetComponentInChildren<MeshRenderer>().material = glassBatteryEmpty;
-
-            item.bubbles.Stop();
-
-            item.gearAnimation.Stop();
+            DisableEffects(item);
         }
 
         Debug.Log("Battery Puzzle Started");
@@ -92,11 +84,9 @@ public class EngineBatteryPuzzle : MonoBehaviour
                 // Only once
                 if (!solved[i])
                 {
-                    batteryInfos[i].snapZone.GetComponentInChildren<MeshRenderer>().material = glassBatteryInPlace;
+                    EnableEffects(batteryInfos[i]);
 
-                    batteryInfos[i].bubbles.Play();
-
-                    batteryInfos[i].gearAnimation.Play();
+                    batteryInfos[i].snapZone.GetComponent<Grabbable>().enabled = false;
                 }
 
                 solved[i] = true;
@@ -110,6 +100,24 @@ public class EngineBatteryPuzzle : MonoBehaviour
         }
 
         return true;
+    }
+
+    private void DisableEffects(BatteryInfo info)
+    {
+        info.snapZone.GetComponentInChildren<MeshRenderer>().material = glassBatteryEmpty;
+
+        info.bubbles.Stop();
+
+        info.gearAnimation.Stop();
+    }
+
+    private void EnableEffects(BatteryInfo info)
+    {
+        info.snapZone.GetComponentInChildren<MeshRenderer>().material = glassBatteryInPlace;
+
+        info.bubbles.Play();
+
+        info.gearAnimation.Play();
     }
 
     [Serializable]
