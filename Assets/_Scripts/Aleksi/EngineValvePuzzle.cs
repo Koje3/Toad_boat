@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.Events;
 
-public class ValvePuzzle : MonoBehaviour
+public class EngineValvePuzzle : MonoBehaviour
 {
     [Header("Buffer Value +/-")]
     public float buffer = 10f;
