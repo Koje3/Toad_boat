@@ -6446,6 +6446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valveSteam: {fileID: 4268349742383528895}
   engineSteam: {fileID: 0}
+  onFixedSound: {fileID: 8300000, guid: 0f7bd17113d1c6047b44dabc04c7961a, type: 3}
   wasTamperedAfterFix: 0
   isFunctioning: 1
 --- !u!114 &5639710740259985307
@@ -6461,6 +6462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeingHeld: 0
+  LastGrabbersHand: 0
   GrabButton: 0
   Grabtype: 0
   GrabPhysics: 2
@@ -6586,9 +6588,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 139ef2d853962e14f836c51a778b76f5, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -45,6 +45,8 @@ namespace BNG {
             }
         }
 
+        public ControllerHand LastGrabbersHand;
+
         /// <summary>
         /// Save whether or not the RigidBody was kinematic on Start.
         /// </summary>
@@ -572,6 +574,8 @@ namespace BNG {
                 for (int x = 0; x < heldByGrabbers.Count; x++) {
                     Grabber g = heldByGrabbers[x];
 
+                    if (x == 0)
+                        LastGrabbersHand = g.HandSide;
                     // Should we drop the item if it's too far away?
                     if (!recentlyTeleported && BreakDistance > 0 && Vector3.Distance(grabPosition, g.transform.position) > BreakDistance) {
                         Debug.Log("Break Distance Exceeded. Dropping item.");

@@ -14,12 +14,14 @@ public class BatteryPlant : MonoBehaviour
     private ParticleSystem arcParticles;
     [SerializeField]
     private Animator _animator;
+    [SerializeField]
+    private AudioClip shockSound;
     private BatteryPlantSoil _batteryPlantSoil;
 
     [Header("Debugging")]
     public bool shocked = false;
 
-    private AudioSource _shockAudio;
+    private AudioSource _audioSource;
     private ParticleSystem.EmissionModule _arcParticleEmission;
     private Vector3[] arcPositions = new Vector3[] { default, default };
     private float originialEmissionRate;
@@ -29,9 +31,9 @@ public class BatteryPlant : MonoBehaviour
     private void Start()
     {
         _batteryPlantSoil = GetComponentInParent<BatteryPlantSoil>();
-        _shockAudio = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
 
-        if (_shockAudio.clip == null)
+        if (_audioSource.clip == null)
             Debug.Log("No AudioClip for Batteryplant shock");
 
         _arcParticleEmission = arcParticles.emission;
@@ -95,7 +97,7 @@ public class BatteryPlant : MonoBehaviour
         // Call OnShocked on target for custom effects
         target.GetComponent<IShockable>().OnShocked(shockDuration, 1);
 
-        _shockAudio.Play();
+        _audioSource.PlayOneShot(shockSound);
 
         float time = 0;
         while(time < shockInterval)

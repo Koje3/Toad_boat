@@ -111,23 +111,24 @@ public class EngineValvePuzzle : MonoBehaviour
                 {
                     item.indicator.material = valveIndicatorCorrect;
 
-                    solved[i] = true;
-
                     if (item.wheelCorrectAction != null)
                         item.wheelCorrectAction.Invoke();
 
                     item.valveScript.FixValve();
+
+                    solved[i] = true;
                 }
                 else
                 {
                     item.indicator.material = valveIndicatorFalse;
 
-                    solved[i] = false;
-
                     if (item.wheelInCorrectAction != null)
                         item.wheelInCorrectAction.Invoke();
 
                     item.valveScript.BreakValve();
+
+                    solved[i] = false;
+
                 }
 
                 // Map value to 0.25 - 1 range and scale the steam with it

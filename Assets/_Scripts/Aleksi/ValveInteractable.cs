@@ -8,6 +8,7 @@ public class ValveInteractable : MonoBehaviour
 {
     public ParticleSystem valveSteam;
     public ParticleSystem engineSteam;
+    public AudioClip onFixedSound;
 
     private ParticleSystem.ShapeModule steamShape;
     private AudioSource _audioSource;
@@ -20,6 +21,9 @@ public class ValveInteractable : MonoBehaviour
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
+
+        if (_audioSource.clip == null)
+            Debug.LogWarning("Steam audio missing from valves");
 
         // Set random rotation for the steam to come out of
         steamShape = valveSteam.shape;
@@ -45,22 +49,30 @@ public class ValveInteractable : MonoBehaviour
 
     public void FixValve()
     {
-        valveSteam.Stop();
+        if (!isFunctioning)
+        {
+            valveSteam.Stop();
 
-        //_audioSource.Stop();
+            _audioSource.Stop();
 
-        isFunctioning = true;
+            _audioSource.PlayOneShot(onFixedSound);
 
-        engineSteam.Stop();
+            isFunctioning = true;
+
+            engineSteam.Stop();
+        }
     }
 
     public void BreakValve()
     {
-        valveSteam.Play();
+        if (isFunctioning)
+        {
+            valveSteam.Play();
 
-        //_audioSource.Play();
+            _audioSource.Play();
 
-        isFunctioning = false;
+            isFunctioning = false;
+        }
     }
 
     public void ResetValveRotation()

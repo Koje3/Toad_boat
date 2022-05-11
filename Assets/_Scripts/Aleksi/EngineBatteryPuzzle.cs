@@ -37,7 +37,11 @@ public class EngineBatteryPuzzle : MonoBehaviour
         if(!isActive && !isFixed)
             foreach (var item in batteryInfos)
             {
+                item.ring = item.snapZone.GetComponentInChildren<Canvas>().gameObject;
+
                 EnableEffects(item);
+
+                item.snapZone.OnSnapEvent.AddListener(OnBatteryPlaced);
             }
     }
 
@@ -109,6 +113,8 @@ public class EngineBatteryPuzzle : MonoBehaviour
         info.bubbles.Stop();
 
         info.gearAnimation.Stop();
+
+        info.ring.SetActive(true);
     }
 
     private void EnableEffects(BatteryInfo info)
@@ -118,6 +124,13 @@ public class EngineBatteryPuzzle : MonoBehaviour
         info.bubbles.Play();
 
         info.gearAnimation.Play();
+
+        info.ring.SetActive(false);
+    }
+
+    private void OnBatteryPlaced(Grabbable grabbable)
+    {
+        InputBridge.Instance.VibrateController(0.1f, 1f, 0.25f, grabbable.LastGrabbersHand);
     }
 
     [Serializable]
@@ -126,5 +139,7 @@ public class EngineBatteryPuzzle : MonoBehaviour
         public SnapZone snapZone;
         public ParticleSystem bubbles;
         public Animation gearAnimation;
+        [HideInInspector]
+        public GameObject ring;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -358,7 +359,7 @@ namespace BNG {
                         Grabbable grab = go.GetComponent<Grabbable>();
 
                         // Ok to attach it to snap zone now
-                        this.GrabGrabbable(grab);
+                        GrabGrabbable(grab);
 
                         // Finish Grabbing the desired object
                         grabber.GrabGrabbable(g);

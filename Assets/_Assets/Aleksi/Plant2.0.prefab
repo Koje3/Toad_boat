@@ -5476,6 +5476,7 @@ MonoBehaviour:
   shockArc: {fileID: 8970725270277502161}
   arcParticles: {fileID: 5662400096354887951}
   _animator: {fileID: 4939691885789373380}
+  shockSound: {fileID: 8300000, guid: e57455ee0d473904dac8e05a3c06787f, type: 3}
   shocked: 0
 --- !u!82 &6251045192672313078
 AudioSource:
@@ -5489,7 +5490,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5533,7 +5534,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
