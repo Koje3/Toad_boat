@@ -40915,6 +40915,7 @@ GameObject:
   - component: {fileID: 7555793613302446333}
   - component: {fileID: 7555793613302446332}
   - component: {fileID: 7555793613302446331}
+  - component: {fileID: 3470522371207674488}
   m_Layer: 0
   m_Name: InnerButton
   m_TagString: Untagged
@@ -41202,6 +41203,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3470522371207674488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7555793613302446329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01404a5a30ea2e4db8fd7d34b4390b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollidersToIgnore:
+  - {fileID: 7658077001302658708}
 --- !u!1 &7555793613309863794
 GameObject:
   m_ObjectHideFlags: 0
@@ -52473,7 +52488,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7555793613888662738}
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -2.5750003, y: 0.503, z: 0.016}
+  m_LocalPosition: {x: -2.5635, y: 0.503, z: 0.016}
   m_LocalScale: {x: 1.1833199, y: 1.1833199, z: 1.1833199}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -59306,7 +59321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6071311723035444526
 Transform:
   m_ObjectHideFlags: 0
@@ -59816,6 +59831,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2500129918191673241, guid: c5c550e92dd8b744393bd0e51f653905, type: 3}
   m_PrefabInstance: {fileID: 3041976565811025528}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1052916435952801954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2642470016164400858, guid: c5c550e92dd8b744393bd0e51f653905, type: 3}
+  m_PrefabInstance: {fileID: 3041976565811025528}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &2005943011
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052916435952801954}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 267e8e78b0a9d174ab229fa6ae8e9c97, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 267e8e78b0a9d174ab229fa6ae8e9c97, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!1 &7348642626417271279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5750210627249354647, guid: c5c550e92dd8b744393bd0e51f653905, type: 3}
+  m_PrefabInstance: {fileID: 3041976565811025528}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &108287459
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7348642626417271279}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 267e8e78b0a9d174ab229fa6ae8e9c97, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 267e8e78b0a9d174ab229fa6ae8e9c97, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!1 &8509843251833318549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6642330924375423725, guid: c5c550e92dd8b744393bd0e51f653905, type: 3}
+  m_PrefabInstance: {fileID: 3041976565811025528}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &1778840263
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8509843251833318549}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 267e8e78b0a9d174ab229fa6ae8e9c97, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 267e8e78b0a9d174ab229fa6ae8e9c97, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &3689840584328094206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62861,21 +62939,6 @@ MonoBehaviour:
   timeRemaining: 0.2
   timerIsOn: 0
   timerEndEventTriggered: 0
---- !u!114 &7447404191339419221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141891300044595073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a694dbcd525eb1b4c92f9b782845b055, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeRemaining: 0
-  timerIsOn: 0
-  timerEndEventTriggered: 0
 --- !u!4 &141891300044595086 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7576051970319625219, guid: 643eb43d5c6d9ce49840abf74c0c8685, type: 3}
@@ -64261,21 +64324,6 @@ MonoBehaviour:
   timeRemaining: 0.2
   timerIsOn: 0
   timerEndEventTriggered: 0
---- !u!114 &3561745063602358110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141891300968309783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a694dbcd525eb1b4c92f9b782845b055, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeRemaining: 0
-  timerIsOn: 0
-  timerEndEventTriggered: 0
 --- !u!4 &141891300968309784 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7576051970319625219, guid: 643eb43d5c6d9ce49840abf74c0c8685, type: 3}
@@ -65407,21 +65455,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeRemaining: 0.2
-  timerIsOn: 0
-  timerEndEventTriggered: 0
---- !u!114 &1308597636236678276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141891300843864292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a694dbcd525eb1b4c92f9b782845b055, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeRemaining: 0
   timerIsOn: 0
   timerEndEventTriggered: 0
 --- !u!4 &141891300843864299 stripped
