@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class DrinkingVessel : MonoBehaviour
 {
@@ -10,11 +11,10 @@ public class DrinkingVessel : MonoBehaviour
     public float liquidParticleEmissionRate;
     public ParticleSystem pouringEffect;
     public GameObject coffee;
-    private GameObject centerEye;
-
-    [SerializeField] private float distanceToPlayer;
     public float drinkingDistance = 0.5f;
 
+    private GameObject centerEye;
+    private float distanceToPlayer;
     public float timeRemaining = 1.5f;
     private float timeRemainingAtStart;
 
@@ -25,6 +25,7 @@ public class DrinkingVessel : MonoBehaviour
 
         timeRemainingAtStart = timeRemaining;
     }
+
     void Update()
     {
         //measure distance from this to player
@@ -34,6 +35,7 @@ public class DrinkingVessel : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.up), out hit, Mathf.Infinity))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.up) * hit.distance, Color.yellow);
+
             if (hit.collider.GetComponentInParent<DrinkingVessel>() == this) //check if the hit collider has this object as its parent
             {
                 if (hit.collider.CompareTag("TiltCollider")) //check that the collider is on the TiltObserver object (prevent triggering tilt from the container's own colliders)
@@ -55,6 +57,7 @@ public class DrinkingVessel : MonoBehaviour
                 }
             }
         }
+
         if (isTilted == true)
         {
             if (timeRemaining > 0)
@@ -71,6 +74,7 @@ public class DrinkingVessel : MonoBehaviour
             }
         }
     }
+
     void TiltStarted()
     {
         isTilted = true;
@@ -91,8 +95,9 @@ public class DrinkingVessel : MonoBehaviour
     {
         if (distanceToPlayer <= drinkingDistance)
         {
-            //YOU DRANK THE COFFEE
+            FindObjectOfType<MainGameManager>().GetComponent<Volume>().profile.components[3].active = false;
         }
+
         isEmpty = true;
         coffee.SetActive(false);
         var emission = pouringEffect.emission;

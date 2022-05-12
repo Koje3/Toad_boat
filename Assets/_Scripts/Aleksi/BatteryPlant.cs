@@ -33,9 +33,6 @@ public class BatteryPlant : MonoBehaviour
         _batteryPlantSoil = GetComponentInParent<BatteryPlantSoil>();
         _audioSource = GetComponent<AudioSource>();
 
-        if (_audioSource.clip == null)
-            Debug.Log("No AudioClip for Batteryplant shock");
-
         _arcParticleEmission = arcParticles.emission;
         originialEmissionRate = _arcParticleEmission.rateOverTimeMultiplier;
         burst = _arcParticleEmission.GetBurst(0);
