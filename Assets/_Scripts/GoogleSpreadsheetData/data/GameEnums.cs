@@ -33,6 +33,14 @@ namespace GameEnums
         Relieved
     }
 
+    public enum SamAction
+    {
+        Idle,
+        WaitForPlayer,
+        Panic,
+        RandomMove
+    }
+
     [System.Serializable]
     public class ElementForces
     {

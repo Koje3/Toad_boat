@@ -54,7 +54,7 @@ public class MainGameManager : MonoBehaviour
 
         foreach (GameObject item in destroyOnStartUp)
         {
-            Destroy(item);
+            item.SetActive(false);
         }
     }
 

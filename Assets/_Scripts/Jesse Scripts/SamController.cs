@@ -2,18 +2,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public enum SamBehavior
+public enum SamAction
 {
-    Tutorial1,
-    Tutorial2,
-    WaitPlayer,
-    Speak,
-    GoToPlayer,
-    GoToPlayerToSpeak,
-    NearPlayer,
-    SpeakNearPlayer,
-    GoToNextWaypoint,
-    MoveAroungShipRandom
+    Idle,
+    WaitForPlayer,
+    Panic,
+    RandomMove
 }
 
 
@@ -47,11 +41,10 @@ public class SamController : MonoBehaviour
     [Header("Behavior (read only)")]
     public string IDText;
     public List<Sam1BehaviorRow> samBehaviorQueue = new List<Sam1BehaviorRow>();
-    public SamBehavior samBehavior { get; private set; }
+    public GameEnums.SamAction samAction { get; private set; }
 
     public GameEnums.Mood samMood;
     public string nextIDText;
-    private bool executingBehavior;
     public bool changingPosition;
 
     [Header("For Debugging (don't change)")]
@@ -111,31 +104,31 @@ public class SamController : MonoBehaviour
         ChangePosition("BackDeck");
 
         AddSamBehaviorToQueue("ShipTour1");
-        AddSamBehaviorToQueue("ShipTour2");
-        AddSamBehaviorToQueue("ShipTour3");
-        AddSamBehaviorToQueue("ShipTour4");
-        AddSamBehaviorToQueue("ShipTour5");
-        AddSamBehaviorToQueue("ShipTour6");
 
     }
 
     void Update()
     {
-
+        //Timers
         turnTimer += Time.deltaTime;
         rotationIntervalTimer += Time.deltaTime;
-
         moveTimer += Time.deltaTime;
 
-
+        //Check if theres point of interest nearby
         CheckPointOfInterestCollision();
+
+        //Rotate sam towards player if near
         RotateTowardsPlayerWhenNear();
+
+        //Tell in what position sam is currently
         UpdatePosition();
+
+
+        UpdateCurrentSamBehavior();
 
         if (randomMove == true)
             RandomMoveAfterTime();
 
-        ExecuteBehaviorsFromQueue();
 
     }
 
@@ -151,6 +144,8 @@ public class SamController : MonoBehaviour
                 break;
             }
         }
+
+        ExecuteBehaviorsFromQueue();
     }
 
     public void ExecuteBehaviorsFromQueue()
@@ -162,11 +157,12 @@ public class SamController : MonoBehaviour
 
             ChangePosition(samBehaviorQueue[0].Location);
 
-            executingBehavior = true;
 
             samDialogueController.AddDialogueToQueue(samBehaviorQueue[0].Dialogue);
 
             samMood = samBehaviorQueue[0].Mood;
+
+            samAction = samBehaviorQueue[0].SamAction;
 
             //if theres nextIDText defined, add that next in the list
             if (samBehaviorQueue[0].NextIDText != null)
@@ -188,52 +184,46 @@ public class SamController : MonoBehaviour
                 }
             }
 
+            if (samAction != GameEnums.SamAction.WaitForPlayer)
+            {
+                ExecuteBehaviorsFromQueue();
+            }
+
             samBehaviorQueue.RemoveAt(0);
-            executingBehavior = false;
-        }
-    }
-
-
-    void UpdateSamBehaviorTransitions()
-    {
-        // Handle transitions 
-        switch (samBehavior)
-        {
-            case SamBehavior.Tutorial1:
-
-
-                break;
-
-            case SamBehavior.Speak:
-
-
-                break;
-            case SamBehavior.NearPlayer:
-
-
-                break;
         }
     }
 
     void UpdateCurrentSamBehavior()
     {
         // Handle logic 
-        switch (samBehavior)
+        switch (samAction)
         {
-            case SamBehavior.Tutorial1:
-
-
-                break;
-            case SamBehavior.Speak:
+            case GameEnums.SamAction.Idle:
+                randomMove = false;
 
                 break;
-            case SamBehavior.GoToPlayer:
+
+            case GameEnums.SamAction.WaitForPlayer:
+                randomMove = false;
+                WaitForPlayer();
 
                 break;
-            case SamBehavior.MoveAroungShipRandom:
-                RandomMoveAfterTime();
+
+            case GameEnums.SamAction.Panic:
+                randomMove = false;
+
+                break;
+
+            case GameEnums.SamAction.RandomMove:
+                randomMove = true;
+
                 break;
         }
+    }
+
+    void WaitForPlayer()
+    {
+
     }
 
 

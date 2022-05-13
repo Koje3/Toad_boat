@@ -2555,6 +2555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeingHeld: 0
+  LastGrabbersHand: 0
   GrabButton: 0
   Grabtype: 0
   GrabPhysics: 2
@@ -3033,7 +3034,7 @@ GameObject:
   - component: {fileID: 8469321775045177425}
   - component: {fileID: 8469321775045177430}
   m_Layer: 0
-  m_Name: HandCollider
+  m_Name: LeftHandCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3999,7 +4000,7 @@ GameObject:
   - component: {fileID: 8469321775173693732}
   - component: {fileID: 8469321775173693733}
   m_Layer: 0
-  m_Name: HandCollider
+  m_Name: RightHandCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5248,6 +5249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeingHeld: 0
+  LastGrabbersHand: 0
   GrabButton: 0
   Grabtype: 0
   GrabPhysics: 2
