@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SamDialogueControl : MonoBehaviour
 {
     [Header("UI")]
-    public GameObject samUI;
+    public GameObject samUICanvas;
     public Text UIText;
     public HandUIController playerHandUI;
 
@@ -38,7 +38,7 @@ public class SamDialogueControl : MonoBehaviour
 
     void Start()
     {
-        samUI.SetActive(false);
+        samUICanvas.SetActive(false);
         dialogueTimer = 3f;
         dialogueActive = false;
         dialogueContinues = false;
@@ -81,13 +81,13 @@ public class SamDialogueControl : MonoBehaviour
     //if theres dialogue in list show the first one and then delete it -> repeat
     public void ShowDialogueInQueue()
     {
-        if (currentStringQueue.Count > 0 && transform.position.x == samController.targetMovePosition.position.x)
+        if (currentStringQueue.Count > 0 && samController.changingPosition == false)
         {
             dialogueActive = true;
 
             if (dialogueTimer <= 0)
             {
-                samUI.SetActive(true);
+                samUICanvas.SetActive(true);
                 UIText.text = currentStringQueue[0];
 
                 //change playerhandUI text also
@@ -109,7 +109,6 @@ public class SamDialogueControl : MonoBehaviour
         else if (dialogueActive == true && dialogueTimer <= 0)
         {
             dialogueTimer = coolDownTimeAfterDialogue;
-            dialogueActive = false;
 
             if (dialogueContinues == false)
             {
@@ -123,9 +122,10 @@ public class SamDialogueControl : MonoBehaviour
 
     public void DialogueEnded()
     {
-        samUI.SetActive(false);
+        samUICanvas.SetActive(false);
         audioSource.clip = sfxDialogueEnd;
         audioSource.Play();
+        dialogueActive = false;
 
         playerHandUI.leftHandUI.SetActive(false);
     }
@@ -145,7 +145,7 @@ public class SamDialogueControl : MonoBehaviour
     public void SilenceSam()
     {
         letSamSpeak = false;
-        samUI.SetActive(false);
+        samUICanvas.SetActive(false);
         audioSource.clip = sfxDialogueEnd;
         audioSource.Play();
 
@@ -166,7 +166,7 @@ public class SamDialogueControl : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
 
-        samUI.SetActive(true);
+        samUICanvas.SetActive(true);
         UIText.text = newText;
         audioSource.clip = sfxDialogueStart;
         audioSource.Play();
@@ -175,7 +175,7 @@ public class SamDialogueControl : MonoBehaviour
 
     public void HideUIText()
     {
-        samUI.SetActive(false);
+        samUICanvas.SetActive(false);
         audioSource.clip = sfxDialogueEnd;
         audioSource.Play();
     }
@@ -189,7 +189,7 @@ public class SamDialogueControl : MonoBehaviour
         //navMeshAgent.destination = currentMoveTransform.position;
 
         yield return new WaitForSeconds(2);
-        samUI.SetActive(true);
+        samUICanvas.SetActive(true);
         audioSource.Play();
 
         yield return new WaitForSeconds(4);
@@ -203,7 +203,7 @@ public class SamDialogueControl : MonoBehaviour
         yield return new WaitForSeconds(4);
         audioSource.clip = sfxDialogueEnd;
         audioSource.Play();
-        samUI.SetActive(false);
+        samUICanvas.SetActive(false);
 
         yield return new WaitForSeconds(2);
        // randomMove = true;

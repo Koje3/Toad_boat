@@ -45,25 +45,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelPieces:
-  - {fileID: 3294887180321509542, guid: 0ba615464778e614b9cd5f878055acc7, type: 3}
-  - {fileID: 1660227527033583740, guid: 685c70d626353a447ae8381a850b90e2, type: 3}
-  - {fileID: 100169681379321019, guid: 08cbc82769323bf40ac1f565c820d4f3, type: 3}
-  - {fileID: 3294887180321509542, guid: 33ee413f6b88d764e8ff66143e5286b6, type: 3}
-  - {fileID: 1660227527033583740, guid: b39310356804d2f4fb437a5c64022d14, type: 3}
+  - {fileID: 2589276072003867696, guid: 2be463b1b5facfb41bb66d41b5fe4c9f, type: 3}
+  - {fileID: 8436617914720886593, guid: 89e21ad6ec44a704cb8eb52e2a01493b, type: 3}
+  - {fileID: 7162849172803350855, guid: 58d352b1f449a224fa3746dc5e18c9aa, type: 3}
+  - {fileID: 2589276072003867696, guid: 56516e380274cd245ad0a886053f7a6d, type: 3}
+  - {fileID: 8436617914720886593, guid: 6190dc479c1144648a3c08b407d5a13c, type: 3}
   levelBackPieces:
-  - {fileID: 3294887180321509542, guid: 33ee413f6b88d764e8ff66143e5286b6, type: 3}
-  - {fileID: 3294887180321509542, guid: 33ee413f6b88d764e8ff66143e5286b6, type: 3}
-  riverStreamPrefab: {fileID: 616177454331132942, guid: 43ea7d3ee69af5047802e63e1fe3e994, type: 3}
+  - {fileID: 2589276072003867696, guid: 56516e380274cd245ad0a886053f7a6d, type: 3}
+  - {fileID: 2589276072003867696, guid: 56516e380274cd245ad0a886053f7a6d, type: 3}
+  riverStreamPrefab: {fileID: 616177454331132942, guid: 709ce103742cec340a0bf4572c71129e, type: 3}
+  emptyObject: {fileID: 8477211959396097788, guid: 5731a17dde93ed64f9584a34bf29d594, type: 3}
   levelNumber: 1
-  emptyObject: {fileID: 8477211959396097788, guid: 3a15be2642ef0b24bbd9d41cecfc1cac, type: 3}
-  pieceLenghtSum: 0
-  shipSpeed: 0
   shipStartSpeed: 8
+  rotateShipYAmount: 0
+  rotateShipYFrequency: 0
+  rotateShipZAmount: 0.6
+  rotateShipZFrequency: 0.4
+  floatingSpeed: 0.3
+  floatingAmplitude: 0.3
+  shipSpeed: 0
   shipGoalSpeed: 8
   speedDelta: 0
   deaccelerationSpeed: 0.5
-  accelerationSpeed: 0.5
+  accelerationSpeed: 0.1
   currentPieceNumber: 0
+  pieceLenghtSum: 0
   currentPiece: {fileID: 0}
   levelTravelled: 0
   currentPieceDistance: 0

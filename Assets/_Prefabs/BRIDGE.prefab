@@ -864,6 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeingHeld: 0
+  LastGrabbersHand: 0
   GrabButton: 0
   Grabtype: 0
   GrabPhysics: 1
@@ -2935,7 +2936,7 @@ GameObject:
   m_Name: Cylinder.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6474200452535038401
@@ -3642,6 +3643,7 @@ MonoBehaviour:
   CollidersToIgnore:
   - {fileID: 6474200453773737973}
   - {fileID: 5783596604209621525}
+  - {fileID: 0}
 --- !u!114 &6474200452656376552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5008,6 +5010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeingHeld: 0
+  LastGrabbersHand: 0
   GrabButton: 0
   Grabtype: 0
   GrabPhysics: 1
@@ -5227,7 +5230,7 @@ GameObject:
   m_Name: Sphere.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6474200453096573525
@@ -6041,7 +6044,7 @@ GameObject:
   m_Name: Cylinder.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6474200453170916450
@@ -6360,7 +6363,7 @@ GameObject:
   m_Name: Cylinder.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6474200453181438009
@@ -6443,7 +6446,7 @@ GameObject:
   m_Name: Torus.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6474200453197697468
@@ -12067,7 +12070,7 @@ GameObject:
   m_Name: Cube.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6474200453492503772
@@ -12183,7 +12186,7 @@ GameObject:
   m_Name: Sphere.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6474200453499427324
@@ -12853,7 +12856,7 @@ GameObject:
   m_Name: Sphere.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6474200453619208134
@@ -13322,7 +13325,7 @@ GameObject:
   m_Name: Cylinder.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6474200453718436002
@@ -13542,6 +13545,7 @@ GameObject:
   - component: {fileID: 6474200453773737971}
   - component: {fileID: 6474200453773737968}
   - component: {fileID: 1447738663}
+  - component: {fileID: 1389988495516694448}
   m_Layer: 0
   m_Name: HandleGrabbable
   m_TagString: Untagged
@@ -13607,6 +13611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeingHeld: 0
+  LastGrabbersHand: 0
   GrabButton: 0
   Grabtype: 0
   GrabPhysics: 1
@@ -13697,6 +13702,20 @@ MonoBehaviour:
   VibrateFrequency: 0.3
   VibrateAmplitude: 0.1
   VibrateDuration: 0.1
+--- !u!114 &1389988495516694448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6474200453773737966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01404a5a30ea2e4db8fd7d34b4390b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollidersToIgnore:
+  - {fileID: 0}
 --- !u!1 &6474200453791385098
 GameObject:
   m_ObjectHideFlags: 0
@@ -13795,7 +13814,7 @@ GameObject:
   m_Name: Cylinder.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6474200453813912632
@@ -18945,7 +18964,7 @@ GameObject:
   m_Name: Cube.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6474200453911817805
@@ -19209,7 +19228,7 @@ GameObject:
   m_Name: Cube.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6474200453961244109
@@ -19306,7 +19325,7 @@ GameObject:
   m_Name: Cylinder.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6474200453974930794
@@ -20015,7 +20034,7 @@ GameObject:
   m_Name: Sphere.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6474200454116896034
@@ -20539,6 +20558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeingHeld: 0
+  LastGrabbersHand: 0
   GrabButton: 0
   Grabtype: 0
   GrabPhysics: 2
@@ -21584,7 +21604,7 @@ GameObject:
   m_Name: Cylinder.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6474200454536558233
@@ -21667,7 +21687,7 @@ GameObject:
   m_Name: Cylinder.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6474200454540624298
@@ -24468,6 +24488,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1f44e0018cdb3794d95619ab7458cced, type: 3}
       propertyPath: m_Name
       value: BridgeFloor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1f44e0018cdb3794d95619ab7458cced, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f44e0018cdb3794d95619ab7458cced, type: 3}

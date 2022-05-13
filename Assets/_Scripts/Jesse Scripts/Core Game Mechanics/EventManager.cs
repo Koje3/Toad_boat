@@ -191,7 +191,7 @@ public class Crises
 
                 if (stopShipSpeed == true)
                 {
-                    LevelManager.instance.ChangeShipSpeed(0, 0.1f);
+                    LevelManager.instance.ChangeShipSpeed(0, 1f);
                 }
 
                 isCrisisStarted = true;               

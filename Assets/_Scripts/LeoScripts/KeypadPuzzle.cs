@@ -18,10 +18,12 @@ public class KeypadPuzzle : MonoBehaviour {
     }
     private void Update()
     {
-        if (puzzleIsFinished == true)
-        {
-            CodeComplete();
-        }
+
+        // This part isn't necessary
+        //if (puzzleIsFinished == true)
+        //{
+        //    CodeComplete();
+        //}
     }
     public void ButtonWasPressed(int keyNumber) {
         screenText.color = Color.black;
@@ -52,6 +54,8 @@ public class KeypadPuzzle : MonoBehaviour {
         puzzleIsFinished = true;
         screenText.text = "OPEN";
         ActivateObject();
+
+        SamController.instance.AddSamBehaviorTopOfQueue("CodeComplete1", true);
     }
 
     void ActivateObject()

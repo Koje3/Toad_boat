@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 267502162954379667}
   - component: {fileID: 267502162954379677}
   - component: {fileID: 267502162954379676}
+  - component: {fileID: 1498927793}
   m_Layer: 0
   m_Name: Hatch.002
   m_TagString: Untagged
@@ -230,6 +231,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1498927793
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267502162954379666}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3559965112968920333, guid: b367dff58d47e264dbf63687e6e99833, type: 3}
 --- !u!1 &267502163146065225
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,9 +269,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267502163146065225}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.078999996, y: 1.144, z: -7.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.9607844, y: 1.9607844, z: 1.9607844}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 267502162296758909}
@@ -296,6 +311,7 @@ GameObject:
   - component: {fileID: 267502163832423587}
   - component: {fileID: 267502163832423597}
   - component: {fileID: 267502163832423596}
+  - component: {fileID: 1445784870}
   m_Layer: 0
   m_Name: Hatch.001
   m_TagString: Untagged
@@ -368,3 +384,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1445784870
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267502163832423586}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3011791490873928107, guid: b367dff58d47e264dbf63687e6e99833, type: 3}

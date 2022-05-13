@@ -7,16 +7,31 @@ public class ObjectOfInterest : MonoBehaviour
 
     public Transform lookTarget;
 
+    public BNG.Grabber grabber;
+
+    private void Start()
+    {
+        grabber = GetComponent<BNG.Grabber>();
+    }
+
     public Transform GetLookTarget()
     {
-        if(lookTarget != null)
+        if (grabber.HeldGrabbable != null)
         {
-            return lookTarget;
+            if (lookTarget != null)
+            {
+                return lookTarget;
+            }
+            else
+            {
+                return transform;
+            }
         }
         else
         {
-            return transform;
+            return null;
         }
+
     }
 
 }

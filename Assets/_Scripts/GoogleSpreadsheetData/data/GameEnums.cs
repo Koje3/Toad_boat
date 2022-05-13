@@ -21,6 +21,7 @@ namespace GameEnums
         BodyStellar
     }
 
+    [System.Serializable]
     public enum Mood
     {
         Default,
@@ -33,12 +34,15 @@ namespace GameEnums
         Relieved
     }
 
+    [System.Serializable]
     public enum SamAction
     {
         Idle,
         WaitForPlayer,
         Panic,
-        RandomMove
+        RandomMove,
+        TurnTowardsPlayer,
+        ChangeLocation
     }
 
     [System.Serializable]

@@ -37,7 +37,14 @@ public class SamMoveHands : MonoBehaviour
         Vector3 targetPosition;
         if (objectOfInterest != null)
         {
-            targetPosition = objectOfInterest.GetLookTarget().position;
+            if (objectOfInterest.GetLookTarget() != null)
+            {
+                targetPosition = objectOfInterest.GetLookTarget().position;
+            }
+            else
+            {
+                targetPosition = aimTargetTransform.position;
+            }
         }
         else
         {

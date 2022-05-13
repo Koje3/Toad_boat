@@ -1,44 +1,49 @@
-IDText,Dialogue,Location,Mood,Action,NextIDText
-ShipTour1,"Thank God that you're awake, captain. During your sleep things went bad and I couldn't fix it by myself, I really need your help! Oh boy, I bet your head is dizzy after the cryosleep. Let me refresh your memory and show you around.",BackDeck,Relieved,,ShipTour1Move
-ShipTour1Move,,Kitchen,,WaitForPlayer,ShipTour2
-ShipTour2,"Here's the kitchen, cap. I’m very sorry for the mess.",,Embarrassed,,ShipTour2Move
-ShipTour2Move,,FrontSam1sRoom,,WaitForPlayer,ShipTour3
-ShipTour3,"And here is my bedroom, but there is nothing to see.",,Embarrassed,,ShipTour3Move
-ShipTour3Move,,HatchEngineRoom,,WaitForPlayer,ShipTour4
-ShipTour4,"Down there is the same old engine room, still hot as hell.",,Default,,ShipTour5
-ShipTour5,"Alright, to the bridge we go!",,Default,,ShipTour5Move
-ShipTour5Move,,Bridge,,WaitForPlayer,ShipTour6
-ShipTour6,"Here is the bridge, sir. As you can see, we are stuck and can't take off.",,Default,Idle,
+IDText,Dialogue,Location,Mood,SamAction,NextIDText
+ShipTour1,"Thank God that you're awake, captain. During your sleep things went bad and I couldn't fix it by myself, I really need your help! Oh boy, I bet your head is dizzy after the cryosleep. Let me refresh your memory and show you around.",BackDeck,Relieved,Idle,ShipTour1Move
+ShipTour1Move,,Kitchen,Default,WaitForPlayer,ShipTour2
+ShipTour2,"Here's the kitchen, cap. I’m very sorry for the mess.",,Embarrassed,Idle,ShipTour2Move
+ShipTour2Move,,FrontSam1sRoom,Default,WaitForPlayer,ShipTour3
+ShipTour3,"And here is my bedroom, but there is nothing to see.",,Embarrassed,Idle,ShipTour3Move
+ShipTour3Move,,HatchEngineRoom,Default,WaitForPlayer,ShipTour4
+ShipTour4,"Down there is the same old engine room, still hot as hell.",,Default,Idle,ShipTour5
+ShipTour5,"Alright, to the bridge we go!",,Default,Idle,ShipTour5Move
+ShipTour5Move,,Bridge,Default,WaitForPlayer,ShipTour6
+ShipTour6,"Here is the bridge, sir. As you can see, we are stuck in this strange river and can't take off.",,Default,Idle,
 CrisisRadar,"Oh crap, not again! The radar is broken but this is easy to fix. Go get a new battery from green room. Entrance is in the engine room.",ToPlayer,Annoyed,Idle,CrisisRadarMove
-CrisisRadarMove,,Bridge,,Idle,
+CrisisRadarMove,,Bridge,Default,Idle,
 CrisisRadarHelp1,Did you find the entrance in the engine room? That's the hot spot.,Bridge,Default,Idle,
 CrisisRadarHelp2,Did you get the code right? There should be a memo somewhere…,Bridge,Default,Idle,
 CrisisRadarHelp3,"While you’re there, could you make me a sandwich?",Bridge,Sarcastic,Idle,
 CodeComplete1,Ah that was it! Please don’t flash it around!,Bridge,Sarcastic,Idle,
 RadarComplete,Well that took a while! Maybe you should check YOUR batteries?! Get some dirty beans from the kitchen.,Bridge,Sarcastic,Idle,
-CoffeeHelp,You know the bitter brown liquid you mammals love to drink WAY too much? That should do the trick.,,Sarcastic,,
-CrisisEngine1,WHAT IN THE HEAVENS NAME ARE YOU STILL DOING HERE?! DIDN’T YOU HEAR THE ENGINES CRASHING?!,Kitchen,Panicking,Panic,
-CrisisEngine2,HURRY UP!  You need to fix this!! Otherwise you can feed me to the French!,EngineRoom,Panicking,Panic,
+CoffeeHelp,You know the bitter brown liquid you mammals love to drink WAY too much? That should do the trick.,,Sarcastic,RandomMove,
+CrisisEngine1,WHAT IN THE HEAVENS NAME ARE YOU STILL DOING HERE?! DIDN’T YOU HEAR THE ENGINES CRASHING?!,ToPlayer,Panicking,Panic,CrisisEngineMove
+CrisisEngineMove,,EngineRoom,Panicking,Panic,TutorialLazerMove
 EngineComplete1,Not bad.,EngineRoom,Default,Idle,
 EngineComplete2,Good good.,EngineRoom,Default,Idle,
 EngineComplete3,Well that was fast… Speed of light... more like speed of *sigh*…,EngineRoom,Bored,Idle,
 EngineFail,You fucking killed us!!!!,EngineRoom,Angry,Panic,
-CrisisEngineHelp1,Hey slowpoke! Are you going to fix this!?,EngineRoom,Annoyed,Panic,
-CrisisEngineHelp2,My skinny legs can almost feel the flames! GET YOUR BUTT MOVING!,EngineRoom,Panicking,Panic,
-CrisisEngineHelp3,"Just check the positions of levers, valves and batteries!",EngineRoom,Angry,Panic,
-CrisisPlant,"Alright, you used all the batteries to the engine. Water the plants so we can get new ones.",GreenRoom,Default,,
-PlantComplete,Ah! I can feel the energy!,GreenRoom,Default,,TutorialLazer1
-CrisisPlantHelp1,*Sigh* my precious plants are all wilted…,GreenRoom,Bored,,
-CrisisPlantHelp2,"Can’t say who is thirstier, me or my plants…",GreenRoom,Sarcastic,,
-CrisisPlantHelp3,Just get the frigging watering can and water the frigging plants!,GreenRoom,Angry,,
-TutorialLazer1,We should check if the lazer gun is still working. You load it by using the batteries.,GreenRoom,Default,,
-TutorialLazerHelp,I don’t have the whole day to just wait here for you to check if the Lazer Gun works.,FrontDeck,Annoyed,,
-TutorialLazer2,"It makes some noice, that’s a good sign. Try shooting those barrels.",FrontDeck,Default,,
-CrisisLazer1,Focus! Can you see that big log?,FrontDeck,Default,,
-CrisisLazer2,Get your ass moving and fetch more batteries! I can’t die this way!,FrontDeck,Panicking,,
-CrisisLazerHelp1,"Hey butter finger, get your shit together!",FrontDeck,Sarcastic,,
-CrisisLazerHelp2,You have thumbs so why can’t you aim?,FrontDeck,Sarcastic,,
-CrisisLazerHelp3,You are missing all the targets butt head!,FrontDeck,Annoyed,,
-CrisisLazerHelp4,ARGH you get both of us killed!,FrontDeck,Angry,,
-CrisisLazerHelp5,Even reptiles would do a better job!,FrontDeck,Sarcastic,,
-LazerComplete,"Huh that was too close. Luckily I had it together and kept us alive. You really need to keep your head cool, if we wanna get out of here in one piece.",FrontDeck,Relieved,,
+CrisisEngineHelp1,HURRY UP!  You need to fix this!! Otherwise you can feed me to the French!,EngineRoom,Panicking,Panic,
+CrisisEngineHelp2,Hey slowpoke! Are you going to fix this!?,EngineRoom,Annoyed,Panic,
+CrisisEngineHelp3,My skinny legs can almost feel the flames! GET YOUR BUTT MOVING!,EngineRoom,Panicking,Panic,
+CrisisEngineHelp4,"Just check the positions of levers, valves and batteries!",EngineRoom,Angry,Panic,
+CrisisPlant,"Alright, you used all the batteries to the engine. Water the plants so we can get new ones.",ToPlayer,Default,Idle,
+PlantComplete,Ah! I can feel the energy!,GreenRoom,Default,Idle,TutorialLazer1
+CrisisPlantHelp1,*Sigh* my precious plants are all wilted…,GreenRoom,Bored,Idle,
+CrisisPlantHelp2,"Can’t say who is thirstier, me or my plants…",GreenRoom,Sarcastic,Idle,
+CrisisPlantHelp3,Just get the frigging watering can and water the frigging plants!,GreenRoom,Angry,Idle,
+TutorialLazer1,We should check if the lazer gun is still working. You load it by using the batteries.,ToPlayer,Default,Idle,TutorialLazerMove
+TutorialLazerMove,,FrontDeck,Default,WaitForPlayer,
+TutorialLazerHelp,I don’t have the whole day to just wait here for you to check if the Lazer Gun works.,FrontDeck,Annoyed,Idle,
+TutorialLazer2,"It makes some noice, that’s a good sign. Try shooting those barrels.",FrontDeck,Default,Idle,
+CrisisLazer1,Focus! Can you see that big log?,FrontDeck,Default,Idle,
+CrisisLazer2,Get your ass moving and fetch more batteries! I can’t die this way!,FrontDeck,Panicking,Idle,
+CrisisLazerHelp1,"Hey butter finger, get your shit together!",FrontDeck,Sarcastic,Idle,
+CrisisLazerHelp2,You have thumbs so why can’t you aim?,FrontDeck,Sarcastic,Idle,
+CrisisLazerHelp3,You are missing all the targets butt head!,FrontDeck,Annoyed,Idle,
+CrisisLazerHelp4,ARGH you get both of us killed!,FrontDeck,Angry,Idle,
+CrisisLazerHelp5,Even reptiles would do a better job!,FrontDeck,Sarcastic,Idle,
+LazerComplete,"Huh that was too close. Luckily I had it together and kept us alive. You really need to keep your head cool, if we wanna get out of here in one piece.",FrontDeck,Relieved,Idle,
+ComeHere1,Come to my location,,Default,WaitForPlayer,
+ComeHere2,You see where I am? Come here.,,Default,WaitForPlayer,
+ComeHere3,Hey! Come to see this,,Default,WaitForPlayer,

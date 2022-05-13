@@ -5,13 +5,17 @@ using System;
 using UnityEngine.Events;
 
 
-
 public class PuzzleComponentManager : MonoBehaviour
 {
 
     public PuzzleComponent puzzleComponent;
 
     public List<CrisisTypes> crisisTypes;
+
+
+    [Header ("EVENTS AFTER WHOLE PUZZLECOMPONENT IS FIXED")]
+    public float startEventsDelay = 0;
+    public UnityEvent wholePuzzleComponentIsFixedEvent;
 
 
     void Start()
@@ -80,6 +84,7 @@ public class PuzzleComponentManager : MonoBehaviour
     public void StartCrisis(CrisisTypes startCrisisType)
     {
         startCrisisType.onCrisisStartEvent.Invoke();
+
     }
 
     /// <returns>First CrisisType with given CrisisSubType.</returns>
@@ -101,9 +106,20 @@ public class PuzzleComponentManager : MonoBehaviour
     {
         yield return new WaitForSeconds(stopCrisisType.delayStopCrisisSeconds);
 
-        stopCrisisType.onCrisisStopEvent.Invoke();       
+        stopCrisisType.onCrisisStopEvent.Invoke();
+
+        if (LevelManager.instance.currentPiece.IsPuzzleComponentFixed(puzzleComponent) == true)
+        {
+            StartCoroutine(PuzzleComponentIsFixed());
+        }
     }
-    
+
+    public IEnumerator PuzzleComponentIsFixed()
+    {
+        yield return new WaitForSeconds(startEventsDelay);
+
+        wholePuzzleComponentIsFixedEvent.Invoke();
+    }   
 
 }
 
@@ -114,6 +130,7 @@ public class CrisisTypes
     public CrisisSubType crisisType;
 
     public UnityEvent onCrisisStartEvent;
+
 
     public float delayStopCrisisSeconds = 0;
     public UnityEvent onCrisisStopEvent;

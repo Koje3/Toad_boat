@@ -563,6 +563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeingHeld: 0
+  LastGrabbersHand: 0
   GrabButton: 0
   Grabtype: 0
   GrabPhysics: 1
@@ -674,7 +675,7 @@ BoxCollider:
   m_GameObject: {fileID: 9144173001202575795}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.017, y: 0.17, z: 0.015}
   m_Center: {x: -0.0005, y: 0.005, z: -0.003}
@@ -1287,6 +1288,8 @@ GameObject:
   - component: {fileID: 9144173001357582488}
   - component: {fileID: 9144173001357582494}
   - component: {fileID: 9144173001357582495}
+  - component: {fileID: 552281084}
+  - component: {fileID: 5670982094627451072}
   m_Layer: 0
   m_Name: LaserGun 1
   m_TagString: Untagged
@@ -1301,9 +1304,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9144173001357582491}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.094, y: 1.2610002, z: -7.312999}
-  m_LocalScale: {x: 0.4457, y: 0.4457, z: 0.4457}
+  m_LocalScale: {x: 0.8739216, y: 0.8739216, z: 0.8739216}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9144173002861620707}
@@ -1349,15 +1352,15 @@ MonoBehaviour:
   slowDownColorChange: 6
   inactiveColor: {r: 0.7578583, g: 0, b: 0.00891598, a: 1}
   activeColor: {r: 0, g: 2.8691096, b: 3.9999995, a: 1}
-  firingSource: {fileID: 0}
-  laserTriggerSound: {fileID: 0}
-  triggerSoundVolume: 0
-  laserShootSound: {fileID: 0}
-  shootSoundVolume: 0
-  laserActivateSound: {fileID: 0}
+  firingSource: {fileID: 9144173002704209774}
+  laserTriggerSound: {fileID: 8300000, guid: 682be5806501f9f48bf9dd4167149cdd, type: 3}
+  triggerSoundVolume: 0.4
+  laserShootSound: {fileID: 8300000, guid: 0af768b503b892545bf9c9d4de2ae9f5, type: 3}
+  shootSoundVolume: 0.2
+  laserActivateSound: {fileID: 8300000, guid: 497ad0358effa4544bd6863c2d10b43c, type: 3}
   laserDeactivateSound: {fileID: 0}
-  laserChargeSound: {fileID: 0}
-  chargeSoundVolume: 0
+  laserChargeSound: {fileID: 8300000, guid: fc33e2b5e4d52234b9c7a24240cbbc09, type: 3}
+  chargeSoundVolume: 0.5
   onRaycastHitEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1401,7 +1404,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.094, y: 1.261, z: -7.313}
+  m_ConnectedAnchor: {x: -0.094, y: 1.2610002, z: -7.312999}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -1445,6 +1448,120 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!82 &552281084
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9144173001357582491}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 497ad0358effa4544bd6863c2d10b43c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.169
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 50
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &5670982094627451072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9144173001357582491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &9144173001381456446
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,7 +2487,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.012999989, y: 1.6247, z: -0.6130007}
+  m_ConnectedAnchor: {x: 0.013000002, y: 1.6247001, z: -0.6130006}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -4493,6 +4610,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 9144173001357582489}
+        m_TargetAssemblyTypeName: BNG.ShootLaser, Assembly-CSharp
+        m_MethodName: PlayChargeUpSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDetachEvent:
     m_PersistentCalls:
       m_Calls:
@@ -4537,6 +4666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeingHeld: 0
+  LastGrabbersHand: 0
   GrabButton: 0
   Grabtype: 0
   GrabPhysics: 2
@@ -5129,6 +5259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeingHeld: 0
+  LastGrabbersHand: 0
   GrabButton: 0
   Grabtype: 0
   GrabPhysics: 1
@@ -5340,7 +5471,7 @@ BoxCollider:
   m_GameObject: {fileID: 9144173002704209769}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.017, y: 0.17, z: 0.015}
   m_Center: {x: -0.0005, y: 0.005, z: -0.003}
