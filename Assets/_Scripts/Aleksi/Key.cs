@@ -2,10 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Key : MonoBehaviour, IKey
+public class Key : MonoBehaviour
 {
-    [SerializeField]
     public Transform lockTargetTransform;
-
-    Transform IKey.LockTargetTransform { get => lockTargetTransform; }
 }
