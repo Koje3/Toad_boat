@@ -36,15 +36,15 @@ public class HeadAimIdle : MonoBehaviour
 
     IEnumerator ChangeTargetPosition()
     {
-        //Randomise an amount of time to wait before changing the position
-        yield return new WaitForSeconds(Random.Range(minMaxTime.x, minMaxTime.y));
-
         float x = Random.Range(minLocalTransformation.x, maxLocalTransformation.x);
         float y = Random.Range(minLocalTransformation.y, maxLocalTransformation.y);
         float z = Random.Range(minLocalTransformation.z, maxLocalTransformation.z);
 
         //Update the target position, by offsetting the origin point.
         targetPosition = origin + new Vector3(x, y, z);
+
+        //Randomise an amount of time to wait before changing the position
+        yield return new WaitForSeconds(Random.Range(minMaxTime.x, minMaxTime.y));
 
         //Loop
         StartCoroutine(ChangeTargetPosition());

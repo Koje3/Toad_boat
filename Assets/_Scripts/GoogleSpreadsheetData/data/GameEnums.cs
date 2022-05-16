@@ -42,7 +42,8 @@ namespace GameEnums
         Panic,
         RandomMove,
         TurnTowardsPlayer,
-        ChangeLocation
+        ChangeLocation,
+        Talk
     }
 
     [System.Serializable]

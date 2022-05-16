@@ -63,7 +63,11 @@ public class SamController : MonoBehaviour
     [Header("For Debugging (don't change)")]
 
     [SerializeField]
-    private float moveTimer;
+    private float moveAfterDelayTimer;
+    [SerializeField]
+    private float maxMoveTimeTimer;
+    [SerializeField]
+    private float maxMoveTime = 20f;
     [SerializeField]
     private float randomMoveInterval;
     [SerializeField]
@@ -82,6 +86,10 @@ public class SamController : MonoBehaviour
     private int waitIndex;
     [SerializeField]
     private float behaviorExecutionTimer;
+    [SerializeField]
+    private float stoppinDistanceFromDestination = 0.05f;
+    [SerializeField]
+    private float remainingDistanceFromDestination;
 
     private Vector3 playerPosition;
 
@@ -109,7 +117,9 @@ public class SamController : MonoBehaviour
         changingPosition = false;
 
         //reset timers
-        moveTimer = 0;
+        moveAfterDelayTimer = 0;
+        stoppinDistanceFromDestination = 0.05f;
+        maxMoveTimeTimer = 0f;
         turnTimer = 0;
         behaviorExecutionTimer = 0f;
         waitTimer = 0;
@@ -119,23 +129,29 @@ public class SamController : MonoBehaviour
         {
             samAction = SamAction.RandomMove;
         }
+        else
+        {
+            samAction = SamAction.Idle;
 
-        samAction = SamAction.Idle;
+            ChangePosition("BackDeck");
 
-        ChangePosition("BackDeck");
+            AddSamBehaviorToQueue("ShipTour1");
+        }
 
-        AddSamBehaviorToQueue("ShipTour1");
+
 
     }
 
     void Update()
     {
+        remainingDistanceFromDestination = navMeshAgent.remainingDistance;
+
         //Timers
         turnTimer += Time.deltaTime;
         rotationIntervalTimer += Time.deltaTime;
 
-        if (moveTimer > 0)
-            moveTimer -= Time.deltaTime;
+        if (moveAfterDelayTimer > 0)
+            moveAfterDelayTimer -= Time.deltaTime;
 
         if (behaviorExecutionTimer > 0)
             behaviorExecutionTimer -= Time.deltaTime;
@@ -196,7 +212,7 @@ public class SamController : MonoBehaviour
     {
         //execute behavior in the list if there's no more dialogue to be done from the previous behavior. Then delete the first behavior in the list
 
-        if (samBehaviorQueue.Count > 0 && samDialogueController.IsDialogueEnded() && changingPosition == false)
+        if (samBehaviorQueue.Count > 0 && samAction != SamAction.Talk && samAction != SamAction.ChangeLocation)
         {
 
             nextSamAction = samBehaviorQueue[0].SamAction;
@@ -210,14 +226,12 @@ public class SamController : MonoBehaviour
                 samAction = nextSamAction;
             }
 
+            samMood = samBehaviorQueue[0].Mood;
 
             if (samBehaviorQueue[0].Dialogue != null)
             {
                 samDialogueController.AddDialogueToQueue(samBehaviorQueue[0].Dialogue);
             }
-
-            samMood = samBehaviorQueue[0].Mood;
-
 
             //if theres nextIDText defined, add that next in the list
             if (samBehaviorQueue[0].NextIDText != null)
@@ -239,6 +253,8 @@ public class SamController : MonoBehaviour
                 }
             }
 
+
+
             samBehaviorQueue.RemoveAt(0);
 
             behaviorExecutionTimer = behaviorExecutionInterval;
@@ -254,6 +270,11 @@ public class SamController : MonoBehaviour
             case SamAction.Idle:
 
                 waitIndex = 0;
+
+                if (samDialogueController.currentStringQueue.Count > 0)
+                {
+                    samAction = SamAction.Talk;
+                }
 
                 if (behaviorExecutionTimer <= 0)
                 {
@@ -292,6 +313,11 @@ public class SamController : MonoBehaviour
 
                 waitIndex = 0;
 
+                if (samDialogueController.currentStringQueue.Count > 0)
+                {
+                    samAction = SamAction.Talk;
+                }
+
                 if (behaviorExecutionTimer <= 0)
                 {
                     behaviorExecutionTimer = behaviorExecutionInterval;
@@ -325,9 +351,37 @@ public class SamController : MonoBehaviour
             case SamAction.ChangeLocation:
 
                 waitIndex = 0;
+                waitTimer = 0;
                 changingPosition = true;
+                navMeshAgent.updateRotation = true;
 
                 UpdatePosition();
+
+                //if sam is close to destination check if player is in sight and rotate towards player
+                if (navMeshAgent.remainingDistance < 2.5f)
+                {
+                    RaycastHit hit;
+                    Vector3 raycastDirection = playerController.transform.position - transform.position;
+                    if (Physics.Raycast(transform.position, raycastDirection, out hit, maxRaycastRange))
+                    {
+                        if (hit.transform.tag == "Player")
+                        {
+                            navMeshAgent.updateRotation = false;
+                            RotateTowardsPlayer();
+                        }
+                    }
+                }
+
+
+                break;
+
+            case SamAction.Talk:
+                //Talk activates after sam has moved (if theres new destination specified)
+
+                if (samDialogueController.dialogueActive == false)
+                {
+                    samAction = nextSamAction;
+                }
 
                 break;
 
@@ -369,12 +423,12 @@ public class SamController : MonoBehaviour
         //if sam hasn't moved to position yet, reset timer
         if (transform.position.x != targetMovePosition.position.x)
         {
-            moveTimer = 0;
+            moveAfterDelayTimer = 0;
         }
 
-        if (moveTimer > randomMoveInterval)
+        if (moveAfterDelayTimer > randomMoveInterval)
         {
-            moveTimer = 0;
+            moveAfterDelayTimer = 0;
             randomMoveInterval = Random.Range(3f, 10f);
 
             ChangePositionRandom();
@@ -398,46 +452,69 @@ public class SamController : MonoBehaviour
     void ChangePosition(string newPos)
     {
         samAction = SamAction.ChangeLocation;
+        navMeshAgent.stoppingDistance = 0f;
 
-        foreach (Transform pos in movePositions)
+        maxMoveTimeTimer = 0f;
+
+        stoppinDistanceFromDestination = 0.05f;
+
+        if (newPos == "ToPlayer")
         {
-            if (newPos == pos.name)
-            {
-                targetMovePosition = pos;
-                break;
-            }
+            navMeshAgent.stoppingDistance = 2f;
+            stoppinDistanceFromDestination = 1.8f;
+            targetMovePosition = playerController.transform;
+
         }
-
-        if (currentPosition != null)
+        else
         {
-            if ((currentPosition.name == "GreenRoom" || currentPosition.name == "EngineRoom") && (targetMovePosition.name != "GreenRoom" && targetMovePosition.name != "EngineRoom"))
+            foreach (Transform pos in movePositions)
             {
-                foreach (Transform pos in movePositions)
+                if (newPos == pos.name)
                 {
-                    if (pos.name == "LadderBelowDeck")
-                    {
-                        nextTargetMovePosition = targetMovePosition;
-                        targetMovePosition = pos;
-                        break;
-                    }
+                    targetMovePosition = pos;
+                    break;
                 }
             }
         }
 
+        //if sam is below deck then set the next position to be ladder
+        if (transform.position.y < -1.8f)
+        {
+
+            foreach (Transform pos in movePositions)
+            {
+                if (pos.name == "LadderBelowDeck")
+                {
+                    nextTargetMovePosition = targetMovePosition;
+                    targetMovePosition = pos;
+                    break;
+                }
+            }
+
+        }
 
         navMeshAgent.destination = targetMovePosition.position;
+
     }
 
     void UpdatePosition()
     {
+        maxMoveTimeTimer += Time.deltaTime;
 
-        if (transform.position.x != targetMovePosition.position.x)
+
+        if (navMeshAgent.remainingDistance > stoppinDistanceFromDestination)
         {
-            moveTimer = 0.4f;
+            moveAfterDelayTimer = 0.4f;
         }
 
-        if (transform.position.x == targetMovePosition.position.x && moveTimer <= 0f)
+        if (targetMovePosition.name == "PlayerController")
         {
+            navMeshAgent.destination = targetMovePosition.position;
+        }
+
+        if (navMeshAgent.remainingDistance < stoppinDistanceFromDestination && moveAfterDelayTimer <= 0f)
+        {
+
             //If sam is below deck and comes to the ladder teleport him up and set new destination
             if (targetMovePosition.name == "LadderBelowDeck")
             {
@@ -448,9 +525,10 @@ public class SamController : MonoBehaviour
                         transform.position = pos.position;
                         navMeshAgent.Warp(pos.position);
                         targetMovePosition = nextTargetMovePosition;
-                        
+
                         navMeshAgent.destination = targetMovePosition.position;
-                        
+
+                        break;
                     }
                 }
             }
@@ -459,10 +537,36 @@ public class SamController : MonoBehaviour
                 currentPosition = targetMovePosition;
                 changingPosition = false;
 
+                // after sam gets to destination check if theres dialogue in queue and set samAction to Talk if there is
+                if (samDialogueController.currentStringQueue.Count > 0)
+                {
+                    samAction = SamAction.Talk;
+                }
+                else
+                {
+                    samAction = nextSamAction;
+                }
+            }
+        }
+
+        //if sam cant reach destination in time, continue
+        if (maxMoveTimeTimer > maxMoveTime)
+        {
+            currentPosition = targetMovePosition;
+            changingPosition = false;
+
+            if (samDialogueController.currentStringQueue.Count > 0)
+            {
+                samAction = SamAction.Talk;
+            }
+            else
+            {
                 samAction = nextSamAction;
             }
-
         }
+
+
+
     }
 
 
@@ -492,7 +596,7 @@ public class SamController : MonoBehaviour
     {
         if (turnTimer < maxTimeForTurning)
         {
-            float speed = turnSpeed / 10;
+            float speed = turnSpeed / 20;
 
             Quaternion rotation = Quaternion.LookRotation(targetRotationPosition - transform.position);
 
@@ -517,6 +621,11 @@ public class SamController : MonoBehaviour
 
         rotationIntervalTimer = 0f;
 
+    }
+
+    public void SetSamBehavior(SamAction newSamAction)
+    {
+        samAction = newSamAction;
     }
 
 

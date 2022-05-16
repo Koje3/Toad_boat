@@ -49,25 +49,30 @@ public class SamDialogueControl : MonoBehaviour
     void Update()
     {
         if (dialogueTimer > 0)
-        dialogueTimer -= Time.deltaTime;
+            dialogueTimer -= Time.deltaTime;
 
         //if sam should speak, show the next dialogue in the list
         if (letSamSpeak)
-        ShowDialogueInQueue();
+            ShowDialogueInQueue();
 
     }
 
 
     public void AddDialogueToQueue(string IDText)
     {
+        dialogueTimer = coolDownTimeAfterDialogue;
 
         if (IDText.Length > maxCharactersPerSlide)
         {
-            string[] splitStrings = IDText.Split(new char[] {'.', '?', '!' });
+            string[] splitStrings = IDText.Split(new char[] { '.', '?', '!' });
 
             for (int i = 0; i < splitStrings.Length; i++)
             {
-                currentStringQueue.Add(splitStrings[i]);
+                if (splitStrings[i] != " ")
+                {
+                    currentStringQueue.Add(splitStrings[i]);
+                }
+
             }
         }
         else
@@ -77,16 +82,17 @@ public class SamDialogueControl : MonoBehaviour
 
     }
 
-    
+
     //if theres dialogue in list show the first one and then delete it -> repeat
     public void ShowDialogueInQueue()
     {
-        if (currentStringQueue.Count > 0 && samController.changingPosition == false)
+        if (currentStringQueue.Count > 0 && samController.changingPosition == false && samController.samAction == GameEnums.SamAction.Talk)
         {
             dialogueActive = true;
 
             if (dialogueTimer <= 0)
             {
+
                 samUICanvas.SetActive(true);
                 UIText.text = currentStringQueue[0];
 
@@ -122,40 +128,41 @@ public class SamDialogueControl : MonoBehaviour
 
     public void DialogueEnded()
     {
-        samUICanvas.SetActive(false);
-        audioSource.clip = sfxDialogueEnd;
-        audioSource.Play();
         dialogueActive = false;
 
-        playerHandUI.leftHandUI.SetActive(false);
-    }
-
-    public bool IsDialogueEnded()
-    {
-        if (dialogueActive == false)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    public void SilenceSam()
-    {
-        letSamSpeak = false;
-        samUICanvas.SetActive(false);
         audioSource.clip = sfxDialogueEnd;
         audioSource.Play();
 
+        samUICanvas.SetActive(false);
         playerHandUI.leftHandUI.SetActive(false);
     }
 
-    public void LetSamSpeak()
-    {
-        letSamSpeak = true;
-    }
+    //public bool IsDialogueEnded()
+    //{
+    //    if (dialogueActive == false)
+    //    {
+    //        return true;
+    //    }
+    //    else
+    //    {
+    //        return false;
+    //    }
+    //}
+
+    //public void SilenceSam()
+    //{
+    //    letSamSpeak = false;
+    //    samUICanvas.SetActive(false);
+    //    audioSource.clip = sfxDialogueEnd;
+    //    audioSource.Play();
+
+    //    playerHandUI.leftHandUI.SetActive(false);
+    //}
+
+    //public void LetSamSpeak()
+    //{
+    //    letSamSpeak = true;
+    //}
 
     public void ShowUIText(string newText)
     {
@@ -181,31 +188,4 @@ public class SamDialogueControl : MonoBehaviour
     }
 
 
-    IEnumerator StartingSequence()
-    {
-        yield return new WaitForSeconds(3);
-
-        //currentMoveTransform = movePositions[4];
-        //navMeshAgent.destination = currentMoveTransform.position;
-
-        yield return new WaitForSeconds(2);
-        samUICanvas.SetActive(true);
-        audioSource.Play();
-
-        yield return new WaitForSeconds(4);
-        UIText.text = "During your sleep things went bad and I couldn't fix it by myself.";
-        audioSource.Play();
-
-        yield return new WaitForSeconds(5);
-        UIText.text = "I really need your help.";
-        audioSource.Play();
-
-        yield return new WaitForSeconds(4);
-        audioSource.clip = sfxDialogueEnd;
-        audioSource.Play();
-        samUICanvas.SetActive(false);
-
-        yield return new WaitForSeconds(2);
-       // randomMove = true;
-    }
 }

@@ -47,7 +47,7 @@ public class EngineBatteryPuzzle : MonoBehaviour
 
     void Update()
     {
-        if (!isFixed && CheckIsPuzzleSolved())
+        if (!isFixed && isActive && CheckIsPuzzleSolved())
             PuzzleSolved();
     }
 
