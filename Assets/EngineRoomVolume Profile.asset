@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5254660493662069363
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
+  m_Name: Tonemapping
+  m_EditorClassIdentifier: 
+  active: 0
+  mode:
+    m_OverrideState: 1
+    m_Value: 2
 --- !u!114 &-4383840688666696200
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -15,10 +31,10 @@ MonoBehaviour:
   active: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.53
+    m_Value: 0.83
   intensity:
     m_OverrideState: 1
-    m_Value: 0.25
+    m_Value: 0.5
   scatter:
     m_OverrideState: 0
     m_Value: 0.675
@@ -27,7 +43,7 @@ MonoBehaviour:
     m_Value: 65472
   tint:
     m_OverrideState: 1
-    m_Value: {r: 0.25400767, g: 0, b: 0.47058824, a: 1}
+    m_Value: {r: 0, g: 0.26821184, b: 1, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 0
@@ -52,13 +68,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221518ef91623a7438a71fef23660601, type: 3}
   m_Name: WhiteBalance
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   temperature:
     m_OverrideState: 1
-    m_Value: 35.7
+    m_Value: 62
   tint:
     m_OverrideState: 1
-    m_Value: -96.4
+    m_Value: -24
+--- !u!114 &-1400762183920593630
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
+  m_Name: LiftGammaGain
+  m_EditorClassIdentifier: 
+  active: 1
+  lift:
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.9213042, z: 0.9398343, w: 0}
+  gamma:
+    m_OverrideState: 0
+    m_Value: {x: 0.90818673, y: 0.95934945, z: 1, w: 0.08826126}
+  gain:
+    m_OverrideState: 0
+    m_Value: {x: 0.63229233, y: 0.48014325, z: 1, w: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,6 +113,9 @@ MonoBehaviour:
   - {fileID: -4383840688666696200}
   - {fileID: 6092296142203730846}
   - {fileID: -2525468612593583714}
+  - {fileID: -1400762183920593630}
+  - {fileID: -5254660493662069363}
+  - {fileID: 6693991322900364119}
 --- !u!114 &6092296142203730846
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -87,13 +128,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70afe9e12c7a7ed47911bb608a23a8ff, type: 3}
   m_Name: SplitToning
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   shadows:
     m_OverrideState: 1
-    m_Value: {r: 0.41509432, g: 0, b: 0.14858171, a: 1}
+    m_Value: {r: 0.2432805, g: 0.6698113, b: 0.66487515, a: 1}
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 0.4418709, g: 0.6784314, b: 0, a: 1}
+    m_Value: {r: 0.5126753, g: 0.247543, b: 1, a: 1}
   balance:
     m_OverrideState: 1
-    m_Value: 0.7
+    m_Value: -11
+--- !u!114 &6693991322900364119
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb60a22f311433c4c962b888d1393f88, type: 3}
+  m_Name: PaniniProjection
+  m_EditorClassIdentifier: 
+  active: 0
+  distance:
+    m_OverrideState: 1
+    m_Value: 0.234
+  cropToFit:
+    m_OverrideState: 0
+    m_Value: 1
