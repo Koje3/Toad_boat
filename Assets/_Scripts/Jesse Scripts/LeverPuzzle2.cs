@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.Events;
+using BNG;
 
 public class LeverPuzzle2 : BNG.GrabbableEvents
 {
@@ -89,7 +90,8 @@ public class LeverPuzzle2 : BNG.GrabbableEvents
                         if (leverCorrectSound != null)
                         {
                             item.lever.GetComponent<AudioSource>().PlayOneShot(leverCorrectSound, leverSoundVol);
-                            //BNG.InputBridge.Instance.VibrateController(0.2f, 0.2f, 0.2f, thisGrabber.HandSide);                           
+
+                            BNG.InputBridge.Instance.VibrateController(0.2f, 0.5f, 0.2f, item.lever.GetComponent<Grabbable>().LastGrabbersHand);                           
                         }
 
                         if (item.leverCorrectAction != null)

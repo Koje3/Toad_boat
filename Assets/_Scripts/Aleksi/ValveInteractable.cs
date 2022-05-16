@@ -1,3 +1,4 @@
+using BNG;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -53,13 +54,15 @@ public class ValveInteractable : MonoBehaviour
         {
             valveSteam.Stop();
 
+            engineSteam.Stop();
+
             _audioSource.Stop();
 
             _audioSource.PlayOneShot(onFixedSound);
 
-            isFunctioning = true;
+            InputBridge.Instance.VibrateController(0.2f, 0.5f, 0.2f, GetComponent<Grabbable>().LastGrabbersHand);
 
-            engineSteam.Stop();
+            isFunctioning = true;
         }
     }
 
