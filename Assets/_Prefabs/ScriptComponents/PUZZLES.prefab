@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indicatorMaterialIncorrect: {fileID: 2100000, guid: 2409e75098bade540b9d75e00112fb0a, type: 2}
   indicatorMaterialCorrect: {fileID: 2100000, guid: 353f49845e7345b43ae5e480a648fd5e, type: 2}
-  puzzleObject: {fileID: 4696539545237508378}
+  puzzleComponentManager: {fileID: 4696539545237508378}
   crisisTypeToSolve: 4
   puzzleOpen: 0
   leverCorrectSound: {fileID: 8300000, guid: c336a0bbe5c29644ab9b693b03b64009, type: 3}
@@ -314,8 +314,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4696539546174710643}
-          m_TargetAssemblyTypeName: LaserRocks, Assembly-CSharp
-          m_MethodName: StartPuzzle
+          m_TargetAssemblyTypeName: ObstaclePuzzles, Assembly-CSharp
+          m_MethodName: StartObstaclePuzzle
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -397,18 +397,6 @@ MonoBehaviour:
             m_StringArgument: CrisisLazer1
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
     delayStopCrisisSeconds: 3
     onCrisisStopEvent:
       m_PersistentCalls:
@@ -473,37 +461,13 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: SamController, Assembly-CSharp
-          m_MethodName: AddSamBehaviorToQueue
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: LazerComplete
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   - crisisType: 7
     onCrisisStartEvent:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 4696539546174710643}
-          m_TargetAssemblyTypeName: LaserRocks, Assembly-CSharp
-          m_MethodName: StartPuzzle
+          m_TargetAssemblyTypeName: ObstaclePuzzles, Assembly-CSharp
+          m_MethodName: StartMultipleObstaclePuzzle
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -573,18 +537,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
     delayStopCrisisSeconds: 3
     onCrisisStopEvent:
       m_PersistentCalls:
@@ -649,18 +601,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   startEventsDelay: 0
   wholePuzzleComponentIsFixedEvent:
     m_PersistentCalls:
@@ -674,8 +614,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4696539544934023043}
-  - component: {fileID: 4696539544934023042}
   - component: {fileID: 6251010589162770523}
+  - component: {fileID: 4696539544934023042}
   m_Layer: 0
   m_Name: Radar
   m_TagString: Untagged
@@ -698,6 +638,24 @@ Transform:
   m_Father: {fileID: 4696539544729692455}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6251010589162770523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4696539544934023040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 377acbb499865954181b4c54d7c7ccef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radarBatteryEmptySolved: 0
+  radarBatteryEmpty: 0
+  samHelpIdtextBase: CrisisRadarHelp
+  samHelpIntervalSeconds: 30
+  helpIdtextCount: 3
+  radarButton: {fileID: 0}
 --- !u!114 &4696539544934023042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -916,22 +874,6 @@ MonoBehaviour:
   wholePuzzleComponentIsFixedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6251010589162770523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4696539544934023040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 377acbb499865954181b4c54d7c7ccef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radarBatteryEmptySolved: 0
-  radarBatteryEmpty: 0
-  helpInterval: 30
-  radarButton: {fileID: 0}
 --- !u!1 &4696539545237508379
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,8 +883,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4696539545237508357}
-  - component: {fileID: 4696539545237508378}
   - component: {fileID: 7243559903798339535}
+  - component: {fileID: 4696539545237508378}
   m_Layer: 0
   m_Name: Engine
   m_TagString: Untagged
@@ -968,6 +910,22 @@ Transform:
   m_Father: {fileID: 4696539544729692455}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7243559903798339535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4696539545237508379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ee5e035d21fca24db67014afb7b7c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  engineBroken: 0
+  samHelpIdtextBase: CrisisEngineHelp
+  samHelpIntervalSeconds: 30
+  helpIdtextCount: 5
 --- !u!114 &4696539545237508378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,20 +1257,18 @@ MonoBehaviour:
           m_StringArgument: EngineComplete3
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7243559903798339535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4696539545237508379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ee5e035d21fca24db67014afb7b7c78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  engineBroken: 0
-  helpInterval: 0
+      - m_Target: {fileID: 7243559903798339535}
+        m_TargetAssemblyTypeName: EnginePuzzles, Assembly-CSharp
+        m_MethodName: EngineFixed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4696539545474893154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,7 +1380,7 @@ GameObject:
   - component: {fileID: 4696539546174710640}
   - component: {fileID: 4696539546174710643}
   m_Layer: 0
-  m_Name: Obstacle_puzzle1
+  m_Name: Obstacle_puzzles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1459,11 +1415,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefab: {fileID: 3203435110355213448, guid: 9fe13c6b600f01742acef8407797f2df, type: 3}
   explosionEffectPrefab: {fileID: 6710109155937161603, guid: 446223661be5cc94dbbd396a5bef25ba, type: 3}
-  puzzleObject: {fileID: 4696539544905032988}
+  puzzleComponentManager: {fileID: 4696539544905032988}
   crisisTypeToSolve: 6
-  obstacleCount: 3
+  multipleObstacleCount: 3
   obstacleSpacing: 100
-  obstacleSpawnZ: 0
+  puzzleStartIdtext: CrisisLazer1
+  samHelpIdtextBase: CrisisLazerHelp
+  puzzleEndIdtext: LazerComplete
+  samHelpIntervalSeconds: 30
+  helpIdtextCount: 5
 --- !u!1 &8520768632017551925
 GameObject:
   m_ObjectHideFlags: 0

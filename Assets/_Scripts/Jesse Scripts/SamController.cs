@@ -47,7 +47,7 @@ public class SamController : MonoBehaviour
     [Header("Other settings")]
     public SamDialogueControl samDialogueController;
     public string[] comeHereVoiceLines;
-    public float behaviorExecutionInterval = 2;
+    public float behaviorExecutionInterval = 1;
 
     [Header("Behavior (read only)")]
 
@@ -433,7 +433,7 @@ public class SamController : MonoBehaviour
 
         if (transform.position.x != targetMovePosition.position.x)
         {
-            moveTimer = 1;
+            moveTimer = 0.4f;
         }
 
         if (transform.position.x == targetMovePosition.position.x && moveTimer <= 0f)

@@ -9,7 +9,7 @@ public class LeverPuzzle2 : BNG.GrabbableEvents
     public Material indicatorMaterialIncorrect;
     public Material indicatorMaterialCorrect;
 
-    public PuzzleComponentManager puzzleObject;
+    public PuzzleComponentManager puzzleComponentManager;
     public CrisisSubType crisisTypeToSolve;
 
     public bool puzzleOpen = false;
@@ -44,7 +44,7 @@ public class LeverPuzzle2 : BNG.GrabbableEvents
 
             puzzleOpen = false;
 
-            puzzleObject.FixCrisis(crisisTypeToSolve);
+            puzzleComponentManager.FixCrisis(crisisTypeToSolve);
         }
     }
 

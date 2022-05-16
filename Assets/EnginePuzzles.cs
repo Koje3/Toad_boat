@@ -6,7 +6,9 @@ public class EnginePuzzles : MonoBehaviour
 {
 
     public bool engineBroken;
-    public float helpInterval = 30;
+    public string samHelpIdtextBase = "CrisisEngineHelp";
+    public float samHelpIntervalSeconds = 30;
+    public int helpIdtextCount = 3;
     private int helpIndex;
 
     // Start is called before the first frame update
@@ -24,6 +26,7 @@ public class EnginePuzzles : MonoBehaviour
 
     public void StartEnginePuzzles()
     {
+        engineBroken = true;
         StartCoroutine(SamHelpVoiceLines());
     }
 
@@ -31,17 +34,17 @@ public class EnginePuzzles : MonoBehaviour
     {
         while (engineBroken == true)
         {
-            yield return new WaitForSeconds(helpInterval);
+            yield return new WaitForSeconds(samHelpIntervalSeconds);
 
             if (SamController.instance.samBehaviorQueue.Count <= 0)
             {
                 helpIndex++;
 
-                SamController.instance.AddSamBehaviorToQueue("CrisisEngineHelp" + helpIndex);
+                SamController.instance.AddSamBehaviorToQueue(samHelpIdtextBase + helpIndex);
             }
 
 
-            if (helpIndex > 5)
+            if (helpIndex > helpIdtextCount)
             {
                 break;
             }
@@ -51,6 +54,11 @@ public class EnginePuzzles : MonoBehaviour
     public void AddSamBehavior(string samBehavior)
     {
         SamController.instance.AddSamBehaviorTopOfQueue(samBehavior, true);
+    }
+
+    public void EngineFixed()
+    {
+        engineBroken = false;
     }
 
 }

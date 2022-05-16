@@ -8,7 +8,10 @@ public class Radar : MonoBehaviour
     public bool radarBatteryEmptySolved;
     public bool radarBatteryEmpty;
 
-    public float helpInterval = 30f;
+    [Header("SAM HELP")]
+    public string samHelpIdtextBase = "CrisisRadarHelp";
+    public float samHelpIntervalSeconds = 30f;
+    public int helpIdtextCount = 3;
     private int helpIndex;
 
     public BNG.Button radarButton;
@@ -55,17 +58,17 @@ public class Radar : MonoBehaviour
     {
         while (radarBatteryEmpty == true)
         {
-            yield return new WaitForSeconds(helpInterval);
+            yield return new WaitForSeconds(samHelpIntervalSeconds);
 
             if (SamController.instance.samBehaviorQueue.Count <= 0)
             {
                 helpIndex++;
 
-                SamController.instance.AddSamBehaviorToQueue("CrisisRadarHelp" + helpIndex);
+                SamController.instance.AddSamBehaviorToQueue(samHelpIdtextBase + helpIndex);
             }
 
 
-            if (helpIndex > 5)
+            if (helpIndex > helpIdtextCount)
             {
                 break;
             }
