@@ -11,15 +11,27 @@ public class CoffeePuzzle : MonoBehaviour
     private PuzzleComponentManager puzzleComponent;
     bool isFixed;
 
+    [Header("SAM HELP")]
+    public string samHelpIdtextBase = "CrisisLazerHelp";
+    public string puzzleEndIdtext;
+    public float samHelpIntervalSeconds = 30;
+    public int helpIdtextCount = 1;
+    private int helpIndex;
+
     private void Start()
     {
         FindObjectOfType<MainGameManager>().GetComponent<Volume>().profile.TryGet(out UnityEngine.Rendering.Universal.Vignette tmp);
         globalVignetteVolume = tmp;
+
+        isFixed = false;
     }
 
     public void StartPuzzle()
     {
         StartCoroutine(StartPuzzleRoutine());
+
+        StartCoroutine(SamHelpVoiceLines());
+        
     }
 
     public void PuzzleSolved()
@@ -69,5 +81,27 @@ public class CoffeePuzzle : MonoBehaviour
         globalVignetteVolume.intensity.value = 0f;
 
         globalVignetteVolume.active = false;
+    }
+
+
+    IEnumerator SamHelpVoiceLines()
+    {
+        while (isFixed == false)
+        {
+            yield return new WaitForSeconds(samHelpIntervalSeconds);
+
+            if (SamController.instance.samBehaviorQueue.Count <= 0)
+            {
+                helpIndex++;
+
+                SamController.instance.AddSamBehaviorToQueue(samHelpIdtextBase + helpIndex);
+            }
+
+            if (helpIndex >= helpIdtextCount)
+            {
+                break;
+            }
+        }
+     
     }
 }

@@ -65,6 +65,7 @@ public class EnginePuzzles : MonoBehaviour
     public void EngineFixed()
     {
         engineBroken = false;
+        StopAllCoroutines();
 
         // Speed back up to normal
         levelManager.ChangeShipSpeed(8);

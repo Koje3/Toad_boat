@@ -16,7 +16,7 @@ CrisisRadarHelp2,Did you get the code right? There should be a memo somewhere…
 CrisisRadarHelp3,"While you’re there, could you make me a sandwich?",Bridge,Sarcastic,Idle,
 CodeComplete1,Ah that was it! Please don’t flash it around!,Bridge,Sarcastic,Idle,
 RadarComplete,Well that took a while! Maybe you should check YOUR batteries?! Get some dirty beans from the kitchen.,Bridge,Sarcastic,Idle,
-CoffeeHelp,You know the bitter brown liquid you mammals love to drink WAY too much? That should do the trick.,,Sarcastic,RandomMove,
+CoffeeHelp1,You know the bitter brown liquid you mammals love to drink WAY too much? That should do the trick.,,Sarcastic,RandomMove,
 CrisisEngine1,WHAT IN THE HEAVENS NAME ARE YOU STILL DOING HERE? DIDN’T YOU HEAR THE ENGINES CRASHING?!,ToPlayer,Panicking,Idle,CrisisEngineMove
 CrisisEngineMove,,EngineRoom,Panicking,WaitForPlayer,CrisisEngine2
 CrisisEngine2,HURRY UP!  You need to fix this!! Otherwise you can feed me to the French!,EngineRoom,Panicking,Idle,
@@ -36,8 +36,9 @@ TutorialLazer1,We should check if the lazer gun is still working. You load it by
 TutorialLazerMove,,FrontDeck,Default,WaitForPlayer,
 TutorialLazerHelp,I don’t have the whole day to just wait here for you to check if the Lazer Gun works.,FrontDeck,Annoyed,Idle,
 TutorialLazer2,"It makes some noice, that’s a good sign. Try shooting those barrels.",FrontDeck,Default,Idle,
-CrisisLazer1,Focus! Can you see that big log?,ToPlayer,Default,Idle,CrisisLazer2
-CrisisLazer2,Get your ass moving and fetch more batteries for the laser! I can’t die this way!,FrontDeck,Panicking,Idle,
+CrisisLazer1,,ToPlayer,Default,Idle,CrisisLazer2
+CrisisLazer2,Focus! Can you see that big log?,,Default,Idle,CrisisLazer3
+CrisisLazer3,Get your ass moving and fetch more batteries for the laser! I can’t die this way!,FrontDeck,Panicking,Idle,
 CrisisLazerHelp1,"Hey butter finger, get your shit together!",FrontDeck,Sarcastic,Idle,
 CrisisLazerHelp2,You have thumbs so why can’t you aim?,FrontDeck,Sarcastic,Idle,
 CrisisLazerHelp3,You are missing all the targets butt head!,FrontDeck,Annoyed,Idle,

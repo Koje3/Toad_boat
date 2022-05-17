@@ -152,8 +152,6 @@ public class ObstaclePuzzles : MonoBehaviour
                     break;
                 }
             }
-
-
     }
 
     public void AddSamBehavior(string samBehavior)
@@ -173,6 +171,8 @@ public class ObstaclePuzzles : MonoBehaviour
         {
             puzzleComponentManager.FixCrisis(CrisisSubType.MultipleObstacles);
         }
+
+        StopAllCoroutines();
 
         SamController.instance.AddSamBehaviorTopOfQueue(puzzleEndIdtext, true);
 

@@ -481,7 +481,7 @@ public class SamController : MonoBehaviour
         }
 
         //if sam is below deck then set the next position to be ladder
-        if (transform.position.y < -1.8f)
+        if (transform.position.y < -1.8f && newPos != "GreenRoom" && newPos != "EngineRoom")
         {
 
             foreach (Transform pos in movePositions)

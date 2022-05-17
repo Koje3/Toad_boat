@@ -83,6 +83,8 @@ public class Radar : MonoBehaviour
         Debug.Log("Radar Solved");
         radarBatteryEmpty = false;
 
+        StopAllCoroutines();
+
         SamController.instance.AddSamBehaviorTopOfQueue("RadarComplete", true);
     }
 
