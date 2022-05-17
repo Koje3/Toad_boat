@@ -89,7 +89,6 @@ public class PuzzleComponentManager : MonoBehaviour
     public void StartCrisis(CrisisTypes startCrisisType)
     {
         startCrisisType.onCrisisStartEvent.Invoke();
-
     }
 
     /// <returns>First CrisisType with given CrisisSubType.</returns>

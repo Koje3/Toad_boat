@@ -39,6 +39,8 @@ public class EngineBatteryPuzzle : MonoBehaviour
             {
                 item.ring = item.snapZone.GetComponentInChildren<Canvas>().gameObject;
 
+                item.attachedBatteryFunctions = item.snapZone.StartingItem.GetComponent<BatteryFunctions>();
+
                 EnableEffects(item);
 
                 item.snapZone.OnSnapEvent.AddListener(OnBatteryPlaced);
@@ -83,7 +85,7 @@ public class EngineBatteryPuzzle : MonoBehaviour
     {
         for (int i = 0; i < batteryInfos.Count; i++)
         {
-            if (batteryInfos[i].snapZone.HeldItem != null)
+            if (batteryInfos[i].snapZone.HeldItem != null && !batteryInfos[i].snapZone.HeldItem.GetComponent<BatteryFunctions>().empty)
             {
                 // Only once
                 if (!solved[i])
@@ -115,6 +117,10 @@ public class EngineBatteryPuzzle : MonoBehaviour
         info.gearAnimation.Stop();
 
         info.ring.SetActive(true);
+
+        info.snapZone.CanRemoveItem = true;
+
+        info.attachedBatteryFunctions.SetEmpty();
     }
 
     private void EnableEffects(BatteryInfo info)
@@ -141,5 +147,7 @@ public class EngineBatteryPuzzle : MonoBehaviour
         public Animation gearAnimation;
         [HideInInspector]
         public GameObject ring;
+        [HideInInspector]
+        public BatteryFunctions attachedBatteryFunctions;
     }
 }

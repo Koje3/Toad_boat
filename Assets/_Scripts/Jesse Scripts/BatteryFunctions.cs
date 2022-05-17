@@ -5,6 +5,11 @@ using UnityEngine;
 public class BatteryFunctions : MonoBehaviour
 {
     public float dropTime;
+    public bool empty = false;
+    [SerializeField]
+    private Material emptyMaterial;
+    [SerializeField]
+    private MeshRenderer _renderer;
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +24,18 @@ public class BatteryFunctions : MonoBehaviour
         dropTime = Time.time - GetComponent<BNG.Grabbable>().LastDropTime;
     }
 
+    public void SetEmpty()
+    {
+        empty = true;
+
+        Material[] materials = _renderer.materials;
+        materials[2] = emptyMaterial;
+        _renderer.materials = materials;
+    }
+
 public void MessageToConsole()
+    {
+        Debug.Log("Hello! Can You Hear me?");
 
-{
-Debug.Log("Hello! Can You Hear me?");
-
-}
-
+    }
 }

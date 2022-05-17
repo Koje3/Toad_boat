@@ -9,6 +9,8 @@ public class EnginePuzzles : MonoBehaviour
     public string samHelpIdtextBase = "CrisisEngineHelp";
     public float samHelpIntervalSeconds = 30;
     public int helpIdtextCount = 3;
+    public LevelManager levelManager;
+
     private int helpIndex;
 
     // Start is called before the first frame update
@@ -27,7 +29,11 @@ public class EnginePuzzles : MonoBehaviour
     public void StartEnginePuzzles()
     {
         engineBroken = true;
+
         StartCoroutine(SamHelpVoiceLines());
+
+        // Slow down to give time for engine puzzle
+        levelManager.ChangeShipSpeed(4);
     }
 
     IEnumerator SamHelpVoiceLines()
@@ -59,6 +65,9 @@ public class EnginePuzzles : MonoBehaviour
     public void EngineFixed()
     {
         engineBroken = false;
+
+        // Speed back up to normal
+        levelManager.ChangeShipSpeed(8);
     }
 
 }

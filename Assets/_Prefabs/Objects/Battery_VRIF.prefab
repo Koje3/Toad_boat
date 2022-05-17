@@ -332,6 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BeingHeld: 0
+  LastGrabbersHand: 0
   GrabButton: 0
   Grabtype: 0
   GrabPhysics: 0
@@ -549,6 +550,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropTime: 0
+  empty: 0
+  emptyMaterial: {fileID: 2100000, guid: 039b07f90541ac7429c817c2e3871ece, type: 2}
+  _renderer: {fileID: 6964696353289216789}
 --- !u!136 &1366630622285901797
 CapsuleCollider:
   m_ObjectHideFlags: 0

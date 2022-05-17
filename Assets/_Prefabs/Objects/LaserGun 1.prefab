@@ -4528,6 +4528,7 @@ GameObject:
   - component: {fileID: 9144173002369925939}
   - component: {fileID: 9144173002369925948}
   - component: {fileID: 9144173002369925944}
+  - component: {fileID: 8030950301938386567}
   - component: {fileID: 9144173002369925949}
   - component: {fileID: 9144173002369925950}
   - component: {fileID: 9144173002369925951}
@@ -4598,22 +4599,10 @@ MonoBehaviour:
   OnSnapEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9144173002704209774}
-        m_TargetAssemblyTypeName: BNG.RaycastWeapon, Assembly-CSharp
-        m_MethodName: Reload
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 9144173001357582489}
-        m_TargetAssemblyTypeName: BNG.ShootLaser, Assembly-CSharp
-        m_MethodName: PlayChargeUpSound
-        m_Mode: 1
+      - m_Target: {fileID: 8030950301938386567}
+        m_TargetAssemblyTypeName: ReloadWeaponOnFullBattery, Assembly-CSharp
+        m_MethodName: ReloadIfBatteryFull
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4638,6 +4627,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   ClosestGrabbable: {fileID: 0}
+--- !u!114 &8030950301938386567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9144173002369925945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744e68b11edd2e241a077e87e4400354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycastWeapon: {fileID: 9144173002704209774}
+  shootLaser: {fileID: 9144173001357582489}
 --- !u!114 &9144173002369925949
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public enum PuzzleComponent
     Rudder,
     Hull,
     Environment,
+    Player
 }
 
 public enum CrisisSubType
@@ -26,6 +27,7 @@ public enum CrisisSubType
     Explosion,
     Obstacle,
     MultipleObstacles,
+    Tired
 }
 
 

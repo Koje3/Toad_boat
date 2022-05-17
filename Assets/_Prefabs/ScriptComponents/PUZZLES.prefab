@@ -51,18 +51,22 @@ MonoBehaviour:
     bubbles: {fileID: 0}
     gearAnimation: {fileID: 0}
     ring: {fileID: 0}
+    attachedBatteryFunctions: {fileID: 0}
   - snapZone: {fileID: 0}
     bubbles: {fileID: 0}
     gearAnimation: {fileID: 0}
     ring: {fileID: 0}
+    attachedBatteryFunctions: {fileID: 0}
   - snapZone: {fileID: 0}
     bubbles: {fileID: 0}
     gearAnimation: {fileID: 0}
     ring: {fileID: 0}
+    attachedBatteryFunctions: {fileID: 0}
   - snapZone: {fileID: 0}
     bubbles: {fileID: 0}
     gearAnimation: {fileID: 0}
     ring: {fileID: 0}
+    attachedBatteryFunctions: {fileID: 0}
   glassBatteryEmpty: {fileID: 2100000, guid: 53c08d3f74a943c4cb6bbb8c4936994d, type: 2}
   glassBatteryInPlace: {fileID: 2100000, guid: 23f16522e92bed148a251129ee456c45, type: 2}
   onPuzzleStart:
@@ -926,6 +930,7 @@ MonoBehaviour:
   samHelpIdtextBase: CrisisEngineHelp
   samHelpIntervalSeconds: 30
   helpIdtextCount: 5
+  levelManager: {fileID: 0}
 --- !u!114 &4696539545237508378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1434,6 +1439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 125729277721614527}
   - component: {fileID: 2346037775003636195}
+  - component: {fileID: 3235190930990620371}
   m_Layer: 0
   m_Name: CoffeePuzzle
   m_TagString: Untagged
@@ -1468,6 +1474,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a029643d177af34683f48bffbab9f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleComponent: {fileID: 3235190930990620371}
+--- !u!114 &3235190930990620371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8520768632017551925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21e36caa70245614babbc991963086ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleComponent: 6
+  crisisTypes:
+  - crisisType: 8
+    onCrisisStartEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2346037775003636195}
+          m_TargetAssemblyTypeName: CoffeePuzzle, Assembly-CSharp
+          m_MethodName: StartPuzzle
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    delayStopCrisisSeconds: 0
+    onCrisisStopEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  startEventsDelay: 0
+  wholePuzzleComponentIsFixedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8554881612927560736
 GameObject:
   m_ObjectHideFlags: 0

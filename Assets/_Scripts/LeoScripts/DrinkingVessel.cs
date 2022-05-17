@@ -12,6 +12,7 @@ public class DrinkingVessel : MonoBehaviour
     public ParticleSystem pouringEffect;
     public GameObject coffee;
     public float drinkingDistance = 0.5f;
+    public CoffeePuzzle coffeePuzzle;
 
     private GameObject centerEye;
     private float distanceToPlayer;
@@ -95,7 +96,7 @@ public class DrinkingVessel : MonoBehaviour
     {
         if (distanceToPlayer <= drinkingDistance)
         {
-            FindObjectOfType<MainGameManager>().GetComponent<Volume>().profile.components[3].active = false;
+            coffeePuzzle.PuzzleSolved();
         }
 
         isEmpty = true;
