@@ -25,6 +25,11 @@ public class PuzzleComponentManager : MonoBehaviour
 
     }
 
+    private void OnDestroy()
+    {
+        EventManager.onCrisisStateChange -= GetCrisisStateChange;
+    }
+
 
 
     //Get notice from current EventManager that crisis state has changed

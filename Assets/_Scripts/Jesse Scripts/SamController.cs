@@ -187,6 +187,8 @@ public class SamController : MonoBehaviour
 
     }
 
+
+    //Add defined behavior to top the list and can also delete rest of the list
     public void AddSamBehaviorTopOfQueue(string IDText, bool deleteRestOfTheQueue = false)
     {
         foreach (Sam1BehaviorRow item in GameData.Sam1Behavior)
@@ -421,7 +423,7 @@ public class SamController : MonoBehaviour
     void RandomMoveAfterTime()
     {
         //if sam hasn't moved to position yet, reset timer
-        if (transform.position.x != targetMovePosition.position.x)
+        if (navMeshAgent.remainingDistance > stoppinDistanceFromDestination)
         {
             moveAfterDelayTimer = 0;
         }
@@ -438,6 +440,7 @@ public class SamController : MonoBehaviour
 
     void ChangePositionRandom()
     {
+        targetMovePosition = movePositions[Random.Range(0, movePositions.Length)];
 
         while (targetMovePosition.name == "GreenRoom" || targetMovePosition.name == "EngineRoom")
         {

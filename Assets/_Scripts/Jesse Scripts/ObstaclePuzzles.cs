@@ -20,6 +20,7 @@ public class ObstaclePuzzles : MonoBehaviour
     public int multipleObstacleCount = 3;
     public float obstacleSpacing;
     private bool multipleObstaclePuzzleOpen;
+    public float newShipSpeed = 6;
 
 
     [Header("SAM HELP")]
@@ -41,9 +42,13 @@ public class ObstaclePuzzles : MonoBehaviour
     {
         if (obstaclePuzzleOpen == false && multipleObstaclePuzzleOpen == false)
         {
+            obstaclePuzzleOpen = true;
+
             StartCoroutine(SamHelpVoiceLines());
             SamController.instance.AddSamBehaviorTopOfQueue(puzzleStartIdtext, true);
         }
+
+
 
         obstaclePuzzleOpen = true;
 
@@ -63,9 +68,13 @@ public class ObstaclePuzzles : MonoBehaviour
     {
         if (obstaclePuzzleOpen == false && multipleObstaclePuzzleOpen == false)
         {
+            multipleObstaclePuzzleOpen = true;
+
             StartCoroutine(SamHelpVoiceLines());
             SamController.instance.AddSamBehaviorTopOfQueue(puzzleStartIdtext, true);
         }
+
+        LevelManager.instance.ChangeShipSpeed(newShipSpeed);
 
         multipleObstaclePuzzleOpen = true;
 
@@ -87,7 +96,7 @@ public class ObstaclePuzzles : MonoBehaviour
 
     public void CheckWhatRaycastHit(RaycastHit hit)
     {
-        if (obstaclePuzzleOpen == true)
+        if (obstaclePuzzleOpen == true || multipleObstaclePuzzleOpen == true)
         {
             Debug.Log("Raycast hit " + hit.transform.name);
 
@@ -126,8 +135,7 @@ public class ObstaclePuzzles : MonoBehaviour
 
     IEnumerator SamHelpVoiceLines()
     {
-        if (obstaclePuzzleOpen == false && multipleObstaclePuzzleOpen == false)
-        {
+
             while (obstaclePuzzleOpen == true || multipleObstaclePuzzleOpen == true)
             {
                 yield return new WaitForSeconds(samHelpIntervalSeconds);
@@ -144,7 +152,7 @@ public class ObstaclePuzzles : MonoBehaviour
                     break;
                 }
             }
-        }
+
 
     }
 
@@ -167,6 +175,8 @@ public class ObstaclePuzzles : MonoBehaviour
         }
 
         SamController.instance.AddSamBehaviorTopOfQueue(puzzleEndIdtext, true);
+
+        LevelManager.instance.ChangeShipSpeed(LevelManager.instance.shipStartSpeed);
 
         obstaclePuzzleOpen = false;
         multipleObstaclePuzzleOpen = false;        
