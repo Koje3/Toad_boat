@@ -39,13 +39,15 @@ public class BatteryPlantSoil : MonoBehaviour
         }
     }
 
-    private void OnFullCharge()
+    public void OnFullCharge()
     {
         _disabled = false;
 
         batterySpawner.SpawnBatteries(growPlatformIndex);
 
         onFullCharge.Invoke();
+
+        chargeScaled = 1;
     }
 
     public IEnumerator ResetCharge()
